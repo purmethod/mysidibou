@@ -68,7 +68,7 @@ export const site = {
    * Instagram handle, and the circular slot fills in automatically.
    */
   team: [
-    { name: "[Name]", photo: "/assets/team-founder.jpg", instagram: "@brinkbuild" },
+    { name: "Paul Brinkmann", photo: "/assets/team-founder.jpg", instagram: "@brinkbuild" },
     { name: "Manel Chaabene", photo: "/assets/team-manel.jpg", instagram: "@manel_chaaben" },
     { name: "[Name]", photo: "", instagram: "@insta" },
     { name: "[Name]", photo: "", instagram: "@insta" },
