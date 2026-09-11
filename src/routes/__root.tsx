@@ -3,20 +3,16 @@ import {
   Outlet,
   Link,
   createRootRouteWithContext,
-  useRouter,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
-import { button } from "@higgsfield/quanta/button";
-import { NotFound } from "@higgsfield/quanta/not-found";
+import type { ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { reportHiggsfieldError } from "../lib/higgsfield-error-reporting";
 import { I18nProvider } from "../lib/i18n";
 import { site } from "../config/site";
 
-// Self-hosted brand fonts (never a runtime Google Fonts link).
+// Self-hosted brand fonts (no external font requests at runtime).
 import "@fontsource-variable/outfit";
 import "@fontsource/cormorant-garamond/400.css";
 import "@fontsource/cormorant-garamond/500.css";
@@ -24,14 +20,10 @@ import "@fontsource/cormorant-garamond/600.css";
 import "@fontsource/cormorant-garamond/400-italic.css";
 import "@fontsource/cormorant-garamond/600-italic.css";
 
-// Page metadata (browser <title>/favicon + social og: tags) committed into the
-// repo by the marketplace meta API and read at BUILD time — no runtime fetch.
-// Editing it via the app settings UI rewrites this file and redeploys the app.
+// Page metadata (browser <title>/favicon + social og: tags), committed in the
+// repo and read at BUILD time.
 import appMetaJson from "../app-meta.json";
 
-declare const __HF_DESIGN_INSPECTOR__: boolean;
-
-// Built-in defaults for any field that isn't set in app-meta.json.
 const DEFAULT_TITLE = "mysidibou | protect sidi bou said";
 const DEFAULT_DESCRIPTION =
   "turning sidi bou said into the cleanest city in tunisia. students, locals and architecture working together to preserve a unesco world heritage site.";
@@ -42,42 +34,15 @@ type AppMeta = {
   og_image_url?: string | null;
   favicon_url?: string | null;
   og_video_url?: string | null;
-  // Read by the Higgsfield platform (marketplace feed card), never by the
-  // app itself — keep it in this file, don't render it.
-  marketplace_cover_url?: string | null;
 };
 
 const appMeta = appMetaJson as AppMeta;
 
-// Build the document head (title / description / og: / twitter: / favicon) from
-// app-meta.json, falling back to the defaults above for any unset field.
-// og_title/og_description double as the browser <title> and meta description;
-// og_image_url (when set) also drives the twitter card + image. Built from
-// inline tag literals (conditional spreads for the optional image/favicon) so
-// it matches the head() shape TanStack expects.
-const APP_HOST_ZONES = ["higgsfield.app", "higgsfield-dev.app"];
-
-function toOwnAssetUrl(value: string | null | undefined): string | null {
-  if (!value) return null;
-  if (value.startsWith("/")) return value; // already root-relative
-  try {
-    const u = new URL(value);
-    const isAppHost = APP_HOST_ZONES.some(
-      (zone) => u.hostname === zone || u.hostname.endsWith(`.${zone}`),
-    );
-    if (isAppHost) return u.pathname + u.search;
-    return value; // external host (CDN, etc.) — keep absolute
-  } catch {
-    return value; // not a parseable URL — leave as-is
-  }
-}
-
 function buildHead(meta: AppMeta) {
   const title = meta.og_title ?? DEFAULT_TITLE;
   const description = meta.og_description ?? DEFAULT_DESCRIPTION;
-  const ogImage = toOwnAssetUrl(meta.og_image_url);
-  const favicon = toOwnAssetUrl(meta.favicon_url);
-  const ogVideo = toOwnAssetUrl(meta.og_video_url);
+  const ogImage = meta.og_image_url ?? null;
+  const favicon = meta.favicon_url ?? null;
 
   return {
     meta: [
@@ -101,7 +66,9 @@ function buildHead(meta: AppMeta) {
             { name: "twitter:image", content: ogImage },
           ]
         : []),
-      ...(ogVideo ? [{ property: "og:video", content: ogVideo }] : []),
+      ...(meta.og_video_url
+        ? [{ property: "og:video", content: meta.og_video_url }]
+        : []),
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -118,63 +85,40 @@ const structuredData = {
   name: "mysidibou",
   description: DEFAULT_DESCRIPTION,
   areaServed: "Sidi Bou Said, Tunisia",
-  sameAs: [site.social.instagram]
-    .filter(Boolean)
-    .map((url) => url),
+  sameAs: [site.social.instagram].filter(Boolean),
 };
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-dvh items-center justify-center bg-q-background-primary px-4">
-      <NotFound
-        className="mx-auto max-w-md"
-        icon={<span className="text-q-title-md-semi-bold text-q-text-primary">404</span>}
-        title="Page not found"
-        subtitle="The page you're looking for doesn't exist or has been moved."
-      >
-        <Link to="/" className={button({ variant: "primary", size: "md" }, "mt-3")}>
-          Go home
+    <div className="flex min-h-dvh items-center justify-center px-4 text-center">
+      <div className="max-w-md">
+        <h1 className="section-headline text-6xl">404</h1>
+        <p className="mt-4 text-ink-soft">The page you are looking for does not exist.</p>
+        <Link className="btn-donate mt-8" to="/">
+          Back home
         </Link>
-      </NotFound>
+      </div>
     </div>
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
-  console.error(error);
-  const router = useRouter();
-  useEffect(() => {
-    reportHiggsfieldError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
-
+function ErrorComponent() {
   return (
-    <div className="flex min-h-dvh items-center justify-center bg-q-background-primary px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-q-title-lg-semi-bold text-q-text-primary">This page didn't load</h1>
-        <p className="mt-2 text-q-body-sm-regular text-q-text-secondary">
-          Something went wrong on our end. You can try refreshing or head back home.
+    <div className="flex min-h-dvh items-center justify-center px-4 text-center">
+      <div className="max-w-md">
+        <h1 className="section-headline text-5xl">This page did not load</h1>
+        <p className="mt-4 text-ink-soft">
+          Something went wrong on our end. Try refreshing, or head back home.
         </p>
-        <div className="mt-4 flex flex-wrap justify-center gap-2">
-          <button
-            onClick={() => {
-              router.invalidate();
-              reset();
-            }}
-            className={button({ variant: "primary", size: "md" })}
-          >
-            Try again
-          </button>
-          <a href="/" className={button({ variant: "outline", size: "md" })}>
-            Go home
-          </a>
-        </div>
+        <Link className="btn-donate mt-8" to="/">
+          Back home
+        </Link>
       </div>
     </div>
   );
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  // Read the committed page metadata at build time (no runtime fetch).
   head: () => buildHead(appMeta),
   shellComponent: RootShell,
   component: RootComponent,
@@ -184,8 +128,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    // Light, paper-white site. Language and direction are applied by the
-    // i18n provider on the client (Arabic renders RTL).
     <html lang="en" dir="ltr" style={{ colorScheme: "light" }}>
       <head>
         <HeadContent />
@@ -205,29 +147,9 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
-  useEffect(() => {
-    if (!__HF_DESIGN_INSPECTOR__) {
-      return;
-    }
-
-    void import("../module/design-inspector/runtime")
-      .then(({ installHiggsfieldDesignInspector }) => {
-        installHiggsfieldDesignInspector();
-      })
-      .catch((error) => {
-        reportHiggsfieldError(
-          error instanceof Error ? error : new Error("Failed to load design inspector"),
-          {
-            boundary: "higgsfield_design_inspector_import",
-          },
-        );
-      });
-  }, []);
-
   return (
     <QueryClientProvider client={queryClient}>
       <I18nProvider>
-        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
         <Outlet />
       </I18nProvider>
     </QueryClientProvider>

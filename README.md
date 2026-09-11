@@ -33,7 +33,11 @@ bun install
 bun run dev
 ```
 
-Note: this export contains the complete source of the website. The build on the originating platform additionally provides vendored platform packages (`packages/`), which are not part of this repository.
+## Deploy on Vercel
+
+1. Import this repository into Vercel (Add New Project → Import Git Repository). Vercel detects the TanStack Start setup automatically.
+2. The build runs `NITRO_PRESET=vercel` (already wired in `package.json`); no extra configuration is needed.
+3. Attach your domain under Project → Settings → Domains (`www.mysidibou.com` and/or `mysidibou.com`) and point the DNS records Vercel shows you at your domain registrar.
 
 ## Brand
 
