@@ -206,7 +206,14 @@ export function TeamSection() {
               )}
               <p className="team-member__name">{member.name}</p>
               {member.instagram ? (
-                <p className="team-member__insta">{member.instagram}</p>
+                <a
+                  className="team-member__insta"
+                  href={`https://instagram.com/${member.instagram.replace(/^@/, "")}`}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  {member.instagram}
+                </a>
               ) : null}
             </div>
           </Reveal>

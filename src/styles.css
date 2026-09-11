@@ -937,6 +937,30 @@ html[dir="rtl"] .marquee__track {
   font-weight: 600;
   letter-spacing: 0.02em;
   color: var(--color-cobalt);
+  text-decoration: none;
+  padding-block: 0.15rem;
+  position: relative;
+}
+
+.team-member__insta::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.25s ease;
+}
+
+.team-member__insta:hover {
+  color: var(--color-cobalt-deep);
+}
+
+.team-member__insta:hover::after {
+  transform: scaleX(1);
 }
 
 /* ---------- reveals (transform-only, screenshot-safe) ---------- */
