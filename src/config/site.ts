@@ -70,8 +70,8 @@ export const site = {
   team: [
     { name: "Paul Brinkmann", photo: "/assets/team-founder.jpg", instagram: "@brinkbuild" },
     { name: "Manel Chaabene", photo: "/assets/team-manel.jpg", instagram: "@manel_chaaben" },
-    { name: "[Name]", photo: "", instagram: "@insta" },
-    { name: "[Name]", photo: "", instagram: "@insta" },
+    { name: "Yasmine Hadj Said", photo: "/assets/team-yasmine.jpg", instagram: "@yasmine_hadjsaid" },
+    { name: "Ahmed Khmiri", photo: "/assets/team-ahmed.jpg", instagram: "@appareil_de_golgi" },
     { name: "[Name]", photo: "", instagram: "@insta" },
     { name: "[Name]", photo: "", instagram: "@insta" },
   ],
