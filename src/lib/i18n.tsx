@@ -14,24 +14,21 @@ import {
   type ReactNode,
 } from "react";
 
-export type Lang = "en" | "fr" | "ar";
+export type Lang = "en" | "fr" | "de" | "ar";
 
 export const LANGS: { code: Lang; label: string; dir: "ltr" | "rtl" }[] = [
   { code: "en", label: "EN", dir: "ltr" },
   { code: "fr", label: "FR", dir: "ltr" },
+  { code: "de", label: "DE", dir: "ltr" },
   { code: "ar", label: "AR", dir: "rtl" },
 ];
 
 export function isLang(value: string | null): value is Lang {
-  return value === "en" || value === "fr" || value === "ar";
+  return value === "en" || value === "fr" || value === "de" || value === "ar";
 }
 
 const en = {
-  langName: {
-    en: "English",
-    fr: "Français",
-    ar: "العربية",
-  },
+  langName: { en: "English", fr: "Français", de: "Deutsch", ar: "العربية" },
   nav: {
     mission: "mission",
     people: "people",
@@ -213,7 +210,7 @@ const en = {
 export type Dict = typeof en;
 
 const fr: Dict = {
-  langName: { en: "English", fr: "Français", ar: "العربية" },
+  langName: { en: "English", fr: "Français", de: "Deutsch", ar: "العربية" },
   nav: {
     mission: "mission",
     people: "les gens",
@@ -393,7 +390,7 @@ const fr: Dict = {
 };
 
 const ar: Dict = {
-  langName: { en: "English", fr: "Français", ar: "العربية" },
+  langName: { en: "English", fr: "Français", de: "Deutsch", ar: "العربية" },
   nav: {
     mission: "المهمة",
     people: "الناس",
@@ -570,7 +567,186 @@ const ar: Dict = {
   },
 };
 
-export const dictionaries: Record<Lang, Dict> = { en, fr, ar };
+const de: Dict = {
+  langName: { en: "English", fr: "Français", de: "Deutsch", ar: "العربية" },
+  nav: {
+    mission: "Mission",
+    people: "Menschen",
+    team: "Team",
+    progress: "Fortschritt",
+    transparency: "Transparenz",
+    donate: "Spenden",
+  },
+  cta: {
+    donate: "Jetzt spenden",
+    follow: "Die Mission verfolgen",
+  },
+  heroLine: "Studierende. Einheimische. Eine Stadt. Eine Mission.",
+  marquee: "Plastik raus. Schönheit zurück.",
+  journey: [
+    {
+      label: "die Stadt",
+      kicker: "sidi bou said, tunesien",
+      title: "Eine weiße Stadt über dem Meer.",
+      body: "Blaue Türen. Bougainvillea. Jasmin. Ein Ort, in den man sich verliebt, bevor man ihn versteht.",
+    },
+    {
+      label: "die Gassen",
+      title: "Weißer Kalk und Kobaltblau.",
+      body: "Zuerst sieht man das Problem nicht. Es versteckt sich unter der Bougainvillea.",
+    },
+    {
+      label: "das Problem",
+      title: "Jeder Besucher hinterlässt einen Fußabdruck.",
+      body: "Plastik, Zigarettenstummel und Müll zehren an einem Ort, den die Welt gerade kostbar genannt hat.",
+      tags: ["Plastik", "Zigarettenstummel", "Müll"],
+    },
+    {
+      label: "die Menschen",
+      kicker: "die nächste Generation",
+      title: "Die nächste Generation übernimmt Verantwortung.",
+      body: "Architekturstudierende messen, zeichnen, reinigen und planen die Straßen, die sie eines Tages schützen werden.",
+      tags: ["Reinigung", "Zeichnen", "Dokumentation"],
+    },
+    {
+      label: "die Mission",
+      title: "Die sauberste Stadt Tunesiens.",
+      body: "Bezahlte lokale Reinigungsteams. Studierende. Anwohner. Jede Straße, jede Ecke, jeden Tag.",
+    },
+    {
+      label: "die Zukunft",
+      title: "In zweihundert Jahren.",
+      body: "Menschen sollen diese Straßen noch begehen können. Wir sind verantwortlich für das, was wir hinterlassen.",
+      tags: ["unesco-weltkulturerbe"],
+    },
+  ],
+  problem: {
+    headline: "Jeder Besucher hinterlässt einen Fußabdruck.",
+    lines: [
+      "das Plastik.",
+      "die Zigarettenstummel.",
+      "der Müll.",
+      "der Massentourismus.",
+      "der Verschleiß der öffentlichen Räume.",
+    ],
+  },
+  mission: {
+    headline: "Die sauberste Stadt Tunesiens.",
+    sub: "Reinigen ist nur der Anfang. Es geht um ein Modell dafür, wie Architektur, Tourismus, Studierende, Einheimische, Umwelt und Kultur zusammenwirken können.",
+    rows: [
+      "Plastik aus den Straßen",
+      "Zigarettenstummel aus den Straßen",
+      "Müll aus den Straßen",
+    ],
+    footer:
+      "Bezahlte lokale Reinigungsteams übernehmen jeden Tag Verantwortung. Das langfristige Ziel ist einfach: jede Straße. jede Ecke. jeden Tag. sauber.",
+  },
+  people: {
+    headline: "Die nächste Generation übernimmt Verantwortung.",
+    body: "Architektur bedeutet nicht nur, Gebäude zu entwerfen. Es bedeutet, die Umwelt zu schützen, in der Menschen leben.",
+    body2:
+      "Unsere Studierenden sprechen mit den Einheimischen, zeichnen, planen, reinigen und dokumentieren die Stadt. Unser langfristiges Ziel ist die Zusammenarbeit mit Architekturinstitutionen: die ENAU in Sidi Bou Said, die Universität Stuttgart und weitere.",
+    goals: ["Reden", "Zeichnen", "Planen", "Draußen arbeiten", "Reinigen", "Dokumentieren"],
+  },
+  team: {
+    headline: "Die Menschen hinter der Mission.",
+    body: "Architekturstudierende und lokale Partner. Namen und Fotos erscheinen hier, während das Team wächst, beginnend mit dem ersten öffentlichen Bericht.",
+  },
+  cleaning: {
+    headline: "jede Straße. jede Ecke. jeden Tag.",
+    body: "Wir bauen bezahlte lokale Reinigungsteams auf, die sich täglich um die Straßen kümmern. Plastik raus. Zigarettenstummel raus. Müll raus.",
+  },
+  locals: {
+    headline: "Die Stadt zu schützen stärkt auch das lokale Leben.",
+    body: "Die Menschen, die hier leben und arbeiten, sind das Herz von Sidi Bou Said: Blumenverkäufer, kleine Läden, Cafés, Handwerker, Familien.",
+  },
+  entrance: {
+    headline: "Lass die Natur den Eingang bauen.",
+    body: "Der Eingang der Stadt soll kein schwerer architektonischer Eingriff sein. Keine neuen Betonmauern, kein unnötiges Mauerwerk. Wir schaffen die Bedingungen: Kletterpflanzen, Bougainvillea, Blumen, dünne Drähte, leichte Rankgitter. Die Natur schafft die Architektur.",
+  },
+  contribution: {
+    headline: "Ein Beitrag, kein Ticket.",
+    body: "Sidi Bou Said ist einer der meistbesuchten Orte Tunesiens. Unser langfristiger Plan ist einfach: Tunesische Besucher bleiben frei. Internationale Besucher tragen zur Erhaltung der Stadt bei.",
+    returns: [
+      "Reinigung",
+      "Erhalt",
+      "Architekturstudierende",
+      "lokale Arbeiter und Menschen",
+      "Blumen",
+      "öffentliche Räume",
+      "Projektinfrastruktur",
+    ],
+    note: "Die Beträge werden bekannt gegeben, sobald die finalen Vereinbarungen stehen.",
+  },
+  transparency: {
+    headline: "Wohin dein Beitrag fließt.",
+    body: "Wir erfinden niemals Zahlen. Der erste öffentliche Bericht veröffentlicht erhaltene Spenden, Ausgaben, Reinigungskosten, die Arbeit der Studierenden und den Fortschritt.",
+    rows: [
+      { label: "Reinigung", note: "tägliche Straßenteams" },
+      { label: "Studierende und lokale Arbeiter", note: "bezahlte Arbeit, keine Versprechen" },
+      { label: "Blumen und öffentliche Räume", note: "Bougainvillea, Jasmin, Pflanztage" },
+      { label: "Erhalt", note: "das historische Gefüge der Stadt" },
+      { label: "lokale Gemeinschaft", note: "Cafés, Läden, Familien" },
+      { label: "Projektinfrastruktur", note: "Werkzeug, Transport, Berichte" },
+    ],
+    honesty: "Der erste öffentliche Bericht wird vorbereitet.",
+  },
+  progress: {
+    headline: "Beweise, keine Versprechen.",
+    body: "Die echten Zahlen erscheinen mit dem ersten öffentlichen Bericht. Bis dahin erfinden wir nichts.",
+    comingSoon: "erster öffentlicher Bericht in Kürze",
+    statLabels: [
+      "Kilogramm entfernter Abfall",
+      "gesammelte Zigarettenstummel",
+      "gereinigte Straßen",
+      "beteiligte Studierende",
+      "beteiligte lokale Arbeiter",
+      "gepflanzte Blumen",
+      "verbesserte öffentliche Räume",
+    ],
+    beforeAfter: "Vorher-/Nachher-Fotos erscheinen hier",
+  },
+  unesco: {
+    headline: "Welterbe. Weltverantwortung.",
+    body: "Sidi Bou Said wurde 2026 UNESCO-Welterbestätte. Ein Titel schützt eine Stadt nicht von allein. Menschen tun das.",
+  },
+  fiveHundred: {
+    years: ["200 Jahre.", "300 Jahre.", "500 Jahre."],
+    line: "Menschen sollten diese Straßen noch begehen können.",
+    footnote: "Wir sind verantwortlich für das, was wir hinterlassen.",
+  },
+  follow: {
+    headline: "Verfolge die Mission.",
+    body: "Die Arbeit ist echt, und sie passiert jetzt. Videos, Updates und Geschichten aus den Straßen.",
+    comingSoon: "demnächst",
+  },
+  donateSection: {
+    headline: "Dein Beitrag hält die Straßen sauber.",
+    body: "Am Telefon öffnet ein Tippen die Spendenseite. Am Computer kannst du den QR-Code scannen.",
+    whyTitle: "Was ein Beitrag bewirkt",
+    why: [
+      "Hält bezahlte lokale Reinigungsteams täglich in den Straßen",
+      "Pflanzt Bougainvillea, Jasmin und Blumen in öffentliche Räume",
+      "Schützt die Straßen für die nächsten 500 Jahre",
+    ],
+    trust: "Jeder Beitrag wird im ersten öffentlichen Bericht ausgewiesen. Wir erfinden niemals Zahlen.",
+    qrSoon: "qr-code in Kürze verfügbar",
+    linkSoon:
+      "Der sichere Spendelink öffnet sich hier, sobald er bereit ist. Verfolge die Mission in der Zwischenzeit.",
+  },
+  finale: {
+    headline: "Eine Stadt. Eine Generation. Eine Verantwortung.",
+    sub: "Hilf uns, Sidi Bou Said zu schützen.",
+  },
+  footer: {
+    missionLine: "Sidi Bou Said zur saubersten Stadt Tunesiens machen.",
+    tagline: "Studierende. Einheimische. Eine Stadt. Eine Mission.",
+    location: "Sidi Bou Said, Tunesien",
+    heritage: "UNESCO-Welterbestätte seit 2026",
+  },
+};
+
+export const dictionaries: Record<Lang, Dict> = { en, fr, de, ar };
 
 const STORAGE_KEY = "mysidibou:lang";
 

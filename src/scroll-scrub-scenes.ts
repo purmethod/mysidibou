@@ -45,5 +45,6 @@ function buildHeroScene(copy: Dict["journey"]): ScrollScrubScene[] {
 export const scrollScrubScenes: Record<Lang, ScrollScrubScene[]> = {
   en: buildHeroScene(dictionaries.en.journey),
   fr: buildHeroScene(dictionaries.fr.journey),
+  de: buildHeroScene(dictionaries.de.journey),
   ar: buildHeroScene(dictionaries.ar.journey),
 };
