@@ -68,8 +68,8 @@ export const site = {
    * Instagram handle, and the circular slot fills in automatically.
    */
   team: [
-    { name: "Paul Brinkmann", role: "", photo: "/assets/team-founder.jpg", instagram: "@brinkbuild" },
-    { name: "Manel Chaabene", role: "admin", photo: "/assets/team-manel.jpg", instagram: "@manel_chaaben" },
+    { name: "Paul Brinkmann, M.Sc.", role: "Founder & Architect", photo: "/assets/team-founder.jpg", instagram: "@brinkbuild" },
+    { name: "Manel Chaabene", role: "Admin", photo: "/assets/team-manel.jpg", instagram: "@manel_chaaben" },
     { name: "Yasmine Hadj Said", role: "Social Media", photo: "/assets/team-yasmine.jpg", instagram: "@yasmine_hadjsaid" },
     { name: "Ahmed Khmiri", role: "Social Media", photo: "/assets/team-ahmed.jpg", instagram: "@appareil_de_golgi" },
     { name: "Maram Jelassi", role: "Social Media", photo: "/assets/team-maram.jpg", instagram: "@pty.yurii" },
