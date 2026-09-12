@@ -1,6 +1,6 @@
 # mysidibou
 
-Turning **Sidi Bou Said** into the cleanest city in Tunisia. Students, locals and architecture working together to preserve a UNESCO World Heritage Site (inscribed 2026).
+Turning **Sidi Bou Said** into the cleanest city in the world. Students, locals and architecture working together to preserve a UNESCO World Heritage Site (inscribed 2026).
 
 Live: https://mysidibou.higgsfield.app
 

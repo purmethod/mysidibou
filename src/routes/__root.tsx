@@ -26,7 +26,7 @@ import appMetaJson from "../app-meta.json";
 
 const DEFAULT_TITLE = "mysidibou | protect sidi bou said";
 const DEFAULT_DESCRIPTION =
-  "turning sidi bou said into the cleanest city in tunisia. students, locals and architecture working together to preserve a unesco world heritage site.";
+  "turning sidi bou said into the cleanest city in the world. students, locals and architecture working together to preserve a unesco world heritage site.";
 
 type AppMeta = {
   og_title?: string | null;

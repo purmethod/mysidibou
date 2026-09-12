@@ -70,7 +70,7 @@ const en = {
     },
     {
       label: "the mission",
-      title: "The cleanest city in Tunisia.",
+      title: "The cleanest city in the world.",
       body: "Paid local cleaning teams. Students. Residents. Every street, every corner, every day.",
     },
     {
@@ -91,7 +91,7 @@ const en = {
     ],
   },
   mission: {
-    headline: "The cleanest city in Tunisia.",
+    headline: "The cleanest city in the world.",
     sub: "Cleaning is only the beginning. This is a model for how architecture, tourism, students, local people, environment and culture can work together.",
     rows: [
       "plastic out of the streets",
@@ -200,7 +200,7 @@ const en = {
     sub: "Help us protect Sidi Bou Said.",
   },
   footer: {
-    missionLine: "Turning Sidi Bou Said into the cleanest city in Tunisia.",
+    missionLine: "Turning Sidi Bou Said into the cleanest city in the world.",
     tagline: "students. locals. one city. one mission.",
     location: "Sidi Bou Said, Tunisia",
     heritage: "UNESCO World Heritage Site since 2026",
@@ -252,7 +252,7 @@ const fr: Dict = {
     },
     {
       label: "la mission",
-      title: "La ville la plus propre de Tunisie.",
+      title: "La ville la plus propre du monde.",
       body: "Des équipes locales payées. Des étudiants. Les habitants. Chaque rue, chaque coin, chaque jour.",
     },
     {
@@ -273,7 +273,7 @@ const fr: Dict = {
     ],
   },
   mission: {
-    headline: "La ville la plus propre de Tunisie.",
+    headline: "La ville la plus propre du monde.",
     sub: "Le nettoyage n'est que le début. C'est un modèle pour que l'architecture, le tourisme, les étudiants, les habitants, l'environnement et la culture travaillent ensemble.",
     rows: [
       "sortir le plastique des rues",
@@ -382,7 +382,7 @@ const fr: Dict = {
     sub: "Aidez-nous à protéger Sidi Bou Said.",
   },
   footer: {
-    missionLine: "Faire de Sidi Bou Said la ville la plus propre de Tunisie.",
+    missionLine: "Faire de Sidi Bou Said la ville la plus propre du monde.",
     tagline: "étudiants. habitants. une ville. une mission.",
     location: "Sidi Bou Said, Tunisie",
     heritage: "Site du patrimoine mondial de l'UNESCO depuis 2026",
@@ -432,7 +432,7 @@ const ar: Dict = {
     },
     {
       label: "المهمة",
-      title: "أنظف مدينة في تونس.",
+      title: "أنظف مدينة في العالم.",
       body: "فرق محلية بأجر. طلّاب. أهل البلدة. كل شارع، كل زاوية، كل يوم.",
     },
     {
@@ -453,7 +453,7 @@ const ar: Dict = {
     ],
   },
   mission: {
-    headline: "أنظف مدينة في تونس.",
+    headline: "أنظف مدينة في العالم.",
     sub: "التنظيف ليس سوى البداية. إنه نموذج لكيفية عمل العمارة والسياحة والطلّاب والأهالي والبيئة والثقافة معاً.",
     rows: [
       "إخراج البلاستيك من الشوارع",
@@ -560,7 +560,7 @@ const ar: Dict = {
     sub: "ساعدونا في حماية سيدي بوسعيد.",
   },
   footer: {
-    missionLine: "تحويل سيدي بوسعيد إلى أنظف مدينة في تونس.",
+    missionLine: "تحويل سيدي بوسعيد إلى أنظف مدينة في العالم.",
     tagline: "طلّاب. أهل البلدة. مدينة واحدة. رسالة واحدة.",
     location: "سيدي بوسعيد، تونس",
     heritage: "موقع تراث عالمي لليونسكو منذ 2026",
@@ -610,7 +610,7 @@ const de: Dict = {
     },
     {
       label: "die Mission",
-      title: "Die sauberste Stadt Tunesiens.",
+      title: "Die sauberste Stadt der Welt.",
       body: "Bezahlte lokale Reinigungsteams. Studierende. Anwohner. Jede Straße, jede Ecke, jeden Tag.",
     },
     {
@@ -631,7 +631,7 @@ const de: Dict = {
     ],
   },
   mission: {
-    headline: "Die sauberste Stadt Tunesiens.",
+    headline: "Die sauberste Stadt der Welt.",
     sub: "Reinigen ist nur der Anfang. Es geht um ein Modell dafür, wie Architektur, Tourismus, Studierende, Einheimische, Umwelt und Kultur zusammenwirken können.",
     rows: [
       "Plastik aus den Straßen",
@@ -739,7 +739,7 @@ const de: Dict = {
     sub: "Hilf uns, Sidi Bou Said zu schützen.",
   },
   footer: {
-    missionLine: "Sidi Bou Said zur saubersten Stadt Tunesiens machen.",
+    missionLine: "Sidi Bou Said zur saubersten Stadt der Welt machen.",
     tagline: "Studierende. Einheimische. Eine Stadt. Eine Mission.",
     location: "Sidi Bou Said, Tunesien",
     heritage: "UNESCO-Welterbestätte seit 2026",
