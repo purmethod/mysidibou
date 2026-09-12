@@ -28,10 +28,10 @@ export const site = {
   social: {
     instagram: "https://instagram.com/mysidibou",
     instagramHandle: "@mysidibou",
-    tiktok: "",
+    tiktok: "https://www.tiktok.com/@mysidibou",
     tiktokHandle: "@mysidibou",
-    youtube: "",
-    youtubeHandle: "mysidibou",
+    youtube: "https://www.youtube.com/@mysidibou",
+    youtubeHandle: "@mysidibou",
   },
 
   /* ---------- Photography (replace with your own photos anytime) ---------- */
