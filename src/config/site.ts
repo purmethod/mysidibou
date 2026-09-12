@@ -72,7 +72,7 @@ export const site = {
     { name: "Manel Chaabene", photo: "/assets/team-manel.jpg", instagram: "@manel_chaaben" },
     { name: "Yasmine Hadj Said", photo: "/assets/team-yasmine.jpg", instagram: "@yasmine_hadjsaid" },
     { name: "Ahmed Khmiri", photo: "/assets/team-ahmed.jpg", instagram: "@appareil_de_golgi" },
-    { name: "[Name]", photo: "", instagram: "@insta" },
+    { name: "Maram Jelassi", photo: "/assets/team-maram.jpg", instagram: "" },
     { name: "[Name]", photo: "", instagram: "@insta" },
   ],
 
