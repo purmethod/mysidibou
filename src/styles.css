@@ -26,6 +26,8 @@
   --color-stone: #e7dfd0;
   --color-green: #5f7055;
   --color-blush: #c96f8b;
+  --color-bougainvillea: #b23a68;
+  --color-bougainvillea-deep: #982e55;
   --color-line: rgba(16, 29, 49, 0.16);
 
   --font-display: "Cormorant Garamond", "Georgia", "Noto Naskh Arabic", serif;
@@ -442,8 +444,8 @@ section.scroll-scrub .scroll-scrub__tags li {
 }
 
 .site-nav__link--donate {
-  color: #f7f5ef;
-  background: var(--color-cobalt);
+  color: #fff;
+  background: var(--color-bougainvillea);
   padding: 0.55rem 1.05rem;
   font-weight: 600;
   letter-spacing: 0.03em;
@@ -451,8 +453,8 @@ section.scroll-scrub .scroll-scrub__tags li {
 }
 
 .site-nav__link--donate:hover {
-  background: var(--color-cobalt-deep);
-  color: #f7f5ef;
+  background: var(--color-bougainvillea-deep);
+  color: #fff;
 }
 
 .site-nav__link--donate:active {
@@ -496,14 +498,14 @@ section.scroll-scrub .scroll-scrub__tags li {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: var(--color-cobalt-deep);
-  color: #f7f5ef;
+  background: var(--color-bougainvillea);
+  color: #fff;
   font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   text-decoration: none;
   padding: 0.85rem 1.3rem;
-  box-shadow: 0 12px 32px rgb(11 42 80 / 0.28);
+  box-shadow: 0 12px 32px rgb(152 46 85 / 0.35);
   transform: translateY(150%);
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
     background-color 0.2s ease;
@@ -514,7 +516,7 @@ section.scroll-scrub .scroll-scrub__tags li {
 }
 
 .donate-pill:hover {
-  background: var(--color-cobalt);
+  background: var(--color-bougainvillea-deep);
 }
 
 .donate-pill:active {
@@ -620,9 +622,9 @@ section.scroll-scrub .scroll-scrub__tags li {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  background: var(--color-cobalt);
-  color: #f7f5ef;
-  border: 1px solid var(--color-cobalt);
+  background: var(--color-bougainvillea);
+  color: #fff;
+  border: 1px solid var(--color-bougainvillea);
   padding: 0.95rem 1.7rem;
   font-size: 0.95rem;
   font-weight: 600;
@@ -634,8 +636,9 @@ section.scroll-scrub .scroll-scrub__tags li {
 }
 
 .btn-donate:hover {
-  background: var(--color-cobalt-deep);
-  border-color: var(--color-cobalt-deep);
+  background: var(--color-bougainvillea-deep);
+  border-color: var(--color-bougainvillea-deep);
+  box-shadow: 0 10px 28px rgb(178 58 104 / 0.28);
 }
 
 .btn-donate:active {
@@ -643,14 +646,14 @@ section.scroll-scrub .scroll-scrub__tags li {
 }
 
 .btn-donate--light {
-  background: #f7f5ef;
-  color: var(--color-cobalt-deep);
-  border-color: #f7f5ef;
+  background: var(--color-bougainvillea);
+  color: #fff;
+  border-color: var(--color-bougainvillea);
 }
 
 .btn-donate--light:hover {
-  background: #ffffff;
-  border-color: #ffffff;
+  background: var(--color-bougainvillea-deep);
+  border-color: var(--color-bougainvillea-deep);
 }
 
 .btn-donate--wide {
@@ -709,6 +712,29 @@ html[dir="rtl"] .btn-follow:hover .arrow {
   color: #f7f5ef;
 }
 
+/* ---------- scroll progress bar ---------- */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 41;
+  height: 3px;
+  pointer-events: none;
+}
+
+.scroll-progress span {
+  display: block;
+  height: 100%;
+  background: var(--color-bougainvillea);
+  transform-origin: left center;
+  transform: scaleX(var(--scroll-progress, 0));
+}
+
+html[dir="rtl"] .scroll-progress span {
+  transform-origin: right center;
+}
+
 /* ---------- mission marquee (one per page) ---------- */
 .marquee {
   overflow: hidden;
@@ -720,7 +746,7 @@ html[dir="rtl"] .btn-follow:hover .arrow {
 .marquee__track {
   display: flex;
   width: max-content;
-  animation: marquee-scroll 32s linear infinite;
+  animation: marquee-scroll 26s linear infinite;
 }
 
 .marquee__group {
@@ -737,7 +763,7 @@ html[dir="rtl"] .btn-follow:hover .arrow {
   font-family: var(--font-display);
   font-style: italic;
   font-weight: 500;
-  font-size: clamp(1.9rem, 4.5vw, 3.4rem);
+  font-size: clamp(2.2rem, 5vw, 4rem);
   line-height: 1.1;
   letter-spacing: -0.01em;
   color: var(--color-cobalt);
@@ -905,6 +931,11 @@ html[dir="rtl"] .marquee__track {
   height: 5.5rem;
   border-radius: 50%;
   object-fit: cover;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.team-member:hover .team-member__photo {
+  transform: scale(1.06);
 }
 
 .team-member__photo--placeholder {

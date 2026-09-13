@@ -184,3 +184,31 @@ export function HeartIcon(props: SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
+
+/* Thin reading-progress bar under the nav (transform-only). */
+export function ScrollProgress() {
+  const barRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const bar = barRef.current;
+    if (!bar) return;
+    const update = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = max > 0 ? Math.min(1, window.scrollY / max) : 0;
+      bar.style.setProperty("--scroll-progress", String(progress));
+    };
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
+  }, []);
+
+  return (
+    <div aria-hidden="true" className="scroll-progress">
+      <span ref={barRef} />
+    </div>
+  );
+}

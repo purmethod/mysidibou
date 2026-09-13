@@ -21,6 +21,7 @@ import {
 } from "@/components/site/sections";
 import { HeroSection } from "@/components/site/hero";
 import { DonatePill, SiteNav } from "@/components/site/nav";
+import { ScrollProgress } from "@/components/site/ui";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -30,6 +31,7 @@ function Index() {
   return (
     <main id="top">
       <SiteNav />
+      <ScrollProgress />
       <HeroSection />
       <MarqueeSection />
       <ProblemSection />

@@ -92,7 +92,7 @@ const en = {
   },
   mission: {
     headline: "The cleanest city in the world.",
-    sub: "Cleaning is only the beginning. This is a model for how architecture, tourism, students, local people, environment and culture can work together.",
+    sub: "Cleaning is only the beginning. Architecture, tourism, students, locals, environment and culture, working together.",
     rows: [
       "plastic out of the streets",
       "cigarette butts out of the streets",
@@ -105,7 +105,7 @@ const en = {
     headline: "The next generation takes responsibility.",
     body: "Architecture is not only about designing buildings. It is about protecting the environment people live in.",
     body2:
-      "Our students talk to locals, draw, plan, clean and document the town. Our long-term goal is to work side by side with architecture institutions: ENAU in Sidi Bou Said, the University of Stuttgart, and others.",
+      "Our students talk to locals, draw, clean and document the town. Long term, we work with architecture institutions like ENAU and the University of Stuttgart.",
     goals: ["talking", "drawing", "planning", "working outside", "cleaning", "documenting"],
   },
   team: {
@@ -122,7 +122,7 @@ const en = {
   },
   entrance: {
     headline: "Let nature build the entrance.",
-    body: "The entrance to the town should not be a heavy architectural intervention. No new concrete walls, no unnecessary masonry. We create the conditions: climbing plants, bougainvillea, flowers, thin wires, simple trellises. Nature creates the architecture.",
+    body: "No concrete. No heavy masonry. Only conditions: climbing plants, bougainvillea, thin wires, light trellises. Nature builds the architecture.",
   },
   contribution: {
     headline: "A contribution, not a ticket.",
@@ -140,7 +140,7 @@ const en = {
   },
   transparency: {
     headline: "Where your support goes.",
-    body: "We will never invent numbers. The first public report will publish donations received, project spending, cleaning costs, student work and progress.",
+    body: "We never invent numbers. The first public report lists donations, spending, costs and progress.",
     rows: [
       { label: "cleaning", note: "daily street teams" },
       { label: "students and local workers", note: "paid work, not promises" },
@@ -274,7 +274,7 @@ const fr: Dict = {
   },
   mission: {
     headline: "La ville la plus propre du monde.",
-    sub: "Le nettoyage n'est que le début. C'est un modèle pour que l'architecture, le tourisme, les étudiants, les habitants, l'environnement et la culture travaillent ensemble.",
+    sub: "Le nettoyage n'est que le début. Architecture, tourisme, étudiants, habitants, environnement et culture, ensemble.",
     rows: [
       "sortir le plastique des rues",
       "sortir les mégots des rues",
@@ -287,7 +287,7 @@ const fr: Dict = {
     headline: "La prochaine génération prend ses responsabilités.",
     body: "L'architecture ne consiste pas seulement à concevoir des bâtiments. C'est protéger l'environnement dans lequel les gens vivent.",
     body2:
-      "Nos étudiants échangent avec les habitants, dessinent, planifient, nettoient et documentent la ville. Notre objectif à long terme est de travailler aux côtés des institutions d'architecture : l'ENAU à Sidi Bou Said, l'université de Stuttgart, et d'autres.",
+      "Nos étudiants échangent avec les habitants, dessinent, nettoient et documentent la ville. À terme, nous travaillons avec des institutions comme l'ENAU et l'université de Stuttgart.",
     goals: ["échanger", "dessiner", "planifier", "travailler dehors", "nettoyer", "documenter"],
   },
   team: {
@@ -304,7 +304,7 @@ const fr: Dict = {
   },
   entrance: {
     headline: "Laissez la nature construire l'entrée.",
-    body: "L'entrée du village ne doit pas être une intervention lourde. Pas de nouveaux murs de béton, pas de maçonnerie inutile. Nous créons les conditions : plantes grimpantes, bougainvilliers, fleurs, fils fins, treillis légers. La nature crée l'architecture.",
+    body: "Pas de béton. Pas de maçonnerie lourde. Seulement des conditions : plantes grimpantes, bougainvilliers, fils fins, treillis légers. La nature bâtit l'architecture.",
   },
   contribution: {
     headline: "Une contribution, pas un billet.",
@@ -322,7 +322,7 @@ const fr: Dict = {
   },
   transparency: {
     headline: "Où va votre soutien.",
-    body: "Nous n'inventerons jamais de chiffres. Le premier rapport public publiera les dons reçus, les dépenses, les coûts de nettoyage, le travail des étudiants et les progrès.",
+    body: "Nous n'inventons jamais de chiffres. Le premier rapport public liste les dons, les dépenses, les coûts et les progrès.",
     rows: [
       { label: "nettoyage", note: "équipes de rue quotidiennes" },
       { label: "étudiants et travailleurs locaux", note: "travail payé, pas des promesses" },
@@ -454,7 +454,7 @@ const ar: Dict = {
   },
   mission: {
     headline: "أنظف مدينة في العالم.",
-    sub: "التنظيف ليس سوى البداية. إنه نموذج لكيفية عمل العمارة والسياحة والطلّاب والأهالي والبيئة والثقافة معاً.",
+    sub: "التنظيف ليس سوى البداية. عمارة، سياحة، طلّاب، أهالي، بيئة وثقافة، معاً.",
     rows: [
       "إخراج البلاستيك من الشوارع",
       "إخراج أعقاب السجائر من الشوارع",
@@ -467,7 +467,7 @@ const ar: Dict = {
     headline: "الجيل القادم يتحمّل المسؤولية.",
     body: "العمارة ليست فقط تصميم المباني. إنها حماية البيئة التي يعيش فيها الناس.",
     body2:
-      "طلّابنا يتحاورون مع الأهالي ويرسمون ويخطّطون وينظّفون ويوثّقون المدينة. هدفنا طويل المدى هو العمل جنباً إلى جنب مع مؤسسات العمارة: المدرسة الوطنية للهندسة المعمارية والتعمير في سيدي بوسعيد، جامعة شتوتغارت، وغيرها.",
+      "طلّابنا يتحاورون مع الأهالي ويرسمون وينظّفون ويوثّقون المدينة. مستقبلاً، نعمل مع مؤسسات عمارة مثل إينو وجامعة شتوتغارت.",
     goals: ["تحاور", "رسم", "تخطيط", "عمل ميداني", "تنظيف", "توثيق"],
   },
   team: {
@@ -484,7 +484,7 @@ const ar: Dict = {
   },
   entrance: {
     headline: "دعوا الطبيعة تبني المدخل.",
-    body: "مدخل البلدة لا يجب أن يكون تدخلاً معمارياً ثقيلاً. لا جدران خرسانية جديدة، لا بناء حجري غير ضروري. نحن نصنع الشروط: نباتات متسلّقة، بنفسج، زهور، أسلاك رفيعة، تعريشات خفيفة. الطبيعة تصنع العمارة.",
+    body: "لا خرسانة. لا بناء حجري ثقيل. فقط شروط: نباتات متسلّقة، بنفسج، أسلاك رفيعة، تعريشات خفيفة. الطبيعة تبني العمارة.",
   },
   contribution: {
     headline: "مساهمة، لا تذكرة.",
@@ -502,7 +502,7 @@ const ar: Dict = {
   },
   transparency: {
     headline: "أين يذهب دعمك.",
-    body: "لن نخترع أرقاماً أبداً. سيُنشر في أول تقرير عام: التبرعات المستلمة، المصروفات، تكاليف التنظيف، عمل الطلّاب، والتقدّم.",
+    body: "لا نختلق الأرقام أبداً. أول تقرير عام يسرد التبرعات والمصروفات والتكاليف والتقدّم.",
     rows: [
       { label: "التنظيف", note: "فرق يومية في الشوارع" },
       { label: "الطلّاب والعمال المحليون", note: "عمل بأجر، لا وعود" },
@@ -632,7 +632,7 @@ const de: Dict = {
   },
   mission: {
     headline: "Die sauberste Stadt der Welt.",
-    sub: "Reinigen ist nur der Anfang. Es geht um ein Modell dafür, wie Architektur, Tourismus, Studierende, Einheimische, Umwelt und Kultur zusammenwirken können.",
+    sub: "Reinigen ist nur der Anfang. Architektur, Tourismus, Studierende, Einheimische, Umwelt und Kultur, gemeinsam.",
     rows: [
       "Plastik aus den Straßen",
       "Zigarettenstummel aus den Straßen",
@@ -645,7 +645,7 @@ const de: Dict = {
     headline: "Die nächste Generation übernimmt Verantwortung.",
     body: "Architektur bedeutet nicht nur, Gebäude zu entwerfen. Es bedeutet, die Umwelt zu schützen, in der Menschen leben.",
     body2:
-      "Unsere Studierenden sprechen mit den Einheimischen, zeichnen, planen, reinigen und dokumentieren die Stadt. Unser langfristiges Ziel ist die Zusammenarbeit mit Architekturinstitutionen: die ENAU in Sidi Bou Said, die Universität Stuttgart und weitere.",
+      "Unsere Studierenden reden mit Einheimischen, zeichnen, reinigen und dokumentieren die Stadt. Langfristig arbeiten wir mit Institutionen wie der ENAU und der Universität Stuttgart.",
     goals: ["Reden", "Zeichnen", "Planen", "Draußen arbeiten", "Reinigen", "Dokumentieren"],
   },
   team: {
@@ -662,7 +662,7 @@ const de: Dict = {
   },
   entrance: {
     headline: "Lass die Natur den Eingang bauen.",
-    body: "Der Eingang der Stadt soll kein schwerer architektonischer Eingriff sein. Keine neuen Betonmauern, kein unnötiges Mauerwerk. Wir schaffen die Bedingungen: Kletterpflanzen, Bougainvillea, Blumen, dünne Drähte, leichte Rankgitter. Die Natur schafft die Architektur.",
+    body: "Kein Beton. Kein schweres Mauerwerk. Nur Bedingungen: Kletterpflanzen, Bougainvillea, dünne Drähte, leichte Rankgitter. Die Natur baut die Architektur.",
   },
   contribution: {
     headline: "Ein Beitrag, kein Ticket.",
@@ -680,7 +680,7 @@ const de: Dict = {
   },
   transparency: {
     headline: "Wohin dein Beitrag fließt.",
-    body: "Wir erfinden niemals Zahlen. Der erste öffentliche Bericht veröffentlicht erhaltene Spenden, Ausgaben, Reinigungskosten, die Arbeit der Studierenden und den Fortschritt.",
+    body: "Wir erfinden niemals Zahlen. Der erste öffentliche Bericht listet Spenden, Ausgaben, Kosten und Fortschritt.",
     rows: [
       { label: "Reinigung", note: "tägliche Straßenteams" },
       { label: "Studierende und lokale Arbeiter", note: "bezahlte Arbeit, keine Versprechen" },
