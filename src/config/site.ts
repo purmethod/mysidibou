@@ -68,12 +68,12 @@ export const site = {
    * Instagram handle, and the circular slot fills in automatically.
    */
   team: [
-    { name: "Paul Brinkmann", role: "Founder & Architect", photo: "/assets/team-founder.jpg", instagram: "@buildpaul" },
-    { name: "Manel Chaabene", role: "Admin", photo: "/assets/team-manel.jpg", instagram: "@manel_chaaben" },
-    { name: "Yasmine Hadj Said", role: "Social Media", photo: "/assets/team-yasmine.jpg", instagram: "@yasmine_hadjsaid" },
-    { name: "Ahmed Khmiri", role: "Social Media", photo: "/assets/team-ahmed.jpg", instagram: "@appareil_de_golgi" },
-    { name: "Maram Jelassi", role: "Social Media", photo: "/assets/team-maram.jpg", instagram: "@pty.yurii" },
-    { name: "[Name]", role: "Social Media", photo: "", instagram: "@insta" },
+    { name: "Paul Brinkmann", university: "University of Stuttgart", role: "Founder & Architect", photo: "/assets/team-founder.jpg", instagram: "@buildpaul" },
+    { name: "Manel Chaabene", university: "ENAU", role: "Admin", photo: "/assets/team-manel.jpg", instagram: "@manel_chaaben" },
+    { name: "Yasmine Hadj Said", university: "ENAU", role: "Social Media", photo: "/assets/team-yasmine.jpg", instagram: "@yasmine_hadjsaid" },
+    { name: "Ahmed Khmiri", university: "ENAU", role: "Social Media", photo: "/assets/team-ahmed.jpg", instagram: "@appareil_de_golgi" },
+    { name: "Maram Jelassi", university: "ENAU", role: "Social Media", photo: "/assets/team-maram.jpg", instagram: "@pty.yurii" },
+    { name: "[Name]", university: "", role: "Social Media", photo: "", instagram: "@insta" },
   ],
 
   /* ---------- UNESCO ---------- */

@@ -951,6 +951,16 @@ html[dir="rtl"] .marquee__track {
   height: 2.2rem;
 }
 
+.team-member__university {
+  margin-top: 0.15rem;
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+  max-width: 11rem;
+}
+
 .team-member__name {
   margin-top: 0.6rem;
   font-size: 0.95rem;
