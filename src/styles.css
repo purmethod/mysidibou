@@ -884,20 +884,21 @@ html[dir="rtl"] .marquee__track {
 
 .hero__title {
   margin: 0;
-  max-width: 13ch;
+  max-width: 16ch;
   font-family: var(--font-display);
   font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 0.98;
-  font-size: clamp(2.7rem, 7vw, 6.4rem);
+  font-size: clamp(2.55rem, 7vw, 6.2rem);
   text-wrap: balance;
 }
 
 .hero__body {
   margin: 1.4rem 0 0;
-  max-width: 44ch;
-  color: var(--color-ink-soft);
-  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  max-width: 46ch;
+  color: var(--color-ink);
+  font-size: clamp(1rem, 1.35vw, 1.15rem);
+  font-weight: 500;
   line-height: 1.55;
 }
 

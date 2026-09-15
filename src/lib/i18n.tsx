@@ -47,8 +47,8 @@ const en = {
     {
       label: "the town",
       kicker: "sidi bou said, tunisia",
-      title: "A white town above the sea.",
-      body: "Blue doors. Bougainvillea. Jasmine. A place people fall in love with before they understand it.",
+      title: "This place deserves the next 500 years.",
+      body: "Our mission: make Sidi Bou Said the cleanest city in the world.",
     },
     {
       label: "the streets",
@@ -229,8 +229,8 @@ const fr: Dict = {
     {
       label: "la ville",
       kicker: "sidi bou said, tunisie",
-      title: "Une ville blanche au-dessus de la mer.",
-      body: "Portes bleues. Bougainvilliers. Jasmin. Un lieu dont on tombe amoureux avant même de le comprendre.",
+      title: "Ce lieu mérite les 500 prochaines années.",
+      body: "Notre mission : faire de Sidi Bou Said la ville la plus propre du monde.",
     },
     {
       label: "les rues",
@@ -409,8 +409,8 @@ const ar: Dict = {
     {
       label: "البلدة",
       kicker: "سيدي بوسعيد، تونس",
-      title: "مدينة بيضاء فوق البحر.",
-      body: "أبواب زرقاء. بنفسج متسلّق. ياسمين. مكان تقع في حبّه قبل أن تفهمه.",
+      title: "هذا المكان يستحق الـ500 عاماً القادمة.",
+      body: "مهمتنا: جعل سيدي بوسعيد أنظف مدينة في العالم.",
     },
     {
       label: "الشوارع",
@@ -587,8 +587,8 @@ const de: Dict = {
     {
       label: "die Stadt",
       kicker: "sidi bou said, tunesien",
-      title: "Eine weiße Stadt über dem Meer.",
-      body: "Blaue Türen. Bougainvillea. Jasmin. Ein Ort, in den man sich verliebt, bevor man ihn versteht.",
+      title: "Dieser Ort verdient die nächsten 500 Jahre.",
+      body: "Unsere Mission: Sidi Bou Said zur saubersten Stadt der Welt machen.",
     },
     {
       label: "die Gassen",
