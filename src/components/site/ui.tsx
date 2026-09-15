@@ -104,11 +104,11 @@ export function DonateButton({
     );
   }
 
-  // Placeholder link: never fake a payment flow. Scroll to the donate
-  // section, which explains that the secure link opens soon.
+  // Donation is not live yet: lead every primary CTA to the mission instead
+  // of a fake payment flow. Restored to "donate now" as soon as the link is set.
   return (
-    <a className={classes} href="#donate">
-      {dict.cta.donate}
+    <a className={classes} href="#follow">
+      {dict.cta.follow}
     </a>
   );
 }

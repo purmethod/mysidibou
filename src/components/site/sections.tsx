@@ -114,9 +114,6 @@ export function MissionSection() {
             </div>
           </Reveal>
         ))}
-        <Reveal delay={1}>
-          <p className="section-copy mt-10 text-sm md:text-base">{dict.mission.footer}</p>
-        </Reveal>
       </div>
     </Section>
   );
@@ -134,7 +131,7 @@ export function PeopleSection() {
         <Reveal>
           <div className="split-media aspect-[4/3] w-full">
             <img
-              alt="Architecture students of Sidi Bou Said measuring and drawing a street plan"
+              alt="Architecture students from ENAU measuring and drawing a street in Sidi Bou Said"
               className="h-full w-full object-cover"
               loading="lazy"
               src={site.media.students}
@@ -323,11 +320,6 @@ export function EntranceSection() {
           <Reveal delay={2}>
             <p className="section-copy mt-6 text-base md:text-lg">{dict.entrance.body}</p>
           </Reveal>
-          <Reveal delay={3}>
-            <p className="font-display mt-8 max-w-md border-l-2 border-cobalt pl-4 text-2xl italic leading-[1.15]">
-              We create the conditions. Nature creates the architecture.
-            </p>
-          </Reveal>
         </div>
       </div>
     </Section>
@@ -354,7 +346,7 @@ export function ContributionSection() {
             {dict.contribution.tagline}
           </p>
         </Reveal>
-        <div className="mt-10 grid gap-8 md:grid-cols-3">
+        <div className="mt-10 grid max-w-2xl gap-8 md:grid-cols-2">
           <Reveal delay={1}>
             <p className="eyebrow">{dict.contribution.tunisianLabel}</p>
             <p className="mt-3 text-lg">{dict.contribution.tunisianText}</p>
@@ -363,17 +355,9 @@ export function ContributionSection() {
             <p className="eyebrow">{dict.contribution.internationalLabel}</p>
             <p className="mt-3 text-lg">{dict.contribution.internationalText}</p>
           </Reveal>
-          <Reveal delay={3}>
-            <p className="eyebrow">{dict.contribution.returnsLabel}</p>
-            <ul className="mt-3 space-y-1 text-lg">
-              {dict.contribution.returns.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </Reveal>
         </div>
-        <Reveal>
-          <p className="mt-10 text-sm text-ink-soft">{dict.contribution.note}</p>
+        <Reveal delay={2}>
+          <p className="mt-8 max-w-2xl text-base md:text-lg">{dict.contribution.closing}</p>
         </Reveal>
       </Section>
     </section>
@@ -406,10 +390,10 @@ export function TransparencySection() {
         ))}
       </div>
       <Reveal>
-        <p className="mt-8 inline-flex items-center gap-3 text-sm text-ink-soft">
+        <div className="mt-8 text-sm text-ink-soft">
           <span className="placeholder-chip">{dict.progress.comingSoon}</span>
-          {dict.transparency.honesty}
-        </p>
+          <p className="mt-3">{dict.transparency.honesty}</p>
+        </div>
       </Reveal>
     </Section>
   );
@@ -643,7 +627,6 @@ export function DonateSection() {
                 <span className="qr-tile__label">{dict.donateSection.qrSoon}</span>
               </div>
             )}
-            <p className="max-w-[220px] text-xs text-ink-soft">{dict.donateSection.body}</p>
           </div>
         </Reveal>
       </div>
