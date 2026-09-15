@@ -42,7 +42,7 @@ const en = {
     follow: "follow the mission",
   },
   heroLine: "students. locals. one village. one mission.",
-  marquee: "plastic out. beauty back.",
+  marquee: "Protected since 1915. Protected by us.",
   journey: [
     {
       label: "the village",
@@ -185,7 +185,7 @@ const en = {
   unesco: {
     kicker: "UNESCO WORLD HERITAGE · 2026",
     headline: "World heritage needs local guardians.",
-    body: "Recognition is not the finish line. It is a responsibility. UNESCO placed Sidi Bou Said on the World Heritage List on 25 July 2026. Now we act: for the streets, for the people, for the next 500 years. By 1 December 2027, Tunisia reports to UNESCO on how this village is being protected. We intend to be part of that answer.",
+    body: "Recognition is not the finish line. It is a responsibility. Sidi Bou Said has been protected by law since 1915 — one of the earliest heritage decrees in the world, and the residents themselves asked for it. On 25 July 2026, UNESCO placed the village on the World Heritage List. Now it is our turn: for the streets, for the people, for the next 500 years. By 1 December 2027, Tunisia reports to UNESCO on how this village is being protected. We intend to be part of that answer.",
   },
   fiveHundred: {
     years: ["200 years.", "300 years.", "500 years."],
@@ -240,7 +240,7 @@ const fr: Dict = {
     follow: "suivre la mission",
   },
   heroLine: "étudiants. habitants. un village. une mission.",
-  marquee: "Plastique dehors. Beauté de retour.",
+  marquee: "Protégé depuis 1915. Protégé par nous.",
   journey: [
     {
       label: "le village",
@@ -383,7 +383,7 @@ const fr: Dict = {
   unesco: {
     kicker: "PATRIMOINE MONDIAL UNESCO · 2026",
     headline: "Le patrimoine mondial a besoin de gardiens locaux.",
-    body: "La reconnaissance n'est pas la ligne d'arrivée. C'est une responsabilité. L'UNESCO a inscrit Sidi Bou Said au patrimoine mondial le 25 juillet 2026. Alors nous agissons : pour les rues, pour les gens, pour les 500 prochaines années. D'ici le 1er décembre 2027, la Tunisie rend compte à l'UNESCO de la protection de ce village. Nous entendons faire partie de cette réponse.",
+    body: "La reconnaissance n'est pas la ligne d'arrivée. C'est une responsabilité. Sidi Bou Said est protégé par la loi depuis 1915 — l'un des décrets patrimoniaux les plus précoces au monde, et ce sont les habitants eux-mêmes qui l'ont demandé. Le 25 juillet 2026, l'UNESCO a inscrit le village sur la liste du patrimoine mondial. Maintenant, c'est à notre tour : pour les rues, pour les gens, pour les 500 prochaines années. D'ici le 1er décembre 2027, la Tunisie rend compte à l'UNESCO de la protection de ce village. Nous entendons faire partie de cette réponse.",
   },
   fiveHundred: {
     years: ["200 ans.", "300 ans.", "500 ans."],
@@ -436,7 +436,7 @@ const ar: Dict = {
     follow: "تابع المهمّة",
   },
   heroLine: "طلّاب. أهل القرية. قرية واحدة. مهمة واحدة.",
-  marquee: "أخرجوا البلاستيك. أعيدوا الجمال.",
+  marquee: "محمية منذ 1915. محمية بنا.",
   journey: [
     {
       label: "القرية",
@@ -579,7 +579,7 @@ const ar: Dict = {
   unesco: {
     kicker: "تراث عالمي لليونسكو · 2026",
     headline: "التراث العالمي يحتاج حرّاساً محليين.",
-    body: "الاعتراف ليس خط النهاية. إنه مسؤولية. أدرجت اليونسكو سيدي بوسعيد في قائمة التراث العالمي في 25 يوليو 2026. لذلك نتحرك: من أجل الشوارع، ومن أجل الناس، ومن أجل الـ500 عام القادمة. بحلول 1 ديسمبر 2027، ترفع تونس تقريراً إلى اليونسكو عن حماية هذه القرية. ننوي أن نكون جزءاً من تلك الإجابة.",
+    body: "الاعتراف ليس خط النهاية. إنه مسؤولية. سيدي بوسعيد محمية بالقانون منذ 1915 — أحد أقدم مراسيم حماية التراث في العالم، وقد طلب ذلك السكان أنفسهم. في 25 يوليو 2026، أدرجت اليونسكو القرية في قائمة التراث العالمي. الآن جاء دورنا: من أجل الشوارع، ومن أجل الناس، ومن أجل الـ500 عام القادمة. بحلول 1 ديسمبر 2027، ترفع تونس تقريراً إلى اليونسكو عن حماية هذه القرية. ننوي أن نكون جزءاً من تلك الإجابة.",
   },
   fiveHundred: {
     years: ["200 عاماً.", "300 عاماً.", "500 عاماً."],
@@ -631,7 +631,7 @@ const de: Dict = {
     follow: "Die Mission verfolgen",
   },
   heroLine: "Studierende. Einheimische. Ein Dorf. Eine Mission.",
-  marquee: "Plastik raus. Schönheit zurück.",
+  marquee: "Geschützt seit 1915. Geschützt von uns.",
   journey: [
     {
       label: "das Dorf",
@@ -774,7 +774,7 @@ const de: Dict = {
   unesco: {
     kicker: "UNESCO-WELTERBE · 2026",
     headline: "Weltkulturerbe braucht lokale Hüter.",
-    body: "Die Anerkennung ist nicht die Ziellinie. Sie ist eine Verantwortung. Die UNESCO hat Sidi Bou Said am 25. Juli 2026 in die Welterbeliste aufgenommen. Also handeln wir: für die Straßen, für die Menschen, für die nächsten 500 Jahre. Bis zum 1. Dezember 2027 berichtet Tunesien der UNESCO, wie dieses Dorf geschützt wird. Wir wollen Teil dieser Antwort sein.",
+    body: "Die Anerkennung ist nicht die Ziellinie. Sie ist eine Verantwortung. Sidi Bou Said steht seit 1915 unter gesetzlichem Schutz — eines der frühesten Denkmalschutz-Dekrete der Welt, und die Bewohner selbst haben darum gebeten. Am 25. Juli 2026 hat die UNESCO das Dorf in die Welterbeliste aufgenommen. Jetzt sind wir an der Reihe: für die Straßen, für die Menschen, für die nächsten 500 Jahre. Bis zum 1. Dezember 2027 berichtet Tunesien der UNESCO, wie dieses Dorf geschützt wird. Wir wollen Teil dieser Antwort sein.",
   },
   fiveHundred: {
     years: ["200 Jahre.", "300 Jahre.", "500 Jahre."],
