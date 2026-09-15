@@ -282,7 +282,7 @@ export function LocalsSection() {
         <Reveal className="order-1 lg:order-2">
           <div className="split-media aspect-[4/3] w-full">
             <img
-              alt="A flower seller at her stand in a white street of Sidi Bou Said"
+              alt="A flower seller at his cart in a white street of Sidi Bou Said"
               className="h-full w-full object-cover"
               loading="lazy"
               src={site.media.flowerSeller}
@@ -306,7 +306,7 @@ export function EntranceSection() {
         <Reveal>
           <div className="split-media aspect-[16/10] w-full">
             <img
-              alt="Fell and jasmine beginning to climb a light trellis on a white wall"
+              alt="Volunteers welcoming visitors at the flower gate of Sidi Bou Said"
               className="h-full w-full object-cover"
               loading="lazy"
               src={site.media.entrance}
