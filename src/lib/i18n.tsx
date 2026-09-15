@@ -47,8 +47,8 @@ const en = {
     {
       label: "the town",
       kicker: "sidi bou said, tunisia",
-      title: "This place deserves the next 500 years.",
-      body: "Our mission: make Sidi Bou Said the cleanest city in the world.",
+      title: "Protecting Sidi Bou Said for the next 500 years.",
+      body: "Our first mission: make Sidi Bou Said the cleanest city in the world.",
     },
     {
       label: "the streets",
@@ -81,7 +81,8 @@ const en = {
     },
   ],
   problem: {
-    headline: "every visitor leaves a footprint.",
+    headline: "Millions come to experience its beauty. Together, we can help preserve it.",
+    body: "Tourism is not the enemy. Unmanaged impact is the challenge. Visitors can become part of the solution.",
     lines: [
       "plastic.",
       "cigarette butts.",
@@ -103,9 +104,9 @@ const en = {
   },
   people: {
     headline: "The next generation takes responsibility.",
-    body: "Architecture is not only about designing buildings. It is about protecting the environment people live in.",
+    body: "The city becomes the classroom.",
     body2:
-      "Our students talk to locals, draw, clean and document the town. Long term, we work with architecture institutions like ENAU and the University of Stuttgart.",
+      "A team of students works alongside local people to observe, document, design and improve the town.",
     goals: ["talking", "drawing", "planning", "working outside", "cleaning", "documenting"],
   },
   team: {
@@ -119,14 +120,22 @@ const en = {
   locals: {
     headline: "Protecting the town should also strengthen local life.",
     body: "The people who live and work here are the heart of Sidi Bou Said: flower sellers, small shops, cafés, craftsmen, families.",
+    value:
+      "Preservation should create local value. What the project generates flows back into the town: workers, students, craftsmen, public spaces, nature, preservation.",
   },
   entrance: {
     headline: "Let nature build the entrance.",
     body: "No concrete. No heavy masonry. Only conditions: climbing plants, bougainvillea, thin wires, light trellises. Nature builds the architecture.",
   },
   contribution: {
-    headline: "A contribution, not a ticket.",
-    body: "Sidi Bou Said is one of the most visited places in Tunisia. Our long-term plan is simple: Tunisian visitors remain free. International visitors contribute to the preservation of the town.",
+    headline: "A new model for responsible tourism.",
+    body: "We are developing a model in which international tourism can directly contribute to the preservation of Sidi Bou Said.",
+    tagline: "Visit. Contribute. Preserve.",
+    tunisianLabel: "Tunisian visitors",
+    tunisianText: "Proposed: remain free.",
+    internationalLabel: "International visitors",
+    internationalText: "Proposed: contribute to preservation.",
+    returnsLabel: "Where contributions would go",
     returns: [
       "cleaning",
       "preservation",
@@ -139,8 +148,10 @@ const en = {
     note: "Amounts will be announced once final agreements are made.",
   },
   transparency: {
-    headline: "Where your support goes.",
-    body: "We never invent numbers. The first public report lists donations, spending, costs and progress.",
+    headline: "Radical transparency.",
+    body: "Every contribution. Every expense. Every result.",
+    support:
+      "Public reports will show where the money came from, where it went and what changed.",
     rows: [
       { label: "cleaning", note: "daily street teams" },
       { label: "students and local workers", note: "paid work, not promises" },
@@ -153,22 +164,25 @@ const en = {
   },
   progress: {
     headline: "Proof, not promises.",
-    body: "Real numbers land here with the first public report. Until then, we do not invent them.",
+    body: "Real numbers land here with the first public report.",
     comingSoon: "first public report upcoming",
     statLabels: [
       "kilograms of waste removed",
       "cigarette butts collected",
       "streets cleaned",
       "students involved",
-      "local workers involved",
+      "local participants",
       "flowers planted",
       "public spaces improved",
+      "money contributed",
+      "money reinvested",
     ],
     beforeAfter: "before / after photographs will appear here",
   },
   unesco: {
-    headline: "World heritage. World responsibility.",
-    body: "Sidi Bou Said became a UNESCO World Heritage Site in 2026. A heritage title does not protect a town by itself. People do.",
+    kicker: "UNESCO WORLD HERITAGE · 2026",
+    headline: "World heritage needs local guardians.",
+    body: "Recognition is not the finish line. It is a responsibility. UNESCO placed Sidi Bou Said on the World Heritage List in 2026. Now we act: for the streets, for the people, for the next 500 years.",
   },
   fiveHundred: {
     years: ["200 years.", "300 years.", "500 years."],
@@ -189,8 +203,7 @@ const en = {
       "Plants bougainvillea, jasmine and flowers in public spaces",
       "Protects the streets for the next 500 years",
     ],
-    trust:
-      "Every contribution is accounted for in the first public report. We never invent numbers.",
+    trust: "Every contribution is accounted for in the first public report.",
     qrSoon: "qr code coming soon",
     linkSoon:
       "The secure donation link opens here as soon as it is ready. Follow the mission in the meantime.",
@@ -200,8 +213,8 @@ const en = {
     sub: "Help us protect Sidi Bou Said.",
   },
   footer: {
-    missionLine: "Turning Sidi Bou Said into the cleanest city in the world.",
-    tagline: "students. locals. one city. one mission.",
+    missionLine: "Protecting Sidi Bou Said for the next 500 years.",
+    tagline: "Students. Locals. Visitors. One city. One responsibility.",
     location: "Sidi Bou Said, Tunisia",
     heritage: "UNESCO World Heritage Site since 2026",
   },
@@ -229,8 +242,8 @@ const fr: Dict = {
     {
       label: "la ville",
       kicker: "sidi bou said, tunisie",
-      title: "Ce lieu mérite les 500 prochaines années.",
-      body: "Notre mission : faire de Sidi Bou Said la ville la plus propre du monde.",
+      title: "Protéger Sidi Bou Said pour les 500 prochaines années.",
+      body: "Notre première mission : faire de Sidi Bou Said la ville la plus propre du monde.",
     },
     {
       label: "les rues",
@@ -263,7 +276,8 @@ const fr: Dict = {
     },
   ],
   problem: {
-    headline: "Chaque visiteur laisse une empreinte.",
+    headline: "Des millions viennent découvrir sa beauté. Ensemble, nous pouvons aider à la préserver.",
+    body: "Le tourisme n'est pas l'ennemi. L'impact non maîtrisé est le défi. Les visiteurs peuvent faire partie de la solution.",
     lines: [
       "le plastique.",
       "les mégots.",
@@ -285,9 +299,9 @@ const fr: Dict = {
   },
   people: {
     headline: "La prochaine génération prend ses responsabilités.",
-    body: "L'architecture ne consiste pas seulement à concevoir des bâtiments. C'est protéger l'environnement dans lequel les gens vivent.",
+    body: "La ville devient la salle de classe.",
     body2:
-      "Nos étudiants échangent avec les habitants, dessinent, nettoient et documentent la ville. À terme, nous travaillons avec des institutions comme l'ENAU et l'université de Stuttgart.",
+      "Une équipe d'étudiants travaille aux côtés des habitants pour observer, documenter, concevoir et améliorer la ville.",
     goals: ["échanger", "dessiner", "planifier", "travailler dehors", "nettoyer", "documenter"],
   },
   team: {
@@ -301,14 +315,22 @@ const fr: Dict = {
   locals: {
     headline: "Protéger la ville doit aussi renforcer la vie locale.",
     body: "Ceux qui vivent et travaillent ici sont le cœur de Sidi Bou Said : vendeurs de fleurs, petites boutiques, cafés, artisans, familles.",
+    value:
+      "Préserver doit créer de la valeur locale. Ce que le projet génère rejaillit sur la ville : travailleurs, étudiants, artisans, espaces publics, nature, préservation.",
   },
   entrance: {
     headline: "Laissez la nature construire l'entrée.",
     body: "Pas de béton. Pas de maçonnerie lourde. Seulement des conditions : plantes grimpantes, bougainvilliers, fils fins, treillis légers. La nature bâtit l'architecture.",
   },
   contribution: {
-    headline: "Une contribution, pas un billet.",
-    body: "Sidi Bou Said est l'un des lieux les plus visités de Tunisie. Notre projet à long terme est simple : les visiteurs tunisiens restent libres d'accès. Les visiteurs internationaux contribuent à la préservation du village.",
+    headline: "Un nouveau modèle de tourisme responsable.",
+    body: "Nous développons un modèle dans lequel le tourisme international peut contribuer directement à la préservation de Sidi Bou Said.",
+    tagline: "Visiter. Contribuer. Préserver.",
+    tunisianLabel: "Visiteurs tunisiens",
+    tunisianText: "Proposé : rester libres.",
+    internationalLabel: "Visiteurs internationaux",
+    internationalText: "Proposé : contribuer à la préservation.",
+    returnsLabel: "Où iraient les contributions",
     returns: [
       "nettoyage",
       "préservation",
@@ -321,8 +343,10 @@ const fr: Dict = {
     note: "Les montants seront annoncés après les accords finaux.",
   },
   transparency: {
-    headline: "Où va votre soutien.",
-    body: "Nous n'inventons jamais de chiffres. Le premier rapport public liste les dons, les dépenses, les coûts et les progrès.",
+    headline: "Transparence radicale.",
+    body: "Chaque contribution. Chaque dépense. Chaque résultat.",
+    support:
+      "Les rapports publics montreront d'où vient l'argent, où il va et ce qui change.",
     rows: [
       { label: "nettoyage", note: "équipes de rue quotidiennes" },
       { label: "étudiants et travailleurs locaux", note: "travail payé, pas des promesses" },
@@ -335,22 +359,25 @@ const fr: Dict = {
   },
   progress: {
     headline: "Des preuves, pas des promesses.",
-    body: "Les vrais chiffres arriveront avec le premier rapport public. En attendant, nous n'inventons rien.",
+    body: "Les vrais chiffres arriveront avec le premier rapport public.",
     comingSoon: "premier rapport public à venir",
     statLabels: [
       "kilogrammes de déchets retirés",
       "mégots collectés",
       "rues nettoyées",
       "étudiants mobilisés",
-      "travailleurs locaux mobilisés",
+      "participants locaux",
       "fleurs plantées",
       "espaces publics améliorés",
+      "argent contribué",
+      "argent réinvesti",
     ],
     beforeAfter: "les photos avant / après apparaîtront ici",
   },
   unesco: {
-    headline: "Patrimoine mondial. Responsabilité mondiale.",
-    body: "Sidi Bou Said est devenu site du patrimoine mondial de l'UNESCO en 2026. Un titre ne protège pas une ville à lui seul. Ce sont les gens qui la protègent.",
+    kicker: "PATRIMOINE MONDIAL UNESCO · 2026",
+    headline: "Le patrimoine mondial a besoin de gardiens locaux.",
+    body: "La reconnaissance n'est pas la ligne d'arrivée. C'est une responsabilité. L'UNESCO a inscrit Sidi Bou Said au patrimoine mondial en 2026. Alors nous agissons : pour les rues, pour les gens, pour les 500 prochaines années.",
   },
   fiveHundred: {
     years: ["200 ans.", "300 ans.", "500 ans."],
@@ -371,8 +398,7 @@ const fr: Dict = {
       "Plante des bougainvilliers, du jasmin et des fleurs dans les espaces publics",
       "Protège les rues pour les 500 prochaines années",
     ],
-    trust:
-      "Chaque contribution est comptabilisée dans le premier rapport public. Nous n'inventons jamais de chiffres.",
+    trust: "Chaque contribution est comptabilisée dans le premier rapport public.",
     qrSoon: "code qr bientôt disponible",
     linkSoon:
       "Le lien de don sécurisé s'ouvrira ici dès qu'il sera prêt. En attendant, suivez la mission.",
@@ -382,8 +408,8 @@ const fr: Dict = {
     sub: "Aidez-nous à protéger Sidi Bou Said.",
   },
   footer: {
-    missionLine: "Faire de Sidi Bou Said la ville la plus propre du monde.",
-    tagline: "étudiants. habitants. une ville. une mission.",
+    missionLine: "Protéger Sidi Bou Said pour les 500 prochaines années.",
+    tagline: "Étudiants. Habitants. Visiteurs. Une ville. Une responsabilité.",
     location: "Sidi Bou Said, Tunisie",
     heritage: "Site du patrimoine mondial de l'UNESCO depuis 2026",
   },
@@ -409,8 +435,8 @@ const ar: Dict = {
     {
       label: "البلدة",
       kicker: "سيدي بوسعيد، تونس",
-      title: "هذا المكان يستحق الـ500 عاماً القادمة.",
-      body: "مهمتنا: جعل سيدي بوسعيد أنظف مدينة في العالم.",
+      title: "حماية سيدي بوسعيد لخمسمئة عام قادمة.",
+      body: "مهمتنا الأولى: جعل سيدي بوسعيد أنظف مدينة في العالم.",
     },
     {
       label: "الشوارع",
@@ -443,7 +469,8 @@ const ar: Dict = {
     },
   ],
   problem: {
-    headline: "كل زائر يترك أثراً.",
+    headline: "الملايين يأتون ليعيشوا جمالها. معاً، يمكننا المساعدة في الحفاظ عليها.",
+    body: "السياحة ليست العدو. الأثر غير المُدار هو التحدي. الزوار يمكنهم أن يكونوا جزءاً من الحل.",
     lines: [
       "البلاستيك.",
       "أعقاب السجائر.",
@@ -465,9 +492,9 @@ const ar: Dict = {
   },
   people: {
     headline: "الجيل القادم يتحمّل المسؤولية.",
-    body: "العمارة ليست فقط تصميم المباني. إنها حماية البيئة التي يعيش فيها الناس.",
+    body: "المدينة تصبح قاعة الدرس.",
     body2:
-      "طلّابنا يتحاورون مع الأهالي ويرسمون وينظّفون ويوثّقون المدينة. مستقبلاً، نعمل مع مؤسسات عمارة مثل إينو وجامعة شتوتغارت.",
+      "فريق من الطلّاب يعمل مع الأهالي لمراقبة المدينة وتوثيقها وتصميمها وتحسينها.",
     goals: ["تحاور", "رسم", "تخطيط", "عمل ميداني", "تنظيف", "توثيق"],
   },
   team: {
@@ -481,14 +508,22 @@ const ar: Dict = {
   locals: {
     headline: "حماية المدينة يجب أن تقوّي أيضاً حياة أهلها.",
     body: "الناس الذين يعيشون ويعملون هنا هم قلب سيدي بوسعيد: باعة الزهور، المحلات الصغيرة، المقاهي، الحرفيّون، العائلات.",
+    value:
+      "الحفاظ يجب أن يخلق قيمة محلية. ما يولّده المشروع يعود إلى البلدة: عمال، طلّاب، حرفيّون، أماكن عامة، طبيعة، حفظ.",
   },
   entrance: {
     headline: "دعوا الطبيعة تبني المدخل.",
     body: "لا خرسانة. لا بناء حجري ثقيل. فقط شروط: نباتات متسلّقة، بنفسج، أسلاك رفيعة، تعريشات خفيفة. الطبيعة تبني العمارة.",
   },
   contribution: {
-    headline: "مساهمة، لا تذكرة.",
-    body: "سيدي بوسعيد من أكثر الأماكن زيارة في تونس. خطتنا طويلة المدى بسيطة: الزوار التونسيون يبقون أحراراً ودون مقابل. الزوار الدوليون يساهمون في الحفاظ على البلدة.",
+    headline: "نموذج جديد للسياحة المسؤولة.",
+    body: "نطوّر نموذجاً تساهم فيه السياحة الدولية مباشرةً في الحفاظ على سيدي بوسعيد.",
+    tagline: "زُر. ساهم. احفظ.",
+    tunisianLabel: "الزوار التونسيون",
+    tunisianText: "مقترح: يبقون أحراراً.",
+    internationalLabel: "الزوار الدوليون",
+    internationalText: "مقترح: المساهمة في الحفظ.",
+    returnsLabel: "أين تذهب المساهمات",
     returns: [
       "التنظيف",
       "الحفاظ على التراث",
@@ -501,8 +536,10 @@ const ar: Dict = {
     note: "سيُعلَن عن المبالغ بعد الاتفاقيات النهائية.",
   },
   transparency: {
-    headline: "أين يذهب دعمك.",
-    body: "لا نختلق الأرقام أبداً. أول تقرير عام يسرد التبرعات والمصروفات والتكاليف والتقدّم.",
+    headline: "شفافية جذرية.",
+    body: "كل مساهمة. كل مصروف. كل نتيجة.",
+    support:
+      "التقارير العامة ستُظهر من أين جاء المال، وإلى أين ذهب، وماذا تغيّر.",
     rows: [
       { label: "التنظيف", note: "فرق يومية في الشوارع" },
       { label: "الطلّاب والعمال المحليون", note: "عمل بأجر، لا وعود" },
@@ -515,22 +552,25 @@ const ar: Dict = {
   },
   progress: {
     headline: "إثبات، لا وعود.",
-    body: "الأرقام الحقيقية ستظهر مع التقرير العام الأول. حتى ذلك الحين لا نختلق شيئاً.",
+    body: "الأرقام الحقيقية ستظهر مع التقرير العام الأول.",
     comingSoon: "التقرير العام الأول قريباً",
     statLabels: [
       "كيلوغرامات النفايات المُزالة",
       "أعقاب السجائر المجموعة",
       "الشوارع المنظّفة",
       "الطلّاب المشاركون",
-      "العمال المحليون",
+      "المشاركون المحليون",
       "الزهور المزروعة",
       "الأماكن العامة المحسّنة",
+      "أموال مُساهَم بها",
+      "أموال مُعَاد استثمارها",
     ],
     beforeAfter: "صور قبل / بعد ستظهر هنا",
   },
   unesco: {
-    headline: "تراث عالمي. مسؤولية عالمية.",
-    body: "أصبحت سيدي بوسعيد موقع تراث عالمي لليونسكو في عام 2026. اللقب وحده لا يحمي مدينة. الناس يحمونها.",
+    kicker: "تراث عالمي لليونسكو · 2026",
+    headline: "التراث العالمي يحتاج حرّاساً محليين.",
+    body: "الاعتراف ليس خط النهاية. إنه مسؤولية. أدرجت اليونسكو سيدي بوسعيد في قائمة التراث العالمي عام 2026. لذلك نتحرك: من أجل الشوارع، ومن أجل الناس، ومن أجل الـ500 عام القادمة.",
   },
   fiveHundred: {
     years: ["200 عاماً.", "300 عاماً.", "500 عاماً."],
@@ -551,7 +591,7 @@ const ar: Dict = {
       "يزرع البنفسج والياسمين والزهور في الأماكن العامة",
       "يحمي الشوارع لخمسمئة عام قادمة",
     ],
-    trust: "كل مساهمة تُحسب في التقرير العام الأول. نحن لا نختلق الأرقام أبداً.",
+    trust: "كل مساهمة تُحسب في التقرير العام الأول.",
     qrSoon: "رمز الاستجابة قريباً",
     linkSoon: "سيُفتح رابط التبرّع هنا فور جاهزيته. إلى ذلك الحين، تابعوا المهمّة.",
   },
@@ -560,8 +600,8 @@ const ar: Dict = {
     sub: "ساعدونا في حماية سيدي بوسعيد.",
   },
   footer: {
-    missionLine: "تحويل سيدي بوسعيد إلى أنظف مدينة في العالم.",
-    tagline: "طلّاب. أهل البلدة. مدينة واحدة. رسالة واحدة.",
+    missionLine: "حماية سيدي بوسعيد لخمسمئة عام قادمة.",
+    tagline: "طلّاب. أهل البلدة. زوار. مدينة واحدة. مسؤولية واحدة.",
     location: "سيدي بوسعيد، تونس",
     heritage: "موقع تراث عالمي لليونسكو منذ 2026",
   },
@@ -587,8 +627,8 @@ const de: Dict = {
     {
       label: "die Stadt",
       kicker: "sidi bou said, tunesien",
-      title: "Dieser Ort verdient die nächsten 500 Jahre.",
-      body: "Unsere Mission: Sidi Bou Said zur saubersten Stadt der Welt machen.",
+      title: "Sidi Bou Said für die nächsten 500 Jahre schützen.",
+      body: "Unsere erste Mission: Sidi Bou Said zur saubersten Stadt der Welt machen.",
     },
     {
       label: "die Gassen",
@@ -621,7 +661,8 @@ const de: Dict = {
     },
   ],
   problem: {
-    headline: "Jeder Besucher hinterlässt einen Fußabdruck.",
+    headline: "Millionen kommen, um ihre Schönheit zu erleben. Gemeinsam können wir helfen, sie zu bewahren.",
+    body: "Tourismus ist nicht der Feind. Unkontrollierte Auswirkungen sind die Herausforderung. Besucher können Teil der Lösung sein.",
     lines: [
       "das Plastik.",
       "die Zigarettenstummel.",
@@ -643,9 +684,9 @@ const de: Dict = {
   },
   people: {
     headline: "Die nächste Generation übernimmt Verantwortung.",
-    body: "Architektur bedeutet nicht nur, Gebäude zu entwerfen. Es bedeutet, die Umwelt zu schützen, in der Menschen leben.",
+    body: "Die Stadt wird zum Klassenzimmer.",
     body2:
-      "Unsere Studierenden reden mit Einheimischen, zeichnen, reinigen und dokumentieren die Stadt. Langfristig arbeiten wir mit Institutionen wie der ENAU und der Universität Stuttgart.",
+      "Ein Team von Studierenden arbeitet mit Einheimischen zusammen, um die Stadt zu beobachten, zu dokumentieren, zu gestalten und zu verbessern.",
     goals: ["Reden", "Zeichnen", "Planen", "Draußen arbeiten", "Reinigen", "Dokumentieren"],
   },
   team: {
@@ -659,14 +700,22 @@ const de: Dict = {
   locals: {
     headline: "Die Stadt zu schützen stärkt auch das lokale Leben.",
     body: "Die Menschen, die hier leben und arbeiten, sind das Herz von Sidi Bou Said: Blumenverkäufer, kleine Läden, Cafés, Handwerker, Familien.",
+    value:
+      "Erhalt soll lokalen Wert schaffen. Was das Projekt erwirtschaftet, fließt in die Stadt zurück: Arbeiter, Studierende, Handwerker, öffentliche Räume, Natur, Erhalt.",
   },
   entrance: {
     headline: "Lass die Natur den Eingang bauen.",
     body: "Kein Beton. Kein schweres Mauerwerk. Nur Bedingungen: Kletterpflanzen, Bougainvillea, dünne Drähte, leichte Rankgitter. Die Natur baut die Architektur.",
   },
   contribution: {
-    headline: "Ein Beitrag, kein Ticket.",
-    body: "Sidi Bou Said ist einer der meistbesuchten Orte Tunesiens. Unser langfristiger Plan ist einfach: Tunesische Besucher bleiben frei. Internationale Besucher tragen zur Erhaltung der Stadt bei.",
+    headline: "Ein neues Modell für verantwortungsvollen Tourismus.",
+    body: "Wir entwickeln ein Modell, in dem internationaler Tourismus direkt zur Erhaltung von Sidi Bou Said beiträgt.",
+    tagline: "Besuchen. Beitragen. Bewahren.",
+    tunisianLabel: "Tunesische Besucher",
+    tunisianText: "Vorgeschlagen: bleiben frei.",
+    internationalLabel: "Internationale Besucher",
+    internationalText: "Vorgeschlagen: zur Erhaltung beitragen.",
+    returnsLabel: "Wohin Beiträge fließen würden",
     returns: [
       "Reinigung",
       "Erhalt",
@@ -679,8 +728,10 @@ const de: Dict = {
     note: "Die Beträge werden bekannt gegeben, sobald die finalen Vereinbarungen stehen.",
   },
   transparency: {
-    headline: "Wohin dein Beitrag fließt.",
-    body: "Wir erfinden niemals Zahlen. Der erste öffentliche Bericht listet Spenden, Ausgaben, Kosten und Fortschritt.",
+    headline: "Radikale Transparenz.",
+    body: "Jeder Beitrag. Jede Ausgabe. Jedes Ergebnis.",
+    support:
+      "Öffentliche Berichte zeigen, woher das Geld kommt, wohin es fließt und was sich verändert.",
     rows: [
       { label: "Reinigung", note: "tägliche Straßenteams" },
       { label: "Studierende und lokale Arbeiter", note: "bezahlte Arbeit, keine Versprechen" },
@@ -693,22 +744,25 @@ const de: Dict = {
   },
   progress: {
     headline: "Beweise, keine Versprechen.",
-    body: "Die echten Zahlen erscheinen mit dem ersten öffentlichen Bericht. Bis dahin erfinden wir nichts.",
+    body: "Die echten Zahlen erscheinen mit dem ersten öffentlichen Bericht.",
     comingSoon: "erster öffentlicher Bericht in Kürze",
     statLabels: [
       "Kilogramm entfernter Abfall",
       "gesammelte Zigarettenstummel",
       "gereinigte Straßen",
       "beteiligte Studierende",
-      "beteiligte lokale Arbeiter",
+      "lokale Teilnehmende",
       "gepflanzte Blumen",
       "verbesserte öffentliche Räume",
+      "Geld beigetragen",
+      "Geld reinvestiert",
     ],
     beforeAfter: "Vorher-/Nachher-Fotos erscheinen hier",
   },
   unesco: {
-    headline: "Welterbe. Weltverantwortung.",
-    body: "Sidi Bou Said wurde 2026 UNESCO-Welterbestätte. Ein Titel schützt eine Stadt nicht von allein. Menschen tun das.",
+    kicker: "UNESCO-WELTERBE · 2026",
+    headline: "Weltkulturerbe braucht lokale Hüter.",
+    body: "Die Anerkennung ist nicht die Ziellinie. Sie ist eine Verantwortung. Die UNESCO hat Sidi Bou Said 2026 in die Welterbeliste aufgenommen. Also handeln wir: für die Straßen, für die Menschen, für die nächsten 500 Jahre.",
   },
   fiveHundred: {
     years: ["200 Jahre.", "300 Jahre.", "500 Jahre."],
@@ -729,7 +783,7 @@ const de: Dict = {
       "Pflanzt Bougainvillea, Jasmin und Blumen in öffentliche Räume",
       "Schützt die Straßen für die nächsten 500 Jahre",
     ],
-    trust: "Jeder Beitrag wird im ersten öffentlichen Bericht ausgewiesen. Wir erfinden niemals Zahlen.",
+    trust: "Jeder Beitrag wird im ersten öffentlichen Bericht ausgewiesen.",
     qrSoon: "qr-code in Kürze verfügbar",
     linkSoon:
       "Der sichere Spendelink öffnet sich hier, sobald er bereit ist. Verfolge die Mission in der Zwischenzeit.",
@@ -739,8 +793,8 @@ const de: Dict = {
     sub: "Hilf uns, Sidi Bou Said zu schützen.",
   },
   footer: {
-    missionLine: "Sidi Bou Said zur saubersten Stadt der Welt machen.",
-    tagline: "Studierende. Einheimische. Eine Stadt. Eine Mission.",
+    missionLine: "Sidi Bou Said für die nächsten 500 Jahre schützen.",
+    tagline: "Studierende. Einheimische. Besucher. Eine Stadt. Eine Verantwortung.",
     location: "Sidi Bou Said, Tunesien",
     heritage: "UNESCO-Welterbestätte seit 2026",
   },

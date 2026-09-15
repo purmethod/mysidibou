@@ -82,6 +82,11 @@ export function ProblemSection() {
           </Reveal>
         ))}
       </div>
+      {dict.problem.body ? (
+        <Reveal delay={2}>
+          <p className="section-copy mt-12 text-base md:text-lg">{dict.problem.body}</p>
+        </Reveal>
+      ) : null}
     </Section>
   );
 }
@@ -271,6 +276,11 @@ export function LocalsSection() {
           <Reveal delay={1}>
             <p className="section-copy mt-6 text-base md:text-lg">{dict.locals.body}</p>
           </Reveal>
+          {dict.locals.value ? (
+            <Reveal delay={2}>
+              <p className="section-copy mt-4 text-base md:text-lg">{dict.locals.value}</p>
+            </Reveal>
+          ) : null}
         </div>
         <Reveal className="order-1 lg:order-2">
           <div className="split-media aspect-[4/3] w-full">
@@ -339,17 +349,22 @@ export function ContributionSection() {
         <Reveal delay={1}>
           <p className="section-copy mt-6 text-base md:text-lg">{dict.contribution.body}</p>
         </Reveal>
+        <Reveal delay={1}>
+          <p className="font-display mt-6 text-2xl italic text-cobalt">
+            {dict.contribution.tagline}
+          </p>
+        </Reveal>
         <div className="mt-10 grid gap-8 md:grid-cols-3">
           <Reveal delay={1}>
-            <p className="eyebrow">Tunisian visitors</p>
-            <p className="mt-3 text-lg">Remain free. Always.</p>
+            <p className="eyebrow">{dict.contribution.tunisianLabel}</p>
+            <p className="mt-3 text-lg">{dict.contribution.tunisianText}</p>
           </Reveal>
           <Reveal delay={2}>
-            <p className="eyebrow">International visitors</p>
-            <p className="mt-3 text-lg">Contribute to the preservation of the town.</p>
+            <p className="eyebrow">{dict.contribution.internationalLabel}</p>
+            <p className="mt-3 text-lg">{dict.contribution.internationalText}</p>
           </Reveal>
           <Reveal delay={3}>
-            <p className="eyebrow">The money returns here</p>
+            <p className="eyebrow">{dict.contribution.returnsLabel}</p>
             <ul className="mt-3 space-y-1 text-lg">
               {dict.contribution.returns.map((item) => (
                 <li key={item}>{item}</li>
@@ -376,6 +391,9 @@ export function TransparencySection() {
       <Reveal>
         <Headline>{dict.transparency.headline}</Headline>
         <p className="section-copy mt-6 text-base md:text-lg">{dict.transparency.body}</p>
+        {dict.transparency.support ? (
+          <p className="section-copy mt-4 text-base md:text-lg">{dict.transparency.support}</p>
+        ) : null}
       </Reveal>
       <div className="mt-12 max-w-3xl">
         {dict.transparency.rows.map((row, i) => (
@@ -410,7 +428,7 @@ export function ProgressSection() {
         <p className="section-copy mt-6 text-base md:text-lg">{dict.progress.body}</p>
       </Reveal>
 
-      <div className="mt-12 grid grid-cols-2 gap-x-10 gap-y-10 md:grid-cols-3 lg:grid-cols-4">
+      <div className="mt-12 grid grid-cols-2 gap-x-10 gap-y-10 md:grid-cols-3 lg:grid-cols-3">
         {site.stats.map((stat, i) => (
           <Reveal delay={((i % 3) + 1) as 1 | 2 | 3} key={dict.progress.statLabels[i]}>
             <div className="stat-cell">
@@ -453,6 +471,7 @@ export function UnescoSection() {
     <section className="bg-paper-deep">
       <Section className="section-pad text-center">
         <Reveal>
+          {dict.unesco.kicker ? <p className="eyebrow mb-5">{dict.unesco.kicker}</p> : null}
           <p className="font-display mx-auto max-w-3xl text-3xl leading-[1.1] md:text-5xl">
             {dict.unesco.headline}
           </p>

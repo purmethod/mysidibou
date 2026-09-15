@@ -1,0 +1,271 @@
+Update the existing mysidibou website.
+
+IMPORTANT:
+Keep the existing visual identity, logo, overall design language, typography, colors, photography style and layout wherever possible.
+
+Do NOT redesign the website from scratch.
+
+The goal is to strengthen the message and reposition mysidibou from primarily a cleanup initiative into a broader model for protecting and preserving Sidi Bou Said as a UNESCO World Heritage Site.
+
+Responsibility comes first.
+
+The website should communicate:
+heritage
+responsibility
+local people
+students
+responsible tourism
+preservation
+transparency
+measurable action
+the next 500 years
+
+Make the following changes:
+
+1. HERO
+
+Keep the strong 500 year idea, but change the main messaging to:
+
+“Protecting Sidi Bou Said for the next 500 years.”
+
+Directly underneath:
+
+“Our first mission: make Sidi Bou Said the cleanest city in the world.”
+
+The cleanest city mission remains important. It is the first visible and measurable mission, but the larger vision is the long term protection of Sidi Bou Said.
+
+2. VISITOR RESPONSIBILITY
+
+Replace messaging that makes every tourist sound like the problem.
+
+Move from guilt toward shared responsibility.
+
+Use:
+
+“Millions come to experience its beauty.
+Together, we can help preserve it.”
+
+The existing references to plastic, cigarette butts, waste, mass tourism and pressure on public spaces can remain.
+
+The message should be:
+tourism is not the enemy.
+unmanaged impact is the challenge.
+visitors can become part of the solution.
+
+3. THE CLEANEST CITY IN THE WORLD
+
+KEEP this section and KEEP the challenge.
+
+“The cleanest city in the world.”
+
+This is intentionally ambitious.
+
+Do not remove or weaken it.
+
+It should remain one of the first major missions of mysidibou.
+
+4. STUDENTS / NEXT GENERATION
+
+KEEP:
+
+“The next generation takes responsibility.”
+
+This line is important and emotionally strong.
+
+Improve the supporting text to:
+
+“A team of students works alongside local people to observe, document, design and improve the town.”
+
+Add or emphasize:
+
+“The city becomes the classroom.”
+
+This section should communicate that Sidi Bou Said itself becomes a living laboratory for architecture, preservation, public space and responsible tourism.
+
+5. LOCAL COMMUNITY
+
+Strengthen the role of local people.
+
+Keep the idea that the people who live and work in Sidi Bou Said are the heart of the town.
+
+Add the principle:
+
+“Preservation should create local value.”
+
+Explain that value generated through the project should flow back into Sidi Bou Said and support local workers, students, craftsmen, public spaces, nature and preservation.
+
+Do not make this sound corporate.
+
+Keep it human, simple and direct.
+
+6. RESPONSIBLE TOURISM / CONTRIBUTION
+
+Rework the current entrance contribution section.
+
+Do NOT present a visitor contribution or entrance system as if it is already an officially implemented rule.
+
+Instead present it as part of a developing model for responsible tourism.
+
+Headline:
+
+“A new model for responsible tourism.”
+
+Supporting direction:
+
+“We are developing a model in which international tourism can directly contribute to the preservation of Sidi Bou Said.”
+
+Keep the idea that Tunisian visitors should remain free as part of the proposed model, but make clear that this is the direction being developed, not an already implemented municipal regulation.
+
+Keep or introduce:
+
+“Visit. Contribute. Preserve.”
+
+The tone should be visionary but credible.
+
+7. TRANSPARENCY
+
+Simplify the existing transparency messaging.
+
+Avoid repeatedly saying:
+“We never invent numbers.”
+
+Say it once through a stronger concept:
+
+“Radical transparency.”
+
+Then:
+
+“Every contribution. Every expense. Every result.”
+
+Supporting text:
+
+“Public reports will show where the money came from, where it went and what changed.”
+
+Keep the existing philosophy of complete transparency.
+
+8. KPI / PROOF SECTION
+
+KEEP the KPI counters and placeholders.
+
+The project has only just started, so it is completely acceptable that the numbers are not populated yet.
+
+Keep metrics such as:
+
+kilograms of waste removed
+cigarette butts collected
+streets cleaned
+students involved
+local participants
+money contributed
+money reinvested
+
+KEEP:
+
+“Proof, not promises.”
+
+Once real data becomes available, these placeholders will be replaced with actual numbers.
+
+9. UNESCO WORLD HERITAGE
+
+Move UNESCO much further up the website.
+
+This should establish immediately that mysidibou is not simply about cleaning streets. It is about protecting a place of international cultural importance.
+
+Create a clear section near the beginning:
+
+“UNESCO WORLD HERITAGE · 2026”
+
+Headline:
+
+“World heritage needs local guardians.”
+
+Supporting text:
+
+“Recognition is not the finish line.
+It is a responsibility.”
+
+Connect this naturally to the larger mission of mysidibou.
+
+UNESCO has highlighted the importance of tourism strategy, tourism management and addressing the challenges associated with overtourism.
+
+Do not overload this section with institutional language.
+
+Use UNESCO as context for why action, responsibility and long term thinking matter.
+
+10. FINAL MESSAGE / FOOTER
+
+Replace the narrow closing message:
+
+“Turning Sidi Bou Said into the cleanest city in the world.”
+
+with:
+
+“Protecting Sidi Bou Said for the next 500 years.”
+
+Underneath:
+
+“Students. Locals. Visitors.
+One city. One responsibility.”
+
+11. OVERALL STORY
+
+Restructure the storytelling hierarchy so the website communicates:
+
+SIDI BOU SAID
+↓
+UNESCO WORLD HERITAGE
+↓
+RESPONSIBILITY
+↓
+THE NEXT GENERATION
+↓
+LOCAL COMMUNITY
+↓
+THE CLEANEST CITY IN THE WORLD
+↓
+RESPONSIBLE TOURISM
+↓
+FUNDING / CONTRIBUTIONS
+↓
+VISIBLE ACTION
+↓
+RADICAL TRANSPARENCY
+↓
+MEASURABLE RESULTS
+↓
+THE NEXT 500 YEARS
+
+The visitor should understand that cleaning is the first mission, not the limit of the project.
+
+mysidibou is evolving from a cleanup initiative into a model for the long term preservation of a UNESCO World Heritage Site.
+
+12. TONE
+
+The entire website should feel:
+
+human
+ambitious
+responsible
+optimistic
+local
+international
+transparent
+architectural
+credible
+
+Avoid NGO bureaucracy.
+Avoid corporate sustainability language.
+Avoid guilt based tourism messaging.
+Avoid excessive explanations.
+
+Use short, powerful sentences.
+
+Responsibility first.
+
+Beauty follows.
+
+Do not change the existing logo.
+
+Do not unnecessarily redesign sections that already work.
+
+Preserve the existing visual character of mysidibou while making the narrative significantly stronger.

@@ -58,9 +58,11 @@ export const site = {
     { value: "-" }, // cigarette butts collected
     { value: "-" }, // streets cleaned
     { value: "-" }, // students involved
-    { value: "-" }, // local workers involved
+    { value: "-" }, // local participants
     { value: "-" }, // flowers planted
     { value: "-" }, // public spaces improved
+    { value: "-" }, // money contributed
+    { value: "-" }, // money reinvested
   ],
 
   /* ---------- Team (placeholders until real members) ----------

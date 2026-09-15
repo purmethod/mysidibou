@@ -34,6 +34,7 @@ function Index() {
       <ScrollProgress />
       <HeroSection />
       <MarqueeSection />
+      <UnescoSection />
       <ProblemSection />
       <MissionSection />
       <PeopleSection />
@@ -44,7 +45,6 @@ function Index() {
       <ContributionSection />
       <TransparencySection />
       <ProgressSection />
-      <UnescoSection />
       <FiveHundredSection />
       <FollowSection />
       <DonateSection />
