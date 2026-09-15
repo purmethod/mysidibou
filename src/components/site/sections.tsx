@@ -306,7 +306,7 @@ export function EntranceSection() {
         <Reveal>
           <div className="split-media aspect-[16/10] w-full">
             <img
-              alt="Fell and jasmine beginning to climb a light trellis on a white wall"
+              alt="Volunteers welcoming visitors at the flower gate of Sidi Bou Said"
               className="h-full w-full object-cover"
               loading="lazy"
               src={site.media.entrance}
