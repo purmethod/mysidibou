@@ -282,7 +282,7 @@ export function LocalsSection() {
         <Reveal className="order-1 lg:order-2">
           <div className="split-media aspect-[4/3] w-full">
             <img
-              alt="Volunteers welcoming visitors at the flower gate of Sidi Bou Said"
+              alt="A flower seller arranging jasmine flowers in a white street of Sidi Bou Said, fell climbing the walls"
               className="h-full w-full object-cover"
               loading="lazy"
               src={site.media.flowerSeller}
