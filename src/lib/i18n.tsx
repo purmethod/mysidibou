@@ -45,7 +45,7 @@ const en = {
   marquee: "plastic out. beauty back.",
   journey: [
     {
-      label: "the town",
+      label: "the village",
       kicker: "sidi bou said, tunisia",
       title: "Protecting Sidi Bou Said for the next 500 years.",
       body: "Our first mission: make Sidi Bou Said the cleanest village in the world.",
@@ -53,7 +53,7 @@ const en = {
     {
       label: "the streets",
       title: "White lime and cobalt blue.",
-      body: "You will not see the problem at first. It hides under the bougainvillea.",
+      body: "You will not see the problem at first. It hides under the fell.",
     },
     {
       label: "the problem",
@@ -70,7 +70,7 @@ const en = {
     },
     {
       label: "the mission",
-      title: "The cleanest city in the world.",
+      title: "The cleanest village in the world.",
       body: "Paid local cleaning teams. Students. Residents. Every street, every corner, every day.",
     },
     {
@@ -92,11 +92,11 @@ const en = {
   },
   mission: {
     headline: "The cleanest village in the world.",
-    sub: "Cleaning is where it starts. Students and locals keep the streets clean, the walls green and the village documented.",
+    sub: "Cleanest is not a feeling. It is a standard.",
     rows: [
-      "clean: every street, every day.",
-      "green: fell and jasmine.",
-      "document: the students map the village.",
+      "not one piece of plastic on the stones.",
+      "not one cigarette butt in the cracks.",
+      "not one day skipped.",
     ],
     footer: "",
   },
@@ -126,10 +126,10 @@ const en = {
   },
   contribution: {
     headline: "A new model for responsible tourism.",
-    body: "We are developing a model in which international tourism directly funds the preservation of Sidi Bou Said. One gate, one village: every visitor enters the old village through the flower gate.",
+    body: "One gate, one village: every visitor enters the old village through the flower gate. Sidi Bou Said belongs to Tunisia. Tunisians are never charged — they are invited. Ten dinar from a Tunisian protects what is already his.",
     tagline: "Visit. Contribute. Preserve.",
     tunisianLabel: "Tunisian visitors",
-    tunisianText: "Proposed: free. Always.",
+    tunisianText: "Free. Always. Invited to give 10 dinar for their own village.",
     internationalLabel: "International visitors",
     internationalText: "Proposed: 10 dinar per person.",
     closing:
@@ -151,6 +151,10 @@ const en = {
     body: "Every contribution. Every expense. Every result.",
     support:
       "Public reports will show where the money came from, where it went and what changed.",
+    reportsTitle: "Two reports",
+    report1: "December 2026 — our first public report. Donations, spending, results.",
+    report2:
+      "1 December 2027 — Tunisia's official report to the UNESCO World Heritage Centre on the conservation of Sidi Bou Said. UNESCO named tourism pressure among the main threats to the village. Every street cleaned, every flower planted and every visitor counted is part of that answer.",
     rows: [
       { label: "cleaning", note: "daily street teams" },
       { label: "students and local workers", note: "paid work, not promises" },
@@ -159,11 +163,11 @@ const en = {
       { label: "local community", note: "cafés, shops, families" },
       { label: "project infrastructure", note: "tools, transport, reports" },
     ],
-    honesty: "First public report: [MONTH] 2026.",
+    honesty: "First public report: December 2026.",
   },
   progress: {
     headline: "Proof, not promises.",
-    body: "Real numbers land here with the first public report: [MONTH] 2026.",
+    body: "Real numbers land here with the first public report: December 2026.",
     comingSoon: "first public report upcoming",
     statLabels: [
       "kilograms of waste removed",
@@ -181,7 +185,7 @@ const en = {
   unesco: {
     kicker: "UNESCO WORLD HERITAGE · 2026",
     headline: "World heritage needs local guardians.",
-    body: "Recognition is not the finish line. It is a responsibility. UNESCO placed Sidi Bou Said on the World Heritage List on 25 July 2026. Now we act: for the streets, for the people, for the next 500 years.",
+    body: "Recognition is not the finish line. It is a responsibility. UNESCO placed Sidi Bou Said on the World Heritage List on 25 July 2026. Now we act: for the streets, for the people, for the next 500 years. By 1 December 2027, Tunisia reports to UNESCO on how this village is being protected. We intend to be part of that answer.",
   },
   fiveHundred: {
     years: ["200 years.", "300 years.", "500 years."],
@@ -239,7 +243,7 @@ const fr: Dict = {
   marquee: "Plastique dehors. Beauté de retour.",
   journey: [
     {
-      label: "la ville",
+      label: "le village",
       kicker: "sidi bou said, tunisie",
       title: "Protéger Sidi Bou Said pour les 500 prochaines années.",
       body: "Notre première mission : faire de Sidi Bou Said le village le plus propre du monde.",
@@ -247,7 +251,7 @@ const fr: Dict = {
     {
       label: "les rues",
       title: "Chaux blanche et bleu cobalt.",
-      body: "Au premier regard, le problème ne se voit pas. Il se cache sous les bougainvilliers.",
+      body: "Au premier regard, le problème ne se voit pas. Il se cache sous le fell.",
     },
     {
       label: "le problème",
@@ -286,11 +290,11 @@ const fr: Dict = {
   },
   mission: {
     headline: "Le village le plus propre du monde.",
-    sub: "Le nettoyage, c'est par là que tout commence. Étudiants et habitants gardent les rues propres, les murs verts et le village documenté.",
+    sub: "Le plus propre n'est pas un ressenti. C'est une norme.",
     rows: [
-      "propre : chaque rue, chaque jour.",
-      "vert : fell et jasmin.",
-      "documenter : les étudiants cartographient le village.",
+      "aucun plastique sur les pierres.",
+      "aucun mégot dans les interstices.",
+      "aucun jour sauté.",
     ],
     footer: "",
   },
@@ -320,10 +324,10 @@ const fr: Dict = {
   },
   contribution: {
     headline: "Un nouveau modèle de tourisme responsable.",
-    body: "Nous développons un modèle dans lequel le tourisme international finance directement la préservation de Sidi Bou Said. Une porte, un village : chaque visiteur entre dans le vieux village par la porte fleurie.",
+    body: "Une porte, un village : chaque visiteur entre dans le vieux village par la porte fleurie. Sidi Bou Said appartient à la Tunisie. Les Tunisiens ne paient jamais : ils sont invités. Dix dinars d'un Tunisien protègent ce qui lui appartient déjà.",
     tagline: "Visiter. Contribuer. Préserver.",
     tunisianLabel: "Visiteurs tunisiens",
-    tunisianText: "Proposé : libre. Toujours.",
+    tunisianText: "Libre. Toujours. Invités à donner 10 dinars pour leur propre village.",
     internationalLabel: "Visiteurs internationaux",
     internationalText: "Proposé : 10 dinars par personne.",
     closing:
@@ -345,6 +349,10 @@ const fr: Dict = {
     body: "Chaque contribution. Chaque dépense. Chaque résultat.",
     support:
       "Les rapports publics montreront d'où vient l'argent, où il va et ce qui change.",
+    reportsTitle: "Deux rapports",
+    report1: "Décembre 2026 — notre premier rapport public. Dons, dépenses, résultats.",
+    report2:
+      "Le 1er décembre 2027 — le rapport officiel de la Tunisie au Centre du patrimoine mondial de l'UNESCO sur la conservation de Sidi Bou Said. L'UNESCO a cité la pression touristique parmi les principales menaces pesant sur le village. Chaque rue nettoyée, chaque fleur plantée et chaque visiteur compté fait partie de cette réponse.",
     rows: [
       { label: "nettoyage", note: "équipes de rue quotidiennes" },
       { label: "étudiants et travailleurs locaux", note: "travail payé, pas des promesses" },
@@ -353,11 +361,11 @@ const fr: Dict = {
       { label: "communauté locale", note: "cafés, boutiques, familles" },
       { label: "infrastructure du projet", note: "outils, transport, rapports" },
     ],
-    honesty: "Premier rapport public : [MONTH] 2026.",
+    honesty: "Premier rapport public : décembre 2026.",
   },
   progress: {
     headline: "Des preuves, pas des promesses.",
-    body: "Les vrais chiffres arriveront avec le premier rapport public : [MONTH] 2026.",
+    body: "Les vrais chiffres arriveront avec le premier rapport public : décembre 2026.",
     comingSoon: "premier rapport public à venir",
     statLabels: [
       "kilogrammes de déchets retirés",
@@ -375,7 +383,7 @@ const fr: Dict = {
   unesco: {
     kicker: "PATRIMOINE MONDIAL UNESCO · 2026",
     headline: "Le patrimoine mondial a besoin de gardiens locaux.",
-    body: "La reconnaissance n'est pas la ligne d'arrivée. C'est une responsabilité. L'UNESCO a inscrit Sidi Bou Said au patrimoine mondial le 25 juillet 2026. Alors nous agissons : pour les rues, pour les gens, pour les 500 prochaines années.",
+    body: "La reconnaissance n'est pas la ligne d'arrivée. C'est une responsabilité. L'UNESCO a inscrit Sidi Bou Said au patrimoine mondial le 25 juillet 2026. Alors nous agissons : pour les rues, pour les gens, pour les 500 prochaines années. D'ici le 1er décembre 2027, la Tunisie rend compte à l'UNESCO de la protection de ce village. Nous entendons faire partie de cette réponse.",
   },
   fiveHundred: {
     years: ["200 ans.", "300 ans.", "500 ans."],
@@ -431,7 +439,7 @@ const ar: Dict = {
   marquee: "أخرجوا البلاستيك. أعيدوا الجمال.",
   journey: [
     {
-      label: "البلدة",
+      label: "القرية",
       kicker: "سيدي بوسعيد، تونس",
       title: "حماية سيدي بوسعيد لخمسمئة عام قادمة.",
       body: "مهمتنا الأولى: جعل سيدي بوسعيد أنظف قرية في العالم.",
@@ -439,7 +447,7 @@ const ar: Dict = {
     {
       label: "الشوارع",
       title: "جير أبيض وأزرق كوبالت.",
-      body: "لن ترى المشكلة في البداية. إنها تختبئ تحت البنفسج المتسلّق.",
+      body: "لن ترى المشكلة في البداية. إنها تختبئ تحت الفلّ.",
     },
     {
       label: "المشكلة",
@@ -456,8 +464,8 @@ const ar: Dict = {
     },
     {
       label: "المهمة",
-      title: "أنظف مدينة في العالم.",
-      body: "فرق محلية بأجر. طلّاب. أهل البلدة. كل شارع، كل زاوية، كل يوم.",
+      title: "أنظف قرية في العالم.",
+      body: "فرق محلية بأجر. طلّاب. أهل القرية. كل شارع، كل زاوية، كل يوم.",
     },
     {
       label: "المستقبل",
@@ -478,11 +486,11 @@ const ar: Dict = {
   },
   mission: {
     headline: "أنظف قرية في العالم.",
-    sub: "التنظيف هو نقطة البداية. الطلّاب والأهالي يحافظون على الشوارع نظيفة، والجدران خضراء، والقرية موثّقة.",
+    sub: "الأكثر نظافة ليس شعوراً. إنه معيار.",
     rows: [
-      "نظيف: كل شارع، كل يوم.",
-      "أخضر: فلّ وياسمين.",
-      "توثيق: الطلّاب يرسّمون القرية.",
+      "لا قطعة بلاستيك واحدة على الحجارة.",
+      "لا عقب سيجارة واحدة في الشقوق.",
+      "لا يوم واحد مُتخطّى.",
     ],
     footer: "",
   },
@@ -512,10 +520,10 @@ const ar: Dict = {
   },
   contribution: {
     headline: "نموذج جديد للسياحة المسؤولة.",
-    body: "نطوّر نموذجاً يمول فيه السياحة الدولية مباشرةً الحفاظ على سيدي بوسعيد. بوابة واحدة، قرية واحدة: كل زائر يدخل القرية القديمة عبر بوابة الزهور.",
+    body: "بوابة واحدة، قرية واحدة: كل زائر يدخل القرية القديمة عبر بوابة الزهور. سيدي بوسعيد ملك لتونس. التونسيون لا يُدفَعون أبداً: إنهم مدعوّون. عشرة دنانير من تونسي تحمي ما هو ملكه أصلاً.",
     tagline: "زُر. ساهم. احفظ.",
     tunisianLabel: "الزوار التونسيون",
-    tunisianText: "مقترح: مجاناً. دائماً.",
+    tunisianText: "مجاناً. دائماً. مدعوّ لمنح 10 دنانير لقريته الخاصة.",
     internationalLabel: "الزوار الدوليون",
     internationalText: "مقترح: 10 دنانير للشخص.",
     closing:
@@ -537,6 +545,10 @@ const ar: Dict = {
     body: "كل مساهمة. كل مصروف. كل نتيجة.",
     support:
       "التقارير العامة ستُظهر من أين جاء المال، وإلى أين ذهب، وماذا تغيّر.",
+    reportsTitle: "تقريران",
+    report1: "ديسمبر 2026 — تقريرنا العام الأول. تبرعات، مصروفات، نتائج.",
+    report2:
+      "1 ديسمبر 2027 — التقرير الرسمي لتونس إلى مركز التراث العالمي لليونسكو حول حفظ سيدي بوسعيد. ذكرت اليونسكو ضغط السياحة بين التهديدات الرئيسية للقرية. كل شارع نُظّف، وكل زهرة زُرعت، وكل زائر جرى إحصاؤه جزء من تلك الإجابة.",
     rows: [
       { label: "التنظيف", note: "فرق يومية في الشوارع" },
       { label: "الطلّاب والعمال المحليون", note: "عمل بأجر، لا وعود" },
@@ -545,11 +557,11 @@ const ar: Dict = {
       { label: "المجتمع المحلي", note: "مقاهٍ، محلات، عائلات" },
       { label: "بنية المشروع", note: "أدوات، نقل، تقارير" },
     ],
-    honesty: "أول تقرير عام: [MONTH] 2026.",
+    honesty: "أول تقرير عام: ديسمبر 2026.",
   },
   progress: {
     headline: "إثبات، لا وعود.",
-    body: "الأرقام الحقيقية ستظهر مع التقرير العام الأول: [MONTH] 2026.",
+    body: "الأرقام الحقيقية ستظهر مع التقرير العام الأول: ديسمبر 2026.",
     comingSoon: "التقرير العام الأول قريباً",
     statLabels: [
       "كيلوغرامات النفايات المُزالة",
@@ -567,7 +579,7 @@ const ar: Dict = {
   unesco: {
     kicker: "تراث عالمي لليونسكو · 2026",
     headline: "التراث العالمي يحتاج حرّاساً محليين.",
-    body: "الاعتراف ليس خط النهاية. إنه مسؤولية. أدرجت اليونسكو سيدي بوسعيد في قائمة التراث العالمي في 25 يوليو 2026. لذلك نتحرك: من أجل الشوارع، ومن أجل الناس، ومن أجل الـ500 عام القادمة.",
+    body: "الاعتراف ليس خط النهاية. إنه مسؤولية. أدرجت اليونسكو سيدي بوسعيد في قائمة التراث العالمي في 25 يوليو 2026. لذلك نتحرك: من أجل الشوارع، ومن أجل الناس، ومن أجل الـ500 عام القادمة. بحلول 1 ديسمبر 2027، ترفع تونس تقريراً إلى اليونسكو عن حماية هذه القرية. ننوي أن نكون جزءاً من تلك الإجابة.",
   },
   fiveHundred: {
     years: ["200 عاماً.", "300 عاماً.", "500 عاماً."],
@@ -622,7 +634,7 @@ const de: Dict = {
   marquee: "Plastik raus. Schönheit zurück.",
   journey: [
     {
-      label: "die Stadt",
+      label: "das Dorf",
       kicker: "sidi bou said, tunesien",
       title: "Sidi Bou Said für die nächsten 500 Jahre schützen.",
       body: "Unsere erste Mission: Sidi Bou Said zum saubersten Dorf der Welt machen.",
@@ -630,7 +642,7 @@ const de: Dict = {
     {
       label: "die Gassen",
       title: "Weißer Kalk und Kobaltblau.",
-      body: "Zuerst sieht man das Problem nicht. Es versteckt sich unter der Bougainvillea.",
+      body: "Zuerst sieht man das Problem nicht. Es versteckt sich unter dem fell.",
     },
     {
       label: "das Problem",
@@ -647,7 +659,7 @@ const de: Dict = {
     },
     {
       label: "die Mission",
-      title: "Die sauberste Stadt der Welt.",
+      title: "Das sauberste Dorf der Welt.",
       body: "Bezahlte lokale Reinigungsteams. Studierende. Anwohner. Jede Straße, jede Ecke, jeden Tag.",
     },
     {
@@ -669,11 +681,11 @@ const de: Dict = {
   },
   mission: {
     headline: "Das sauberste Dorf der Welt.",
-    sub: "Reinigen ist der Anfang. Studierende und Einheimische halten die Straßen sauber, die Wände grün und das Dorf dokumentiert.",
+    sub: "Sauber ist kein Gefühl. Es ist ein Standard.",
     rows: [
-      "sauber: jede Straße, jeden Tag.",
-      "grün: fell und Jasmin.",
-      "dokumentieren: die Studierenden kartieren das Dorf.",
+      "kein einziges Plastikteil auf den Steinen.",
+      "keine einzige Kippe in den Fugen.",
+      "kein einziger übersprungener Tag.",
     ],
     footer: "",
   },
@@ -703,10 +715,10 @@ const de: Dict = {
   },
   contribution: {
     headline: "Ein neues Modell für verantwortungsvollen Tourismus.",
-    body: "Wir entwickeln ein Modell, in dem internationaler Tourismus die Erhaltung von Sidi Bou Said direkt finanziert. Ein Tor, ein Dorf: Jeder Besucher betritt das alte Dorf durch das Blumentor.",
+    body: "Ein Tor, ein Dorf: Jeder Besucher betritt das alte Dorf durch das Blumentor. Sidi Bou Said gehört zu Tunesien. Tunesier zahlen nie: Sie sind eingeladen. Zehn Dinar eines Tunesiers schützen, was bereits seins ist.",
     tagline: "Besuchen. Beitragen. Bewahren.",
     tunisianLabel: "Tunesische Besucher",
-    tunisianText: "Vorgeschlagen: frei. Immer.",
+    tunisianText: "Frei. Immer. Eingeladen, 10 Dinar für das eigene Dorf zu geben.",
     internationalLabel: "Internationale Besucher",
     internationalText: "Vorgeschlagen: 10 Dinar pro Person.",
     closing:
@@ -728,6 +740,10 @@ const de: Dict = {
     body: "Jeder Beitrag. Jede Ausgabe. Jedes Ergebnis.",
     support:
       "Öffentliche Berichte zeigen, woher das Geld kommt, wohin es fließt und was sich verändert.",
+    reportsTitle: "Zwei Berichte",
+    report1: "Dezember 2026 — unser erster öffentlicher Bericht. Spenden, Ausgaben, Ergebnisse.",
+    report2:
+      "Der 1. Dezember 2027 — der offizielle Bericht Tunesiens an das UNESCO-Welterbezentrum über die Erhaltung von Sidi Bou Said. Die UNESCO nannte den Tourismusdruck unter den Hauptgefahren für das Dorf. Jede gereinigte Straße, jede gepflanzte Blume und jeder gezählte Besucher ist Teil dieser Antwort.",
     rows: [
       { label: "Reinigung", note: "tägliche Straßenteams" },
       { label: "Studierende und lokale Arbeiter", note: "bezahlte Arbeit, keine Versprechen" },
@@ -736,11 +752,11 @@ const de: Dict = {
       { label: "lokale Gemeinschaft", note: "Cafés, Läden, Familien" },
       { label: "Projektinfrastruktur", note: "Werkzeug, Transport, Berichte" },
     ],
-    honesty: "Erster öffentlicher Bericht: [MONTH] 2026.",
+    honesty: "Erster öffentlicher Bericht: Dezember 2026.",
   },
   progress: {
     headline: "Beweise, keine Versprechen.",
-    body: "Die echten Zahlen erscheinen mit dem ersten öffentlichen Bericht: [MONTH] 2026.",
+    body: "Die echten Zahlen erscheinen mit dem ersten öffentlichen Bericht: Dezember 2026.",
     comingSoon: "erster öffentlicher Bericht in Kürze",
     statLabels: [
       "Kilogramm entfernter Abfall",
@@ -758,7 +774,7 @@ const de: Dict = {
   unesco: {
     kicker: "UNESCO-WELTERBE · 2026",
     headline: "Weltkulturerbe braucht lokale Hüter.",
-    body: "Die Anerkennung ist nicht die Ziellinie. Sie ist eine Verantwortung. Die UNESCO hat Sidi Bou Said am 25. Juli 2026 in die Welterbeliste aufgenommen. Also handeln wir: für die Straßen, für die Menschen, für die nächsten 500 Jahre.",
+    body: "Die Anerkennung ist nicht die Ziellinie. Sie ist eine Verantwortung. Die UNESCO hat Sidi Bou Said am 25. Juli 2026 in die Welterbeliste aufgenommen. Also handeln wir: für die Straßen, für die Menschen, für die nächsten 500 Jahre. Bis zum 1. Dezember 2027 berichtet Tunesien der UNESCO, wie dieses Dorf geschützt wird. Wir wollen Teil dieser Antwort sein.",
   },
   fiveHundred: {
     years: ["200 Jahre.", "300 Jahre.", "500 Jahre."],

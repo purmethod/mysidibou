@@ -1,7 +1,7 @@
 /**
- * mysidibou navigation: fixed wordmark bar, section links, language
- * switcher and the sticky donate pill that appears while scrolling.
- * On phones the links collapse into a burger menu.
+ * mysidibou navigation: fixed wordmark bar, language switcher beside the
+ * logo (always visible, incl. mobile), section links, and the sticky donate
+ * pill that appears while scrolling.
  */
 import { useEffect, useState } from "react";
 
@@ -24,6 +24,7 @@ export function LanguageSwitch() {
       {LANGS.map((item) => (
         <button
           aria-current={lang === item.code ? "true" : undefined}
+          className={lang === item.code ? "is-active" : undefined}
           key={item.code}
           onClick={() => setLang(item.code as Lang)}
           type="button"
@@ -52,10 +53,13 @@ export function SiteNav() {
 
   return (
     <header className={`site-nav ${solid || open ? "is-solid" : ""}`}>
-      <a className="site-nav__wordmark" href="#top" aria-label="mysidibou">
-        mysidibou
-        <HeartIcon className="wordmark-heart" />
-      </a>
+      <div className="site-nav__left">
+        <a className="site-nav__wordmark" href="#top" aria-label="mysidibou">
+          mysidibou
+          <HeartIcon className="wordmark-heart" />
+        </a>
+        <LanguageSwitch />
+      </div>
 
       <div className="site-nav__right">
         <nav aria-label="Primary" className="site-nav__links">
@@ -64,7 +68,6 @@ export function SiteNav() {
               {dict.nav[item.key]}
             </a>
           ))}
-          <LanguageSwitch />
           <a className="site-nav__link site-nav__link--donate" href={donateHref}>
             {dict.nav.donate}
           </a>
@@ -85,11 +88,7 @@ export function SiteNav() {
       </div>
 
       {open ? (
-        <nav
-          aria-label="Mobile"
-          className="site-nav__menu"
-          id="site-nav-menu"
-        >
+        <nav aria-label="Mobile" className="site-nav__menu" id="site-nav-menu">
           {anchors.map((item) => (
             <a
               className="site-nav__menu-link"
@@ -101,7 +100,6 @@ export function SiteNav() {
             </a>
           ))}
           <div className="site-nav__menu-foot">
-            <LanguageSwitch />
             <a
               className="site-nav__link site-nav__link--donate"
               href={donateHref}

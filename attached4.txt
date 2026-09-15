@@ -1,0 +1,127 @@
+Revise the existing mysidibou website. Keep the design system, layout, section order, images, buttons and anchors. Change the header as described and replace the section copy with the text below. Apply every text change to all four language versions (EN, FR, DE, AR). Keep the word "fell" untranslated in all languages – it is the Tunisian name of the flower.
+
+HEADER / LANGUAGE SWITCHER
+Move the language switcher from the menu area to the left of the header, directly next to the "mysidibou" logo, so every visitor sees it immediately without opening the menu.
+- Order in the header: logo "mysidibou" → language switcher (EN · FR · DE · AR) → nav links → donate button.
+- Show all four language codes inline, separated by thin dividers. The active language is highlighted, the others are plain links. No dropdown, no globe icon only.
+- Keep it small and quiet: same typeface as the nav, smaller size, lowercase or small caps, so it sits beside the logo without competing with it.
+- On mobile: keep the four language codes visible in the header bar next to the logo, in a single row. The nav collapses into the menu, the language switcher does not.
+- The switcher stays visible when the header is sticky.
+- In the Arabic version the header mirrors right-to-left: logo on the right, switcher to its left.
+
+GLOBAL
+- Replace "city" and "town" with "village" everywhere: meta, hero, section titles, body, closing, footer. The official UNESCO name is "Village of Sidi Bou Said".
+- Replace "bougainvillea" with "fell" everywhere, including image alt texts.
+- Remove only the one placeholder team card that shows "[Name]" and "@insta". Keep the five real team cards (Paul Brinkmann, Manel Chaabene, Yasmine Hadj Said, Ahmed Khmiri, Maram Jelassi) exactly as they are.
+- Fix the missing line break in "first public report upcomingThe first public report is being prepared."
+- Delete the sentence "The work is real and it is happening now."
+- Delete the sentence "We create the conditions. Nature creates the architecture."
+- Paid cleaning teams are planned, not running. Write "We are building paid local cleaning teams." Never write that they already work every day.
+- Keep all counters and both "before / after photographs will appear here" lines.
+- If the donation link is not live at publish time: label every "donate now" button "follow the mission" linking to #follow. Restore "donate now" when the link is live.
+
+META
+Description: "Turning Sidi Bou Said into the cleanest village in the world. Students, locals and architects protecting a UNESCO World Heritage village for the next 500 years."
+
+HERO
+Title: "Protecting Sidi Bou Said for the next 500 years."
+Subline: "Our first mission: make Sidi Bou Said the cleanest village in the world."
+Tagline: "students. locals. one village. one mission."
+Marquee unchanged.
+
+UNESCO BLOCK
+Label: "UNESCO WORLD HERITAGE · 2026"
+Title: "World heritage needs local guardians."
+Body: "Recognition is not the finish line. It is a responsibility. UNESCO placed Sidi Bou Said on the World Heritage List on 25 July 2026. Now we act: for the streets, for the people, for the next 500 years. By 1 December 2027, Tunisia reports to UNESCO on how this village is being protected. We intend to be part of that answer."
+
+FOOTPRINT BLOCK
+Intro: "Millions come for its beauty. Every visit leaves something behind."
+List: plastic. / cigarette butts. / waste. / worn steps and walls.
+Closing: "Tourism is not the enemy. Unmanaged impact is. Visitors can become part of the solution."
+
+SECTION: MISSION
+Title: "The cleanest village in the world."
+Intro: "Cleanest is not a feeling. It is a standard."
+01 not one piece of plastic on the stones.
+02 not one cigarette butt in the cracks.
+03 not one day skipped.
+Delete the closing line about paid cleaning teams (it moves to the section "every street. every corner. every day.").
+
+SECTION: NEXT GENERATION
+Title: "The next generation takes responsibility."
+Line: "The village becomes the classroom."
+Body: "Architecture students from ENAU work alongside local people to observe, document, design and improve the village."
+List: talking / drawing / planning / cleaning / planting / documenting
+Image alt: "Architecture students from ENAU measuring and drawing a street in Sidi Bou Said"
+
+SECTION: TEAM
+Title: "The people behind the mission."
+Intro: "Architecture students from ENAU and local partners. The team grows with every report."
+
+SECTION: EVERY STREET
+Title: "every street. every corner. every day."
+Body: "Today, the students and local volunteers clean and document the village. Next: paid local cleaning teams, every day. Paid work, not promises."
+
+SECTION: LOCAL LIFE
+Title: "Protecting the village means strengthening local life."
+Body: "The people who live and work here are the heart of Sidi Bou Said: flower sellers, small shops, cafés, craftsmen, families. Every dinar the project generates flows back into the village."
+
+SECTION: FLOWER GATE
+Title: "Let nature build the entrance."
+Body: "No concrete. No masonry. Thin wires, light trellises, fell and jasmine. We set the frame. Nature does the rest. The flower gate stands where the old village begins. Every visit starts here."
+Image alt: "Fell and jasmine beginning to climb a light trellis on a white wall"
+
+SECTION: RESPONSIBLE TOURISM
+Title: "A new model for responsible tourism."
+Body: "One gate, one village: every visitor enters the old village through the flower gate. Sidi Bou Said belongs to Tunisia. Tunisians are never charged — they are invited. Ten dinar from a Tunisian protects what is already his."
+Line: "Visit. Contribute. Preserve."
+Column 1: "Tunisian visitors
+Free. Always.
+Invited to give 10 dinar for their own village."
+Column 2: "International visitors
+Proposed: 10 dinar per person."
+Closing: "Every dinar returns to the village: cleaning, flowers, students, local workers. Full breakdown under transparency. In preparation with the municipality of Sidi Bou Said."
+Delete the list "Where contributions would go" and the sentence "Amounts will be announced once final agreements are made."
+
+SECTION: TRANSPARENCY
+Title: "Radical transparency."
+Lines: "Every contribution. Every expense. Every result." / "Public reports will show where the money came from, where it went and what changed."
+Cards unchanged, except: "fell, jasmine, planting days" and "the historic fabric of the village".
+Add a two-column block "Two reports" below the cards:
+  "December 2026 — our first public report. Donations, spending, results."
+  "1 December 2027 — Tunisia's official report to the UNESCO World Heritage Centre on the conservation of Sidi Bou Said. UNESCO named tourism pressure among the main threats to the village. Every street cleaned, every flower planted and every visitor counted is part of that answer."
+Replace the line "first public report upcoming / The first public report is being prepared." with "First public report: December 2026."
+
+SECTION: PROOF
+Title: "Proof, not promises."
+Body: "Real numbers land here with the first public report: December 2026."
+Counters and both before/after lines unchanged.
+
+SECTION: 500 YEARS
+Unchanged.
+
+SECTION: FOLLOW
+Title: "Follow the mission."
+Body: "Videos, updates and stories from the streets."
+Links unchanged.
+
+SECTION: DONATE
+Title: "Your support keeps the streets clean."
+Body: "On a phone, one tap opens the donation page. On a computer, you can scan the QR code." (once only – delete the second occurrence)
+Lines: "The secure donation link opens here as soon as it is ready. Follow the mission in the meantime." / "Every contribution is accounted for in the first public report."
+What a contribution does:
+- Puts paid local cleaning teams on the streets every day
+- Plants fell and jasmine in public spaces
+- Builds the flower gate where the old village begins
+"qr code coming soon" unchanged.
+
+CLOSING
+Title: "One village. One generation. One responsibility."
+Line: "Help us protect Sidi Bou Said."
+
+FOOTER
+Tagline: "Protecting Sidi Bou Said for the next 500 years."
+Line: "Students. Locals. Visitors. One village. One responsibility."
+Status: "UNESCO World Heritage Site since 25 July 2026"
+
+Change nothing that is not listed here.

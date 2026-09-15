@@ -461,32 +461,68 @@ section.scroll-scrub .scroll-scrub__tags li {
   transform: translateY(1px);
 }
 
-/* language switcher */
+.site-nav__left {
+  display: flex;
+  align-items: center;
+}
+
+/* language switcher — inline codes beside the logo, thin dividers */
 .lang-switch {
   display: inline-flex;
   align-items: center;
-  gap: 0.15rem;
-  border: 1px solid var(--color-line);
-  padding: 0.2rem;
+  margin-inline-start: 0.85rem;
 }
 
 .lang-switch button {
+  position: relative;
   border: 0;
   background: transparent;
   color: var(--color-ink-soft);
   font: inherit;
-  font-size: 0.76rem;
+  font-size: 0.64rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   line-height: 1;
-  padding: 0.38rem 0.5rem;
+  padding: 0.4rem 0.42rem;
   cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: color 0.2s ease;
 }
 
-.lang-switch button[aria-current="true"] {
-  background: var(--color-cobalt);
-  color: #f7f5ef;
+.lang-switch button + button::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 0.8em;
+  width: 1px;
+  background: var(--color-line);
+}
+
+.lang-switch button:hover,
+.lang-switch button.is-active {
+  color: var(--color-ink);
+}
+
+.lang-switch button.is-active {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+  .site-nav__wordmark {
+    font-size: 1.2rem;
+  }
+
+  .lang-switch {
+    margin-inline-start: 0.55rem;
+  }
+
+  .lang-switch button {
+    padding: 0.4rem 0.32rem;
+  }
 }
 
 /* sticky donate pill (appears while scrolling) */

@@ -390,9 +390,23 @@ export function TransparencySection() {
         ))}
       </div>
       <Reveal>
-        <div className="mt-8 text-sm text-ink-soft">
-          <span className="placeholder-chip">{dict.progress.comingSoon}</span>
-          <p className="mt-3">{dict.transparency.honesty}</p>
+        <p className="mt-8 text-sm text-ink-soft">{dict.transparency.honesty}</p>
+      </Reveal>
+      <Reveal delay={1}>
+        <div className="mt-10">
+          <p className="eyebrow">{dict.transparency.reportsTitle}</p>
+          <div className="mt-5 grid max-w-4xl gap-8 md:grid-cols-2">
+            <div className="border-l-2 border-cobalt pl-4">
+              <p className="text-base leading-relaxed text-ink md:text-lg">
+                {dict.transparency.report1}
+              </p>
+            </div>
+            <div className="border-l-2 border-cobalt pl-4">
+              <p className="text-base leading-relaxed text-ink md:text-lg">
+                {dict.transparency.report2}
+              </p>
+            </div>
+          </div>
         </div>
       </Reveal>
     </Section>
