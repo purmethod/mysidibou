@@ -77,6 +77,7 @@ export const site = {
     { name: "Maram Jelassi", university: "ENAU", role: "Social Media", photo: "/assets/team-maram.jpg", instagram: "@pty.yurii" },
     { name: "Ayari Mondher", university: "Sidi Bou Said", role: "Jasmin Artisan", photo: "/assets/team-ayari.jpg", instagram: "" },
     { name: "Khamis El Bahri", university: "Sidi Bou Said", role: "Jasmin Artisan", photo: "/assets/team-khamis.jpg", instagram: "" },
+    { name: "Mohamed Amine Farhani", university: "Sidi Bou Said", role: "Jasmin Artisan", photo: "/assets/team-farhani.jpg", instagram: "" },
   ],
 
   /* ---------- UNESCO ---------- */
