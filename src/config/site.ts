@@ -75,6 +75,7 @@ export const site = {
     { name: "Yasmine Hadj Said", university: "ENAU", role: "Social Media", photo: "/assets/team-yasmine.jpg", instagram: "@yasmine_hadjsaid" },
     { name: "Ahmed Khmiri", university: "ENAU", role: "Social Media", photo: "/assets/team-ahmed.jpg", instagram: "@appareil_de_golgi" },
     { name: "Maram Jelassi", university: "ENAU", role: "Social Media", photo: "/assets/team-maram.jpg", instagram: "@pty.yurii" },
+    { name: "Ayari Mondher", university: "", role: "Social Media", photo: "/assets/team-ayari.jpg", instagram: "" },
   ],
 
   /* ---------- UNESCO ---------- */
