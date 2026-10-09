@@ -24,6 +24,7 @@ import "@fontsource/cormorant-garamond/600-italic.css";
 // repo and read at BUILD time.
 import appMetaJson from "../app-meta.json";
 
+const SITE_URL = "https://www.mysidibou.com";
 const DEFAULT_TITLE = "mysidibou | protect sidi bou said";
 const DEFAULT_DESCRIPTION =
   "Turning Sidi Bou Said into the cleanest village in the world. Students, locals and architects protecting a UNESCO World Heritage village for the next 500 years.";
@@ -56,6 +57,7 @@ function buildHead(meta: AppMeta) {
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "mysidibou" },
+      { property: "og:url", content: `${SITE_URL}/` },
       { property: "og:locale", content: "en_US" },
       { property: "og:locale:alternate", content: "fr_FR" },
       { property: "og:locale:alternate", content: "ar_AR" },
@@ -63,6 +65,8 @@ function buildHead(meta: AppMeta) {
       ...(ogImage
         ? [
             { property: "og:image", content: ogImage },
+            { property: "og:image:width", content: "1200" },
+            { property: "og:image:height", content: "630" },
             { name: "twitter:image", content: ogImage },
           ]
         : []),
@@ -71,6 +75,7 @@ function buildHead(meta: AppMeta) {
         : []),
     ],
     links: [
+      { rel: "canonical", href: `${SITE_URL}/` },
       { rel: "stylesheet", href: appCss },
       ...(favicon ? [{ rel: "icon", href: favicon }] : []),
       ...(favicon ? [{ rel: "apple-touch-icon", href: favicon }] : []),
