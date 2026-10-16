@@ -93,7 +93,7 @@ const en = {
   mission: {
     headline: "Our mission: the cleanest and most beautiful village in the world.",
     sub: "Remove the waste. Fill the streets with flowers.",
-    rows: ["No plastic.","Not a single cigarette butt.","Flowers at the entrance. No plastic."],
+    rows: ["No plastic.","Not a single cigarette butt.","A flower gate at the entrance."],
     footer: "Protect what makes Sidi Bou Said unique.",
   },
   people: {
@@ -275,7 +275,7 @@ const fr: Dict = {
   mission: {
     headline: "Notre mission : le village le plus propre et le plus beau du monde.",
     sub: "Retirer les déchets. Fleurir les ruelles.",
-    rows: ["Aucun plastique.","Pas un seul mégot.","Des fleurs à l’entrée. Aucun plastique."],
+    rows: ["Aucun plastique.","Pas un seul mégot.","Une porte fleurie à l’entrée."],
     footer: "Préserver ce qui rend Sidi Bou Said unique.",
   },
   people: {
@@ -455,7 +455,7 @@ const ar: Dict = {
   mission: {
     headline: "مهمتنا: أنظف وأجمل قرية في العالم.",
     sub: "نزيل النفايات. نملأ الأزقة بالزهور.",
-    rows: ["لا بلاستيك.","ولا عقب سيجارة واحد.","زهور عند المدخل. لا بلاستيك."],
+    rows: ["لا بلاستيك.","ولا عقب سيجارة واحد.","بوابة من الزهور عند المدخل."],
     footer: "نحمي ما يميّز سيدي بوسعيد.",
   },
   people: {
@@ -634,7 +634,7 @@ const de: Dict = {
   mission: {
     headline: "Unsere Mission: das sauberste und schönste Dorf der Welt.",
     sub: "Müll entfernen. Die Gassen mit Blumen füllen.",
-    rows: ["Kein Plastik.","Keine einzige Zigarettenkippe.","Blumen am Eingang. Kein Plastik."],
+    rows: ["Kein Plastik.","Keine einzige Zigarettenkippe.","Ein Blumentor als Eingang."],
     footer: "Bewahren, was Sidi Bou Said einzigartig macht.",
   },
   people: {
