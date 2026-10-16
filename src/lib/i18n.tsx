@@ -47,7 +47,7 @@ const en = {
     {
       label: "the village",
       kicker: "sidi bou said, tunisia",
-      title: "THE MOST BEAUTIFUL VILLAGE IN THE WORLD",
+      title: "THE WORLD'S MOST BEAUTIFUL VILLAGE",
       body: "Our mission: protect Sidi Bou Said and make it the most beautiful town in the world.",
     },
     {
