@@ -47,8 +47,8 @@ const en = {
     {
       label: "the village",
       kicker: "sidi bou said, tunisia",
-      title: "Protecting Sidi Bou Said for the next 500 years.",
-      body: "Our first mission: make Sidi Bou Said the cleanest village in the world.",
+      title: "THE MOST BEAUTIFUL VILLAGE IN THE WORLD",
+      body: "Our mission: protect Sidi Bou Said and make it the most beautiful town in the world.",
     },
     {
       label: "the streets",
@@ -245,8 +245,8 @@ const fr: Dict = {
     {
       label: "le village",
       kicker: "sidi bou said, tunisie",
-      title: "Protéger Sidi Bou Said pour les 500 prochaines années.",
-      body: "Notre première mission : faire de Sidi Bou Said le village le plus propre du monde.",
+      title: "LE PLUS BEAU VILLAGE DU MONDE",
+      body: "Notre mission : protéger Sidi Bou Said et en faire la plus belle ville du monde.",
     },
     {
       label: "les rues",
@@ -441,8 +441,8 @@ const ar: Dict = {
     {
       label: "القرية",
       kicker: "سيدي بوسعيد، تونس",
-      title: "حماية سيدي بوسعيد لخمسمئة عام قادمة.",
-      body: "مهمتنا الأولى: جعل سيدي بوسعيد أنظف قرية في العالم.",
+      title: "أجمل قرية في العالم",
+      body: "مهمتنا: حماية سيدي بوسعيد وجعلها أجمل مدينة في العالم.",
     },
     {
       label: "الشوارع",
@@ -636,8 +636,8 @@ const de: Dict = {
     {
       label: "das Dorf",
       kicker: "sidi bou said, tunesien",
-      title: "Sidi Bou Said für die nächsten 500 Jahre schützen.",
-      body: "Unsere erste Mission: Sidi Bou Said zum saubersten Dorf der Welt machen.",
+      title: "DAS SCHÖNSTE DORF DER WELT",
+      body: "Unsere Mission: Sidi Bou Said schützen und zur schönsten Stadt der Welt machen.",
     },
     {
       label: "die Gassen",
