@@ -13,7 +13,6 @@ import {
   MarqueeSection,
   MissionSection,
   PeopleSection,
-  ProblemSection,
   ProgressSection,
   TeamSection,
   TransparencySection,
@@ -33,9 +32,8 @@ function Index() {
       <SiteNav />
       <ScrollProgress />
       <HeroSection />
-      <MarqueeSection />
       <UnescoSection />
-      <ProblemSection />
+      <MarqueeSection />
       <MissionSection />
       <PeopleSection />
       <TeamSection />

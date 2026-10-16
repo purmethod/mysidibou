@@ -107,7 +107,7 @@ export function DonateButton({
   // Donation is not live yet: lead every primary CTA to the mission instead
   // of a fake payment flow. Restored to "donate now" as soon as the link is set.
   return (
-    <a className={classes} href="#follow">
+    <a className={classes} href={site.social.instagram}>
       {dict.cta.follow}
     </a>
   );
@@ -130,7 +130,7 @@ export function FollowLink({
     .join(" ");
 
   return (
-    <a className={classes} href="#follow">
+    <a className={classes} href={site.social.instagram}>
       {dict.cta.follow}
       <span className="arrow" aria-hidden="true">
         →

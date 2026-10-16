@@ -475,6 +475,9 @@ export function UnescoSection() {
           </p>
         </Reveal>
         <Reveal delay={1}>
+          <p className="mx-auto mt-6 max-w-2xl text-base text-ink md:text-lg">
+            {dict.problem.body}
+          </p>
           <p className="mx-auto mt-6 max-w-2xl text-base text-ink-soft md:text-lg">
             {dict.unesco.body}
           </p>

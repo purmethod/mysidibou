@@ -48,7 +48,7 @@ const en = {
       label: "the village",
       kicker: "sidi bou said, tunisia",
       title: "THE WORLD'S MOST BEAUTIFUL VILLAGE",
-      body: "Our mission: protect Sidi Bou Said and make it the most beautiful town in the world.",
+      body: "Protect what you love. Keep Sidi Bou Said beautiful for your children and for generations to come.",
     },
     {
       label: "the streets",
@@ -82,7 +82,7 @@ const en = {
   ],
   problem: {
     headline: "Millions come for its beauty. Every visit leaves something behind.",
-    body: "Tourism is not the enemy. Unmanaged impact is. Visitors can become part of the solution.",
+    body: "Tourism is not the problem. Uncontrolled mass tourism is. We must manage visitor numbers and protect local life. Otherwise, we risk losing the very beauty people come to see. Our mission is clear: protect Sidi Bou Said and its coastline for generations to come.",
     lines: [
       "plastic.",
       "cigarette butts.",
@@ -246,7 +246,7 @@ const fr: Dict = {
       label: "le village",
       kicker: "sidi bou said, tunisie",
       title: "LE PLUS BEAU VILLAGE DU MONDE",
-      body: "Notre mission : protéger Sidi Bou Said et en faire la plus belle ville du monde.",
+      body: "Protégez ce que vous aimez. Préservons la beauté de Sidi Bou Said pour vos enfants et les générations à venir.",
     },
     {
       label: "les rues",
@@ -280,7 +280,7 @@ const fr: Dict = {
   ],
   problem: {
     headline: "Des millions viennent pour sa beauté. Chaque visite laisse quelque chose derrière elle.",
-    body: "Le tourisme n'est pas l'ennemi. L'impact non maîtrisé l'est. Les visiteurs peuvent faire partie de la solution.",
+    body: "Le tourisme n'est pas le problème. Le tourisme de masse incontrôlé, oui. Nous devons maîtriser le nombre de visiteurs et protéger la vie locale. Sinon, nous risquons de perdre la beauté même que les gens viennent admirer. Notre mission est claire : protéger Sidi Bou Said et son littoral pour les générations à venir.",
     lines: [
       "le plastique.",
       "les mégots.",
@@ -442,7 +442,7 @@ const ar: Dict = {
       label: "القرية",
       kicker: "سيدي بوسعيد، تونس",
       title: "أجمل قرية في العالم",
-      body: "مهمتنا: حماية سيدي بوسعيد وجعلها أجمل مدينة في العالم.",
+      body: "احمِ ما تحب. لنحافظ على جمال سيدي بوسعيد لأطفالك وللأجيال القادمة.",
     },
     {
       label: "الشوارع",
@@ -476,7 +476,7 @@ const ar: Dict = {
   ],
   problem: {
     headline: "الملايين يأتون لجمالها. كل زيارة تترك شيئاً خلفها.",
-    body: "السياحة ليست العدو. الأثر غير المُدار هو كذلك. الزوار يمكنهم أن يكونوا جزءاً من الحل.",
+    body: "السياحة ليست المشكلة. السياحة الجماعية غير المنضبطة هي المشكلة. علينا تنظيم أعداد الزوار وحماية الحياة المحلية، وإلا فإننا نخاطر بفقدان الجمال الذي يأتي الناس لرؤيته. مهمتنا واضحة: حماية سيدي بوسعيد وساحلها للأجيال القادمة.",
     lines: [
       "البلاستيك.",
       "أعقاب السجائر.",
@@ -637,7 +637,7 @@ const de: Dict = {
       label: "das Dorf",
       kicker: "sidi bou said, tunesien",
       title: "DAS SCHÖNSTE DORF DER WELT",
-      body: "Unsere Mission: Sidi Bou Said schützen und zur schönsten Stadt der Welt machen.",
+      body: "Schütze, was du liebst. Bewahren wir die Schönheit von Sidi Bou Said für deine Kinder und die kommenden Generationen.",
     },
     {
       label: "die Gassen",
@@ -671,7 +671,7 @@ const de: Dict = {
   ],
   problem: {
     headline: "Millionen kommen wegen ihrer Schönheit. Jeder Besuch hinterlässt etwas.",
-    body: "Tourismus ist nicht der Feind. Unkontrollierte Auswirkungen sind es. Besucher können Teil der Lösung sein.",
+    body: "Tourismus ist nicht das Problem. Unkontrollierter Massentourismus ist es. Wir müssen die Besucherzahlen steuern und das lokale Leben schützen. Sonst verlieren wir womöglich genau die Schönheit, die Menschen hierherzieht. Unsere Mission ist klar: Sidi Bou Said und seine Küste für die kommenden Generationen schützen.",
     lines: [
       "das Plastik.",
       "die Zigarettenstummel.",
