@@ -37,6 +37,7 @@ function Index() {
       <MissionSection />
       <PeopleSection />
       <TeamSection />
+      <DonateSection />
       <CleaningSection />
       <LocalsSection />
       <EntranceSection />
@@ -45,7 +46,6 @@ function Index() {
       <ProgressSection />
       <FiveHundredSection />
       <FollowSection />
-      <DonateSection />
       <FinaleSection />
       <FooterSection />
       <DonatePill />

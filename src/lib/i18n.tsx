@@ -187,7 +187,7 @@ const en = {
   },
   donateSection: {
     headline: "SIDI BOU SAID IS A LIVING MUSEUM.",
-    body: "Museums charge admission to protect their heritage. Sidi Bou Said deserves the same care.\n\nEvery visit leaves a mark. Over time, millions of visits wear down the village. We must protect it.\n\nWe propose an entrance fee for international visitors.",
+    body: "Museums charge admission to protect their heritage. Sidi Bou Said deserves the same care.\n\nEvery visit leaves a mark. Over time, millions of visits wear down the village. We must protect it.\n\nWe propose an entrance fee of 10 dinars for international visitors. A small amount for one visitor. Essential for protecting the village.",
     whyTitle: "WHERE YOUR MONEY GOES",
     why: ["Local jobs to keep the village clean.","Repairs to historic buildings and streets.","The flower gate at the village entrance.","Support for local flower makers all year round."],
     trust: "The money will support the village of Sidi Bou Said and ENAU, the National School of Architecture and Urban Planning of Tunis.",
@@ -369,7 +369,7 @@ const fr: Dict = {
   },
   donateSection: {
     headline: "SIDI BOU SAID EST UN MUSÉE VIVANT.",
-    body: "Les musées font payer l’entrée pour protéger leur patrimoine. Sidi Bou Said mérite la même attention.\n\nChaque visite laisse une trace. Au fil du temps, des millions de visites usent le village. Nous devons le protéger.\n\nNous proposons un droit d’entrée pour les visiteurs internationaux.",
+    body: "Les musées font payer l’entrée pour protéger leur patrimoine. Sidi Bou Said mérite la même attention.\n\nChaque visite laisse une trace. Au fil du temps, des millions de visites usent le village. Nous devons le protéger.\n\nNous proposons un droit d’entrée de 10 dinars pour les visiteurs internationaux. Une petite somme pour un visiteur. Essentielle pour protéger le village.",
     whyTitle: "OÙ VA VOTRE ARGENT",
     why: ["Des emplois locaux pour garder le village propre.","La réparation des bâtiments historiques et des rues.","La porte fleurie à l’entrée du village.","Le soutien aux artisans fleuristes locaux toute l’année."],
     trust: "L’argent soutiendra le village de Sidi Bou Said et l’ENAU, l’École nationale d’architecture et d’urbanisme de Tunis.",
@@ -549,7 +549,7 @@ const ar: Dict = {
   },
   donateSection: {
     headline: "سيدي بوسعيد متحف حيّ.",
-    body: "تفرض المتاحف رسوم دخول لحماية تراثها. سيدي بوسعيد تستحق العناية نفسها.\n\nكل زيارة تترك أثراً. ومع مرور الوقت، تستهلك ملايين الزيارات القرية. علينا حمايتها.\n\nنقترح رسوم دخول للزوار الأجانب.",
+    body: "تفرض المتاحف رسوم دخول لحماية تراثها. سيدي بوسعيد تستحق العناية نفسها.\n\nكل زيارة تترك أثراً. ومع مرور الوقت، تستهلك ملايين الزيارات القرية. علينا حمايتها.\n\nنقترح رسوم دخول بقيمة 10 دنانير للزوار الأجانب. مبلغ صغير للزائر الواحد. لكنه ضروري لحماية القرية.",
     whyTitle: "أين تذهب أموالك",
     why: ["وظائف محلية للحفاظ على نظافة القرية.","إصلاح المباني التاريخية والشوارع.","بوابة الزهور عند مدخل القرية.","دعم صانعي باقات الزهور المحليين طوال العام."],
     trust: "ستدعم الأموال قرية سيدي بوسعيد وإينو، المدرسة الوطنية للهندسة المعمارية والتعمير بتونس.",
@@ -728,7 +728,7 @@ const de: Dict = {
   },
   donateSection: {
     headline: "SIDI BOU SAID IST EIN LEBENDIGES MUSEUM.",
-    body: "Museen verlangen Eintritt, um ihr Erbe zu schützen. Sidi Bou Said verdient dieselbe Fürsorge.\n\nJeder Besuch hinterlässt Spuren. Über die Jahre nutzen Millionen von Besuchen das Dorf ab. Wir müssen es schützen.\n\nWir schlagen einen Eintrittspreis für internationale Besucher vor.",
+    body: "Museen verlangen Eintritt, um ihr Erbe zu schützen. Sidi Bou Said verdient dieselbe Fürsorge.\n\nJeder Besuch hinterlässt Spuren. Über die Jahre nutzen Millionen von Besuchen das Dorf ab. Wir müssen es schützen.\n\nWir schlagen einen Eintrittspreis von 10 Dinar für internationale Besucher vor. Ein kleiner Betrag für einen Besucher. Unverzichtbar für den Schutz des Dorfes.",
     whyTitle: "WOHIN DEIN GELD GEHT",
     why: ["Lokale Arbeitsplätze, die das Dorf sauber halten.","Reparaturen an historischen Gebäuden und Straßen.","Das Blumentor am Dorfeingang.","Unterstützung für lokale Blumenmacher das ganze Jahr."],
     trust: "Das Geld wird das Dorf Sidi Bou Said und die ENAU, die Nationale Hochschule für Architektur und Stadtplanung in Tunis, unterstützen.",
