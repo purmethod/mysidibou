@@ -91,21 +91,17 @@ const en = {
     ],
   },
   mission: {
-    headline: "The cleanest village in the world.",
-    sub: "Cleanest is not a feeling. It is a standard.",
-    rows: [
-      "not one piece of plastic on the stones.",
-      "not one cigarette butt in the cracks.",
-      "not one day skipped.",
-    ],
+    headline: "Our mission: the cleanest and most beautiful village in the world.",
+    sub: "Remove the waste. Plant the streets. Protect what makes Sidi Bou Said unique.",
+    rows: ["No plastic left on the stones.","No cigarette butts between the steps.","Flowers, not rubbish, at the entrance to the village."],
     footer: "",
   },
   people: {
     headline: "The next generation takes responsibility.",
-    body: "The village becomes the classroom.",
+    body: "Every generation of students should leave Sidi Bou Said better protected than they found it.",
     body2:
-      "Architecture students from ENAU work alongside local people to observe, document, design and improve the village.",
-    goals: ["talking", "drawing", "planning", "cleaning", "planting", "documenting"],
+      "Architecture students from ENAU and local residents will work together to make this the cleanest and most beautiful village in the world. Our goal is to establish an independent committee at the university in Sidi Bou Said, with each generation of students passing its work and responsibilities to the next.",
+    goals: ["remove plastic and cigarette butts","plant and maintain flowers","record damage to buildings","design improvements to public spaces","document work before and after","hand projects to the next student team"],
   },
   team: {
     headline: "The people behind the mission.",
@@ -113,7 +109,7 @@ const en = {
   },
   cleaning: {
     headline: "every street. every corner. every day.",
-    body: "Today, the students and local volunteers clean and document the village. Next: paid local cleaning teams, every day. Paid work, not promises.",
+    body: "Students and local volunteers clean the streets and record where waste accumulates. Our goal is to fund local cleaning jobs so the work continues throughout the year.",
   },
   locals: {
     headline: "Protecting the village means strengthening local life.",
@@ -150,24 +146,17 @@ const en = {
     headline: "Radical transparency.",
     body: "Every contribution. Every expense. Every result.",
     support:
-      "Public reports will show where the money came from, where it went and what changed.",
+      "Our goal is to direct funds to the municipality and the university in Sidi Bou Said for the protection of the village. We aim to establish an independent university committee to oversee their use and pass responsibility from one generation of students to the next. These arrangements are not yet in place. Public reports will show every amount received, who received it, what it paid for and the work completed.",
     reportsTitle: "Two reports",
     report1: "December 2026 — our first public report. Donations, spending, results.",
     report2:
       "1 December 2027 — Tunisia's official report to the UNESCO World Heritage Centre on the conservation of Sidi Bou Said. UNESCO named tourism pressure among the main threats to the village. Every street cleaned, every flower planted and every visitor counted is part of that answer.",
-    rows: [
-      { label: "cleaning", note: "daily street teams" },
-      { label: "students and local workers", note: "paid work, not promises" },
-      { label: "flowers and public spaces", note: "fell, jasmine, planting days" },
-      { label: "preservation", note: "the historic fabric of the village" },
-      { label: "local community", note: "cafés, shops, families" },
-      { label: "project infrastructure", note: "tools, transport, reports" },
-    ],
+    rows: [{"label":"street cleaning","note":"collect plastic, cigarette butts and other waste; fund local cleaning jobs"},{"label":"student projects","note":"fund materials and equipment for surveys, planting and improvements to the village"},{"label":"flowers and public spaces","note":"buy plants, install light trellises and maintain planted areas"},{"label":"heritage protection","note":"document damage to historic buildings and support approved repairs"},{"label":"local workers","note":"pay local people for cleaning, planting and maintenance"},{"label":"tools and reporting","note":"buy cleaning tools, transport collected waste and publish spending records"}],
     honesty: "First public report: December 2026.",
   },
   progress: {
-    headline: "Proof, not promises.",
-    body: "Real numbers land here with the first public report: December 2026.",
+    headline: "Project updates",
+    body: "Coming soon. The first public report will show funds received, spending and work completed.",
     comingSoon: "first public report upcoming",
     statLabels: [
       "kilograms of waste removed",
@@ -198,14 +187,10 @@ const en = {
     comingSoon: "coming soon",
   },
   donateSection: {
-    headline: "Your support keeps the streets clean.",
-    body: "On a phone, one tap opens the donation page. On a computer, you can scan the QR code.",
-    whyTitle: "What a contribution does",
-    why: [
-      "Puts paid local cleaning teams on the streets every day",
-      "Plants fell and jasmine in public spaces",
-      "Builds the flower gate where the old village begins",
-    ],
+    headline: "Help protect Sidi Bou Said.",
+    body: "",
+    whyTitle: "What your contribution would fund",
+    why: ["The flower gate where the old village begins","Cleaning the streets and removing plastic and cigarette butts","Plants, trellises and ongoing care for public spaces","Student projects and local work to protect the village"],
     trust: "Every contribution is accounted for in the first public report.",
     qrSoon: "qr code coming soon",
     linkSoon:
@@ -289,21 +274,17 @@ const fr: Dict = {
     ],
   },
   mission: {
-    headline: "Le village le plus propre du monde.",
-    sub: "Le plus propre n'est pas un ressenti. C'est une norme.",
-    rows: [
-      "aucun plastique sur les pierres.",
-      "aucun mégot dans les interstices.",
-      "aucun jour sauté.",
-    ],
+    headline: "Notre mission : le village le plus propre et le plus beau du monde.",
+    sub: "Retirer les déchets. Fleurir les ruelles. Préserver ce qui rend Sidi Bou Said unique.",
+    rows: ["Aucun plastique sur les pierres.","Aucun mégot entre les marches.","Des fleurs, pas des déchets, à l'entrée du village."],
     footer: "",
   },
   people: {
     headline: "La prochaine génération prend ses responsabilités.",
-    body: "Le village devient la salle de classe.",
+    body: "Chaque génération d'étudiants doit laisser Sidi Bou Said mieux protégé qu'elle ne l'a trouvé.",
     body2:
-      "Des étudiants en architecture de l'ENAU travaillent aux côtés des habitants pour observer, documenter, concevoir et améliorer le village.",
-    goals: ["échanger", "dessiner", "planifier", "nettoyer", "planter", "documenter"],
+      "Les étudiants en architecture de l'ENAU et les habitants travailleront ensemble pour faire de ce village le plus propre et le plus beau du monde. Notre objectif est de créer un comité indépendant au sein de l'université de Sidi Bou Said, afin que chaque génération d'étudiants transmette son travail et ses responsabilités à la suivante.",
+    goals: ["retirer le plastique et les mégots","planter et entretenir les fleurs","relever les dommages aux bâtiments","améliorer les espaces publics","documenter les travaux avant et après","transmettre les projets à l'équipe étudiante suivante"],
   },
   team: {
     headline: "Les personnes derrière la mission.",
@@ -311,7 +292,7 @@ const fr: Dict = {
   },
   cleaning: {
     headline: "chaque rue. chaque coin. chaque jour.",
-    body: "Aujourd'hui, les étudiants et les bénévoles locaux nettoient et documentent le village. Ensuite : des équipes locales payées, chaque jour. Du travail payé, pas des promesses.",
+    body: "Les étudiants et les bénévoles locaux nettoient les ruelles et repèrent les endroits où les déchets s'accumulent. Notre objectif est de financer des emplois locaux de nettoyage pour poursuivre ce travail toute l'année.",
   },
   locals: {
     headline: "Protéger le village, c'est renforcer la vie locale.",
@@ -348,24 +329,17 @@ const fr: Dict = {
     headline: "Transparence radicale.",
     body: "Chaque contribution. Chaque dépense. Chaque résultat.",
     support:
-      "Les rapports publics montreront d'où vient l'argent, où il va et ce qui change.",
+      "Notre objectif est de verser les fonds à la municipalité et à l'université de Sidi Bou Said pour protéger le village. Nous voulons créer un comité universitaire indépendant chargé de suivre leur utilisation et de transmettre cette responsabilité aux générations suivantes d'étudiants. Ces dispositifs ne sont pas encore en place. Les rapports publics présenteront chaque montant reçu, ses bénéficiaires, les dépenses et les travaux réalisés.",
     reportsTitle: "Deux rapports",
     report1: "Décembre 2026 — notre premier rapport public. Dons, dépenses, résultats.",
     report2:
       "Le 1er décembre 2027 — le rapport officiel de la Tunisie au Centre du patrimoine mondial de l'UNESCO sur la conservation de Sidi Bou Said. L'UNESCO a cité la pression touristique parmi les principales menaces pesant sur le village. Chaque rue nettoyée, chaque fleur plantée et chaque visiteur compté fait partie de cette réponse.",
-    rows: [
-      { label: "nettoyage", note: "équipes de rue quotidiennes" },
-      { label: "étudiants et travailleurs locaux", note: "travail payé, pas des promesses" },
-      { label: "fleurs et espaces publics", note: "fell, jasmin, jours de plantation" },
-      { label: "préservation", note: "le tissu historique du village" },
-      { label: "communauté locale", note: "cafés, boutiques, familles" },
-      { label: "infrastructure du projet", note: "outils, transport, rapports" },
-    ],
+    rows: [{"label":"nettoyage des rues","note":"ramasser le plastique, les mégots et les déchets ; financer des emplois locaux de nettoyage"},{"label":"projets étudiants","note":"financer le matériel pour les relevés, les plantations et les améliorations du village"},{"label":"fleurs et espaces publics","note":"acheter les plantes, installer des treillis légers et entretenir les plantations"},{"label":"protection du patrimoine","note":"documenter les dommages aux bâtiments historiques et soutenir les réparations autorisées"},{"label":"travailleurs locaux","note":"rémunérer les habitants pour le nettoyage, les plantations et l'entretien"},{"label":"outils et rapports","note":"acheter les outils, transporter les déchets et publier les dépenses"}],
     honesty: "Premier rapport public : décembre 2026.",
   },
   progress: {
-    headline: "Des preuves, pas des promesses.",
-    body: "Les vrais chiffres arriveront avec le premier rapport public : décembre 2026.",
+    headline: "Avancement du projet",
+    body: "Bientôt. Le premier rapport public présentera les fonds reçus, les dépenses et les travaux réalisés.",
     comingSoon: "premier rapport public à venir",
     statLabels: [
       "kilogrammes de déchets retirés",
@@ -396,14 +370,10 @@ const fr: Dict = {
     comingSoon: "bientôt",
   },
   donateSection: {
-    headline: "Votre soutien garde les rues propres.",
-    body: "Sur un téléphone, une seule pression ouvre la page de don. Sur un ordinateur, vous pouvez scanner le QR code.",
-    whyTitle: "Ce que fait une contribution",
-    why: [
-      "Met des équipes locales payées dans les rues chaque jour",
-      "Plante du fell et du jasmin dans les espaces publics",
-      "Construit la porte fleurie là où commence le vieux village",
-    ],
+    headline: "Aidez-nous à protéger Sidi Bou Said.",
+    body: "",
+    whyTitle: "Ce que votre contribution financerait",
+    why: ["La porte fleurie à l'entrée du vieux village","Le nettoyage des ruelles et le ramassage du plastique et des mégots","Les plantes, les treillis et l'entretien des espaces publics","Les projets étudiants et le travail local pour protéger le village"],
     trust: "Chaque contribution est comptabilisée dans le premier rapport public.",
     qrSoon: "code qr bientôt disponible",
     linkSoon:
@@ -485,21 +455,17 @@ const ar: Dict = {
     ],
   },
   mission: {
-    headline: "أنظف قرية في العالم.",
-    sub: "الأكثر نظافة ليس شعوراً. إنه معيار.",
-    rows: [
-      "لا قطعة بلاستيك واحدة على الحجارة.",
-      "لا عقب سيجارة واحدة في الشقوق.",
-      "لا يوم واحد مُتخطّى.",
-    ],
+    headline: "مهمتنا: أنظف وأجمل قرية في العالم.",
+    sub: "نزيل النفايات. نزرع الأزقة. نحمي ما يميّز سيدي بوسعيد.",
+    rows: ["لا بلاستيك على الحجارة.","لا أعقاب سجائر بين الدرجات.","زهور بدل النفايات عند مدخل القرية."],
     footer: "",
   },
   people: {
     headline: "الجيل القادم يتحمّل المسؤولية.",
-    body: "القرية تصبح قاعة الدرس.",
+    body: "على كل جيل من الطلاب أن يترك سيدي بوسعيد أكثر حماية مما وجدها.",
     body2:
-      "طلّاب عمارة من إينو يعملون مع الأهالي لمراقبة القرية وتوثيقها وتصميمها وتحسينها.",
-    goals: ["تحاور", "رسم", "تخطيط", "تنظيف", "زراعة", "توثيق"],
+      "سيعمل طلاب الهندسة المعمارية في إينو مع الأهالي لجعل هذه القرية الأنظف والأجمل في العالم. هدفنا إنشاء لجنة مستقلة داخل الجامعة في سيدي بوسعيد، لينقل كل جيل من الطلاب عمله ومسؤولياته إلى الجيل التالي.",
+    goals: ["إزالة البلاستيك وأعقاب السجائر","زراعة الزهور والعناية بها","توثيق أضرار المباني","تحسين الأماكن العامة","توثيق الأعمال قبلها وبعدها","تسليم المشاريع للفريق الطلابي التالي"],
   },
   team: {
     headline: "الناس وراء المهمّة.",
@@ -507,7 +473,7 @@ const ar: Dict = {
   },
   cleaning: {
     headline: "كل شارع. كل زاوية. كل يوم.",
-    body: "اليوم، ينظّف الطلّاب والمتطوعون المحليون القرية ويوثّقونها. بعدها: فرق تنظيف محلية بأجر، كل يوم. عمل بأجر، لا وعود.",
+    body: "ينظّف الطلاب والمتطوعون المحليون الأزقة ويوثّقون أماكن تراكم النفايات. هدفنا تمويل وظائف تنظيف محلية ليستمر العمل طوال العام.",
   },
   locals: {
     headline: "حماية القرية تعني تقوية الحياة المحلية.",
@@ -544,24 +510,17 @@ const ar: Dict = {
     headline: "شفافية جذرية.",
     body: "كل مساهمة. كل مصروف. كل نتيجة.",
     support:
-      "التقارير العامة ستُظهر من أين جاء المال، وإلى أين ذهب، وماذا تغيّر.",
+      "هدفنا توجيه الأموال إلى البلدية والجامعة في سيدي بوسعيد لحماية القرية. نسعى لإنشاء لجنة جامعية مستقلة تتابع استخدام الأموال وتنقل المسؤولية من جيل من الطلاب إلى الجيل التالي. هذه الترتيبات لم تُنشأ بعد. ستعرض التقارير العامة كل مبلغ مستلم والجهة المستفيدة وما أُنفق عليه والأعمال المنجزة.",
     reportsTitle: "تقريران",
     report1: "ديسمبر 2026 — تقريرنا العام الأول. تبرعات، مصروفات، نتائج.",
     report2:
       "1 ديسمبر 2027 — التقرير الرسمي لتونس إلى مركز التراث العالمي لليونسكو حول حفظ سيدي بوسعيد. ذكرت اليونسكو ضغط السياحة بين التهديدات الرئيسية للقرية. كل شارع نُظّف، وكل زهرة زُرعت، وكل زائر جرى إحصاؤه جزء من تلك الإجابة.",
-    rows: [
-      { label: "التنظيف", note: "فرق يومية في الشوارع" },
-      { label: "الطلّاب والعمال المحليون", note: "عمل بأجر، لا وعود" },
-      { label: "الزهور والأماكن العامة", note: "فلّ، ياسمين، أيام زراعة" },
-      { label: "الحفاظ على التراث", note: "النسيج التاريخي للقرية" },
-      { label: "المجتمع المحلي", note: "مقاهٍ، محلات، عائلات" },
-      { label: "بنية المشروع", note: "أدوات، نقل، تقارير" },
-    ],
+    rows: [{"label":"تنظيف الشوارع","note":"جمع البلاستيك وأعقاب السجائر والنفايات وتمويل وظائف تنظيف محلية"},{"label":"مشاريع الطلاب","note":"تمويل المواد والمعدات للمسح والزراعة وتحسين القرية"},{"label":"الزهور والأماكن العامة","note":"شراء النباتات وتركيب تعريشات خفيفة والعناية بالمساحات المزروعة"},{"label":"حماية التراث","note":"توثيق أضرار المباني التاريخية ودعم الإصلاحات المرخّصة"},{"label":"العمال المحليون","note":"دفع أجور للأهالي مقابل التنظيف والزراعة والصيانة"},{"label":"الأدوات والتقارير","note":"شراء أدوات التنظيف ونقل النفايات ونشر سجلات المصروفات"}],
     honesty: "أول تقرير عام: ديسمبر 2026.",
   },
   progress: {
-    headline: "إثبات، لا وعود.",
-    body: "الأرقام الحقيقية ستظهر مع التقرير العام الأول: ديسمبر 2026.",
+    headline: "تقدّم المشروع",
+    body: "قريباً. سيعرض التقرير العام الأول الأموال المستلمة والمصروفات والأعمال المنجزة.",
     comingSoon: "التقرير العام الأول قريباً",
     statLabels: [
       "كيلوغرامات النفايات المُزالة",
@@ -592,14 +551,10 @@ const ar: Dict = {
     comingSoon: "قريباً",
   },
   donateSection: {
-    headline: "دعمك يُبقي الشوارع نظيفة.",
-    body: "على الهاتف: ضغطة واحدة تفتح صفحة التبرّع. على الحاسوب: يمكنك مسح رمز الاستجابة.",
-    whyTitle: "ماذا تصنع المساهمة",
-    why: [
-      "يضع فرق تنظيف محلية بأجر في الشوارع كل يوم",
-      "يزرع فلّاً وياسمين في الأماكن العامة",
-      "يبني بوابة الزهور حيث تبدأ القرية القديمة",
-    ],
+    headline: "ساهم في حماية سيدي بوسعيد.",
+    body: "",
+    whyTitle: "ما الذي ستموّله مساهمتك",
+    why: ["بوابة الزهور عند مدخل القرية القديمة","تنظيف الأزقة وإزالة البلاستيك وأعقاب السجائر","النباتات والتعريشات والعناية المستمرة بالأماكن العامة","مشاريع الطلاب والعمل المحلي لحماية القرية"],
     trust: "كل مساهمة تُحسب في التقرير العام الأول.",
     qrSoon: "رمز الاستجابة قريباً",
     linkSoon: "سيُفتح رابط التبرّع هنا فور جاهزيته. إلى ذلك الحين، تابعوا المهمّة.",
@@ -680,21 +635,17 @@ const de: Dict = {
     ],
   },
   mission: {
-    headline: "Das sauberste Dorf der Welt.",
-    sub: "Sauber ist kein Gefühl. Es ist ein Standard.",
-    rows: [
-      "kein einziges Plastikteil auf den Steinen.",
-      "keine einzige Kippe in den Fugen.",
-      "kein einziger übersprungener Tag.",
-    ],
+    headline: "Unsere Mission: das sauberste und schönste Dorf der Welt.",
+    sub: "Müll entfernen. Die Gassen bepflanzen. Bewahren, was Sidi Bou Said einzigartig macht.",
+    rows: ["Kein Plastik auf den Steinen.","Keine Zigarettenstummel zwischen den Stufen.","Blumen statt Müll am Dorfeingang."],
     footer: "",
   },
   people: {
     headline: "Die nächste Generation übernimmt Verantwortung.",
-    body: "Das Dorf wird zum Klassenzimmer.",
+    body: "Jede Generation von Studierenden soll Sidi Bou Said besser geschützt hinterlassen, als sie es vorgefunden hat.",
     body2:
-      "Architekturstudierende der ENAU arbeiten mit Einheimischen zusammen, um das Dorf zu beobachten, zu dokumentieren, zu gestalten und zu verbessern.",
-    goals: ["Reden", "Zeichnen", "Planen", "Reinigen", "Pflanzen", "Dokumentieren"],
+      "Architekturstudierende der ENAU und Einheimische werden gemeinsam daran arbeiten, dieses Dorf zum saubersten und schönsten der Welt zu machen. Unser Ziel ist ein unabhängiges Gremium an der Universität in Sidi Bou Said. Jede Generation von Studierenden soll ihre Arbeit und Verantwortung an die nächste weitergeben.",
+    goals: ["Plastik und Zigarettenstummel entfernen","Blumen pflanzen und pflegen","Schäden an Gebäuden erfassen","öffentliche Räume verbessern","Arbeiten vorher und nachher dokumentieren","Projekte an das nächste Studierendenteam übergeben"],
   },
   team: {
     headline: "Die Menschen hinter der Mission.",
@@ -702,7 +653,7 @@ const de: Dict = {
   },
   cleaning: {
     headline: "jede Straße. jede Ecke. jeden Tag.",
-    body: "Heute reinigen und dokumentieren Studierende und lokale Freiwillige das Dorf. Als Nächstes: bezahlte lokale Reinigungsteams, jeden Tag. Bezahlte Arbeit, keine Versprechen.",
+    body: "Studierende und lokale Freiwillige reinigen die Gassen und dokumentieren, wo sich Müll ansammelt. Unser Ziel ist es, lokale Arbeitsplätze für die Reinigung zu finanzieren, damit die Arbeit das ganze Jahr weitergeht.",
   },
   locals: {
     headline: "Das Dorf zu schützen heißt, das lokale Leben zu stärken.",
@@ -739,24 +690,17 @@ const de: Dict = {
     headline: "Radikale Transparenz.",
     body: "Jeder Beitrag. Jede Ausgabe. Jedes Ergebnis.",
     support:
-      "Öffentliche Berichte zeigen, woher das Geld kommt, wohin es fließt und was sich verändert.",
+      "Unser Ziel ist, Gelder für den Schutz des Dorfes an die Gemeinde und die Universität in Sidi Bou Said zu leiten. Ein unabhängiges Gremium an der Universität soll die Verwendung überwachen und die Verantwortung an die nächste Generation von Studierenden weitergeben. Diese Strukturen sind noch nicht eingerichtet. Öffentliche Berichte werden jeden eingegangenen Betrag, die Empfänger, die Ausgaben und die ausgeführten Arbeiten offenlegen.",
     reportsTitle: "Zwei Berichte",
     report1: "Dezember 2026 — unser erster öffentlicher Bericht. Spenden, Ausgaben, Ergebnisse.",
     report2:
       "Der 1. Dezember 2027 — der offizielle Bericht Tunesiens an das UNESCO-Welterbezentrum über die Erhaltung von Sidi Bou Said. Die UNESCO nannte den Tourismusdruck unter den Hauptgefahren für das Dorf. Jede gereinigte Straße, jede gepflanzte Blume und jeder gezählte Besucher ist Teil dieser Antwort.",
-    rows: [
-      { label: "Reinigung", note: "tägliche Straßenteams" },
-      { label: "Studierende und lokale Arbeiter", note: "bezahlte Arbeit, keine Versprechen" },
-      { label: "Blumen und öffentliche Räume", note: "fell, Jasmin, Pflanztage" },
-      { label: "Erhalt", note: "das historische Gefüge des Dorfes" },
-      { label: "lokale Gemeinschaft", note: "Cafés, Läden, Familien" },
-      { label: "Projektinfrastruktur", note: "Werkzeug, Transport, Berichte" },
-    ],
+    rows: [{"label":"Straßenreinigung","note":"Plastik, Kippen und anderen Müll sammeln; lokale Reinigungsarbeit finanzieren"},{"label":"Studierendenprojekte","note":"Material und Geräte für Bestandsaufnahmen, Pflanzungen und Verbesserungen finanzieren"},{"label":"Blumen und öffentliche Räume","note":"Pflanzen kaufen, leichte Rankhilfen anbringen und bepflanzte Flächen pflegen"},{"label":"Denkmalschutz","note":"Schäden an historischen Gebäuden dokumentieren und genehmigte Reparaturen unterstützen"},{"label":"lokale Arbeitskräfte","note":"Einheimische für Reinigung, Pflanzungen und Pflege bezahlen"},{"label":"Werkzeug und Berichte","note":"Reinigungswerkzeug kaufen, Müll abtransportieren und Ausgaben veröffentlichen"}],
     honesty: "Erster öffentlicher Bericht: Dezember 2026.",
   },
   progress: {
-    headline: "Beweise, keine Versprechen.",
-    body: "Die echten Zahlen erscheinen mit dem ersten öffentlichen Bericht: Dezember 2026.",
+    headline: "Projektfortschritt",
+    body: "Demnächst. Der erste öffentliche Bericht zeigt Einnahmen, Ausgaben und ausgeführte Arbeiten.",
     comingSoon: "erster öffentlicher Bericht in Kürze",
     statLabels: [
       "Kilogramm entfernter Abfall",
@@ -787,14 +731,10 @@ const de: Dict = {
     comingSoon: "demnächst",
   },
   donateSection: {
-    headline: "Dein Beitrag hält die Straßen sauber.",
-    body: "Am Telefon öffnet ein Tippen die Spendenseite. Am Computer kannst du den QR-Code scannen.",
-    whyTitle: "Was ein Beitrag bewirkt",
-    why: [
-      "Bringt bezahlte lokale Reinigungsteams jeden Tag in die Straßen",
-      "Pflanzt fell und Jasmin in öffentlichen Räumen",
-      "Baut das Blumentor dort, wo das alte Dorf beginnt",
-    ],
+    headline: "Hilf mit, Sidi Bou Said zu schützen.",
+    body: "",
+    whyTitle: "Was dein Beitrag finanzieren soll",
+    why: ["Das Blumentor am Eingang des alten Dorfes","Die Reinigung der Gassen von Plastik und Zigarettenstummeln","Pflanzen, Rankhilfen und die laufende Pflege öffentlicher Räume","Studierendenprojekte und lokale Arbeit zum Schutz des Dorfes"],
     trust: "Jeder Beitrag wird im ersten öffentlichen Bericht ausgewiesen.",
     qrSoon: "qr-code in Kürze verfügbar",
     linkSoon:

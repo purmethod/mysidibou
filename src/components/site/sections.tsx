@@ -426,35 +426,7 @@ export function ProgressSection() {
         <p className="section-copy mt-6 text-base md:text-lg">{dict.progress.body}</p>
       </Reveal>
 
-      <div className="mt-12 grid grid-cols-2 gap-x-10 gap-y-10 md:grid-cols-3 lg:grid-cols-3">
-        {site.stats.map((stat, i) => (
-          <Reveal delay={((i % 3) + 1) as 1 | 2 | 3} key={dict.progress.statLabels[i]}>
-            <div className="stat-cell">
-              <p className="stat-cell__value">{stat.value}</p>
-              <p className="stat-cell__label">{dict.progress.statLabels[i]}</p>
-            </div>
-          </Reveal>
-        ))}
-      </div>
 
-      <Reveal>
-        <div className="mt-12 grid max-w-3xl grid-cols-1 gap-4 md:grid-cols-2">
-          {site.media.beforeAfter.before ? (
-            <img alt="Before" className="aspect-[4/3] w-full object-cover" src={site.media.beforeAfter.before} />
-          ) : (
-            <div className="grid aspect-[4/3] w-full place-items-center border border-dashed border-cobalt/40 p-6 text-center">
-              <span className="text-sm text-cobalt">{dict.progress.beforeAfter}</span>
-            </div>
-          )}
-          {site.media.beforeAfter.after ? (
-            <img alt="After" className="aspect-[4/3] w-full object-cover" src={site.media.beforeAfter.after} />
-          ) : (
-            <div className="grid aspect-[4/3] w-full place-items-center border border-dashed border-cobalt/40 p-6 text-center">
-              <span className="text-sm text-cobalt">{dict.progress.beforeAfter}</span>
-            </div>
-          )}
-        </div>
-      </Reveal>
     </Section>
   );
 }
@@ -557,7 +529,7 @@ export function FollowSection() {
   return (
     <Section id="follow" className="section-pad">
       <Reveal>
-        <Headline>{dict.follow.headline}</Headline>
+        <Headline><a href={site.social.instagram}>{dict.follow.headline}</a></Headline>
         <p className="section-copy mt-6 text-base md:text-lg">{dict.follow.body}</p>
       </Reveal>
       <div className="mt-10 flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-x-12">
@@ -605,7 +577,7 @@ export function DonateSection() {
         <div>
           <Reveal>
             <Headline>{dict.donateSection.headline}</Headline>
-            <p className="section-copy mt-6 text-base md:text-lg">{dict.donateSection.body}</p>
+            {dict.donateSection.body ? <p className="section-copy mt-6 text-base md:text-lg">{dict.donateSection.body}</p> : null}
           </Reveal>
           <Reveal delay={1}>
             <div className="mt-9 flex flex-wrap items-center gap-7">
@@ -631,21 +603,11 @@ export function DonateSection() {
           </Reveal>
         </div>
 
-        <Reveal delay={2}>
-          <div className="hidden flex-col items-start gap-3 md:flex">
-            {donate.qrImage ? (
-              <img
-                alt={donate.qrAlt}
-                className="size-[148px] border border-line object-contain"
-                src={donate.qrImage}
-              />
-            ) : (
-              <div className="qr-tile">
-                <span className="qr-tile__label">{dict.donateSection.qrSoon}</span>
-              </div>
-            )}
-          </div>
-        </Reveal>
+        {donate.qrImage ? (
+          <Reveal delay={2}>
+            <img alt={donate.qrAlt} className="hidden size-[148px] border border-line object-contain md:block" src={donate.qrImage} />
+          </Reveal>
+        ) : null}
       </div>
     </Section>
   );
