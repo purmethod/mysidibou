@@ -115,6 +115,11 @@ export function MissionSection() {
           </Reveal>
         ))}
       </div>
+      {dict.mission.footer ? (
+        <Reveal delay={3}>
+          <p className="section-copy mt-8 text-base md:text-lg">{dict.mission.footer}</p>
+        </Reveal>
+      ) : null}
     </Section>
   );
 }

@@ -92,9 +92,9 @@ const en = {
   },
   mission: {
     headline: "Our mission: the cleanest and most beautiful village in the world.",
-    sub: "Remove the waste. Plant the streets. Protect what makes Sidi Bou Said unique.",
-    rows: ["No plastic left on the stones.","No cigarette butts between the steps.","Flowers, not rubbish, at the entrance to the village."],
-    footer: "",
+    sub: "Remove the waste. Fill the streets with flowers.",
+    rows: ["No plastic.","Not a single cigarette butt.","Flowers at the entrance. No plastic."],
+    footer: "Protect what makes Sidi Bou Said unique.",
   },
   people: {
     headline: "The next generation takes responsibility.",
@@ -274,9 +274,9 @@ const fr: Dict = {
   },
   mission: {
     headline: "Notre mission : le village le plus propre et le plus beau du monde.",
-    sub: "Retirer les déchets. Fleurir les ruelles. Préserver ce qui rend Sidi Bou Said unique.",
-    rows: ["Aucun plastique sur les pierres.","Aucun mégot entre les marches.","Des fleurs, pas des déchets, à l'entrée du village."],
-    footer: "",
+    sub: "Retirer les déchets. Fleurir les ruelles.",
+    rows: ["Aucun plastique.","Pas un seul mégot.","Des fleurs à l’entrée. Aucun plastique."],
+    footer: "Préserver ce qui rend Sidi Bou Said unique.",
   },
   people: {
     headline: "La prochaine génération prend ses responsabilités.",
@@ -454,9 +454,9 @@ const ar: Dict = {
   },
   mission: {
     headline: "مهمتنا: أنظف وأجمل قرية في العالم.",
-    sub: "نزيل النفايات. نزرع الأزقة. نحمي ما يميّز سيدي بوسعيد.",
-    rows: ["لا بلاستيك على الحجارة.","لا أعقاب سجائر بين الدرجات.","زهور بدل النفايات عند مدخل القرية."],
-    footer: "",
+    sub: "نزيل النفايات. نملأ الأزقة بالزهور.",
+    rows: ["لا بلاستيك.","ولا عقب سيجارة واحد.","زهور عند المدخل. لا بلاستيك."],
+    footer: "نحمي ما يميّز سيدي بوسعيد.",
   },
   people: {
     headline: "الجيل القادم يتحمّل المسؤولية.",
@@ -633,9 +633,9 @@ const de: Dict = {
   },
   mission: {
     headline: "Unsere Mission: das sauberste und schönste Dorf der Welt.",
-    sub: "Müll entfernen. Die Gassen bepflanzen. Bewahren, was Sidi Bou Said einzigartig macht.",
-    rows: ["Kein Plastik auf den Steinen.","Keine Zigarettenstummel zwischen den Stufen.","Blumen statt Müll am Dorfeingang."],
-    footer: "",
+    sub: "Müll entfernen. Die Gassen mit Blumen füllen.",
+    rows: ["Kein Plastik.","Keine einzige Zigarettenkippe.","Blumen am Eingang. Kein Plastik."],
+    footer: "Bewahren, was Sidi Bou Said einzigartig macht.",
   },
   people: {
     headline: "Die nächste Generation übernimmt Verantwortung.",
