@@ -108,8 +108,8 @@ const en = {
     body: "Architecture students from ENAU and local partners. The team grows with every report.",
   },
   cleaning: {
-    headline: "every street. every corner. every day.",
-    body: "Students and local volunteers clean the streets and record where waste accumulates. Our goal is to fund local cleaning jobs so the work continues throughout the year.",
+    headline: "EVERY STREET. EVERY CORNER.",
+    body: "Students and local cleaning teams will work together to make Sidi Bou Said the cleanest village in the world.\n\nThis project will create local jobs and help local flower makers sell their flowers, supporting their livelihoods even when there are fewer tourists.",
   },
   locals: {
     headline: "Protecting the village means strengthening local life.",
@@ -290,8 +290,8 @@ const fr: Dict = {
     body: "Des étudiants en architecture de l'ENAU et des partenaires locaux. L'équipe grandit à chaque rapport.",
   },
   cleaning: {
-    headline: "chaque rue. chaque coin. chaque jour.",
-    body: "Les étudiants et les bénévoles locaux nettoient les ruelles et repèrent les endroits où les déchets s'accumulent. Notre objectif est de financer des emplois locaux de nettoyage pour poursuivre ce travail toute l'année.",
+    headline: "CHAQUE RUE. CHAQUE COIN.",
+    body: "Les étudiants et les équipes locales de nettoyage travailleront ensemble pour faire de Sidi Bou Said le village le plus propre du monde.\n\nCe projet créera des emplois locaux et aidera les artisans fleuristes à vendre leurs fleurs, pour soutenir leurs revenus même lorsque les touristes sont moins nombreux.",
   },
   locals: {
     headline: "Protéger le village, c'est renforcer la vie locale.",
@@ -470,8 +470,8 @@ const ar: Dict = {
     body: "طلّاب عمارة من إينو وشركاء محليون. الفريق ينمو مع كل تقرير.",
   },
   cleaning: {
-    headline: "كل شارع. كل زاوية. كل يوم.",
-    body: "ينظّف الطلاب والمتطوعون المحليون الأزقة ويوثّقون أماكن تراكم النفايات. هدفنا تمويل وظائف تنظيف محلية ليستمر العمل طوال العام.",
+    headline: "كل شارع. كل زاوية.",
+    body: "سيعمل الطلاب وفرق التنظيف المحلية معاً لجعل سيدي بوسعيد أنظف قرية في العالم.\n\nسيخلق هذا المشروع فرص عمل محلية ويساعد صانعي باقات الزهور المحليين على بيع زهورهم، لدعم أرزاقهم حتى عندما يقل عدد السياح.",
   },
   locals: {
     headline: "حماية القرية تعني تقوية الحياة المحلية.",
@@ -649,8 +649,8 @@ const de: Dict = {
     body: "Architekturstudierende der ENAU und lokale Partner. Das Team wächst mit jedem Bericht.",
   },
   cleaning: {
-    headline: "jede Straße. jede Ecke. jeden Tag.",
-    body: "Studierende und lokale Freiwillige reinigen die Gassen und dokumentieren, wo sich Müll ansammelt. Unser Ziel ist es, lokale Arbeitsplätze für die Reinigung zu finanzieren, damit die Arbeit das ganze Jahr weitergeht.",
+    headline: "JEDE STRASSE. JEDE ECKE.",
+    body: "Studierende und lokale Reinigungsteams werden gemeinsam daran arbeiten, Sidi Bou Said zum saubersten Dorf der Welt zu machen.\n\nDieses Projekt wird lokale Arbeitsplätze schaffen und den Blumenmachern vor Ort helfen, ihre Blumen zu verkaufen. So unterstützen wir ihren Lebensunterhalt auch dann, wenn weniger Touristen kommen.",
   },
   locals: {
     headline: "Das Dorf zu schützen heißt, das lokale Leben zu stärken.",
