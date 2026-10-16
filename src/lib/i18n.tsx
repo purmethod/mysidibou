@@ -143,10 +143,9 @@ const en = {
     note: "Amounts will be announced once final agreements are made.",
   },
   transparency: {
-    headline: "Radical transparency.",
-    body: "Every contribution. Every expense. Every result.",
-    support:
-      "Our goal is to direct funds to the municipality and the university in Sidi Bou Said for the protection of the village. We aim to establish an independent university committee to oversee their use and pass responsibility from one generation of students to the next. These arrangements are not yet in place. Public reports will show every amount received, who received it, what it paid for and the work completed.",
+    headline: "FROM ONE GENERATION TO THE NEXT.",
+    body: "Our goal is to direct funds to the municipality and the university in Sidi Bou Said to protect the village.",
+    support: "We aim to establish an independent committee with students at the university. This committee will manage the funds and oversee the work to protect Sidi Bou Said. Each generation of students will pass this responsibility to the next, benefiting both the university and the village.\n\nFull transparency. Here on this website, you will see how much money came in, where it went, who received it and what was done with it.",
     reportsTitle: "Two reports",
     report1: "December 2026 — our first public report. Donations, spending, results.",
     report2:
@@ -326,10 +325,9 @@ const fr: Dict = {
     note: "Les montants seront annoncés après les accords finaux.",
   },
   transparency: {
-    headline: "Transparence radicale.",
-    body: "Chaque contribution. Chaque dépense. Chaque résultat.",
-    support:
-      "Notre objectif est de verser les fonds à la municipalité et à l'université de Sidi Bou Said pour protéger le village. Nous voulons créer un comité universitaire indépendant chargé de suivre leur utilisation et de transmettre cette responsabilité aux générations suivantes d'étudiants. Ces dispositifs ne sont pas encore en place. Les rapports publics présenteront chaque montant reçu, ses bénéficiaires, les dépenses et les travaux réalisés.",
+    headline: "D’UNE GÉNÉRATION À LA SUIVANTE.",
+    body: "Notre objectif est de verser les fonds à la municipalité et à l’université de Sidi Bou Said pour protéger le village.",
+    support: "Nous voulons créer un comité indépendant avec des étudiants au sein de l’université. Ce comité gérera les fonds et suivra les travaux pour protéger Sidi Bou Said. Chaque génération d’étudiants transmettra cette responsabilité à la suivante, au bénéfice de l’université et du village.\n\nUne transparence totale. Ici, sur ce site, vous verrez combien d’argent a été reçu, où il est allé, qui l’a reçu et ce qui a été fait avec.",
     reportsTitle: "Deux rapports",
     report1: "Décembre 2026 — notre premier rapport public. Dons, dépenses, résultats.",
     report2:
@@ -507,10 +505,9 @@ const ar: Dict = {
     note: "سيُعلَن عن المبالغ بعد الاتفاقيات النهائية.",
   },
   transparency: {
-    headline: "شفافية جذرية.",
-    body: "كل مساهمة. كل مصروف. كل نتيجة.",
-    support:
-      "هدفنا توجيه الأموال إلى البلدية والجامعة في سيدي بوسعيد لحماية القرية. نسعى لإنشاء لجنة جامعية مستقلة تتابع استخدام الأموال وتنقل المسؤولية من جيل من الطلاب إلى الجيل التالي. هذه الترتيبات لم تُنشأ بعد. ستعرض التقارير العامة كل مبلغ مستلم والجهة المستفيدة وما أُنفق عليه والأعمال المنجزة.",
+    headline: "من جيل إلى الجيل التالي.",
+    body: "هدفنا توجيه الأموال إلى البلدية والجامعة في سيدي بوسعيد لحماية القرية.",
+    support: "نسعى لإنشاء لجنة مستقلة تضم طلاباً من الجامعة. ستدير هذه اللجنة الأموال وتتابع العمل لحماية سيدي بوسعيد. وسينقل كل جيل من الطلاب هذه المسؤولية إلى الجيل التالي، لتستفيد الجامعة والقرية معاً.\n\nشفافية كاملة. هنا على هذا الموقع، سترون كم من المال وصل، وأين ذهب، ومن استلمه، وما الذي أُنجز به.",
     reportsTitle: "تقريران",
     report1: "ديسمبر 2026 — تقريرنا العام الأول. تبرعات، مصروفات، نتائج.",
     report2:
@@ -687,10 +684,9 @@ const de: Dict = {
     note: "Die Beträge werden bekannt gegeben, sobald die finalen Vereinbarungen stehen.",
   },
   transparency: {
-    headline: "Radikale Transparenz.",
-    body: "Jeder Beitrag. Jede Ausgabe. Jedes Ergebnis.",
-    support:
-      "Unser Ziel ist, Gelder für den Schutz des Dorfes an die Gemeinde und die Universität in Sidi Bou Said zu leiten. Ein unabhängiges Gremium an der Universität soll die Verwendung überwachen und die Verantwortung an die nächste Generation von Studierenden weitergeben. Diese Strukturen sind noch nicht eingerichtet. Öffentliche Berichte werden jeden eingegangenen Betrag, die Empfänger, die Ausgaben und die ausgeführten Arbeiten offenlegen.",
+    headline: "VON EINER GENERATION ZUR NÄCHSTEN.",
+    body: "Unser Ziel ist, Gelder an die Gemeinde und die Universität in Sidi Bou Said zu leiten, um das Dorf zu schützen.",
+    support: "Wir wollen ein unabhängiges Gremium mit Studierenden an der Universität aufbauen. Dieses Gremium wird die Gelder verwalten und die Arbeit zum Schutz von Sidi Bou Said begleiten. Jede Generation von Studierenden wird diese Verantwortung an die nächste weitergeben. Davon profitieren die Universität und das Dorf.\n\nVollständige Transparenz. Hier auf dieser Webseite wirst du sehen, wie viel Geld eingegangen ist, wohin es geflossen ist, wer es erhalten hat und was damit gemacht wurde.",
     reportsTitle: "Zwei Berichte",
     report1: "Dezember 2026 — unser erster öffentlicher Bericht. Spenden, Ausgaben, Ergebnisse.",
     report2:

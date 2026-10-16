@@ -376,7 +376,7 @@ export function TransparencySection() {
         <Headline>{dict.transparency.headline}</Headline>
         <p className="section-copy mt-6 text-base md:text-lg">{dict.transparency.body}</p>
         {dict.transparency.support ? (
-          <p className="section-copy mt-4 text-base md:text-lg">{dict.transparency.support}</p>
+          <p className="section-copy mt-4 whitespace-pre-line text-base md:text-lg">{dict.transparency.support}</p>
         ) : null}
       </Reveal>
       <div className="mt-12 max-w-3xl">
