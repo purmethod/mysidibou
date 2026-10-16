@@ -582,16 +582,7 @@ export function DonateSection() {
         <div>
           <Reveal>
             <Headline>{dict.donateSection.headline}</Headline>
-            {dict.donateSection.body ? <p className="section-copy mt-6 text-base md:text-lg">{dict.donateSection.body}</p> : null}
-          </Reveal>
-          <Reveal delay={1}>
-            <div className="mt-9 flex flex-wrap items-center gap-7">
-              <DonateButton wide />
-              <p className="max-w-[22rem] text-sm text-ink-soft">{dict.donateSection.linkSoon}</p>
-            </div>
-          </Reveal>
-          <Reveal delay={1}>
-            <p className="mt-6 text-xs text-ink-soft">{dict.donateSection.trust}</p>
+            {dict.donateSection.body ? <p className="section-copy mt-6 whitespace-pre-line text-base md:text-lg">{dict.donateSection.body}</p> : null}
           </Reveal>
           <Reveal delay={2}>
             <div className="mt-10 border-t border-line pt-6">
@@ -604,6 +595,13 @@ export function DonateSection() {
                   </li>
                 ))}
               </ul>
+              <p className="section-copy mt-6 text-base md:text-lg">{dict.donateSection.trust}</p>
+            </div>
+          </Reveal>
+          <Reveal delay={1}>
+            <div className="mt-9 flex flex-wrap items-center gap-7">
+              <DonateButton wide />
+              <p className="max-w-[22rem] text-sm text-ink-soft">{dict.donateSection.linkSoon}</p>
             </div>
           </Reveal>
         </div>
