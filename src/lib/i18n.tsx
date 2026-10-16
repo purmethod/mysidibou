@@ -101,7 +101,7 @@ const en = {
     body: "Every generation of students should leave Sidi Bou Said better protected than they found it.",
     body2:
       "Architecture students from ENAU and local residents will work together to make this the cleanest and most beautiful village in the world. Our goal is to establish an independent committee at the university in Sidi Bou Said, with each generation of students passing its work and responsibilities to the next.",
-    goals: ["remove plastic and cigarette butts","plant and maintain flowers","record damage to buildings","design improvements to public spaces","document work before and after","hand projects to the next student team"],
+    goals: ["clean streets","a flower gate","heritage protection","local jobs","student leadership","transparent funding"],
   },
   team: {
     headline: "The people behind the mission.",
@@ -283,7 +283,7 @@ const fr: Dict = {
     body: "Chaque génération d'étudiants doit laisser Sidi Bou Said mieux protégé qu'elle ne l'a trouvé.",
     body2:
       "Les étudiants en architecture de l'ENAU et les habitants travailleront ensemble pour faire de ce village le plus propre et le plus beau du monde. Notre objectif est de créer un comité indépendant au sein de l'université de Sidi Bou Said, afin que chaque génération d'étudiants transmette son travail et ses responsabilités à la suivante.",
-    goals: ["retirer le plastique et les mégots","planter et entretenir les fleurs","relever les dommages aux bâtiments","améliorer les espaces publics","documenter les travaux avant et après","transmettre les projets à l'équipe étudiante suivante"],
+    goals: ["des rues propres","une porte fleurie","protection du patrimoine","emplois locaux","responsabilité étudiante","financement transparent"],
   },
   team: {
     headline: "Les personnes derrière la mission.",
@@ -463,7 +463,7 @@ const ar: Dict = {
     body: "على كل جيل من الطلاب أن يترك سيدي بوسعيد أكثر حماية مما وجدها.",
     body2:
       "سيعمل طلاب الهندسة المعمارية في إينو مع الأهالي لجعل هذه القرية الأنظف والأجمل في العالم. هدفنا إنشاء لجنة مستقلة داخل الجامعة في سيدي بوسعيد، لينقل كل جيل من الطلاب عمله ومسؤولياته إلى الجيل التالي.",
-    goals: ["إزالة البلاستيك وأعقاب السجائر","زراعة الزهور والعناية بها","توثيق أضرار المباني","تحسين الأماكن العامة","توثيق الأعمال قبلها وبعدها","تسليم المشاريع للفريق الطلابي التالي"],
+    goals: ["شوارع نظيفة","بوابة زهور","حماية التراث","وظائف محلية","مسؤولية الطلاب","تمويل شفاف"],
   },
   team: {
     headline: "الناس وراء المهمّة.",
@@ -642,7 +642,7 @@ const de: Dict = {
     body: "Jede Generation von Studierenden soll Sidi Bou Said besser geschützt hinterlassen, als sie es vorgefunden hat.",
     body2:
       "Architekturstudierende der ENAU und Einheimische werden gemeinsam daran arbeiten, dieses Dorf zum saubersten und schönsten der Welt zu machen. Unser Ziel ist ein unabhängiges Gremium an der Universität in Sidi Bou Said. Jede Generation von Studierenden soll ihre Arbeit und Verantwortung an die nächste weitergeben.",
-    goals: ["Plastik und Zigarettenstummel entfernen","Blumen pflanzen und pflegen","Schäden an Gebäuden erfassen","öffentliche Räume verbessern","Arbeiten vorher und nachher dokumentieren","Projekte an das nächste Studierendenteam übergeben"],
+    goals: ["saubere Gassen","ein Blumentor","Schutz des Kulturerbes","lokale Arbeitsplätze","Verantwortung der Studierenden","transparente Finanzen"],
   },
   team: {
     headline: "Die Menschen hinter der Mission.",
