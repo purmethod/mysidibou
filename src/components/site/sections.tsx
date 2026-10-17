@@ -353,16 +353,27 @@ export function ContributionSection() {
         </Reveal>
         <div className="mt-10 grid max-w-2xl gap-8 md:grid-cols-2">
           <Reveal delay={1}>
-            <p className="eyebrow">{dict.contribution.tunisianLabel}</p>
-            <p className="mt-3 text-lg">{dict.contribution.tunisianText}</p>
-          </Reveal>
-          <Reveal delay={2}>
             <p className="eyebrow">{dict.contribution.internationalLabel}</p>
             <p className="mt-3 text-lg">{dict.contribution.internationalText}</p>
           </Reveal>
+          <Reveal delay={2}>
+            <p className="eyebrow">{dict.contribution.tunisianLabel}</p>
+            <p className="mt-3 text-lg">{dict.contribution.tunisianText}</p>
+          </Reveal>
         </div>
+        <Reveal delay={1}>
+          <div className="mt-12 max-w-2xl">
+            <p className="eyebrow">{dict.contribution.howLabel}</p>
+            <p className="mt-3 text-base md:text-lg">{dict.contribution.howText}</p>
+            <p className="mt-4 text-base md:text-lg">{dict.contribution.howNote}</p>
+            <p className="mt-4 text-lg font-medium">{dict.contribution.fine}</p>
+          </div>
+        </Reveal>
         <Reveal delay={2}>
-          <p className="mt-8 max-w-2xl text-base md:text-lg">{dict.contribution.closing}</p>
+          <div className="mt-12 max-w-2xl">
+            <p className="eyebrow">{dict.contribution.moneyLabel}</p>
+            <p className="mt-3 text-base md:text-lg">{dict.contribution.closing}</p>
+          </div>
         </Reveal>
       </Section>
     </section>
