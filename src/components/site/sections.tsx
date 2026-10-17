@@ -366,6 +366,9 @@ export function ContributionSection() {
             <p className="eyebrow">{dict.contribution.howLabel}</p>
             <p className="mt-3 text-base md:text-lg">{dict.contribution.howText}</p>
             <p className="mt-4 text-base md:text-lg">{dict.contribution.howNote}</p>
+            <button type="button" className="btn-ticket mt-6" disabled aria-disabled="true">
+              {dict.contribution.ticketButton}
+            </button>
             <p className="mt-4 text-lg font-medium">{dict.contribution.fine}</p>
           </div>
         </Reveal>

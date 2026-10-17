@@ -709,6 +709,20 @@ section.scroll-scrub .scroll-scrub__tags li {
   border-color: var(--color-bougainvillea-deep);
 }
 
+.btn-ticket {
+  display: inline-flex;
+  align-items: center;
+  background: var(--color-cobalt);
+  color: #fff;
+  border: 1px solid var(--color-cobalt);
+  padding: 0.95rem 1.7rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
 .btn-donate--wide {
   padding: 1.05rem 2rem;
   font-size: 1rem;
