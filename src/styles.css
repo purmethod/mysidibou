@@ -874,6 +874,19 @@ html[dir="rtl"] .marquee__track {
   flex: 0 0 auto;
 }
 
+.why-heart--lg {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-top: 0;
+}
+
+@media (min-width: 768px) {
+  .why-heart--lg {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+}
+
 /* ---------- scroll-driven image depth (progressive enhancement) ---------- */
 @media (prefers-reduced-motion: no-preference) {
   .split-media {
