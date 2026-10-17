@@ -342,10 +342,10 @@ export function ContributionSection() {
       <Section className="section-pad">
         <Reveal>
           <Headline>{dict.contribution.headline}</Headline>
-          <ul className="mt-8 space-y-3">
+          <ul className="mt-6 space-y-3">
             {dict.contribution.howNote.split(/[.。]\s*/).filter(Boolean).map((item) => (
-              <li className="font-display flex items-center gap-4 text-3xl leading-tight md:text-5xl" key={item}>
-                <HeartIcon className="why-heart why-heart--lg" />
+              <li className="flex items-start gap-3 text-base text-ink md:text-lg" key={item}>
+                <HeartIcon className="why-heart" />
                 <span>{item}</span>
               </li>
             ))}
