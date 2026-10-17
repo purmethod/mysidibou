@@ -37,7 +37,7 @@ export const site = {
   /* ---------- Photography (replace with your own photos anytime) ---------- */
   media: {
     hero: "/assets/hero.jpg", // the first screen
-    students: "/assets/students.jpg", // architecture students at work
+    students: "/assets/entrance.jpg", // architecture students at work
     flowerSeller: "/assets/flower-seller.jpg", // local life
     cleaning: "/assets/cleaning.jpg", // the actual cleaning mission
     entrance: "/assets/entrance.jpg", // let nature build the entrance
