@@ -121,7 +121,7 @@ const en = {
     body: "No concrete. No masonry. Thin wires, light trellises, fell and jasmine. We set the frame. Nature does the rest. The flower gate stands where the old village begins. Every visit starts here.",
   },
   contribution: {
-    headline: "A new model for responsible tourism.",
+    headline: "How it works?",
     body: "Sidi Bou Said is a living museum. To protect it, visitors from abroad pay a small contribution.",
     tagline: "Visit. Contribute. Preserve.",
     tunisianLabel: "Tunisians",
@@ -308,7 +308,7 @@ const fr: Dict = {
     body: "Pas de béton. Pas de maçonnerie. Des fils fins, des treillis légers, du fell et du jasmin. Nous posons le cadre. La nature fait le reste. La porte fleurie se dresse là où commence le vieux village. Chaque visite commence ici.",
   },
   contribution: {
-    headline: "Un nouveau modèle de tourisme responsable.",
+    headline: "Comment ça marche ?",
     body: "Sidi Bou Said est un musée vivant. Pour le protéger, les visiteurs venus de l'étranger versent une petite contribution.",
     tagline: "Visiter. Contribuer. Préserver.",
     tunisianLabel: "Tunisiens",
@@ -493,7 +493,7 @@ const ar: Dict = {
     body: "لا خرسانة. لا بناء حجري. أسلاك رفيعة، تعريشات خفيفة، فلّ وياسمين. نحن نضع الإطار. الطبيعة تكمل الباقي. بوابة الزهور تقف حيث تبدأ القرية القديمة. كل زيارة تبدأ هنا.",
   },
   contribution: {
-    headline: "نموذج جديد للسياحة المسؤولة.",
+    headline: "كيف يعمل؟",
     body: "سيدي بوسعيد متحف حيّ. لحمايته، يدفع الزوار القادمون من الخارج مساهمة رمزية.",
     tagline: "زُر. ساهم. احفظ.",
     tunisianLabel: "التونسيون",
@@ -677,7 +677,7 @@ const de: Dict = {
     body: "Kein Beton. Kein Mauerwerk. Dünne Drähte, leichte Rankgitter, fell und Jasmin. Wir setzen den Rahmen. Die Natur macht den Rest. Das Blumentor steht dort, wo das alte Dorf beginnt. Jeder Besuch beginnt hier.",
   },
   contribution: {
-    headline: "Ein neues Modell für verantwortungsvollen Tourismus.",
+    headline: "Wie funktioniert's?",
     body: "Sidi Bou Said ist ein lebendiges Museum. Um es zu schützen, zahlen Besucher aus dem Ausland einen kleinen Beitrag.",
     tagline: "Besuchen. Beitragen. Bewahren.",
     tunisianLabel: "Tunesier",

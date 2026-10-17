@@ -342,6 +342,7 @@ export function ContributionSection() {
       <Section className="section-pad">
         <Reveal>
           <Headline>{dict.contribution.headline}</Headline>
+          <p className="font-display mt-6 text-3xl leading-tight md:text-5xl">{dict.contribution.howNote}</p>
         </Reveal>
         <Reveal delay={1}>
           <p className="section-copy mt-6 text-base md:text-lg">{dict.contribution.body}</p>
@@ -363,9 +364,7 @@ export function ContributionSection() {
         </div>
         <Reveal delay={1}>
           <div className="mt-12 max-w-2xl">
-            <p className="eyebrow">{dict.contribution.howLabel}</p>
-            <p className="mt-3 text-base md:text-lg">{dict.contribution.howText}</p>
-            <p className="mt-4 text-base md:text-lg">{dict.contribution.howNote}</p>
+            <p className="text-base md:text-lg">{dict.contribution.howText}</p>
             <button type="button" className="btn-ticket mt-6" disabled aria-disabled="true">
               {dict.contribution.ticketButton}
             </button>
