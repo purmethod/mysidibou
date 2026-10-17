@@ -78,6 +78,7 @@ export const site = {
     { name: "Ayari Mondher", university: "Sidi Bou Said", role: "Jasmin Artisan", photo: "/assets/team-ayari.jpg", instagram: "" },
     { name: "Khamis El Bahri", university: "Sidi Bou Said", role: "Jasmin Artisan", photo: "/assets/team-khamis.jpg", instagram: "" },
     { name: "Mohamed Amine Farhani", university: "Sidi Bou Said", role: "Jasmin Artisan", photo: "/assets/team-farhani.jpg", instagram: "" },
+    { name: "Hasan Ghdifi", university: "Sidi Bou Said", role: "Jasmin Artisan", photo: "/assets/team-hasan.jpg", instagram: "" },
   ],
 
   /* ---------- UNESCO ---------- */
