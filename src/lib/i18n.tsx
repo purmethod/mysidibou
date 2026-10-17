@@ -82,7 +82,7 @@ const en = {
   ],
   problem: {
     headline: "Millions come for its beauty. Every visit leaves something behind.",
-    body: "Tourism is not the problem. Uncontrolled mass tourism is. Every year the crowds grow — and the beauty they come for fades a little more. We refuse to let that happen. Our mission: protect Sidi Bou Said, so the next generations can still fall in love with it.",
+    body: "Tourism is not the problem. Uncontrolled mass tourism is. Our mission: protect Sidi Bou Said for the next generations.",
     lines: [
       "plastic.",
       "cigarette butts.",
@@ -264,7 +264,7 @@ const fr: Dict = {
   ],
   problem: {
     headline: "Des millions viennent pour sa beauté. Chaque visite laisse quelque chose derrière elle.",
-    body: "Le tourisme n'est pas le problème. Le tourisme de masse incontrôlé, oui. Chaque année, la foule grandit — et la beauté qu'elle vient chercher s'efface un peu plus. Nous refusons de laisser faire. Notre mission : protéger Sidi Bou Said, pour que les prochaines générations puissent encore en tomber amoureuses.",
+    body: "Le tourisme n'est pas le problème. Le tourisme de masse incontrôlé, oui. Notre mission : protéger Sidi Bou Said pour les générations futures.",
     lines: [
       "le plastique.",
       "les mégots.",
@@ -444,7 +444,7 @@ const ar: Dict = {
   ],
   problem: {
     headline: "الملايين يأتون لجمالها. كل زيارة تترك شيئاً خلفها.",
-    body: "السياحة ليست المشكلة. السياحة الجماعية غير المنضبطة هي المشكلة. كل عام تكبر الحشود، ويخفت الجمال الذي جاءت من أجله أكثر فأكثر. لن نسمح بذلك. مهمتنا: حماية سيدي بوسعيد، حتى تقع الأجيال القادمة في حبها كما وقعنا نحن.",
+    body: "السياحة ليست المشكلة. المشكلة هي السياحة الجماعية غير المنظّمة. مهمتنا: حماية سيدي بوسعيد للأجيال القادمة.",
     lines: [
       "البلاستيك.",
       "أعقاب السجائر.",
@@ -623,7 +623,7 @@ const de: Dict = {
   ],
   problem: {
     headline: "Millionen kommen wegen ihrer Schönheit. Jeder Besuch hinterlässt etwas.",
-    body: "Tourismus ist nicht das Problem. Unkontrollierter Massentourismus ist es. Jedes Jahr werden die Massen größer – und die Schönheit, für die sie kommen, verblasst ein Stück mehr. Wir lassen das nicht zu. Unsere Mission: Sidi Bou Said schützen – damit sich auch die nächsten Generationen in diesen Ort verlieben.",
+    body: "Tourismus ist nicht das Problem. Unkontrollierter Massentourismus ist es. Unsere Mission: Sidi Bou Said für die nächsten Generationen schützen.",
     lines: [
       "das Plastik.",
       "die Zigarettenstummel.",
