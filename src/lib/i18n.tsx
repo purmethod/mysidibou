@@ -121,7 +121,7 @@ const en = {
     body: "No concrete. No masonry. Thin wires, light trellises, fell and jasmine. We set the frame. Nature does the rest. The flower gate stands where the old village begins. Every visit starts here.",
   },
   contribution: {
-    headline: "How it works?",
+    headline: "How does it work?",
     body: "Sidi Bou Said is a living museum. To protect it, visitors from abroad pay a small contribution.",
     tagline: "Visit. Contribute. Preserve.",
     tunisianLabel: "Tunisians",
@@ -493,7 +493,7 @@ const ar: Dict = {
     body: "لا خرسانة. لا بناء حجري. أسلاك رفيعة، تعريشات خفيفة، فلّ وياسمين. نحن نضع الإطار. الطبيعة تكمل الباقي. بوابة الزهور تقف حيث تبدأ القرية القديمة. كل زيارة تبدأ هنا.",
   },
   contribution: {
-    headline: "كيف يعمل؟",
+    headline: "كيف يعمل النظام؟",
     body: "سيدي بوسعيد متحف حيّ. لحمايته، يدفع الزوار القادمون من الخارج مساهمة رمزية.",
     tagline: "زُر. ساهم. احفظ.",
     tunisianLabel: "التونسيون",
