@@ -214,6 +214,7 @@ export function TeamSection() {
               <p className="team-member__name">{member.name}</p>
               {member.university ? <p className="team-member__university">{member.university}</p> : null}
               {member.role ? <p className="team-member__role">{member.role}</p> : null}
+              {"role2" in member && member.role2 ? <p className="team-member__role">{member.role2}</p> : null}
               {member.instagram ? (
                 <a
                   className="team-member__insta"
