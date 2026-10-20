@@ -1167,8 +1167,8 @@ html[dir="rtl"] .marquee__track {
   gap: 0.55rem;
   margin: 0;
   padding: 0.38rem 0.95rem 0.38rem 0.5rem;
-  border: 1px solid rgba(30, 78, 140, 0.25);
-  border-radius: 999px;
+  border: 1px solid #dfe3ea;  /* same frame as the link cards */
+  border-radius: 0.75rem;
   color: var(--color-cobalt);
   text-align: left;
   line-height: 1.2;
@@ -1178,6 +1178,7 @@ html[dir="rtl"] .marquee__track {
   width: 1.5rem;
   height: 1.5rem;
   flex-shrink: 0;
+  color: var(--go-blue);  /* solid blue seal, white tick */
 }
 
 .go__badge strong {
@@ -1334,19 +1335,18 @@ html[dir="rtl"] .marquee__track {
   gap: 0.2rem;
 }
 
-/* One line on every phone: font size derived from the card's inner width
- * (the uppercase title is ~15em wide in Outfit 800). */
+/* Title spans exactly the card's inner width (SVG textLength), flush with the buttons. */
 .go-support__title {
   margin: 0;
-  font-size: min(
-    calc((min(100vw - 2rem, 26rem) - 2 * clamp(0.85rem, 4vw, 1.15rem)) / 15.2),
-    1.4rem
-  );
-  font-weight: 800;
-  letter-spacing: 0.02em;
-  line-height: 1.15;
-  text-transform: uppercase;
-  white-space: nowrap;
+  line-height: 0;
+}
+
+.go-support__title svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  font-family: var(--font-sans);
 }
 
 .go-support__price {
