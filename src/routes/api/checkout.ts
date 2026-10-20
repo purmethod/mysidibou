@@ -1,14 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 
+import { resolveCents } from "@/lib/rate.server";
 import { CONTRIBUTION, json, stripeErrorResponse, stripeRequest } from "@/lib/stripe.server";
 
-/** Card fallback: hosted Stripe Checkout, 3.00 EUR, back to /go?paid=1. */
+/** Card / PayPal: hosted Stripe Checkout, 10 TND in EUR, back to /go?paid=1. */
 export const Route = createFileRoute("/api/checkout")({
   server: {
     handlers: {
       POST: async ({ request }) => {
         const origin = new URL(request.url).origin;
         try {
+          const amount = await resolveCents(request);
           const session = await stripeRequest<{ url: string }>("POST", "/checkout/sessions", {
             mode: "payment",
             submit_type: "donate",
@@ -17,7 +19,7 @@ export const Route = createFileRoute("/api/checkout")({
                 quantity: 1,
                 price_data: {
                   currency: CONTRIBUTION.currency,
-                  unit_amount: CONTRIBUTION.amount,
+                  unit_amount: amount,
                   product_data: { name: CONTRIBUTION.description },
                 },
               },

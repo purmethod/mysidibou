@@ -51,9 +51,8 @@ export async function stripeRequest<T = any>(
   return data as T;
 }
 
-/** Contribution: 10 TND, charged as 3.00 EUR. */
+/** Contribution: 10 TND, charged in EUR at the current rate (see rate.server.ts). */
 export const CONTRIBUTION = {
-  amount: 300,
   currency: "eur",
   description: "MYSIDIBOU student project contribution",
   metadata: { source: "qr-go" },

@@ -1221,9 +1221,9 @@ html[dir="rtl"] .marquee__track {
 }
 
 .go__logo-heart {
-  width: 0.6em;
-  height: 0.6em;
-  margin-left: 0.25em;
+  width: 0.82em;
+  height: 0.82em;
+  margin-left: 0.2em;
   color: var(--go-red);
 }
 
@@ -1239,10 +1239,11 @@ html[dir="rtl"] .marquee__track {
 
 .go__sub {
   max-width: 28ch;
-  margin: clamp(0.25rem, 0.9dvh, 0.55rem) auto 0;
-  color: var(--color-ink-soft);
-  font-size: clamp(0.9rem, 2.2dvh, 1.05rem);
-  line-height: 1.38;
+  margin: clamp(0.3rem, 1dvh, 0.6rem) auto 0;
+  color: var(--color-ink);
+  font-size: clamp(0.95rem, 2.3dvh, 1.1rem);
+  font-weight: 600;
+  line-height: 1.35;
 }
 
 /* Cards */
@@ -1255,7 +1256,7 @@ html[dir="rtl"] .marquee__track {
   display: flex;
   align-items: center;
   gap: 0.85rem;
-  padding: clamp(0.55rem, 1.5dvh, 0.85rem) 1rem;
+  padding: clamp(0.85rem, 2.4dvh, 1.25rem) 1.1rem;
   border: 1px solid #dfe3ea;
   border-radius: 1rem;
   background: #fff;
@@ -1328,25 +1329,23 @@ html[dir="rtl"] .marquee__track {
 }
 
 .go-support__price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
   margin: 0;
-  font-size: clamp(1.9rem, 4.8dvh, 2.4rem);
-  font-weight: 800;
   line-height: 1;
+  white-space: nowrap;
 }
 
-.go-pay {
-  display: grid;
-  gap: 0.5rem;
+.go-support__tnd {
+  font-size: clamp(1.7rem, 4.4dvh, 2.2rem);
+  font-weight: 800;
 }
 
-.go-pay__row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.5rem;
-}
-
-.go-pay__row.is-single {
-  grid-template-columns: 1fr;
+.go-support__eur {
+  font-size: clamp(0.95rem, 2.3dvh, 1.1rem);
+  font-weight: 600;
+  opacity: 0.92;
 }
 
 .go-pay__slot {
@@ -1407,13 +1406,57 @@ html[dir="rtl"] .marquee__track {
   flex-shrink: 0;
 }
 
-.go-tile:disabled {
+.go-tile:disabled,
+.go-support__link:disabled {
   opacity: 0.7;
   cursor: progress;
 }
 
+/* Accepted payment methods: small white chips, informational only. */
+.go-methods {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.go-methods li {
+  display: grid;
+  flex: 1 1 0;
+  place-items: center;
+  height: 30px;
+  min-width: 0;
+  padding: 0 0.25rem;
+  border-radius: 7px;
+  background: #fff;
+}
+
+.go-methods svg {
+  width: 100%;
+  max-width: 3.2rem;
+  height: 20px;
+}
+
+.go-support__link {
+  align-self: center;
+  margin: -0.1rem 0 0;
+  padding: 0.1rem 0.5rem;
+  border: 0;
+  background: none;
+  color: #fff;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
 .go-insta:focus-visible,
 .go-tile:focus-visible,
+.go-support__link:focus-visible,
 .go__footer a:focus-visible {
   outline: 2px solid var(--color-cobalt);
   outline-offset: 3px;
@@ -1421,6 +1464,7 @@ html[dir="rtl"] .marquee__track {
 
 .go-support__secure {
   display: inline-flex;
+  align-self: center;
   align-items: center;
   gap: 0.35rem;
   margin: 0;
@@ -1435,6 +1479,7 @@ html[dir="rtl"] .marquee__track {
 
 .go-support__error {
   margin: 0;
+  text-align: center;
   color: #fff;
   font-size: 0.82rem;
   font-weight: 600;
