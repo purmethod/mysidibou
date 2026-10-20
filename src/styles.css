@@ -1244,24 +1244,28 @@ html[dir="rtl"] .marquee__track {
   color: var(--go-red);
 }
 
-/* Below the logo and clearly smaller than it. */
+/* Below the logo, clearly smaller than it; same sans font, all caps.
+ * ENAU line slightly larger than the student line. */
 .go__headline {
-  margin: clamp(0.35rem, 1.4dvh, 0.8rem) 0 0;
-  font-family: var(--font-display);
-  font-size: clamp(1.15rem, min(6.2vw, 3.6dvh), 1.6rem);
-  font-weight: 600;
-  line-height: 1.1;
+  margin: clamp(0.4rem, 1.4dvh, 0.8rem) 0 0;
+  font-family: var(--font-sans);
+  font-size: clamp(0.92rem, 4.3vw, 1.15rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+  text-transform: uppercase;
   white-space: nowrap;
   color: var(--color-ink);
 }
 
 .go__sub {
-  max-width: 21rem;
   margin: clamp(0.25rem, 0.9dvh, 0.5rem) auto 0;
   color: var(--color-ink);
-  font-size: clamp(0.95rem, 2.3dvh, 1.1rem);
-  font-weight: 600;
+  font-size: clamp(0.76rem, 3.4vw, 0.9rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
   line-height: 1.35;
+  text-transform: uppercase;
 }
 
 /* Cards: two link cards, then (set apart) the support card */
