@@ -1168,12 +1168,17 @@ html[dir="rtl"] .marquee__track {
 }
 
 /* Official badge */
+/* Two lines, left-aligned, seal exactly as tall as both lines.
+ * --b2 is derived from the badge width so line 2 ("Member of the Scientific
+ * Committee · UNESCO 2027", ~23.2em in Outfit 500) always fits one line. */
 .go__badge {
+  --b2: min(calc((min(100vw - 2rem, 26rem) - 2.7rem) / 25.7), 0.9rem);
+  --b1: calc(var(--b2) * 1.08);
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 100%;  /* as wide as the link cards */
+  justify-content: flex-start;
   gap: 0.7rem;
+  width: 100%;  /* as wide as the link cards */
   margin: 0;
   padding: clamp(0.6rem, 1.6dvh, 0.85rem) 1rem;
   border: 1px solid #dfe3ea;  /* same frame as the link cards */
@@ -1184,25 +1189,26 @@ html[dir="rtl"] .marquee__track {
 }
 
 .go__badge-icon {
-  width: 1.85rem;
-  height: 1.85rem;
+  width: calc(1.2 * (var(--b1) + var(--b2)));
+  height: calc(1.2 * (var(--b1) + var(--b2)));
   flex-shrink: 0;
   color: var(--go-blue);  /* solid blue seal, white tick */
 }
 
 .go__badge strong {
   display: block;
-  font-size: 0.82rem;
+  font-size: var(--b1);
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
 .go__badge-line {
   display: block;
   color: var(--color-ink);
-  font-size: clamp(0.78rem, 3.7vw, 0.92rem);
+  font-size: var(--b2);
   font-weight: 500;
+  white-space: nowrap;
 }
 
 /* Logo + headline */
@@ -1672,10 +1678,6 @@ html[dir="rtl"] .marquee__track {
     padding-bottom: 0.5rem;
   }
 
-  .go__badge-icon {
-    width: 1.6rem;
-    height: 1.6rem;
-  }
 
   .go-methods li {
     height: 26px;

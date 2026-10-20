@@ -326,11 +326,7 @@ function GoPage() {
         <SealIcon className="go__badge-icon" />
         <span>
           <strong>Official project</strong>
-          <span className="go__badge-line">
-            Member of the Scientific Committee
-            <br />
-            UNESCO 2027
-          </span>
+          <span className="go__badge-line">Member of the Scientific Committee · UNESCO 2027</span>
         </span>
       </p>
 
