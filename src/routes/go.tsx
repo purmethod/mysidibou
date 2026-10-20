@@ -14,6 +14,7 @@ import type React from "react";
 import { site } from "@/config/site";
 import { HeartIcon } from "@/components/site/ui";
 import { contributionCents } from "@/lib/rate.server";
+import { visitorLang } from "@/lib/lang.server";
 
 const STRIPE_JS = "https://js.stripe.com/v3/";
 
@@ -22,7 +23,19 @@ type Slot = "loading" | "on" | "off";
 // Rendered on the server, so the price is in the first paint.
 const getContribution = createServerFn({ method: "GET" }).handler(async () => ({
   cents: await contributionCents(),
+  lang: visitorLang(),
 }));
+
+// "Support us" in the visitor's phone language (Apple Pay translates its own button).
+const SUPPORT_US: Record<string, string> = {
+  en: "Support us",
+  fr: "Soutenez-nous",
+  de: "Unterstütze uns",
+  it: "Sostienici",
+  es: "Apóyanos",
+  ar: "ادعمونا",
+  ru: "Поддержите нас",
+};
 
 const euro = (cents: number) => `€${(cents / 100).toFixed(2)}`;
 const euroShort = (cents: number) => (cents % 100 === 0 ? `€${cents / 100}` : euro(cents));
@@ -84,7 +97,8 @@ const isAppleDevice = () =>
 
 function GoPage() {
   const { paid, amt, redirect_status } = Route.useSearch();
-  const { cents } = Route.useLoaderData();
+  const { cents, lang } = Route.useLoaderData();
+  const supportUs = SUPPORT_US[lang] ?? SUPPORT_US.en;
   const returnedPaid = paid === 1 && redirect_status !== "failed";
   const [isPaid, setPaid] = useState(returnedPaid);
   const [paidCents, setPaidCents] = useState<number | undefined>(amt);
@@ -378,21 +392,8 @@ function GoPage() {
           ) : (
             <>
               <div className="go-support__head">
-                <p aria-label="UNESCO student project" className="go-support__title">
-                  {/* SVG text with a fixed length: always exactly the card's full width */}
-                  <svg aria-hidden="true" viewBox="0 0 1000 53">
-                    <text
-                      fill="currentColor"
-                      fontSize="72.7"
-                      fontWeight="800"
-                      lengthAdjust="spacingAndGlyphs"
-                      textLength="1000"
-                      x="0"
-                      y="52.5"
-                    >
-                      UNESCO STUDENT PROJECT
-                    </text>
-                  </svg>
+                <p className="go-support__title" dir={lang === "ar" ? "rtl" : "ltr"} lang={lang}>
+                  {supportUs}
                 </p>
               </div>
 

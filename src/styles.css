@@ -1358,19 +1358,21 @@ html[dir="rtl"] .marquee__track {
   gap: 0.2rem;
 }
 
-/* Full-width blue title above the amount choice (SVG textLength = exact width). */
+/* "Support us" in the visitor's language, above the amount choice. */
 .go-support__title {
   margin: 0;
   color: #fff;
-  line-height: 0;
+  font-size: clamp(1.25rem, 5.6vw, 1.55rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
-.go-support__title svg {
-  display: block;
-  width: 100%;
-  height: auto;
-  overflow: visible;
-  font-family: var(--font-sans);
+.go-support__title[lang="ar"] {
+  letter-spacing: 0;  /* keeps Arabic letters joined */
 }
 
 .go-support__price {
