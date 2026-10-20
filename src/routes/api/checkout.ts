@@ -26,6 +26,7 @@ export const Route = createFileRoute("/api/checkout")({
             },
             payment_intent_data: {
               description: CONTRIBUTION.description,
+              statement_descriptor_suffix: CONTRIBUTION.statementDescriptorSuffix,
               metadata: CONTRIBUTION.metadata,
             },
             metadata: CONTRIBUTION.metadata,

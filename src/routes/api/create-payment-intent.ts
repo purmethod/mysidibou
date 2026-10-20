@@ -17,6 +17,7 @@ export const Route = createFileRoute("/api/create-payment-intent")({
               currency: CONTRIBUTION.currency,
               automatic_payment_methods: { enabled: true },
               description: CONTRIBUTION.description,
+              statement_descriptor_suffix: CONTRIBUTION.statementDescriptorSuffix,
               metadata: CONTRIBUTION.metadata,
             },
           );

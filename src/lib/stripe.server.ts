@@ -55,7 +55,10 @@ export async function stripeRequest<T = any>(
 export const CONTRIBUTION = {
   currency: "eur",
   description: "MYSIDIBOU student project contribution",
-  metadata: { source: "qr-go" },
+  // Card statements show "<account prefix>* MYSIDIBOU".
+  statementDescriptorSuffix: "MYSIDIBOU",
+  // Filter in the Stripe Dashboard: metadata project = mysidibou.
+  metadata: { project: "mysidibou", source: "qr-go" },
 } as const;
 
 export function json(data: unknown, status = 200, cache = "no-store") {
