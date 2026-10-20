@@ -284,7 +284,8 @@ function GoPage() {
             // Apple's button type for giving to projects and causes ("Support with Apple Pay",
             // shown in the visitor's own language). Google has no "support" type.
             buttonType: { applePay: "support", googlePay: "donate" },
-            buttonTheme: { applePay: "white", googlePay: "white" },
+            // Neutral on the white card: outlined Apple Pay, white Google Pay
+            buttonTheme: { applePay: "white-outline", googlePay: "white" },
             paymentMethods: { ...none, ...(apple ? { applePay: "auto" } : { googlePay: "auto" }) },
           },
           setWallet,

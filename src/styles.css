@@ -1338,9 +1338,10 @@ html[dir="rtl"] .marquee__track {
   flex-direction: column;
   gap: clamp(0.5rem, 1.4dvh, 0.75rem);
   padding: clamp(0.8rem, 2dvh, 1.15rem) clamp(0.85rem, 4vw, 1.15rem);
+  border: 1px solid #dfe3ea;  /* neutral white card, same frame as the link cards */
   border-radius: 1rem;
-  background: var(--go-blue);
-  color: #fff;
+  background: #fff;
+  color: var(--color-ink);
   text-align: left;
 }
 
@@ -1391,10 +1392,10 @@ html[dir="rtl"] .marquee__track {
 .go-amount {
   height: 40px;
   padding: 0;
-  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid #dfe3ea;
   border-radius: 10px;
-  background: transparent;
-  color: #fff;
+  background: #fff;
+  color: var(--color-ink);
   font: inherit;
   font-size: 0.98rem;
   font-weight: 700;
@@ -1403,14 +1404,14 @@ html[dir="rtl"] .marquee__track {
 }
 
 .go-amount.is-active {
-  border-color: #fff;
+  border: 1.5px solid var(--go-blue);
   background: #fff;
   color: var(--go-blue);
 }
 
 .go-amount:focus-visible,
 .go-amount.is-input:focus-within {
-  outline: 2px solid #fff;
+  outline: 2px solid var(--go-blue);
   outline-offset: 2px;
 }
 
@@ -1451,13 +1452,13 @@ html[dir="rtl"] .marquee__track {
   position: absolute;
   inset: 0;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.22);
+  background: #eef1f5;
   animation: go-pulse 1.2s ease-in-out infinite alternate;
 }
 
 @keyframes go-pulse {
   to {
-    background: rgba(255, 255, 255, 0.36);
+    background: #f6f8fa;
   }
 }
 
@@ -1478,7 +1479,7 @@ html[dir="rtl"] .marquee__track {
   justify-content: center;
   gap: 0.5rem;
   height: 50px;
-  border: 0;
+  border: 1px solid #dfe3ea;
   border-radius: 12px;
   background: #fff;
   color: var(--color-ink);
@@ -1516,6 +1517,7 @@ html[dir="rtl"] .marquee__track {
   height: 30px;
   min-width: 0;
   padding: 0 0.25rem;
+  border: 1px solid #dfe3ea;
   border-radius: 7px;
   background: #fff;
 }
@@ -1540,7 +1542,7 @@ html[dir="rtl"] .marquee__track {
   gap: 0.35rem;
   margin: 0;
   font-size: 0.78rem;
-  opacity: 0.92;
+  color: var(--color-ink-soft);
 }
 
 .go-support__lock {
@@ -1551,7 +1553,7 @@ html[dir="rtl"] .marquee__track {
 .go-support__error {
   margin: 0;
   text-align: center;
-  color: #fff;
+  color: #b3261e;
   font-size: 0.82rem;
   font-weight: 600;
   line-height: 1.3;
@@ -1569,7 +1571,7 @@ html[dir="rtl"] .marquee__track {
 .go-thanks__heart {
   width: 2.4rem;
   height: 2.4rem;
-  color: #fff;
+  color: var(--go-red);
   animation: go-beat 1.4s ease-in-out 2;
 }
 
