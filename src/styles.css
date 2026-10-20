@@ -1622,3 +1622,15 @@ html[dir="rtl"] .marquee__track {
     animation: none;
   }
 }
+
+/* Instagram mark next to "follow the mission" */
+.ig-mark {
+  width: 1.15em;
+  height: 1.15em;
+  flex: 0 0 auto;
+}
+
+.ig-mark--lg {
+  width: 0.85em;
+  height: 0.85em;
+}

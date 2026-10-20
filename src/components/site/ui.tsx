@@ -109,6 +109,7 @@ export function DonateButton({
   return (
     <a className={classes} href={site.social.instagram}>
       {dict.cta.follow}
+      <InstagramIcon className="ig-mark" />
     </a>
   );
 }
@@ -132,9 +133,7 @@ export function FollowLink({
   return (
     <a className={classes} href={site.social.instagram}>
       {dict.cta.follow}
-      <span className="arrow" aria-hidden="true">
-        →
-      </span>
+      <InstagramIcon className="ig-mark" />
     </a>
   );
 }
@@ -143,7 +142,7 @@ export function FollowLink({
 /* Social brand glyphs (minimal geometric marks)                       */
 /* ------------------------------------------------------------------ */
 
-function InstagramIcon(props: SVGProps<SVGSVGElement>) {
+export function InstagramIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true" {...props}>
       <rect x="2.75" y="2.75" width="18.5" height="18.5" rx="5.25" />

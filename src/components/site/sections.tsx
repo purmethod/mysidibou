@@ -7,7 +7,7 @@ import type { ReactNode } from "react";
 
 import { site } from "@/config/site";
 import { useI18n } from "@/lib/i18n";
-import { DonateButton, FollowLink, HeartIcon, Reveal, socialIcons } from "./ui";
+import { DonateButton, FollowLink, HeartIcon, InstagramIcon, Reveal, socialIcons } from "./ui";
 
 /* ------------------------------------------------------------------ */
 /* Layout helpers                                                      */
@@ -555,7 +555,7 @@ export function FollowSection() {
   return (
     <Section id="follow" className="section-pad">
       <Reveal>
-        <Headline><a href={site.social.instagram}>{dict.follow.headline}</a></Headline>
+        <Headline><a className="inline-flex items-center gap-3" href={site.social.instagram}>{dict.follow.headline}<InstagramIcon className="ig-mark ig-mark--lg" /></a></Headline>
         <p className="section-copy mt-6 text-base md:text-lg">{dict.follow.body}</p>
       </Reveal>
       <div className="mt-10 flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-x-12">
