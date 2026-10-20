@@ -1238,7 +1238,7 @@ html[dir="rtl"] .marquee__track {
 }
 
 .go__sub {
-  max-width: 28ch;
+  max-width: 21rem;
   margin: clamp(0.3rem, 1dvh, 0.6rem) auto 0;
   color: var(--color-ink);
   font-size: clamp(0.95rem, 2.3dvh, 1.1rem);
@@ -1246,10 +1246,15 @@ html[dir="rtl"] .marquee__track {
   line-height: 1.35;
 }
 
-/* Cards */
+/* Cards: two link cards, then (set apart) the support card */
 .go__cards {
   display: grid;
-  gap: clamp(0.5rem, 1.4dvh, 0.8rem);
+  gap: clamp(0.75rem, 2.4dvh, 1.4rem);
+}
+
+.go__links {
+  display: grid;
+  gap: clamp(0.45rem, 1.2dvh, 0.65rem);
 }
 
 .go-insta {
@@ -1283,6 +1288,17 @@ html[dir="rtl"] .marquee__track {
 .go-insta__logo svg {
   width: 62%;
   height: 62%;
+}
+
+.go-insta__logo--heart {
+  background: #fdecf1;
+  color: var(--go-red);
+}
+
+.go-insta__logo--heart svg {
+  width: 58%;
+  height: 58%;
+  margin-top: 6%;
 }
 
 .go-insta__text {
@@ -1444,6 +1460,7 @@ html[dir="rtl"] .marquee__track {
   font: inherit;
   font-size: 0.9rem;
   font-weight: 600;
+  line-height: 1.25;
   text-decoration: underline;
   text-underline-offset: 3px;
   cursor: pointer;
@@ -1536,9 +1553,56 @@ html[dir="rtl"] .marquee__track {
   text-decoration: none;
 }
 
-/* Very short screens (small Androids with browser chrome): drop the lead line. */
-@media (max-height: 600px) {
+/* Short screens (iPhone SE, small Androids, in-app browsers): compact, still no scroll. */
+@media (max-height: 700px) {
   .go__footer-lead {
+    display: none;
+  }
+
+  .go-insta {
+    padding-top: clamp(0.55rem, 1.7dvh, 0.9rem);
+    padding-bottom: clamp(0.55rem, 1.7dvh, 0.9rem);
+  }
+
+  .go-insta__logo {
+    width: clamp(2.15rem, 6dvh, 2.8rem);
+    height: clamp(2.15rem, 6dvh, 2.8rem);
+    border-radius: 0.75rem;
+  }
+}
+
+@media (max-height: 620px) {
+  .go__badge {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .go__badge-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .go-methods li {
+    height: 26px;
+  }
+
+  .go-methods svg {
+    height: 17px;
+  }
+
+  .go-support__secure,
+  .go__footer-country {
+    display: none;
+  }
+
+  .go__footer {
+    font-size: 0.66rem;
+  }
+}
+
+/* Extremely short viewports: the credit line yields first. */
+@media (max-height: 540px) {
+  .go__footer {
     display: none;
   }
 }

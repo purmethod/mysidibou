@@ -236,17 +236,25 @@ function GoPage() {
       </header>
 
       <div className="go__cards">
-        <a
-          className="go-insta"
-          href={site.social.instagram}
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <span className="go-insta__text">Follow on Instagram</span>
-          <span aria-hidden="true" className="go-insta__logo">
-            <InstagramGlyph />
-          </span>
-        </a>
+        <div className="go__links">
+          <a
+            className="go-insta"
+            href={site.social.instagram}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <span className="go-insta__text">Follow on Instagram</span>
+            <span aria-hidden="true" className="go-insta__logo">
+              <InstagramGlyph />
+            </span>
+          </a>
+          <a className="go-insta" href="https://mysidibou.com/">
+            <span className="go-insta__text">Visit mysidibou.com</span>
+            <span aria-hidden="true" className="go-insta__logo go-insta__logo--heart">
+              <HeartIcon />
+            </span>
+          </a>
+        </div>
 
         <section aria-live="polite" className="go-support">
           {isPaid ? (
@@ -307,7 +315,8 @@ function GoPage() {
       <footer className="go__footer">
         <p className="go__footer-lead">A small contribution for you, a big help for us.</p>
         <p>
-          Paul Brinkmann · Architect &amp; Founder · Germany ·{" "}
+          Paul Brinkmann · Architect &amp; Founder ·{" "}
+          <span className="go__footer-country">Germany · </span>
           <a href="https://brinkmannpaul.com" rel="noopener" target="_blank">
             brinkmannpaul.com ↗
           </a>
