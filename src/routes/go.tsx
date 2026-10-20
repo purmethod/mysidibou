@@ -379,19 +379,19 @@ function GoPage() {
           ) : (
             <>
               <div className="go-support__head">
-                <p aria-label="Independent student project" className="go-support__title">
+                <p aria-label="UNESCO student project" className="go-support__title">
                   {/* SVG text with a fixed length: always exactly the card's full width */}
-                  <svg aria-hidden="true" viewBox="0 0 1000 43">
+                  <svg aria-hidden="true" viewBox="0 0 1000 53">
                     <text
                       fill="currentColor"
-                      fontSize="59.4"
+                      fontSize="72.7"
                       fontWeight="800"
                       lengthAdjust="spacingAndGlyphs"
                       textLength="1000"
                       x="0"
-                      y="42.5"
+                      y="52.5"
                     >
-                      INDEPENDENT STUDENT PROJECT
+                      UNESCO STUDENT PROJECT
                     </text>
                   </svg>
                 </p>
