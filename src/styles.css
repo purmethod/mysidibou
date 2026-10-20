@@ -1344,18 +1344,15 @@ html[dir="rtl"] .marquee__track {
   gap: 0.2rem;
 }
 
-/* Title spans exactly the card's inner width (SVG textLength), flush with the buttons. */
+/* Small, readable label above the amount choice. */
 .go-support__title {
   margin: 0;
-  line-height: 0;
-}
-
-.go-support__title svg {
-  display: block;
-  width: 100%;
-  height: auto;
-  overflow: visible;
-  font-family: var(--font-sans);
+  font-size: clamp(0.82rem, 3.6vw, 0.95rem);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .go-support__price {

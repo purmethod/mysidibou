@@ -382,22 +382,7 @@ function GoPage() {
           ) : (
             <>
               <div className="go-support__head">
-                <p aria-label="UNESCO student project" className="go-support__title">
-                  {/* SVG text with a fixed length: always exactly the card's full width */}
-                  <svg aria-hidden="true" viewBox="0 0 1000 50">
-                    <text
-                      fill="currentColor"
-                      fontSize="72.7"
-                      fontWeight="800"
-                      lengthAdjust="spacingAndGlyphs"
-                      textLength="1000"
-                      x="0"
-                      y="49"
-                    >
-                      UNESCO STUDENT PROJECT
-                    </text>
-                  </svg>
-                </p>
+                <p className="go-support__title">Independent student project</p>
               </div>
 
               <div aria-label="Amount" className="go-amounts" role="radiogroup">
