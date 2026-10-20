@@ -141,7 +141,7 @@ function GoPage() {
             appearance: { variables: { borderRadius: "12px" } },
           });
           const element = elements.create("expressCheckout", {
-            buttonType: { applePay: "donate", googlePay: "donate" },
+            buttonType: { applePay: "support", googlePay: "donate" },
             buttonTheme: { applePay: "white", googlePay: "white" },
             buttonHeight: 50,
             layout: { maxColumns: 1, maxRows: 1 },
@@ -242,12 +242,9 @@ function GoPage() {
           rel="noopener noreferrer"
           target="_blank"
         >
+          <span className="go-insta__text">Follow on Instagram</span>
           <span aria-hidden="true" className="go-insta__logo">
             <InstagramGlyph />
-          </span>
-          <span className="go-insta__text">Follow on Instagram</span>
-          <span aria-hidden="true" className="go-insta__arrow">
-            ↗
           </span>
         </a>
 
@@ -274,7 +271,7 @@ function GoPage() {
               {wallet === "off" && (
                 <button className="go-tile" disabled={busy} onClick={payWithCard} type="button">
                   <CardIcon className="go-tile__icon" />
-                  {busy ? "Opening…" : "Pay with card or PayPal"}
+                  {busy ? "Opening…" : "Support us with card or PayPal"}
                 </button>
               )}
 
@@ -288,7 +285,7 @@ function GoPage() {
 
               {wallet !== "off" && (
                 <button className="go-support__link" disabled={busy} onClick={payWithCard} type="button">
-                  {busy ? "Opening…" : "Pay with card or PayPal"}
+                  {busy ? "Opening…" : "Support us with card or PayPal"}
                 </button>
               )}
 
