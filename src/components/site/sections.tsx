@@ -555,7 +555,7 @@ export function FollowSection() {
   return (
     <Section id="follow" className="section-pad">
       <Reveal>
-        <Headline><a className="inline-flex items-center gap-3" href={site.landing}>{dict.follow.headline}<InstagramIcon className="ig-mark ig-mark--lg" /></a></Headline>
+        <Headline><a className="inline-flex items-center gap-3" href={site.social.instagram}>{dict.follow.headline}<InstagramIcon className="ig-mark ig-mark--lg" /></a></Headline>
         <p className="section-copy mt-6 text-base md:text-lg">{dict.follow.body}</p>
       </Reveal>
       <div className="mt-10 flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-x-12">
@@ -675,9 +675,7 @@ export function FooterSection() {
     <footer className="border-t border-line bg-paper">
       <div className="mx-auto grid w-full max-w-6xl gap-10 px-[1.25rem] py-16 md:grid-cols-2 md:px-10">
         <div>
-          <a className="block w-fit font-display text-3xl font-semibold" href={site.landing}>
-            mysidibou
-          </a>
+          <p className="font-display text-3xl font-semibold">mysidibou</p>
           <p className="mt-3 max-w-sm text-sm text-ink-soft">{dict.footer.missionLine}</p>
           <p className="mt-6 font-display text-lg italic text-cobalt">{dict.footer.tagline}</p>
         </div>

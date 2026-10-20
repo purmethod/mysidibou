@@ -27,7 +27,7 @@ export function HeroSection() {
         <h1 className="hero__title">{hero.title}</h1>
         <p className="hero__body">{hero.body}</p>
         <div className="hero__actions">
-          <a className="btn-donate btn-donate--wide" href={site.landing}>
+          <a className="btn-donate btn-donate--wide" href={site.social.instagram}>
             {dict.cta.follow}
             <InstagramIcon className="ig-mark" />
           </a>

@@ -24,9 +24,6 @@ export const site = {
     qrAlt: "mysidibou donation QR code",
   },
 
-  /* ---------- Landing page (QR codes, logo, "follow the mission") ---------- */
-  landing: "/go",
-
   /* ---------- Social media ---------- */
   social: {
     instagram: "https://instagram.com/mysidibou",
