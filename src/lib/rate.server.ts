@@ -43,14 +43,14 @@ export async function contributionCents(): Promise<number> {
 /** Fixed euro choices on /go, and the range for a custom "€20+" amount. */
 export const FIXED_EURO_CENTS = [500, 1000];
 export const CUSTOM_MIN_CENTS = 2000;
-export const CUSTOM_MAX_CENTS = 50000;
+export const CUSTOM_MAX_CENTS = 1000000; // €10,000
 
 /**
  * The amount the visitor chose on the page (and saw in the Apple Pay sheet) is
  * the one we charge, if it is one of the allowed choices:
  *  - 10 TND at the current rate (within 3% of the server's own rate)
  *  - €5 or €10
- *  - a custom amount from €20 to €500 (whole euros)
+ *  - a custom amount from €20 to €10,000 (whole euros)
  * Anything else falls back to 10 TND.
  */
 export async function resolveCents(request: Request): Promise<number> {

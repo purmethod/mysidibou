@@ -1141,11 +1141,6 @@ html[dir="rtl"] .marquee__track {
   height: 100dvh;
   overflow: hidden;
   overscroll-behavior: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  gap: clamp(0.5rem, 1.6dvh, 1.1rem);
   padding: max(env(safe-area-inset-top), clamp(0.7rem, 2.2dvh, 1.5rem)) 1rem
     max(env(safe-area-inset-bottom), clamp(0.6rem, 1.8dvh, 1.25rem));
   background: #fff;
@@ -1153,17 +1148,31 @@ html[dir="rtl"] .marquee__track {
   text-align: center;
 }
 
-.go > * {
+/* Content column; height and scale are set by the fit script in go.tsx. */
+.go__fit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(0.5rem, 1.6dvh, 1.1rem);
   width: 100%;
   max-width: 26rem;
+  height: 100%;
+  margin: 0 auto;
+  transform-origin: top center;
+}
+
+.go__fit > * {
+  width: 100%;
   flex-shrink: 0;
 }
 
 /* Official badge */
 .go__badge {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  width: auto;
+  justify-content: center;
+  width: 100%;  /* as wide as the link cards */
   gap: 0.55rem;
   margin: 0;
   padding: 0.38rem 0.95rem 0.38rem 0.5rem;
@@ -1411,7 +1420,7 @@ html[dir="rtl"] .marquee__track {
 }
 
 .go-amount.is-input input {
-  width: 2.4em;
+  width: 3.1em; /* up to 5 digits (€10000) */
   min-width: 0;
   padding: 0;
   border: 0;

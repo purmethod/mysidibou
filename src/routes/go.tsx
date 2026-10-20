@@ -27,10 +27,10 @@ const getContribution = createServerFn({ method: "GET" }).handler(async () => ({
 const euro = (cents: number) => `€${(cents / 100).toFixed(2)}`;
 const euroShort = (cents: number) => (cents % 100 === 0 ? `€${cents / 100}` : euro(cents));
 
-// Amount choices: 10 TND (live rate) · €5 · €10 · €20+ (own amount, €20–€500)
+// Amount choices: 10 TND (live rate) · €5 · €10 · €20+ (own amount, €20–€10,000)
 type Choice = "tnd" | 500 | 1000 | "custom";
 const CUSTOM_MIN = 20;
-const CUSTOM_MAX = 500;
+const CUSTOM_MAX = 10000;
 
 declare global {
   interface Window {
@@ -97,6 +97,46 @@ function GoPage() {
   const amountRef = useRef(amount);
   amountRef.current = amount;
   const groupsRef = useRef<any[]>([]);
+  const screenRef = useRef<HTMLElement>(null);
+  const fitRef = useRef<HTMLDivElement>(null);
+
+  // Self-adjusting single screen: if the content is taller than the phone's
+  // visible area (small phone, in-app browser, enlarged text), scale it down
+  // proportionally; if there is room, the free space is spread between blocks.
+  useEffect(() => {
+    const screen = screenRef.current;
+    const box = fitRef.current;
+    if (!screen || !box) return;
+    let frame = 0;
+    const fit = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const cs = getComputedStyle(screen);
+        const avail = screen.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
+        const kids = [...box.children].filter((k) => (k as HTMLElement).offsetHeight > 0) as HTMLElement[];
+        const gap = parseFloat(getComputedStyle(box).rowGap) || 0;
+        const need = kids.reduce((sum, k) => sum + k.offsetHeight, 0) + gap * Math.max(0, kids.length - 1);
+        if (need <= avail) {
+          box.style.height = `${avail}px`;
+          box.style.transform = "";
+        } else {
+          box.style.height = `${need}px`;
+          box.style.transform = `scale(${Math.max(0.6, avail / need)})`;
+        }
+      });
+    };
+    fit();
+    const ro = new ResizeObserver(fit);
+    ro.observe(screen);
+    [...box.children].forEach((k) => ro.observe(k));
+    window.addEventListener("orientationchange", fit);
+    document.fonts?.ready.then(fit);
+    return () => {
+      cancelAnimationFrame(frame);
+      ro.disconnect();
+      window.removeEventListener("orientationchange", fit);
+    };
+  }, []);
   const [wallet, setWallet] = useState<Slot>("loading");
   const [paypal, setPaypal] = useState<Slot>("loading");
   const [busy, setBusy] = useState(false);
@@ -174,6 +214,10 @@ function GoPage() {
           });
           groupsRef.current.push(elements);
           const element = elements.create("expressCheckout", {
+            // Name shown in the Apple Pay / Google Pay sheet ("Pay MYSIDIBOU").
+            // Set here so it never falls back to an older Stripe account name.
+            business: { name: "MYSIDIBOU" },
+            billingAddressRequired: true,
             // Slightly flatter buttons on short screens so the page never scrolls
             buttonHeight: window.innerHeight < 620 ? 44 : 50,
             layout: { maxColumns: 1, maxRows: 1 },
@@ -276,7 +320,8 @@ function GoPage() {
     !paidCents || Math.abs(paidCents - cents) <= cents * 0.03 ? "10 TND" : euroShort(paidCents);
 
   return (
-    <main className="go">
+    <main className="go" ref={screenRef}>
+      <div className="go__fit" ref={fitRef}>
       <p className="go__badge">
         <SealIcon className="go__badge-icon" />
         <span>
@@ -295,7 +340,7 @@ function GoPage() {
         <p className="go__sub">
           Architecture students protecting
           <br />
-          UNESCO World Heritage.
+          UNESCO World Heritage
         </p>
       </header>
 
@@ -349,13 +394,6 @@ function GoPage() {
                     </text>
                   </svg>
                 </p>
-                <p className="go-support__price">
-                  {choice === "tnd"
-                    ? `10 TND ≈ ${euro(cents)}`
-                    : choice === "custom" && !customValid
-                      ? `€${CUSTOM_MIN}–€${CUSTOM_MAX}`
-                      : euroShort(amount)}
-                </p>
               </div>
 
               <div aria-label="Amount" className="go-amounts" role="radiogroup">
@@ -372,9 +410,9 @@ function GoPage() {
                     <label className="go-amount is-active is-input" key={label}>
                       €
                       <input
-                        aria-label="Your amount in euro (20 to 500)"
+                        aria-label="Your amount in euro (20 to 10000)"
                         inputMode="numeric"
-                        onChange={(e) => setCustomEuro(e.target.value.replace(/[^0-9]/g, "").slice(0, 3))}
+                        onChange={(e) => setCustomEuro(e.target.value.replace(/[^0-9]/g, "").slice(0, 5))}
                         pattern="[0-9]*"
                         type="text"
                         value={customEuro}
@@ -439,6 +477,7 @@ function GoPage() {
           <HeartIcon className="go__logo-heart" />
         </p>
       </footer>
+      </div>
     </main>
   );
 }
