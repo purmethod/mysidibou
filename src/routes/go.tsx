@@ -249,7 +249,10 @@ function GoPage() {
             </span>
           </a>
           <a className="go-insta" href="https://mysidibou.com/">
-            <span className="go-insta__text">Visit mysidibou.com</span>
+            <span className="go-insta__text">
+              Visit the project
+              <span className="go-insta__sub">mysidibou.com</span>
+            </span>
             <span aria-hidden="true" className="go-insta__logo is-heart">
               <HeartIcon />
             </span>

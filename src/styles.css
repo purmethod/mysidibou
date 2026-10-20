@@ -1304,8 +1304,14 @@ html[dir="rtl"] .marquee__track {
   color: var(--go-red);
 }
 
+.go-insta__sub {
+  display: block;
+  color: var(--go-blue);
+}
+
 .go-insta__text {
   flex: 1;
+  line-height: 1.25;
   font-size: clamp(1.05rem, 2.6dvh, 1.2rem);
   font-weight: 600;
 }
