@@ -210,7 +210,8 @@ function GoPage() {
         mount(
           walletRef.current,
           {
-            buttonType: { applePay: "support", googlePay: "donate" },
+            // Logo only (" Pay" / "G Pay"): no text, so no translation into the phone's language.
+            buttonType: { applePay: "plain", googlePay: "plain" },
             buttonTheme: { applePay: "white", googlePay: "white" },
             paymentMethods: { ...none, ...(apple ? { applePay: "auto" } : { googlePay: "auto" }) },
           },
@@ -298,7 +299,7 @@ function GoPage() {
           ) : (
             <>
               <div className="go-support__head">
-                <p className="go-support__title">Support our student project</p>
+                <p className="go-support__title">Support student project</p>
                 <p className="go-support__price">
                   10 TND ≈ {euro(cents)}
                 </p>
@@ -342,11 +343,11 @@ function GoPage() {
 
       <footer className="go__footer">
         <p className="go__footer-lead">A small contribution for you, a big help for us.</p>
-        <p aria-label="© mysidibou" className="go__footer-logo">
-          <span className="go__footer-copy">©</span>
+        <p aria-label="mysidibou · UNESCO Report 2027" className="go__footer-logo">
           <span className="go__logo-my">MY</span>
           <span className="go__logo-name">SIDIBOU</span>
-          <HeartIcon className="go__logo-heart" />
+          <HeartIcon className="go__footer-heart" />
+          <span className="go__logo-name">UNESCO REPORT 2027</span>
         </p>
       </footer>
     </main>
