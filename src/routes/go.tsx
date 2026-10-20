@@ -6,6 +6,7 @@
  */
 import { createFileRoute } from "@tanstack/react-router";
 import { useCallback, useEffect, useRef, useState } from "react";
+import type React from "react";
 
 import { site } from "@/config/site";
 import { HeartIcon, socialIcons } from "@/components/site/ui";
@@ -118,8 +119,8 @@ function GoPage() {
         });
         element = elements.create("expressCheckout", {
           buttonType: { applePay: "donate", googlePay: "donate" },
-          buttonTheme: { applePay: "white", googlePay: "white" },
-          buttonHeight: 48,
+          buttonTheme: { applePay: "black", googlePay: "black" },
+          buttonHeight: 50,
           layout: { maxColumns: 1, maxRows: 1, overflow: "never" },
           paymentMethods: { link: "never", paypal: "never", amazonPay: "never", klarna: "never" },
         });
@@ -176,78 +177,106 @@ function GoPage() {
 
   return (
     <main className="go">
-      <p className="go__brand">
-        mysidibou
-        <HeartIcon className="go__brand-heart" />
-      </p>
-
-      <div className="go__intro">
+      <header className="go__top">
+        <p className="go__badge">
+          <CheckIcon className="go__badge-icon" />
+          <span>
+            <strong>Official project</strong>
+            <span className="go__badge-line">Member of the Scientific Committee · UNESCO 2027</span>
+          </span>
+        </p>
+        <p className="go__brand">
+          mysidibou
+          <HeartIcon className="go__brand-heart" />
+        </p>
         <h1 className="go__headline">Love Sidi Bou Saïd?</h1>
         <p className="go__sub">ENAU Sidi Bou Saïd students protecting our UNESCO World Heritage.</p>
-      </div>
+      </header>
 
-      <div className="go__cards">
+      <section aria-live="polite" className="go__bottom">
         <a
-          className="go-card go-card--insta"
+          className="go-btn go-btn--outline"
           href={site.social.instagram}
           rel="noopener noreferrer"
           target="_blank"
         >
-          <InstagramIcon className="go-card__icon" />
-          <span className="go-card__title">Follow on Instagram</span>
-          <span className="go-card__meta">{site.social.instagramHandle}</span>
+          <InstagramIcon className="go-btn__icon go-btn__icon--insta" />
+          Follow us on Instagram
         </a>
 
-        <section aria-live="polite" className="go-card go-card--support">
-          {mode === "paid" ? (
-            <div className="go-thanks">
-              <HeartIcon className="go-thanks__heart" />
-              <p className="go-thanks__title">Thank you!</p>
-              <p className="go-thanks__text">Your 10 TND protect Sidi Bou Saïd.</p>
+        {mode === "paid" ? (
+          <div className="go-thanks">
+            <HeartIcon className="go-thanks__heart" />
+            <p className="go-thanks__title">Thank you!</p>
+            <p className="go-thanks__text">Your €3 protect Sidi Bou Saïd.</p>
+          </div>
+        ) : (
+          <>
+            <p className="go__ask">
+              Support us with less than a coffee <span className="go__ask-price">(€3)</span>
+            </p>
+
+            <div className={`go-pay ${mode === "card" ? "is-hidden" : ""}`}>
+              <div className={`go-pay__ece ${mode === "wallet" ? "is-ready" : ""}`} ref={eceRef} />
+              {mode === "loading" && <div aria-hidden="true" className="go-pay__skeleton" />}
             </div>
-          ) : (
-            <>
-              <h2 className="go-card__title">Support our UNESCO student project</h2>
-              <p className="go-price">
-                <span className="go-price__main">10 TND</span>
-                <span className="go-price__eur">≈ €3</span>
+
+            <button
+              className={`go-btn ${mode === "card" ? "go-btn--solid" : "go-btn--outline"}`}
+              disabled={busy}
+              onClick={payWithCard}
+              type="button"
+            >
+              <CardIcon className="go-btn__icon" />
+              {busy ? "Opening…" : "Pay with card"}
+            </button>
+
+            {error && (
+              <p className="go-pay__error" role="alert">
+                {error}
               </p>
+            )}
+          </>
+        )}
 
-              <div className="go-pay">
-                <div
-                  className={`go-pay__ece ${mode === "wallet" ? "is-ready" : ""} ${mode === "card" ? "is-hidden" : ""}`}
-                  ref={eceRef}
-                />
-                {mode === "loading" && <div aria-hidden="true" className="go-pay__skeleton" />}
-                {mode === "card" && (
-                  <button className="go-pay__card" disabled={busy} onClick={payWithCard} type="button">
-                    {busy ? "Opening…" : "Pay with card"}
-                  </button>
-                )}
-              </div>
-
-              {mode === "wallet" && (
-                <button className="go-pay__link" disabled={busy} onClick={payWithCard} type="button">
-                  {busy ? "opening card payment…" : "or pay with card"}
-                </button>
-              )}
-              {error && (
-                <p className="go-pay__error" role="alert">
-                  {error}
-                </p>
-              )}
-            </>
-          )}
-        </section>
-      </div>
-
-      <footer className="go__footer">
-        <p className="go__footer-lead">A small contribution for you, a big help for us.</p>
-        <p>Paul Brinkmann · Architect &amp; Founder · Germany</p>
-        <a href="https://brinkmannpaul.com" rel="noopener" target="_blank">
-          brinkmannpaul.com ↗
-        </a>
-      </footer>
+        <p className="go__secure">
+          <LockIcon className="go__secure-icon" />
+          Secure payment by Stripe
+        </p>
+        <p className="go__credit">
+          Paul Brinkmann · Architect &amp; Founder ·{" "}
+          <a href="https://brinkmannpaul.com" rel="noopener" target="_blank">
+            brinkmannpaul.com ↗
+          </a>
+        </p>
+      </section>
     </main>
+  );
+}
+
+function CardIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true" {...props}>
+      <rect x="2.75" y="5.25" width="18.5" height="13.5" rx="2.25" />
+      <path d="M2.75 9.75h18.5M6.5 15h3" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function LockIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true" {...props}>
+      <rect x="4.5" y="10.5" width="15" height="10" rx="2" />
+      <path d="M8 10.5V7.5a4 4 0 0 1 8 0v3" />
+    </svg>
+  );
+}
+
+function CheckIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden="true" {...props}>
+      <path d="M12 2.5l2.4 1.8 3-.1.9 2.9 2.4 1.8-.9 2.9.9 2.9-2.4 1.8-.9 2.9-3-.1L12 21.5l-2.4-1.8-3 .1-.9-2.9-2.4-1.8.9-2.9-.9-2.9 2.4-1.8.9-2.9 3 .1z" />
+      <path d="M8.3 12.2l2.5 2.5 4.9-5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
   );
 }
