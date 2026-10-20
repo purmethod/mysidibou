@@ -1258,6 +1258,7 @@ html[dir="rtl"] .marquee__track {
 }
 
 .go-insta {
+  cursor: pointer;
   display: flex;
   align-items: center;
   gap: 0.85rem;
@@ -1275,30 +1276,32 @@ html[dir="rtl"] .marquee__track {
   border-color: var(--go-blue);
 }
 
+/* Icon frame: same line as the card border, around the original Instagram
+ * icon and around the logo heart. */
 .go-insta__logo {
   display: grid;
   place-items: center;
   width: clamp(2.8rem, 6.8dvh, 3.5rem);
   height: clamp(2.8rem, 6.8dvh, 3.5rem);
   flex-shrink: 0;
-  border-radius: 0.95rem;
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+  padding: 3px;
+  border: 1px solid #dfe3ea;
+  border-radius: 1.05rem;
+  background: #fff;
 }
 
-.go-insta__logo svg {
-  width: 62%;
-  height: 62%;
+.go-insta__logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 22.4%;
 }
 
-.go-insta__logo--heart {
-  background: #fdecf1;
-  color: var(--go-red);
-}
-
-.go-insta__logo--heart svg {
-  width: 58%;
-  height: 58%;
+.go-insta__logo.is-heart svg {
+  width: 60%;
+  height: 60%;
   margin-top: 6%;
+  color: var(--go-red);
 }
 
 .go-insta__text {
@@ -1567,7 +1570,7 @@ html[dir="rtl"] .marquee__track {
   .go-insta__logo {
     width: clamp(2.15rem, 6dvh, 2.8rem);
     height: clamp(2.15rem, 6dvh, 2.8rem);
-    border-radius: 0.75rem;
+    border-radius: 0.85rem;
   }
 }
 

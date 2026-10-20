@@ -245,12 +245,12 @@ function GoPage() {
           >
             <span className="go-insta__text">Follow on Instagram</span>
             <span aria-hidden="true" className="go-insta__logo">
-              <InstagramGlyph />
+              <img alt="" decoding="async" height="168" src="/assets/instagram-icon.webp" width="168" />
             </span>
           </a>
           <a className="go-insta" href="https://mysidibou.com/">
             <span className="go-insta__text">Visit mysidibou.com</span>
-            <span aria-hidden="true" className="go-insta__logo go-insta__logo--heart">
+            <span aria-hidden="true" className="go-insta__logo is-heart">
               <HeartIcon />
             </span>
           </a>
@@ -331,16 +331,6 @@ function SealIcon(props: React.SVGProps<SVGSVGElement>) {
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden="true" {...props}>
       <path d="M12 2.5l2.4 1.8 3-.1.9 2.9 2.4 1.8-.9 2.9.9 2.9-2.4 1.8-.9 2.9-3-.1L12 21.5l-2.4-1.8-3 .1-.9-2.9-2.4-1.8.9-2.9-.9-2.9 2.4-1.8.9-2.9 3 .1z" />
       <path d="M8.3 12.2l2.5 2.5 4.9-5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-function InstagramGlyph() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" aria-hidden="true">
-      <rect x="3.5" y="3.5" width="17" height="17" rx="4.8" />
-      <circle cx="12" cy="12" r="3.9" />
-      <circle cx="17.2" cy="6.8" r="1" fill="#fff" stroke="none" />
     </svg>
   );
 }
