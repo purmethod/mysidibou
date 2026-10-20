@@ -1314,6 +1314,13 @@ html[dir="rtl"] .marquee__track {
   background: #fff;
 }
 
+/* Instagram: the original icon sits directly on the blue card, no white frame,
+ * same outer size as the heart tile. */
+.go-insta__logo:not(.is-heart) {
+  padding: 0;
+  background: transparent;
+}
+
 .go-insta__logo img {
   display: block;
   width: 100%;
