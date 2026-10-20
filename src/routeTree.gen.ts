@@ -13,7 +13,6 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as GoRouteImport } from './routes/go'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ApiStripeDomainsRouteImport } from './routes/api/stripe-domains'
 import { Route as ApiCreatePaymentIntentRouteImport } from './routes/api/create-payment-intent'
 import { Route as ApiConfigRouteImport } from './routes/api/config'
 import { Route as ApiCheckoutRouteImport } from './routes/api/checkout'
@@ -36,11 +35,6 @@ const GoRoute = GoRouteImport.update({
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ApiStripeDomainsRoute = ApiStripeDomainsRouteImport.update({
-  id: '/api/stripe-domains',
-  path: '/api/stripe-domains',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiCreatePaymentIntentRoute = ApiCreatePaymentIntentRouteImport.update({
@@ -67,7 +61,6 @@ export interface FileRoutesByFullPath {
   '/api/checkout': typeof ApiCheckoutRoute
   '/api/config': typeof ApiConfigRoute
   '/api/create-payment-intent': typeof ApiCreatePaymentIntentRoute
-  '/api/stripe-domains': typeof ApiStripeDomainsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -77,7 +70,6 @@ export interface FileRoutesByTo {
   '/api/checkout': typeof ApiCheckoutRoute
   '/api/config': typeof ApiConfigRoute
   '/api/create-payment-intent': typeof ApiCreatePaymentIntentRoute
-  '/api/stripe-domains': typeof ApiStripeDomainsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -88,7 +80,6 @@ export interface FileRoutesById {
   '/api/checkout': typeof ApiCheckoutRoute
   '/api/config': typeof ApiConfigRoute
   '/api/create-payment-intent': typeof ApiCreatePaymentIntentRoute
-  '/api/stripe-domains': typeof ApiStripeDomainsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -100,7 +91,6 @@ export interface FileRouteTypes {
     | '/api/checkout'
     | '/api/config'
     | '/api/create-payment-intent'
-    | '/api/stripe-domains'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -110,7 +100,6 @@ export interface FileRouteTypes {
     | '/api/checkout'
     | '/api/config'
     | '/api/create-payment-intent'
-    | '/api/stripe-domains'
   id:
     | '__root__'
     | '/'
@@ -120,7 +109,6 @@ export interface FileRouteTypes {
     | '/api/checkout'
     | '/api/config'
     | '/api/create-payment-intent'
-    | '/api/stripe-domains'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -131,7 +119,6 @@ export interface RootRouteChildren {
   ApiCheckoutRoute: typeof ApiCheckoutRoute
   ApiConfigRoute: typeof ApiConfigRoute
   ApiCreatePaymentIntentRoute: typeof ApiCreatePaymentIntentRoute
-  ApiStripeDomainsRoute: typeof ApiStripeDomainsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -162,13 +149,6 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/api/stripe-domains': {
-      id: '/api/stripe-domains'
-      path: '/api/stripe-domains'
-      fullPath: '/api/stripe-domains'
-      preLoaderRoute: typeof ApiStripeDomainsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/create-payment-intent': {
@@ -203,7 +183,6 @@ const rootRouteChildren: RootRouteChildren = {
   ApiCheckoutRoute: ApiCheckoutRoute,
   ApiConfigRoute: ApiConfigRoute,
   ApiCreatePaymentIntentRoute: ApiCreatePaymentIntentRoute,
-  ApiStripeDomainsRoute: ApiStripeDomainsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

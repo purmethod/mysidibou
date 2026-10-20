@@ -81,11 +81,13 @@ function GoPage() {
   const returnedPaid = paid === 1 && redirect_status !== "failed";
   const [isPaid, setPaid] = useState(returnedPaid);
   const [wallet, setWallet] = useState<Slot>("loading");
+  const [paypal, setPaypal] = useState<Slot>("loading");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(
     redirect_status === "failed" ? "Payment failed. Please try again." : null,
   );
   const walletRef = useRef<HTMLDivElement>(null);
+  const paypalRef = useRef<HTMLDivElement>(null);
 
   const payWithCard = useCallback(async () => {
     setError(null);
@@ -116,9 +118,11 @@ function GoPage() {
     if (returnedPaid) return;
     let cancelled = false;
     const mounted: any[] = [];
-    // If Stripe never reports back (blocked script, slow network), show the card button.
+    // If Stripe never reports back (blocked script, slow network), leave the card button.
     const fallback = window.setTimeout(() => {
-      if (!cancelled) setWallet((s) => (s === "loading" ? "off" : s));
+      if (cancelled) return;
+      setWallet((s) => (s === "loading" ? "off" : s));
+      setPaypal((s) => (s === "loading" ? "off" : s));
     }, 8000);
 
     (async () => {
@@ -131,9 +135,15 @@ function GoPage() {
         const stripe = window.Stripe(config.publishableKey);
         const apple = isAppleDevice();
 
-        const container = walletRef.current;
-        if (!container) throw new Error("not ready");
-        {
+        // One Express Checkout Element per button, each in its own Elements group.
+        // Tapping it opens the Apple Pay / Google Pay sheet or the PayPal window
+        // directly on this page — no detour via a Stripe page.
+        const mount = (
+          container: HTMLDivElement | null,
+          options: Record<string, unknown>,
+          setSlot: (s: Slot) => void,
+        ) => {
+          if (!container) return setSlot("off");
           const elements = stripe.elements({
             mode: "payment",
             amount: cents,
@@ -141,19 +151,9 @@ function GoPage() {
             appearance: { variables: { borderRadius: "12px" } },
           });
           const element = elements.create("expressCheckout", {
-            buttonType: { applePay: "support", googlePay: "donate" },
-            buttonTheme: { applePay: "white", googlePay: "white" },
             buttonHeight: 50,
             layout: { maxColumns: 1, maxRows: 1 },
-            // iPhone / Mac: Apple Pay only. Android & others: Google Pay.
-            paymentMethods: {
-              applePay: apple ? "auto" : "never",
-              googlePay: apple ? "never" : "auto",
-              paypal: "never",
-              link: "never",
-              amazonPay: "never",
-              klarna: "never",
-            },
+            ...options,
           });
 
           element.on(
@@ -162,7 +162,7 @@ function GoPage() {
               if (cancelled) return;
               const any =
                 !!availablePaymentMethods && Object.values(availablePaymentMethods).some(Boolean);
-              setWallet(any ? "on" : "off");
+              setSlot(any ? "on" : "off");
             },
           );
 
@@ -202,9 +202,34 @@ function GoPage() {
 
           element.mount(container);
           mounted.push(element);
-        }
+        };
+
+        const none = { applePay: "never", googlePay: "never", paypal: "never", link: "never", amazonPay: "never", klarna: "never" };
+        // Wallet: iPhone / Mac → Apple Pay, Android → Google Pay. Shown only if the
+        // wallet is set up on the device ("auto").
+        mount(
+          walletRef.current,
+          {
+            buttonType: { applePay: "support", googlePay: "donate" },
+            buttonTheme: { applePay: "white", googlePay: "white" },
+            paymentMethods: { ...none, ...(apple ? { applePay: "auto" } : { googlePay: "auto" }) },
+          },
+          setWallet,
+        );
+        // PayPal: official PayPal logo button (needs PayPal enabled in Stripe).
+        mount(
+          paypalRef.current,
+          {
+            buttonType: { paypal: "paypal" },
+            buttonTheme: { paypal: "white" },
+            paymentMethods: { ...none, paypal: "auto" },
+          },
+          setPaypal,
+        );
       } catch {
-        if (!cancelled) setWallet("off");
+        if (cancelled) return;
+        setWallet("off");
+        setPaypal("off");
       }
     })();
 
@@ -232,7 +257,11 @@ function GoPage() {
           <HeartIcon className="go__logo-heart" />
         </p>
         <h1 className="go__headline">Love Sidi Bou Saïd?</h1>
-        <p className="go__sub">Architecture students protecting our UNESCO World Heritage.</p>
+        <p className="go__sub">
+          Architecture students protecting
+          <br />
+          UNESCO World Heritage.
+        </p>
       </header>
 
       <div className="go__cards">
@@ -271,20 +300,22 @@ function GoPage() {
               <div className="go-support__head">
                 <p className="go-support__title">Support our student project</p>
                 <p className="go-support__price">
-                  <span className="go-support__tnd">10 TND</span>
-                  <span className="go-support__eur">≈ {euro(cents)}</span>
+                  10 TND ≈ {euro(cents)}
                 </p>
               </div>
 
               <div className={`go-pay__slot is-${wallet}`}>
                 <div className="go-pay__ece" ref={walletRef} />
               </div>
-              {wallet === "off" && (
+              <div className={`go-pay__row ${paypal === "off" ? "is-single" : ""}`}>
                 <button className="go-tile" disabled={busy} onClick={payWithCard} type="button">
                   <CardIcon className="go-tile__icon" />
-                  {busy ? "Opening…" : "Support us with card or PayPal"}
+                  {busy ? "Opening…" : "Card"}
                 </button>
-              )}
+                <div className={`go-pay__slot is-${paypal}`}>
+                  <div className="go-pay__ece" ref={paypalRef} />
+                </div>
+              </div>
 
               <ul aria-label="Accepted payment methods" className="go-methods">
                 <li><ApplePayMark /></li>
@@ -293,12 +324,6 @@ function GoPage() {
                 <li><VisaMark /></li>
                 <li><MastercardMark /></li>
               </ul>
-
-              {wallet !== "off" && (
-                <button className="go-support__link" disabled={busy} onClick={payWithCard} type="button">
-                  {busy ? "Opening…" : "Support us with card or PayPal"}
-                </button>
-              )}
 
               {error ? (
                 <p className="go-support__error" role="alert">
@@ -317,12 +342,11 @@ function GoPage() {
 
       <footer className="go__footer">
         <p className="go__footer-lead">A small contribution for you, a big help for us.</p>
-        <p>
-          Paul Brinkmann · Architect &amp; Founder ·{" "}
-          <span className="go__footer-country">Germany · </span>
-          <a href="https://brinkmannpaul.com" rel="noopener" target="_blank">
-            brinkmannpaul.com ↗
-          </a>
+        <p aria-label="© mysidibou" className="go__footer-logo">
+          <span className="go__footer-copy">©</span>
+          <span className="go__logo-my">MY</span>
+          <span className="go__logo-name">SIDIBOU</span>
+          <HeartIcon className="go__logo-heart" />
         </p>
       </footer>
     </main>

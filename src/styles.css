@@ -1330,43 +1330,43 @@ html[dir="rtl"] .marquee__track {
 
 .go-support__head {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
+  flex-direction: column;
+  gap: 0.2rem;
 }
 
+/* One line on every phone: font size derived from the card's inner width
+ * (the uppercase title is ~17.6em wide in Outfit 800). */
 .go-support__title {
   margin: 0;
-  font-size: clamp(0.98rem, 2.3dvh, 1.1rem);
-  font-weight: 600;
-  line-height: 1.25;
-}
-
-.go-support__title span {
-  display: block;
-  font-size: 0.85em;
-  font-weight: 400;
-  opacity: 0.92;
-}
-
-.go-support__price {
-  display: flex;
-  align-items: baseline;
-  gap: 0.4rem;
-  margin: 0;
-  line-height: 1;
+  font-size: min(
+    calc((min(100vw - 2rem, 26rem) - 2 * clamp(0.85rem, 4vw, 1.15rem)) / 17.6),
+    1.3rem
+  );
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+  text-transform: uppercase;
   white-space: nowrap;
 }
 
-.go-support__tnd {
-  font-size: clamp(1.7rem, 4.4dvh, 2.2rem);
-  font-weight: 800;
+.go-support__price {
+  align-self: flex-end;
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  opacity: 0.95;
 }
 
-.go-support__eur {
-  font-size: clamp(0.95rem, 2.3dvh, 1.1rem);
-  font-weight: 600;
-  opacity: 0.92;
+.go-pay__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.go-pay__row.is-single {
+  grid-template-columns: 1fr;
 }
 
 .go-pay__slot {
@@ -1427,8 +1427,7 @@ html[dir="rtl"] .marquee__track {
   flex-shrink: 0;
 }
 
-.go-tile:disabled,
-.go-support__link:disabled {
+.go-tile:disabled {
   opacity: 0.7;
   cursor: progress;
 }
@@ -1460,25 +1459,8 @@ html[dir="rtl"] .marquee__track {
   height: 20px;
 }
 
-.go-support__link {
-  align-self: center;
-  margin: -0.1rem 0 0;
-  padding: 0.1rem 0.5rem;
-  border: 0;
-  background: none;
-  color: #fff;
-  font: inherit;
-  font-size: 0.9rem;
-  font-weight: 600;
-  line-height: 1.25;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  cursor: pointer;
-}
-
 .go-insta:focus-visible,
 .go-tile:focus-visible,
-.go-support__link:focus-visible,
 .go__footer a:focus-visible {
   outline: 2px solid var(--color-cobalt);
   outline-offset: 3px;
@@ -1558,9 +1540,20 @@ html[dir="rtl"] .marquee__track {
   font-size: clamp(0.82rem, 2dvh, 0.95rem);
 }
 
-.go__footer a {
-  color: var(--color-cobalt);
-  text-decoration: none;
+.go__footer-logo {
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.go__footer-copy {
+  margin-right: 0.3em;
+  color: var(--color-ink-soft);
+  font-weight: 500;
 }
 
 /* Short screens (iPhone SE, small Androids, in-app browsers): compact, still no scroll. */
@@ -1601,7 +1594,7 @@ html[dir="rtl"] .marquee__track {
   }
 
   .go-support__secure,
-  .go__footer-country {
+  .go-methods {
     display: none;
   }
 
