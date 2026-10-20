@@ -11,7 +11,12 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
+import { Route as GoRouteImport } from './routes/go'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ApiStripeDomainsRouteImport } from './routes/api/stripe-domains'
+import { Route as ApiCreatePaymentIntentRouteImport } from './routes/api/create-payment-intent'
+import { Route as ApiConfigRouteImport } from './routes/api/config'
+import { Route as ApiCheckoutRouteImport } from './routes/api/checkout'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
@@ -23,40 +28,110 @@ const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
   path: '/robots.txt',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GoRoute = GoRouteImport.update({
+  id: '/go',
+  path: '/go',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiStripeDomainsRoute = ApiStripeDomainsRouteImport.update({
+  id: '/api/stripe-domains',
+  path: '/api/stripe-domains',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiCreatePaymentIntentRoute = ApiCreatePaymentIntentRouteImport.update({
+  id: '/api/create-payment-intent',
+  path: '/api/create-payment-intent',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiConfigRoute = ApiConfigRouteImport.update({
+  id: '/api/config',
+  path: '/api/config',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiCheckoutRoute = ApiCheckoutRouteImport.update({
+  id: '/api/checkout',
+  path: '/api/checkout',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/go': typeof GoRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/api/checkout': typeof ApiCheckoutRoute
+  '/api/config': typeof ApiConfigRoute
+  '/api/create-payment-intent': typeof ApiCreatePaymentIntentRoute
+  '/api/stripe-domains': typeof ApiStripeDomainsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/go': typeof GoRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/api/checkout': typeof ApiCheckoutRoute
+  '/api/config': typeof ApiConfigRoute
+  '/api/create-payment-intent': typeof ApiCreatePaymentIntentRoute
+  '/api/stripe-domains': typeof ApiStripeDomainsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/go': typeof GoRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/api/checkout': typeof ApiCheckoutRoute
+  '/api/config': typeof ApiConfigRoute
+  '/api/create-payment-intent': typeof ApiCreatePaymentIntentRoute
+  '/api/stripe-domains': typeof ApiStripeDomainsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/robots.txt' | '/sitemap.xml'
+  fullPaths:
+    | '/'
+    | '/go'
+    | '/robots.txt'
+    | '/sitemap.xml'
+    | '/api/checkout'
+    | '/api/config'
+    | '/api/create-payment-intent'
+    | '/api/stripe-domains'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/robots.txt' | '/sitemap.xml'
-  id: '__root__' | '/' | '/robots.txt' | '/sitemap.xml'
+  to:
+    | '/'
+    | '/go'
+    | '/robots.txt'
+    | '/sitemap.xml'
+    | '/api/checkout'
+    | '/api/config'
+    | '/api/create-payment-intent'
+    | '/api/stripe-domains'
+  id:
+    | '__root__'
+    | '/'
+    | '/go'
+    | '/robots.txt'
+    | '/sitemap.xml'
+    | '/api/checkout'
+    | '/api/config'
+    | '/api/create-payment-intent'
+    | '/api/stripe-domains'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  GoRoute: typeof GoRoute
   RobotsDottxtRoute: typeof RobotsDottxtRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  ApiCheckoutRoute: typeof ApiCheckoutRoute
+  ApiConfigRoute: typeof ApiConfigRoute
+  ApiCreatePaymentIntentRoute: typeof ApiCreatePaymentIntentRoute
+  ApiStripeDomainsRoute: typeof ApiStripeDomainsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -75,6 +150,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RobotsDottxtRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/go': {
+      id: '/go'
+      path: '/go'
+      fullPath: '/go'
+      preLoaderRoute: typeof GoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -82,13 +164,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/stripe-domains': {
+      id: '/api/stripe-domains'
+      path: '/api/stripe-domains'
+      fullPath: '/api/stripe-domains'
+      preLoaderRoute: typeof ApiStripeDomainsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/create-payment-intent': {
+      id: '/api/create-payment-intent'
+      path: '/api/create-payment-intent'
+      fullPath: '/api/create-payment-intent'
+      preLoaderRoute: typeof ApiCreatePaymentIntentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/config': {
+      id: '/api/config'
+      path: '/api/config'
+      fullPath: '/api/config'
+      preLoaderRoute: typeof ApiConfigRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/checkout': {
+      id: '/api/checkout'
+      path: '/api/checkout'
+      fullPath: '/api/checkout'
+      preLoaderRoute: typeof ApiCheckoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  GoRoute: GoRoute,
   RobotsDottxtRoute: RobotsDottxtRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  ApiCheckoutRoute: ApiCheckoutRoute,
+  ApiConfigRoute: ApiConfigRoute,
+  ApiCreatePaymentIntentRoute: ApiCreatePaymentIntentRoute,
+  ApiStripeDomainsRoute: ApiStripeDomainsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
