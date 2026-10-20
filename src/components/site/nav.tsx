@@ -5,6 +5,7 @@
  */
 import { useEffect, useState } from "react";
 
+import { site } from "@/config/site";
 import { LANGS, useI18n, type Lang } from "@/lib/i18n";
 import { HeartIcon, useDonation } from "./ui";
 
@@ -54,7 +55,7 @@ export function SiteNav() {
   return (
     <header className={`site-nav ${solid || open ? "is-solid" : ""}`}>
       <div className="site-nav__left">
-        <a className="site-nav__wordmark" href="#top" aria-label="mysidibou">
+        <a className="site-nav__wordmark" href={site.landing} aria-label="mysidibou">
           mysidibou
           <HeartIcon className="wordmark-heart" />
         </a>
