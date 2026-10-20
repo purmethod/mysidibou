@@ -337,20 +337,11 @@ function GoPage() {
           <span className="go__logo-name">SIDIBOU</span>
           <HeartIcon className="go__logo-heart" />
         </p>
-        {/* Two full-width lines (SVG textLength): one block, same width as the cards */}
-        <h1 aria-label="ENAU · UNESCO World Heritage" className="go__headline">
-          <svg aria-hidden="true" viewBox="0 0 1000 44">
-            <text fill="currentColor" fontSize="60" fontWeight="800" lengthAdjust="spacingAndGlyphs" textLength="1000" x="0" y="43">
-              ENAU · UNESCO WORLD HERITAGE
-            </text>
-          </svg>
-        </h1>
-        <p aria-label="Architecture students protecting Sidi Bou Saïd" className="go__sub">
-          <svg aria-hidden="true" viewBox="0 0 1000 34">
-            <text fill="currentColor" fontSize="38.3" fontWeight="600" lengthAdjust="spacingAndGlyphs" textLength="1000" x="0" y="33.5">
-              ARCHITECTURE STUDENTS PROTECTING SIDI BOU SAÏD
-            </text>
-          </svg>
+        <h1 className="go__headline">ENAU · UNESCO World Heritage</h1>
+        <p className="go__sub">
+          Architecture students
+          <br />
+          protecting Sidi Bou Saïd
         </p>
       </header>
 
