@@ -344,10 +344,12 @@ function GoPage() {
       <footer className="go__footer">
         <p className="go__footer-lead">A small contribution for you, a big help for us.</p>
         <p aria-label="mysidibou · UNESCO Report 2027" className="go__footer-logo">
-          <span className="go__logo-my">MY</span>
-          <span className="go__logo-name">SIDIBOU</span>
+          <span className="go__footer-left">
+            <span className="go__logo-my">MY</span>
+            <span className="go__logo-name">SIDIBOU</span>
+          </span>
           <HeartIcon className="go__footer-heart" />
-          <span className="go__logo-name">UNESCO REPORT 2027</span>
+          <span className="go__footer-right">UNESCO REPORT 2027</span>
         </p>
       </footer>
     </main>
