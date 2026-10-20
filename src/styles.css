@@ -1351,15 +1351,19 @@ html[dir="rtl"] .marquee__track {
   gap: 0.2rem;
 }
 
-/* Small, readable label above the amount choice. */
+/* Full-width blue title above the amount choice (SVG textLength = exact width). */
 .go-support__title {
   margin: 0;
-  font-size: clamp(0.82rem, 3.6vw, 0.95rem);
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  line-height: 1.2;
-  text-transform: uppercase;
-  white-space: nowrap;
+  color: var(--go-blue);
+  line-height: 0;
+}
+
+.go-support__title svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  font-family: var(--font-sans);
 }
 
 .go-support__price {
