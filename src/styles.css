@@ -1397,44 +1397,31 @@ html[dir="rtl"] .marquee__track {
 }
 
 .go-amount:focus-visible,
-.go-custom input:focus-visible {
+.go-amount.is-input:focus-within {
   outline: 2px solid #fff;
   outline-offset: 2px;
 }
 
-.go-custom {
+.go-amount.is-input {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
-  height: 44px;
-  padding: 0 0.85rem;
-  border-radius: 10px;
-  background: #fff;
-  color: var(--color-ink);
-  font-weight: 700;
+  justify-content: center;
+  gap: 0.1rem;
+  cursor: text;
 }
 
-.go-custom input {
-  flex: 1;
+.go-amount.is-input input {
+  width: 2.4em;
   min-width: 0;
+  padding: 0;
   border: 0;
   background: transparent;
-  color: var(--color-ink);
+  color: inherit;
   font: inherit;
-  font-size: 1.1rem; /* ≥16px: no zoom on iPhone */
+  font-size: 16px; /* ≥16px: no zoom on iPhone */
   font-weight: 700;
+  text-align: left;
   outline: none;
-}
-
-.go-custom small {
-  color: var(--color-ink-soft);
-  font-size: 0.78rem;
-  font-weight: 500;
-  white-space: nowrap;
-}
-
-.go-support.has-custom .go-methods {
-  display: none;
 }
 
 .go-pay__slot {
@@ -1643,8 +1630,13 @@ html[dir="rtl"] .marquee__track {
     height: 34px;
   }
 
-  .go-custom {
-    height: 38px;
+  .go-pay__slot,
+  .go-tile {
+    height: 44px;
+  }
+
+  .go-support {
+    gap: 0.45rem;
   }
 
   .go__footer {

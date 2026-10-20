@@ -174,7 +174,8 @@ function GoPage() {
           });
           groupsRef.current.push(elements);
           const element = elements.create("expressCheckout", {
-            buttonHeight: 50,
+            // Slightly flatter buttons on short screens so the page never scrolls
+            buttonHeight: window.innerHeight < 620 ? 44 : 50,
             layout: { maxColumns: 1, maxRows: 1 },
             ...options,
           });
@@ -322,7 +323,7 @@ function GoPage() {
           </a>
         </div>
 
-        <section aria-live="polite" className={`go-support ${choice === "custom" ? "has-custom" : ""}`}>
+        <section aria-live="polite" className="go-support">
           {isPaid ? (
             <div className="go-thanks">
               <HeartIcon className="go-thanks__heart" />
@@ -349,7 +350,11 @@ function GoPage() {
                   </svg>
                 </p>
                 <p className="go-support__price">
-                  {choice === "tnd" ? `10 TND ≈ ${euro(cents)}` : euroShort(amount)}
+                  {choice === "tnd"
+                    ? `10 TND ≈ ${euro(cents)}`
+                    : choice === "custom" && !customValid
+                      ? `€${CUSTOM_MIN}–€${CUSTOM_MAX}`
+                      : euroShort(amount)}
                 </p>
               </div>
 
@@ -361,35 +366,34 @@ function GoPage() {
                     [1000, "€10"],
                     ["custom", "€20+"],
                   ] as const
-                ).map(([value, label]) => (
-                  <button
-                    aria-checked={choice === value}
-                    className={`go-amount ${choice === value ? "is-active" : ""}`}
-                    key={label}
-                    onClick={() => setChoice(value)}
-                    role="radio"
-                    type="button"
-                  >
-                    {label}
-                  </button>
-                ))}
+                ).map(([value, label]) =>
+                  value === "custom" && choice === "custom" ? (
+                    // Own amount, typed right inside the chip: no extra row needed
+                    <label className="go-amount is-active is-input" key={label}>
+                      €
+                      <input
+                        aria-label="Your amount in euro (20 to 500)"
+                        inputMode="numeric"
+                        onChange={(e) => setCustomEuro(e.target.value.replace(/[^0-9]/g, "").slice(0, 3))}
+                        pattern="[0-9]*"
+                        type="text"
+                        value={customEuro}
+                      />
+                    </label>
+                  ) : (
+                    <button
+                      aria-checked={choice === value}
+                      className={`go-amount ${choice === value ? "is-active" : ""}`}
+                      key={label}
+                      onClick={() => setChoice(value)}
+                      role="radio"
+                      type="button"
+                    >
+                      {label}
+                    </button>
+                  ),
+                )}
               </div>
-              {choice === "custom" && (
-                <label className="go-custom">
-                  <span>€</span>
-                  <input
-                    aria-label="Your amount in euro (20 to 500)"
-                    inputMode="numeric"
-                    max={CUSTOM_MAX}
-                    min={CUSTOM_MIN}
-                    onChange={(e) => setCustomEuro(e.target.value.replace(/[^0-9]/g, "").slice(0, 3))}
-                    pattern="[0-9]*"
-                    type="text"
-                    value={customEuro}
-                  />
-                  <small>{customValid ? "your amount" : `€${CUSTOM_MIN}–€${CUSTOM_MAX}`}</small>
-                </label>
-              )}
 
               <div className={`go-pay__slot is-${wallet}`}>
                 <div className="go-pay__ece" ref={walletRef} />
