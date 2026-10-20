@@ -1,20 +1,22 @@
 /**
- * /go — QR landing page on café tables. One screen, no scrolling.
- * Payment: Stripe Express Checkout Element (Apple Pay / Google Pay, deferred
- * intent) with a hosted-Checkout card fallback. Keep this route stable:
- * printed QR codes point here.
+ * /go — QR landing page on café tables. One white screen, no scrolling.
+ * Payment: Stripe Express Checkout Element (deferred intent).
+ *  - Wallet button: Apple Pay on Apple devices, Google Pay on Android.
+ *  - PayPal button (shows only if PayPal is enabled in the Stripe Dashboard).
+ *  - Credit card: hosted Stripe Checkout.
+ * Keep this route stable: printed QR codes point here.
  */
 import { createFileRoute } from "@tanstack/react-router";
 import { useCallback, useEffect, useRef, useState } from "react";
 import type React from "react";
 
 import { site } from "@/config/site";
-import { HeartIcon, socialIcons } from "@/components/site/ui";
+import { HeartIcon } from "@/components/site/ui";
 
 const STRIPE_JS = "https://js.stripe.com/v3/";
-const AMOUNT = 300; // 10 TND, charged as 3.00 EUR
+const AMOUNT = 300; // €3.00
 
-type Mode = "loading" | "wallet" | "card" | "paid";
+type Slot = "loading" | "on" | "off";
 
 declare global {
   interface Window {
@@ -30,11 +32,11 @@ export const Route = createFileRoute("/go")({
   }),
   head: () => ({
     meta: [
-      { title: "Support mysidibou | 10 TND for Sidi Bou Saïd" },
+      { title: "Support mysidibou | Sidi Bou Saïd" },
       {
         name: "description",
         content:
-          "ENAU Sidi Bou Saïd students protecting our UNESCO World Heritage. Support the student project with 10 TND.",
+          "Architecture students protecting our UNESCO World Heritage. Support the project with less than a coffee.",
       },
     ],
     links: [
@@ -60,16 +62,22 @@ function loadStripeJs(): Promise<void> {
   });
 }
 
+const isAppleDevice = () =>
+  /iPhone|iPad|iPod|Macintosh/.test(navigator.userAgent) ||
+  (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
 function GoPage() {
   const { paid, redirect_status } = Route.useSearch();
   const returnedPaid = paid === 1 && redirect_status !== "failed";
-  const [mode, setMode] = useState<Mode>(returnedPaid ? "paid" : "loading");
+  const [isPaid, setPaid] = useState(returnedPaid);
+  const [wallet, setWallet] = useState<Slot>("loading");
+  const [paypal, setPaypal] = useState<Slot>("loading");
+  const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(
     redirect_status === "failed" ? "Payment failed. Please try again." : null,
   );
-  const [busy, setBusy] = useState(false);
-  const eceRef = useRef<HTMLDivElement>(null);
-  const InstagramIcon = socialIcons.instagram;
+  const walletRef = useRef<HTMLDivElement>(null);
+  const paypalRef = useRef<HTMLDivElement>(null);
 
   const payWithCard = useCallback(async () => {
     setError(null);
@@ -95,10 +103,12 @@ function GoPage() {
   useEffect(() => {
     if (returnedPaid) return;
     let cancelled = false;
-    let element: any;
-    // If Stripe never reports back (blocked script, slow network), show the card button.
+    const mounted: any[] = [];
+    // If Stripe never reports back (blocked script, slow network), leave only the card button.
     const fallback = window.setTimeout(() => {
-      if (!cancelled) setMode((m) => (m === "loading" ? "card" : m));
+      if (cancelled) return;
+      setWallet((s) => (s === "loading" ? "off" : s));
+      setPaypal((s) => (s === "loading" ? "off" : s));
     }, 8000);
 
     (async () => {
@@ -107,150 +117,213 @@ function GoPage() {
           fetch("/api/config").then((r) => r.json()),
           loadStripeJs(),
         ]);
-        if (cancelled || !config.publishableKey || !window.Stripe || !eceRef.current) {
-          throw new Error("not ready");
-        }
+        if (cancelled || !config.publishableKey || !window.Stripe) throw new Error("not ready");
         const stripe = window.Stripe(config.publishableKey);
-        const elements = stripe.elements({
-          mode: "payment",
-          amount: AMOUNT,
-          currency: "eur",
-          appearance: { variables: { borderRadius: "12px" } },
-        });
-        element = elements.create("expressCheckout", {
-          buttonType: { applePay: "donate", googlePay: "donate" },
-          buttonTheme: { applePay: "black", googlePay: "black" },
-          buttonHeight: 50,
-          layout: { maxColumns: 1, maxRows: 1, overflow: "never" },
-          paymentMethods: { link: "never", paypal: "never", amazonPay: "never", klarna: "never" },
-        });
+        const apple = isAppleDevice();
 
-        element.on("ready", ({ availablePaymentMethods }: { availablePaymentMethods?: Record<string, boolean> }) => {
-          if (cancelled) return;
-          const hasWallet =
-            !!availablePaymentMethods && Object.values(availablePaymentMethods).some(Boolean);
-          setMode(hasWallet ? "wallet" : "card");
-        });
+        // One Express Checkout Element per slot, each in its own Elements group,
+        // so the wallet and PayPal buttons can sit in separate tiles.
+        const mount = (
+          container: HTMLDivElement | null,
+          paymentMethods: Record<string, string>,
+          setSlot: (s: Slot) => void,
+        ) => {
+          if (!container) return setSlot("off");
+          const elements = stripe.elements({
+            mode: "payment",
+            amount: AMOUNT,
+            currency: "eur",
+            appearance: { variables: { borderRadius: "12px" } },
+          });
+          const element = elements.create("expressCheckout", {
+            buttonType: { applePay: "donate", googlePay: "donate", paypal: "paypal" },
+            buttonTheme: { applePay: "white", googlePay: "white", paypal: "white" },
+            buttonHeight: 50,
+            layout: { maxColumns: 1, maxRows: 1 },
+            paymentMethods: {
+              applePay: "never",
+              googlePay: "never",
+              paypal: "never",
+              link: "never",
+              amazonPay: "never",
+              klarna: "never",
+              ...paymentMethods,
+            },
+          });
 
-        element.on("confirm", async (event: any) => {
-          setError(null);
-          const { error: submitError } = await elements.submit();
-          if (submitError) {
-            setError(submitError.message ?? "Payment could not be started.");
-            return;
-          }
-          try {
-            const res = await fetch("/api/create-payment-intent", { method: "POST" });
-            const data = await res.json();
-            if (!res.ok || !data.client_secret) throw new Error(data.error);
+          element.on(
+            "ready",
+            ({ availablePaymentMethods }: { availablePaymentMethods?: Record<string, boolean> }) => {
+              if (cancelled) return;
+              const any =
+                !!availablePaymentMethods && Object.values(availablePaymentMethods).some(Boolean);
+              setSlot(any ? "on" : "off");
+            },
+          );
 
-            const { error: confirmError } = await stripe.confirmPayment({
-              elements,
-              clientSecret: data.client_secret,
-              redirect: "if_required",
-              confirmParams: { return_url: `${window.location.origin}/go?paid=1` },
-            });
-            if (confirmError) throw new Error(confirmError.message);
-            setMode("paid");
-          } catch (err) {
-            event.paymentFailed?.({ reason: "fail" });
-            setError(
-              err instanceof Error && err.message && err.message !== "not_configured"
-                ? err.message
-                : "Payment failed. Please try again.",
-            );
-          }
-        });
+          element.on("confirm", async (event: any) => {
+            setError(null);
+            const { error: submitError } = await elements.submit();
+            if (submitError) {
+              setError(submitError.message ?? "Payment could not be started.");
+              return;
+            }
+            try {
+              const res = await fetch("/api/create-payment-intent", { method: "POST" });
+              const data = await res.json();
+              if (!res.ok || !data.client_secret) throw new Error(data.error);
 
-        element.mount(eceRef.current);
+              const { error: confirmError } = await stripe.confirmPayment({
+                elements,
+                clientSecret: data.client_secret,
+                redirect: "if_required",
+                confirmParams: { return_url: `${window.location.origin}/go?paid=1` },
+              });
+              if (confirmError) throw new Error(confirmError.message);
+              setPaid(true);
+            } catch (err) {
+              event.paymentFailed?.({ reason: "fail" });
+              setError(
+                err instanceof Error && err.message && err.message !== "not_configured"
+                  ? err.message
+                  : "Payment failed. Please try again.",
+              );
+            }
+          });
+
+          element.mount(container);
+          mounted.push(element);
+        };
+
+        // iPhone / Mac: Apple Pay only. Android & others: Google Pay.
+        mount(walletRef.current, apple ? { applePay: "auto" } : { googlePay: "auto" }, setWallet);
+        mount(paypalRef.current, { paypal: "auto" }, setPaypal);
       } catch {
-        if (!cancelled) setMode("card");
+        if (cancelled) return;
+        setWallet("off");
+        setPaypal("off");
       }
     })();
 
     return () => {
       cancelled = true;
       window.clearTimeout(fallback);
-      element?.destroy?.();
+      mounted.forEach((el) => el.destroy?.());
     };
   }, [returnedPaid]);
 
   return (
     <main className="go">
-      <header className="go__top">
-        <p className="go__badge">
-          <CheckIcon className="go__badge-icon" />
-          <span>
-            <strong>Official project</strong>
-            <span className="go__badge-line">Member of the Scientific Committee · UNESCO 2027</span>
-          </span>
-        </p>
-        <p className="go__brand">
-          mysidibou
-          <HeartIcon className="go__brand-heart" />
+      <p className="go__badge">
+        <SealIcon className="go__badge-icon" />
+        <span>
+          <strong>Official project</strong>
+          <span className="go__badge-line">Member of the Scientific Committee · UNESCO 2027</span>
+        </span>
+      </p>
+
+      <header className="go__head">
+        <p aria-label="mysidibou" className="go__logo">
+          <span className="go__logo-my">MY</span>
+          <span className="go__logo-name">SIDIBOU</span>
+          <HeartIcon className="go__logo-heart" />
         </p>
         <h1 className="go__headline">Love Sidi Bou Saïd?</h1>
-        <p className="go__sub">ENAU Sidi Bou Saïd students protecting our UNESCO World Heritage.</p>
+        <p className="go__sub">Architecture students protecting our UNESCO World Heritage.</p>
       </header>
 
-      <section aria-live="polite" className="go__bottom">
+      <div className="go__cards">
         <a
-          className="go-btn go-btn--outline"
+          className="go-insta"
           href={site.social.instagram}
           rel="noopener noreferrer"
           target="_blank"
         >
-          <InstagramIcon className="go-btn__icon go-btn__icon--insta" />
-          Follow us on Instagram
+          <span aria-hidden="true" className="go-insta__logo">
+            <InstagramGlyph />
+          </span>
+          <span className="go-insta__text">Follow on Instagram</span>
+          <span aria-hidden="true" className="go-insta__arrow">
+            ↗
+          </span>
         </a>
 
-        {mode === "paid" ? (
-          <div className="go-thanks">
-            <HeartIcon className="go-thanks__heart" />
-            <p className="go-thanks__title">Thank you!</p>
-            <p className="go-thanks__text">Your €3 protect Sidi Bou Saïd.</p>
-          </div>
-        ) : (
-          <>
-            <p className="go__ask">
-              Support us with less than a coffee <span className="go__ask-price">(€3)</span>
-            </p>
-
-            <div className={`go-pay ${mode === "card" ? "is-hidden" : ""}`}>
-              <div className={`go-pay__ece ${mode === "wallet" ? "is-ready" : ""}`} ref={eceRef} />
-              {mode === "loading" && <div aria-hidden="true" className="go-pay__skeleton" />}
+        <section aria-live="polite" className="go-support">
+          {isPaid ? (
+            <div className="go-thanks">
+              <HeartIcon className="go-thanks__heart" />
+              <p className="go-thanks__title">Thank you!</p>
+              <p className="go-thanks__text">Your support protects Sidi Bou Saïd.</p>
             </div>
+          ) : (
+            <>
+              <div className="go-support__head">
+                <p className="go-support__title">
+                  Support our student project
+                  <span>with less than a coffee</span>
+                </p>
+                <p className="go-support__price">€3</p>
+              </div>
 
-            <button
-              className={`go-btn ${mode === "card" ? "go-btn--solid" : "go-btn--outline"}`}
-              disabled={busy}
-              onClick={payWithCard}
-              type="button"
-            >
-              <CardIcon className="go-btn__icon" />
-              {busy ? "Opening…" : "Pay with card"}
-            </button>
+              <div className="go-pay">
+                <div className={`go-pay__slot is-${wallet}`}>
+                  <div className="go-pay__ece" ref={walletRef} />
+                </div>
+                <div className={`go-pay__row ${paypal === "off" ? "is-single" : ""}`}>
+                  <div className={`go-pay__slot is-${paypal}`}>
+                    <div className="go-pay__ece" ref={paypalRef} />
+                  </div>
+                  <button className="go-tile" disabled={busy} onClick={payWithCard} type="button">
+                    <CardIcon className="go-tile__icon" />
+                    {busy ? "Opening…" : "Credit card"}
+                  </button>
+                </div>
+              </div>
 
-            {error && (
-              <p className="go-pay__error" role="alert">
-                {error}
-              </p>
-            )}
-          </>
-        )}
+              {error ? (
+                <p className="go-support__error" role="alert">
+                  {error}
+                </p>
+              ) : (
+                <p className="go-support__secure">
+                  <LockIcon className="go-support__lock" />
+                  Secure payment by Stripe
+                </p>
+              )}
+            </>
+          )}
+        </section>
+      </div>
 
-        <p className="go__secure">
-          <LockIcon className="go__secure-icon" />
-          Secure payment by Stripe
-        </p>
-        <p className="go__credit">
-          Paul Brinkmann · Architect &amp; Founder ·{" "}
+      <footer className="go__footer">
+        <p className="go__footer-lead">A small contribution for you, a big help for us.</p>
+        <p>
+          Paul Brinkmann · Architect &amp; Founder · Germany ·{" "}
           <a href="https://brinkmannpaul.com" rel="noopener" target="_blank">
             brinkmannpaul.com ↗
           </a>
         </p>
-      </section>
+      </footer>
     </main>
+  );
+}
+
+function SealIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden="true" {...props}>
+      <path d="M12 2.5l2.4 1.8 3-.1.9 2.9 2.4 1.8-.9 2.9.9 2.9-2.4 1.8-.9 2.9-3-.1L12 21.5l-2.4-1.8-3 .1-.9-2.9-2.4-1.8.9-2.9-.9-2.9 2.4-1.8.9-2.9 3 .1z" />
+      <path d="M8.3 12.2l2.5 2.5 4.9-5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function InstagramGlyph() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" aria-hidden="true">
+      <rect x="3.5" y="3.5" width="17" height="17" rx="4.8" />
+      <circle cx="12" cy="12" r="3.9" />
+      <circle cx="17.2" cy="6.8" r="1" fill="#fff" stroke="none" />
+    </svg>
   );
 }
 
@@ -268,15 +341,6 @@ function LockIcon(props: React.SVGProps<SVGSVGElement>) {
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true" {...props}>
       <rect x="4.5" y="10.5" width="15" height="10" rx="2" />
       <path d="M8 10.5V7.5a4 4 0 0 1 8 0v3" />
-    </svg>
-  );
-}
-
-function CheckIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden="true" {...props}>
-      <path d="M12 2.5l2.4 1.8 3-.1.9 2.9 2.4 1.8-.9 2.9.9 2.9-2.4 1.8-.9 2.9-3-.1L12 21.5l-2.4-1.8-3 .1-.9-2.9-2.4-1.8.9-2.9-.9-2.9 2.4-1.8.9-2.9 3 .1z" />
-      <path d="M8.3 12.2l2.5 2.5 4.9-5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
