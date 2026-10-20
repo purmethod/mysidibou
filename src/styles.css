@@ -1221,8 +1221,9 @@ html[dir="rtl"] .marquee__track {
 }
 
 .go__logo-heart {
-  width: 0.82em;
-  height: 0.82em;
+  /* visual heart height = cap height (same as the printed QR code) */
+  width: 0.93em;
+  height: 0.93em;
   margin-left: 0.2em;
   color: var(--go-red);
 }
