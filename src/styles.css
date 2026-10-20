@@ -1330,7 +1330,7 @@ html[dir="rtl"] .marquee__track {
 
 .go-insta__sub {
   display: block;
-  color: rgba(255, 255, 255, 0.85);
+  color: #fff;
 }
 
 .go-insta__text {
