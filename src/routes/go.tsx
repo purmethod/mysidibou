@@ -25,6 +25,12 @@ const getContribution = createServerFn({ method: "GET" }).handler(async () => ({
 }));
 
 const euro = (cents: number) => `€${(cents / 100).toFixed(2)}`;
+const euroShort = (cents: number) => (cents % 100 === 0 ? `€${cents / 100}` : euro(cents));
+
+// Amount choices: 10 TND (live rate) · €5 · €10 · €20+ (own amount, €20–€500)
+type Choice = "tnd" | 500 | 1000 | "custom";
+const CUSTOM_MIN = 20;
+const CUSTOM_MAX = 500;
 
 declare global {
   interface Window {
@@ -35,6 +41,7 @@ declare global {
 export const Route = createFileRoute("/go")({
   validateSearch: (search: Record<string, unknown>) => ({
     paid: search.paid === 1 || search.paid === "1" ? 1 : undefined,
+    amt: Number.isInteger(Number(search.amt)) && Number(search.amt) > 0 ? Number(search.amt) : undefined,
     redirect_status:
       typeof search.redirect_status === "string" ? search.redirect_status : undefined,
   }),
@@ -76,10 +83,20 @@ const isAppleDevice = () =>
   (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
 
 function GoPage() {
-  const { paid, redirect_status } = Route.useSearch();
+  const { paid, amt, redirect_status } = Route.useSearch();
   const { cents } = Route.useLoaderData();
   const returnedPaid = paid === 1 && redirect_status !== "failed";
   const [isPaid, setPaid] = useState(returnedPaid);
+  const [paidCents, setPaidCents] = useState<number | undefined>(amt);
+  const [choice, setChoice] = useState<Choice>("tnd");
+  const [customEuro, setCustomEuro] = useState(String(CUSTOM_MIN));
+  const customValue = Math.round(Number(customEuro));
+  const customValid = Number.isFinite(customValue) && customValue >= CUSTOM_MIN && customValue <= CUSTOM_MAX;
+  const amount =
+    choice === "tnd" ? cents : choice === "custom" ? (customValid ? customValue : CUSTOM_MIN) * 100 : choice;
+  const amountRef = useRef(amount);
+  amountRef.current = amount;
+  const groupsRef = useRef<any[]>([]);
   const [wallet, setWallet] = useState<Slot>("loading");
   const [paypal, setPaypal] = useState<Slot>("loading");
   const [busy, setBusy] = useState(false);
@@ -96,7 +113,7 @@ function GoPage() {
       const res = await fetch("/api/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ amount: cents }),
+        body: JSON.stringify({ amount: amountRef.current }),
       });
       const data = await res.json();
       if (!res.ok || !data.url) throw new Error(data.error);
@@ -105,7 +122,12 @@ function GoPage() {
       setError("Card payment is unavailable right now. Please try again.");
       setBusy(false);
     }
-  }, [cents]);
+  }, []);
+
+  // Keep the Apple Pay / Google Pay / PayPal amount in sync with the choice.
+  useEffect(() => {
+    groupsRef.current.forEach((elements) => elements.update?.({ amount }));
+  }, [amount]);
 
   // Back from Stripe Checkout via the browser back button (bfcache): re-enable buttons.
   useEffect(() => {
@@ -146,10 +168,11 @@ function GoPage() {
           if (!container) return setSlot("off");
           const elements = stripe.elements({
             mode: "payment",
-            amount: cents,
+            amount: amountRef.current,
             currency: "eur",
             appearance: { variables: { borderRadius: "12px" } },
           });
+          groupsRef.current.push(elements);
           const element = elements.create("expressCheckout", {
             buttonHeight: 50,
             layout: { maxColumns: 1, maxRows: 1 },
@@ -177,7 +200,7 @@ function GoPage() {
               const res = await fetch("/api/create-payment-intent", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ amount: cents }),
+                body: JSON.stringify({ amount: amountRef.current }),
               });
               const data = await res.json();
               if (!res.ok || !data.client_secret) throw new Error(data.error);
@@ -186,9 +209,12 @@ function GoPage() {
                 elements,
                 clientSecret: data.client_secret,
                 redirect: "if_required",
-                confirmParams: { return_url: `${window.location.origin}/go?paid=1` },
+                confirmParams: {
+                  return_url: `${window.location.origin}/go?paid=1&amt=${amountRef.current}`,
+                },
               });
               if (confirmError) throw new Error(confirmError.message);
+              setPaidCents(amountRef.current);
               setPaid(true);
             } catch (err) {
               event.paymentFailed?.({ reason: "fail" });
@@ -239,8 +265,14 @@ function GoPage() {
       cancelled = true;
       window.clearTimeout(fallback);
       mounted.forEach((el) => el.destroy?.());
+      groupsRef.current = [];
     };
-  }, [returnedPaid, cents]);
+    // Mount once; later amount changes go through elements.update().
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [returnedPaid]);
+
+  const paidLabel =
+    !paidCents || Math.abs(paidCents - cents) <= cents * 0.03 ? "10 TND" : euroShort(paidCents);
 
   return (
     <main className="go">
@@ -290,12 +322,12 @@ function GoPage() {
           </a>
         </div>
 
-        <section aria-live="polite" className="go-support">
+        <section aria-live="polite" className={`go-support ${choice === "custom" ? "has-custom" : ""}`}>
           {isPaid ? (
             <div className="go-thanks">
               <HeartIcon className="go-thanks__heart" />
               <p className="go-thanks__title">Thank you!</p>
-              <p className="go-thanks__text">Your 10 TND protect Sidi Bou Saïd.</p>
+              <p className="go-thanks__text">Your {paidLabel} protect Sidi Bou Saïd.</p>
             </div>
           ) : (
             <>
@@ -317,9 +349,47 @@ function GoPage() {
                   </svg>
                 </p>
                 <p className="go-support__price">
-                  10 TND ≈ {euro(cents)}
+                  {choice === "tnd" ? `10 TND ≈ ${euro(cents)}` : euroShort(amount)}
                 </p>
               </div>
+
+              <div aria-label="Amount" className="go-amounts" role="radiogroup">
+                {(
+                  [
+                    ["tnd", "10 TND"],
+                    [500, "€5"],
+                    [1000, "€10"],
+                    ["custom", "€20+"],
+                  ] as const
+                ).map(([value, label]) => (
+                  <button
+                    aria-checked={choice === value}
+                    className={`go-amount ${choice === value ? "is-active" : ""}`}
+                    key={label}
+                    onClick={() => setChoice(value)}
+                    role="radio"
+                    type="button"
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+              {choice === "custom" && (
+                <label className="go-custom">
+                  <span>€</span>
+                  <input
+                    aria-label="Your amount in euro (20 to 500)"
+                    inputMode="numeric"
+                    max={CUSTOM_MAX}
+                    min={CUSTOM_MIN}
+                    onChange={(e) => setCustomEuro(e.target.value.replace(/[^0-9]/g, "").slice(0, 3))}
+                    pattern="[0-9]*"
+                    type="text"
+                    value={customEuro}
+                  />
+                  <small>{customValid ? "your amount" : `€${CUSTOM_MIN}–€${CUSTOM_MAX}`}</small>
+                </label>
+              )}
 
               <div className={`go-pay__slot is-${wallet}`}>
                 <div className="go-pay__ece" ref={walletRef} />

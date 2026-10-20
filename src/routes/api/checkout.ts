@@ -30,7 +30,7 @@ export const Route = createFileRoute("/api/checkout")({
               metadata: CONTRIBUTION.metadata,
             },
             metadata: CONTRIBUTION.metadata,
-            success_url: `${origin}/go?paid=1`,
+            success_url: `${origin}/go?paid=1&amt=${amount}`,
             cancel_url: `${origin}/go`,
           });
           return json({ url: session.url });

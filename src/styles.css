@@ -1369,6 +1369,74 @@ html[dir="rtl"] .marquee__track {
   grid-template-columns: 1fr;
 }
 
+/* Amount choice: 10 TND · €5 · €10 · €20+ */
+.go-amounts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.4rem;
+}
+
+.go-amount {
+  height: 40px;
+  padding: 0;
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  background: transparent;
+  color: #fff;
+  font: inherit;
+  font-size: 0.98rem;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.go-amount.is-active {
+  border-color: #fff;
+  background: #fff;
+  color: var(--go-blue);
+}
+
+.go-amount:focus-visible,
+.go-custom input:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.go-custom {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  height: 44px;
+  padding: 0 0.85rem;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--color-ink);
+  font-weight: 700;
+}
+
+.go-custom input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-ink);
+  font: inherit;
+  font-size: 1.1rem; /* ≥16px: no zoom on iPhone */
+  font-weight: 700;
+  outline: none;
+}
+
+.go-custom small {
+  color: var(--color-ink-soft);
+  font-size: 0.78rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.go-support.has-custom .go-methods {
+  display: none;
+}
+
 .go-pay__slot {
   position: relative;
   height: 50px;
@@ -1571,6 +1639,18 @@ html[dir="rtl"] .marquee__track {
 }
 
 @media (max-height: 620px) {
+  .go-amount {
+    height: 34px;
+  }
+
+  .go-custom {
+    height: 38px;
+  }
+
+  .go__footer {
+    display: none;
+  }
+
   .go__badge {
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
