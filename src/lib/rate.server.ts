@@ -53,15 +53,19 @@ export const CUSTOM_MAX_CENTS = 1000000; // €10,000
  *  - a custom amount from €20 to €10,000 (whole euros)
  * Anything else falls back to 10 TND.
  */
+export function validDonationCents(amount: unknown, tnd: number): number | null {
+  if (typeof amount !== "number" || !Number.isInteger(amount)) return null;
+  if (Math.abs(amount - tnd) <= tnd * 0.03) return amount;
+  if (FIXED_EURO_CENTS.includes(amount)) return amount;
+  if (amount >= CUSTOM_MIN_CENTS && amount <= CUSTOM_MAX_CENTS && amount % 100 === 0) return amount;
+  return null;
+}
+
 export async function resolveCents(request: Request): Promise<number> {
   const tnd = await contributionCents();
   try {
     const { amount } = (await request.json()) as { amount?: unknown };
-    const n = Number(amount);
-    if (!Number.isInteger(n)) return tnd;
-    if (Math.abs(n - tnd) <= tnd * 0.03) return n;
-    if (FIXED_EURO_CENTS.includes(n)) return n;
-    if (n >= CUSTOM_MIN_CENTS && n <= CUSTOM_MAX_CENTS && n % 100 === 0) return n;
+    return validDonationCents(amount, tnd) ?? tnd;
   } catch {
     // no / invalid body
   }

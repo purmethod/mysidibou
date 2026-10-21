@@ -1,38 +1,38 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import { resolveCents } from "@/lib/rate.server";
+import { resolvePayment } from "@/lib/payment.server";
 import { CONTRIBUTION, json, stripeErrorResponse, stripeRequest } from "@/lib/stripe.server";
 
-/** Card / PayPal: hosted Stripe Checkout, 10 TND in EUR, back to /go?paid=1. */
+/** Card / PayPal: hosted Stripe Checkout for a donation or the signed coffee price. */
 export const Route = createFileRoute("/api/checkout")({
   server: {
     handlers: {
       POST: async ({ request }) => {
         const origin = new URL(request.url).origin;
         try {
-          const amount = await resolveCents(request);
+          const payment = await resolvePayment(request);
           const session = await stripeRequest<{ url: string }>("POST", "/checkout/sessions", {
             mode: "payment",
-            submit_type: "donate",
+            submit_type: payment.purpose === "coffee" ? "pay" : "donate",
             line_items: {
               0: {
                 quantity: 1,
                 price_data: {
-                  currency: CONTRIBUTION.currency,
-                  unit_amount: amount,
-                  product_data: { name: CONTRIBUTION.description },
+                  currency: payment.currency,
+                  unit_amount: payment.amount,
+                  product_data: { name: payment.description },
                 },
               },
             },
             payment_intent_data: {
-              description: CONTRIBUTION.description,
+              description: payment.description,
               statement_descriptor_suffix: CONTRIBUTION.statementDescriptorSuffix,
-              metadata: CONTRIBUTION.metadata,
+              metadata: payment.metadata,
             },
-            metadata: CONTRIBUTION.metadata,
-            success_url: `${origin}/go?paid=1&amt=${amount}`,
+            metadata: payment.metadata,
+            success_url: `${origin}/go?session_id={CHECKOUT_SESSION_ID}`,
             cancel_url: `${origin}/go`,
-          });
+          }, { idempotencyKey: payment.idempotencyKey ? `${payment.idempotencyKey}:checkout` : undefined });
           return json({ url: session.url });
         } catch (error) {
           return stripeErrorResponse(error);

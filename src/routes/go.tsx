@@ -10,13 +10,16 @@ import { createFileRoute } from "@tanstack/react-router";
 import { createServerFn } from "@tanstack/react-start";
 import { useCallback, useEffect, useRef, useState } from "react";
 import type React from "react";
+import { flushSync } from "react-dom";
+import { CoffeeButton } from "@/components/site/coffee-button";
+import { GO_COPY, goLanguage } from "@/lib/go-copy";
+import { STRIPE_JS, loadStripeJs } from "@/lib/go-stripe";
 
 import { site } from "@/config/site";
 import { HeartIcon } from "@/components/site/ui";
 import { contributionCents } from "@/lib/rate.server";
 import { visitorLang } from "@/lib/lang.server";
 
-const STRIPE_JS = "https://js.stripe.com/v3/";
 
 type Slot = "loading" | "on" | "off";
 
@@ -25,17 +28,6 @@ const getContribution = createServerFn({ method: "GET" }).handler(async () => ({
   cents: await contributionCents(),
   lang: visitorLang(),
 }));
-
-// "Support us" in the visitor's phone language (Apple Pay translates its own button).
-const SUPPORT_US: Record<string, string> = {
-  en: "Support us",
-  fr: "Soutenez-nous",
-  de: "Unterstütze uns",
-  it: "Sostienici",
-  es: "Apóyanos",
-  ar: "ادعمونا",
-  ru: "Поддержите нас",
-};
 
 const euro = (cents: number) => `€${(cents / 100).toFixed(2)}`;
 const euroShort = (cents: number) => (cents % 100 === 0 ? `€${cents / 100}` : euro(cents));
@@ -47,14 +39,15 @@ const CUSTOM_MAX = 10000;
 
 declare global {
   interface Window {
-    Stripe?: (key: string) => any;
+    Stripe?: (key: string, options?: Record<string, unknown>) => any;
   }
 }
 
 export const Route = createFileRoute("/go")({
   validateSearch: (search: Record<string, unknown>) => ({
-    paid: search.paid === 1 || search.paid === "1" ? 1 : undefined,
-    amt: Number.isInteger(Number(search.amt)) && Number(search.amt) > 0 ? Number(search.amt) : undefined,
+    session_id: typeof search.session_id === 'string' && /^cs_(test_|live_)?[A-Za-z0-9]+$/.test(search.session_id) ? search.session_id : undefined,
+    payment_intent: typeof search.payment_intent === 'string' ? search.payment_intent : undefined,
+    payment_intent_client_secret: typeof search.payment_intent_client_secret === 'string' ? search.payment_intent_client_secret : undefined,
     redirect_status:
       typeof search.redirect_status === "string" ? search.redirect_status : undefined,
   }),
@@ -76,41 +69,46 @@ export const Route = createFileRoute("/go")({
   component: GoPage,
 });
 
-function loadStripeJs(): Promise<void> {
-  if (window.Stripe) return Promise.resolve();
-  return new Promise((resolve, reject) => {
-    let script = document.querySelector<HTMLScriptElement>(`script[src="${STRIPE_JS}"]`);
-    if (!script) {
-      script = document.createElement("script");
-      script.src = STRIPE_JS;
-      script.async = true;
-      document.head.appendChild(script);
-    }
-    script.addEventListener("load", () => resolve());
-    script.addEventListener("error", () => reject(new Error("Stripe.js failed to load")));
-  });
-}
-
 const isAppleDevice = () =>
   /iPhone|iPad|iPod|Macintosh/.test(navigator.userAgent) ||
   (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
 
 function GoPage() {
-  const { paid, amt, redirect_status } = Route.useSearch();
-  const { cents, lang } = Route.useLoaderData();
-  const supportUs = SUPPORT_US[lang] ?? SUPPORT_US.en;
-  const returnedPaid = paid === 1 && redirect_status !== "failed";
-  const [isPaid, setPaid] = useState(returnedPaid);
-  const [paidCents, setPaidCents] = useState<number | undefined>(amt);
+  const { session_id, payment_intent, payment_intent_client_secret, redirect_status } = Route.useSearch();
+  const { cents, lang: serverLang } = Route.useLoaderData();
+  const [locale, setLocale] = useState('');
+  const [lang, setLang] = useState(goLanguage([serverLang]));
+  useEffect(() => {
+    const languages = navigator.languages?.length ? navigator.languages : [navigator.language];
+    setLocale(languages[0] || 'en');
+    setLang(goLanguage(languages));
+  }, []);
+  const copy = GO_COPY[lang];
+  const supportUs = copy.support;
+  const [isPaid, setPaid] = useState(false);
+  const [coffeePaid, setCoffeePaid] = useState<{ amount: number; currency: string } | null>(null);
+  const [paidCents, setPaidCents] = useState<number | undefined>();
   const [choice, setChoice] = useState<Choice>("tnd");
   const [customEuro, setCustomEuro] = useState(String(CUSTOM_MIN));
+  const customInputRef = useRef<HTMLInputElement>(null);
   const customValue = Math.round(Number(customEuro));
-  const customValid = Number.isFinite(customValue) && customValue >= CUSTOM_MIN && customValue <= CUSTOM_MAX;
+  const customValid = customEuro.trim() !== "" && Number.isFinite(customValue) && customValue >= CUSTOM_MIN && customValue <= CUSTOM_MAX;
   const amount =
     choice === "tnd" ? cents : choice === "custom" ? (customValid ? customValue : CUSTOM_MIN) * 100 : choice;
   const amountRef = useRef(amount);
   amountRef.current = amount;
   const groupsRef = useRef<any[]>([]);
+  const amountValid = choice !== 'custom' || customValid;
+  const amountValidRef = useRef(amountValid);
+  amountValidRef.current = amountValid;
+  const chooseAmount = (value: Choice) => {
+    if (value === 'custom') {
+      // Commit and focus within the tap: an effect runs too late for the iOS keyboard.
+      flushSync(() => setChoice(value));
+      customInputRef.current?.focus({ preventScroll: true });
+      customInputRef.current?.select();
+    } else setChoice(value);
+  };
   const screenRef = useRef<HTMLElement>(null);
   const fitRef = useRef<HTMLDivElement>(null);
 
@@ -152,15 +150,50 @@ function GoPage() {
     };
   }, []);
   const [wallet, setWallet] = useState<Slot>("loading");
-  const [paypal, setPaypal] = useState<Slot>("loading");
   const [busy, setBusy] = useState(false);
+  const paymentPendingRef = useRef(false);
+  const busyRef = useRef(false);
+  busyRef.current = busy;
   const [error, setError] = useState<string | null>(
     redirect_status === "failed" ? "Payment failed. Please try again." : null,
   );
   const walletRef = useRef<HTMLDivElement>(null);
-  const paypalRef = useRef<HTMLDivElement>(null);
+
+  // Only a Stripe-verified status may produce a thank-you message.
+  useEffect(() => {
+    if (!session_id && !payment_intent_client_secret) return;
+    let cancelled = false;
+    (async () => {
+      try {
+        if (session_id) {
+          const response = await fetch(`/api/payment-status?session_id=${encodeURIComponent(session_id)}`);
+          if (!response.ok) throw new Error('status_unavailable');
+          const result = await response.json();
+          if (!cancelled && result.paid) {
+            if (result.purpose === 'coffee') setCoffeePaid({ amount: result.amount, currency: result.currency });
+            else if (result.purpose === 'donation' && result.currency === 'eur') {
+              setPaidCents(result.amount); setPaid(true);
+            }
+          }
+        } else {
+          const [config] = await Promise.all([fetch('/api/config').then((response) => response.json()), loadStripeJs()]);
+          if (!window.Stripe || !config.publishableKey) throw new Error('not_configured');
+          const stripe = window.Stripe(config.publishableKey);
+          const result = await stripe.retrievePaymentIntent(payment_intent_client_secret);
+          const intent = result.paymentIntent;
+          if (result.error) throw result.error;
+          if (!cancelled && intent?.id === payment_intent && intent.status === 'succeeded' && intent.currency === 'eur') {
+            setPaidCents(intent.amount); setPaid(true);
+          }
+        }
+      } catch { if (!cancelled) setError(GO_COPY[lang].error); }
+    })();
+    return () => { cancelled = true; };
+  }, [session_id, payment_intent, payment_intent_client_secret, lang]);
+
 
   const payWithCard = useCallback(async () => {
+    if (!amountValidRef.current) return;
     setError(null);
     setBusy(true);
     try {
@@ -185,20 +218,19 @@ function GoPage() {
 
   // Back from Stripe Checkout via the browser back button (bfcache): re-enable buttons.
   useEffect(() => {
-    const onShow = () => setBusy(false);
+    const onShow = () => { if (!paymentPendingRef.current) setBusy(false); };
     window.addEventListener("pageshow", onShow);
     return () => window.removeEventListener("pageshow", onShow);
   }, []);
 
   useEffect(() => {
-    if (returnedPaid) return;
+    if (isPaid) return;
     let cancelled = false;
     const mounted: any[] = [];
     // If Stripe never reports back (blocked script, slow network), leave the card button.
     const fallback = window.setTimeout(() => {
       if (cancelled) return;
       setWallet((s) => (s === "loading" ? "off" : s));
-      setPaypal((s) => (s === "loading" ? "off" : s));
     }, 8000);
 
     (async () => {
@@ -208,7 +240,7 @@ function GoPage() {
           loadStripeJs(),
         ]);
         if (cancelled || !config.publishableKey || !window.Stripe) throw new Error("not ready");
-        const stripe = window.Stripe(config.publishableKey);
+        const stripe = window.Stripe(config.publishableKey, { locale: lang });
         const apple = isAppleDevice();
 
         // One Express Checkout Element per button, each in its own Elements group.
@@ -248,35 +280,46 @@ function GoPage() {
             },
           );
 
+          element.on("click", (event: any) => {
+            if (!amountValidRef.current) return;
+            event.resolve();
+          });
           element.on("confirm", async (event: any) => {
+            if (!amountValidRef.current) { event.paymentFailed?.({ reason: 'fail' }); return; }
+            const paymentAmount = amountRef.current;
+            setBusy(true);
             setError(null);
             const { error: submitError } = await elements.submit();
             if (submitError) {
               setError(submitError.message ?? "Payment could not be started.");
+              setBusy(false);
               return;
             }
             try {
               const res = await fetch("/api/create-payment-intent", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ amount: amountRef.current }),
+                body: JSON.stringify({ amount: paymentAmount }),
               });
               const data = await res.json();
               if (!res.ok || !data.client_secret) throw new Error(data.error);
 
-              const { error: confirmError } = await stripe.confirmPayment({
+              const { error: confirmError, paymentIntent } = await stripe.confirmPayment({
                 elements,
                 clientSecret: data.client_secret,
                 redirect: "if_required",
                 confirmParams: {
-                  return_url: `${window.location.origin}/go?paid=1&amt=${amountRef.current}`,
+                  return_url: `${window.location.origin}/go`,
                 },
               });
               if (confirmError) throw new Error(confirmError.message);
-              setPaidCents(amountRef.current);
-              setPaid(true);
+              if (paymentIntent?.status === 'succeeded') {
+                setPaidCents(paymentIntent.amount);
+                setPaid(true);
+              } else { paymentPendingRef.current = true; setError(GO_COPY[lang].pending); }
             } catch (err) {
               event.paymentFailed?.({ reason: "fail" });
+              setBusy(false);
               setError(
                 err instanceof Error && err.message && err.message !== "not_configured"
                   ? err.message
@@ -303,20 +346,9 @@ function GoPage() {
           },
           setWallet,
         );
-        // PayPal: official PayPal logo button (needs PayPal enabled in Stripe).
-        mount(
-          paypalRef.current,
-          {
-            buttonType: { paypal: "paypal" },
-            buttonTheme: { paypal: "white" },
-            paymentMethods: { ...none, paypal: "auto" },
-          },
-          setPaypal,
-        );
       } catch {
         if (cancelled) return;
         setWallet("off");
-        setPaypal("off");
       }
     })();
 
@@ -328,7 +360,7 @@ function GoPage() {
     };
     // Mount once; later amount changes go through elements.update().
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [returnedPaid]);
+  }, [isPaid, lang]);
 
   const paidLabel =
     !paidCents || Math.abs(paidCents - cents) <= cents * 0.03 ? "10 TND" : euroShort(paidCents);
@@ -351,11 +383,7 @@ function GoPage() {
           <HeartIcon className="go__logo-heart" />
         </p>
         <h1 className="go__headline">ENAU · UNESCO World Heritage</h1>
-        <p className="go__sub">
-          Architecture students
-          <br />
-          protecting Sidi Bou Saïd
-        </p>
+        <p className="go__sub">Architecture students<br />protecting Sidi Bou Saïd</p>
       </header>
 
       <div className="go__cards">
@@ -371,10 +399,9 @@ function GoPage() {
               <img alt="" decoding="async" height="168" src="/assets/instagram-icon.webp" width="168" />
             </span>
           </a>
-          <a className="go-insta" href="https://mysidibou.com/">
+          <a className="go-insta go-insta--project" href="https://mysidibou.com/">
             <span className="go-insta__text">
-              Visit the project
-              <span className="go-insta__sub">mysidibou.com</span>
+              Visit the project mysidibou
             </span>
             <span aria-hidden="true" className="go-insta__logo is-heart">
               <HeartIcon />
@@ -411,7 +438,11 @@ function GoPage() {
                     <label className="go-amount is-active is-input" key={label}>
                       €
                       <input
-                        aria-label="Your amount in euro (20 to 10000)"
+                        ref={customInputRef}
+                        disabled={busy}
+                        aria-label={copy.custom}
+                        aria-invalid={!customValid}
+                        aria-describedby={!customValid ? 'custom-amount-error' : undefined}
                         inputMode="numeric"
                         onChange={(e) => setCustomEuro(e.target.value.replace(/[^0-9]/g, "").slice(0, 5))}
                         pattern="[0-9]*"
@@ -422,9 +453,10 @@ function GoPage() {
                   ) : (
                     <button
                       aria-checked={choice === value}
+                      disabled={busy}
                       className={`go-amount ${choice === value ? "is-active" : ""}`}
                       key={label}
-                      onClick={() => setChoice(value)}
+                      onClick={() => chooseAmount(value)}
                       role="radio"
                       type="button"
                     >
@@ -434,17 +466,15 @@ function GoPage() {
                 )}
               </div>
 
-              <div className={`go-pay__slot is-${wallet}`}>
+              {!amountValid && <p id="custom-amount-error" className="go-support__error" role="alert">{copy.range}</p>}
+              <div className={`go-pay__slot is-${wallet}`} inert={!amountValid || busy} aria-disabled={!amountValid || busy}>
                 <div className="go-pay__ece" ref={walletRef} />
               </div>
-              <div className={`go-pay__row ${paypal === "off" ? "is-single" : ""}`}>
-                <button className="go-tile" disabled={busy} onClick={payWithCard} type="button">
+              <div className="go-pay__row is-single">
+                <button className="go-tile" disabled={busy || !amountValid} onClick={payWithCard} type="button" aria-label={`Card ${copy.or} PayPal`}>
                   <CardIcon className="go-tile__icon" />
-                  {busy ? "Opening…" : "Card"}
+                  {busy ? copy.opening : <><span>Card</span><span className="go-tile__or">{copy.or}</span><span className="go-tile__paypal"><PayPalMark /></span></>}
                 </button>
-                <div className={`go-pay__slot is-${paypal}`}>
-                  <div className="go-pay__ece" ref={paypalRef} />
-                </div>
               </div>
 
               <ul aria-label="Accepted payment methods" className="go-methods">
@@ -468,6 +498,7 @@ function GoPage() {
             </>
           )}
         </section>
+        <CoffeeButton locale={locale} lang={lang} completed={coffeePaid} />
       </div>
 
       <footer className="go__footer">
