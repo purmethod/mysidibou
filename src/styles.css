@@ -1750,7 +1750,9 @@ html[dir="rtl"] .marquee__track {
 .go-insta { padding-block: 0.6rem; min-height: 3.6rem; }
 .go-insta__logo { width: 2.4rem; height: 2.4rem; }
 .go-insta--project .go-insta__text { white-space: nowrap; font-size: clamp(0.82rem, 4.15vw, 1.08rem); }
-.go-insta--nav { width: 100%; min-height: 2.75rem; padding-block: 0.5rem; font-family: inherit; }
+.go-insta--nav { width: calc(100% + 1rem); margin-inline: -0.5rem; min-height: 3.5rem; padding-block: 0.875rem; font-family: inherit; }
+/* Reserve space below the closed links, lifting the heading and actions together. */
+.go__fit:has(#go-support-toggle[aria-expanded="false"]) .go__cards { padding-block-end: clamp(2rem, 12dvh, 6rem); }
 .go-insta--nav .go-insta__text { font-size: 1rem; letter-spacing: 0.05em; text-transform: uppercase; }
 .go-insta--nav .go-insta__logo { width: 1.75rem; height: 1.75rem; border-radius: 0.65rem; }
 .go-support-toggle__icon { width: 1.75rem; height: 1.75rem; flex-shrink: 0; transition: transform 0.2s ease; }
