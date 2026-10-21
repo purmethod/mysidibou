@@ -85,6 +85,10 @@ function GoPage() {
   }, []);
   const copy = GO_COPY[lang];
   const supportUs = copy.support;
+  const hasPaymentReturn = !!(session_id || payment_intent_client_secret);
+  const [supportOpen, setSupportOpen] = useState(hasPaymentReturn);
+  // Keep an opened payment panel mounted so closing it cannot reset payment locks.
+  const [supportMounted, setSupportMounted] = useState(hasPaymentReturn);
   const [isPaid, setPaid] = useState(false);
   const [coffeePaid, setCoffeePaid] = useState<{ amount: number; currency: string } | null>(null);
   const [paidCents, setPaidCents] = useState<number | undefined>();
@@ -224,7 +228,7 @@ function GoPage() {
   }, []);
 
   useEffect(() => {
-    if (isPaid) return;
+    if (!supportMounted || isPaid) return;
     let cancelled = false;
     const mounted: any[] = [];
     // If Stripe never reports back (blocked script, slow network), leave the card button.
@@ -360,7 +364,7 @@ function GoPage() {
     };
     // Mount once; later amount changes go through elements.update().
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isPaid, lang]);
+  }, [isPaid, lang, supportMounted]);
 
   const paidLabel =
     !paidCents || Math.abs(paidCents - cents) <= cents * 0.03 ? "10 TND" : euroShort(paidCents);
@@ -389,26 +393,37 @@ function GoPage() {
       <div className="go__cards">
         <div className="go__links">
           <a
-            className="go-insta"
+            className="go-insta go-insta--nav"
             href={site.social.instagram}
             rel="noopener noreferrer"
             target="_blank"
           >
-            <span className="go-insta__text" lang={lang} dir={lang === "ar" ? "rtl" : "ltr"}>{copy.instagram}</span>
+            <span className="go-insta__text">INSTAGRAM</span>
             <span aria-hidden="true" className="go-insta__logo">
               <img alt="" decoding="async" height="168" src="/assets/instagram-icon.webp" width="168" />
             </span>
           </a>
-          <a className="go-insta go-insta--project" href="https://mysidibou.com/">
-            <span className="go-insta__text" lang={lang} dir={lang === "ar" ? "rtl" : "ltr"}>
-              {copy.project} <bdi>mysidibou</bdi>
-            </span>
+          <a className="go-insta go-insta--nav" href="https://mysidibou.com/">
+            <span className="go-insta__text">MYSIDIBOU.COM</span>
             <span aria-hidden="true" className="go-insta__logo is-heart">
               <HeartIcon />
             </span>
           </a>
+          <button
+            id="go-support-toggle"
+            className="go-insta go-insta--nav go-support-toggle"
+            type="button"
+            aria-expanded={supportOpen}
+            aria-controls="go-support-panel"
+            onClick={() => { setSupportMounted(true); setSupportOpen((open) => !open); }}
+          >
+            <span className="go-insta__text">SUPPORT</span>
+            <svg className="go-support-toggle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+          </button>
         </div>
 
+        <div id="go-support-panel" className="go-support-panel" hidden={!supportOpen}>
+        {supportMounted && <>
         <section aria-live="polite" className="go-support">
           {isPaid ? (
             <div className="go-thanks">
@@ -499,10 +514,12 @@ function GoPage() {
           )}
         </section>
         <CoffeeButton locale={locale} lang={lang} completed={coffeePaid} />
+        </>}
+        </div>
       </div>
 
       <footer className="go__footer">
-        <p className="go__footer-lead">A small contribution for you, a big help for us.</p>
+        {supportOpen && <p className="go__footer-lead">A small contribution for you, a big help for us.</p>}
         <p aria-label="mysidibou" className="go__footer-logo">
           <span className="go__logo-my">MY</span>
           <span className="go__logo-name">SIDIBOU</span>

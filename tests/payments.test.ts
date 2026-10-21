@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { createHmac } from "node:crypto";
 import { test } from "node:test";
 
 import { coffeeCurrencyForLocale, formatCoffeePrice } from "../src/lib/coffee.ts";
@@ -10,7 +11,7 @@ import { getMerchantCountry, PaymentInputError, stripeRequest } from "../src/lib
 
 const TEST_KEY = "test-only-quote-key-not-a-stripe-key";
 const NOW = 1792573200000;
-const eurPrice = { amount: 500, currency: "eur", baseAmount: 500, baseCurrency: "eur", fallbackReason: null } as const;
+const eurPrice = { amount: 300, currency: "eur", baseAmount: 300, baseCurrency: "eur", fallbackReason: null } as const;
 
 test("currency follows only an explicit device region, not the language", () => {
   assert.deepEqual(coffeeCurrencyForLocale("de-CH"), { currency: "chf", fallbackReason: null });
@@ -22,14 +23,15 @@ test("currency follows only an explicit device region, not the language", () => 
   assert.deepEqual(coffeeCurrencyForLocale("e".repeat(1000)), { currency: "eur", fallbackReason: "unknown_region" });
 });
 
-test("coffee fixes a €5 base and rounds correctly for two- and zero-decimal currencies", async () => {
+test("coffee fixes a €3 base and rounds correctly for two- and zero-decimal currencies", async () => {
+  assert.deepEqual(await coffeePriceForLocale("de-DE"), eurPrice);
   const usd = await coffeePriceForLocale("en-US", async () => 1.0865);
-  assert.equal(usd.amount, 543);
+  assert.equal(usd.amount, 326);
   assert.equal(usd.currency, "usd");
-  assert.equal(usd.baseAmount, 500);
+  assert.equal(usd.baseAmount, 300);
   const jpy = await coffeePriceForLocale("ja-JP", async () => 163.78);
-  assert.equal(jpy.amount, 819);
-  assert.equal(formatCoffeePrice(jpy, "en-US"), "¥819");
+  assert.equal(jpy.amount, 491);
+  assert.equal(formatCoffeePrice(jpy, "en-US"), "¥491");
 });
 
 test("unknown regions never perform a guessed exchange", async () => {
@@ -39,7 +41,7 @@ test("unknown regions never perform a guessed exchange", async () => {
   assert.deepEqual(price, { ...eurPrice, fallbackReason: "unknown_region" });
 });
 
-test("unavailable or malformed FX falls back explicitly to €5", async () => {
+test("unavailable or malformed FX falls back explicitly to €3", async () => {
   for (const rate of [null, NaN, Infinity, -1, 0, 1000000]) {
     const price = await coffeePriceForLocale("en-US", async () => rate);
     assert.deepEqual(price, { ...eurPrice, fallbackReason: "rate_unavailable" });
@@ -51,6 +53,15 @@ test("a signed quote holds the exact displayed price until it expires", () => {
   assert.equal(quote.expiresAt, NOW + COFFEE_QUOTE_TTL_MS);
   assert.deepEqual(verifyCoffeeQuote(quote.token, TEST_KEY, NOW + 1000), eurPrice);
   assert.throws(() => verifyCoffeeQuote(quote.token, TEST_KEY, quote.expiresAt), /expired_coffee_quote/);
+});
+
+test("previous €5 quotes are rejected even with a valid signature and unexpired lifetime", () => {
+  // Reproduce the previously issued v1 quote, including the old €5 base.
+  const oldPrice = { ...eurPrice, amount: 500, baseAmount: 500, expiresAt: NOW + COFFEE_QUOTE_TTL_MS };
+  const payload = Buffer.from(JSON.stringify(oldPrice)).toString("base64url");
+  const signature = createHmac("sha256", TEST_KEY).update(`mysidibou:coffee:v1:${payload}`).digest("base64url");
+  assert.throws(() => verifyCoffeeQuote(`${payload}.${signature}`, TEST_KEY, NOW + 1000), /invalid_coffee_quote/);
+  assert.throws(() => signCoffeeQuote({ ...eurPrice, amount: 500 }, TEST_KEY, NOW), /invalid_coffee_quote/);
 });
 
 test("altering the signed coffee amount or using a different key is rejected", () => {
@@ -74,11 +85,11 @@ test("coffee API ignores a client-supplied amount and currency", async () => {
     const result = await resolvePayment(new Request("https://example.test/api/checkout", {
       method: "POST", body: JSON.stringify({ purpose: "coffee", quote: quote.token, amount: 1, currency: "usd" }),
     }));
-    assert.equal(result.amount, 500);
+    assert.equal(result.amount, 300);
     assert.equal(result.currency, "eur");
     assert.equal(result.purpose, "coffee");
     assert.equal(result.metadata.purpose, "coffee");
-    assert.equal(result.metadata.base_amount, "500");
+    assert.equal(result.metadata.base_amount, "300");
   } finally {
     if (previous === undefined) delete process.env.STRIPE_SECRET_KEY;
     else process.env.STRIPE_SECRET_KEY = previous;
@@ -153,10 +164,10 @@ test("stale FX responses are rejected and a fresh secondary source is accepted",
 
 test("Checkout confirmation uses the verified purpose and charged currency", () => {
   const session = {
-    status: "complete", payment_status: "paid", amount_total: 543, currency: "usd",
+    status: "complete", payment_status: "paid", amount_total: 326, currency: "usd",
     metadata: { project: "mysidibou", source: "qr-go", purpose: "coffee" },
   };
-  assert.deepEqual(verifiedCheckoutStatus(session), { paid: true, purpose: "coffee", amount: 543, currency: "usd" });
+  assert.deepEqual(verifiedCheckoutStatus(session), { paid: true, purpose: "coffee", amount: 326, currency: "usd" });
   for (const change of [
     { status: "open" }, { payment_status: "unpaid" }, { amount_total: null },
     { currency: null }, { amount_total: -1 },
@@ -216,7 +227,7 @@ test("Stripe receives the coffee idempotency key in the request header", async (
       assert.equal(new Headers(init?.headers).get("Idempotency-Key"), "coffee:test-id:intent");
       return Response.json({ client_secret: "test-only" });
     };
-    await stripeRequest("POST", "/payment_intents", { amount: 500 }, { idempotencyKey: "coffee:test-id:intent" });
+    await stripeRequest("POST", "/payment_intents", { amount: 300 }, { idempotencyKey: "coffee:test-id:intent" });
   } finally {
     globalThis.fetch = originalFetch;
     if (previousKey === undefined) delete process.env.STRIPE_SECRET_KEY;

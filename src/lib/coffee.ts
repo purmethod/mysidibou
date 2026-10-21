@@ -1,10 +1,13 @@
 /** Public coffee price data. The signed token is verified on the server. */
 export type CoffeeFallbackReason = "unknown_region" | "unsupported_currency" | "rate_unavailable" | null;
 
+/** Fixed coffee price in euro cents, shared by quoting and display code. */
+export const COFFEE_BASE_AMOUNT = 300 as const;
+
 export interface CoffeePrice {
   amount: number;
   currency: string;
-  baseAmount: 500;
+  baseAmount: typeof COFFEE_BASE_AMOUNT;
   baseCurrency: "eur";
   fallbackReason: CoffeeFallbackReason;
 }

@@ -30,7 +30,7 @@ export async function resolvePayment(request: Request): Promise<PaymentDetails> 
   if (!body || typeof body !== "object" || Array.isArray(body)) throw new PaymentInputError("invalid_payment_request");
 
   if (body.purpose === "coffee") {
-    // Never trust a client amount, currency or FX rate for the fixed €5 coffee.
+    // Never trust a client amount, currency or FX rate for the fixed coffee price.
     const price = verifyCoffeeQuote(body.quote);
     return {
       purpose: "coffee",
@@ -41,8 +41,8 @@ export async function resolvePayment(request: Request): Promise<PaymentDetails> 
       metadata: {
         ...CONTRIBUTION.metadata,
         purpose: "coffee",
-        base_amount: "500",
-        base_currency: "eur",
+        base_amount: String(price.baseAmount),
+        base_currency: price.baseCurrency,
       },
     };
   }

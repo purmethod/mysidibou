@@ -1,6 +1,6 @@
 import { createHmac, timingSafeEqual } from "node:crypto";
 
-import { COFFEE_CURRENCIES, coffeeCurrencyForLocale } from "./coffee.ts";
+import { COFFEE_BASE_AMOUNT, COFFEE_CURRENCIES, coffeeCurrencyForLocale } from "./coffee.ts";
 import type { CoffeePrice, CoffeeQuote } from "./coffee.ts";
 import { PaymentInputError, StripeConfigError } from "./stripe.server.ts";
 
@@ -42,7 +42,7 @@ export async function getEuroRate(currency: string): Promise<number | null> {
         return rates[currency];
       }
     } catch {
-      // Try the second source, then quote the fixed €5 price explicitly.
+      // Try the second source, then quote the fixed euro price explicitly.
     }
   }
   return null;
@@ -53,15 +53,15 @@ export async function coffeePriceForLocale(
   rateLookup: (currency: string) => Promise<number | null> = getEuroRate,
 ): Promise<CoffeePrice> {
   const { currency, fallbackReason } = coffeeCurrencyForLocale(locale);
-  const base = { baseAmount: 500 as const, baseCurrency: "eur" as const };
-  if (currency === "eur") return { ...base, amount: 500, currency, fallbackReason };
+  const base = { baseAmount: COFFEE_BASE_AMOUNT, baseCurrency: "eur" as const };
+  if (currency === "eur") return { ...base, amount: COFFEE_BASE_AMOUNT, currency, fallbackReason };
   const rate = await rateLookup(currency);
   if (typeof rate !== "number" || !Number.isFinite(rate) || rate <= 0.01 || rate >= 100000) {
-    return { ...base, amount: 500, currency: "eur", fallbackReason: "rate_unavailable" };
+    return { ...base, amount: COFFEE_BASE_AMOUNT, currency: "eur", fallbackReason: "rate_unavailable" };
   }
-  const amount = Math.round(5 * rate * 10 ** COFFEE_CURRENCIES[currency]);
+  const amount = Math.round((COFFEE_BASE_AMOUNT / 100) * rate * 10 ** COFFEE_CURRENCIES[currency]);
   if (!Number.isSafeInteger(amount) || amount < 1 || amount > 99999999) {
-    return { ...base, amount: 500, currency: "eur", fallbackReason: "rate_unavailable" };
+    return { ...base, amount: COFFEE_BASE_AMOUNT, currency: "eur", fallbackReason: "rate_unavailable" };
   }
   return { ...base, amount, currency, fallbackReason: null };
 }
@@ -78,6 +78,9 @@ function signature(payload: string, key: string): Buffer {
 
 /** Locks the displayed amount, including its FX rounding, for the wallet sheet. */
 export function signCoffeeQuote(price: CoffeePrice, key = signingKey(), now = Date.now()): CoffeeQuote {
+  if (price.baseAmount !== COFFEE_BASE_AMOUNT || (price.currency === "eur" && price.amount !== COFFEE_BASE_AMOUNT)) {
+    throw new PaymentInputError("invalid_coffee_quote");
+  }
   const expiresAt = now + COFFEE_QUOTE_TTL_MS;
   const payload = Buffer.from(JSON.stringify({ ...price, expiresAt })).toString("base64url");
   const token = `${payload}.${signature(payload, key).toString("base64url")}`;
@@ -104,12 +107,13 @@ export function verifyCoffeeQuote(token: unknown, key = signingKey(), now = Date
   }
   if (!price || !Number.isSafeInteger(price.amount) || price.amount < 1 || price.amount > 99999999 ||
       typeof price.currency !== "string" || !Object.hasOwn(COFFEE_CURRENCIES, price.currency) ||
-      price.baseAmount !== 500 || price.baseCurrency !== "eur" || !Number.isFinite(price.expiresAt) ||
+      price.baseAmount !== COFFEE_BASE_AMOUNT || price.baseCurrency !== "eur" ||
+      (price.currency === "eur" && price.amount !== COFFEE_BASE_AMOUNT) || !Number.isFinite(price.expiresAt) ||
       price.expiresAt > now + COFFEE_QUOTE_TTL_MS) {
     throw new PaymentInputError("invalid_coffee_quote");
   }
   if (price.expiresAt <= now) throw new PaymentInputError("expired_coffee_quote");
-  return { amount: price.amount, currency: price.currency, baseAmount: 500, baseCurrency: "eur", fallbackReason: price.fallbackReason };
+  return { amount: price.amount, currency: price.currency, baseAmount: COFFEE_BASE_AMOUNT, baseCurrency: "eur", fallbackReason: price.fallbackReason };
 }
 
 export async function getCoffeeQuote(locale: unknown): Promise<CoffeeQuote> {
