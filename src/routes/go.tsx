@@ -394,14 +394,14 @@ function GoPage() {
             rel="noopener noreferrer"
             target="_blank"
           >
-            <span className="go-insta__text">Follow on Instagram</span>
+            <span className="go-insta__text" lang={lang} dir={lang === "ar" ? "rtl" : "ltr"}>{copy.instagram}</span>
             <span aria-hidden="true" className="go-insta__logo">
               <img alt="" decoding="async" height="168" src="/assets/instagram-icon.webp" width="168" />
             </span>
           </a>
           <a className="go-insta go-insta--project" href="https://mysidibou.com/">
-            <span className="go-insta__text">
-              Visit the project mysidibou
+            <span className="go-insta__text" lang={lang} dir={lang === "ar" ? "rtl" : "ltr"}>
+              {copy.project} <bdi>mysidibou</bdi>
             </span>
             <span aria-hidden="true" className="go-insta__logo is-heart">
               <HeartIcon />
