@@ -622,7 +622,6 @@ export function DonateSection() {
           <Reveal delay={1}>
             <div className="mt-9 flex flex-wrap items-center gap-7">
               <DonateButton wide />
-              <p className="max-w-[22rem] text-sm text-ink-soft">{dict.donateSection.linkSoon}</p>
             </div>
           </Reveal>
         </div>
@@ -686,7 +685,7 @@ export function FooterSection() {
                 {dict.nav[key]}
               </a>
             ))}
-            <a className="site-nav__link" href="#donate">
+            <a className="site-nav__link" href={site.donate.link}>
               {dict.nav.donate}
             </a>
           </nav>

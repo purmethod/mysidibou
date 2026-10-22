@@ -19,7 +19,7 @@ import {
   UnescoSection,
 } from "@/components/site/sections";
 import { HeroSection } from "@/components/site/hero";
-import { SiteNav } from "@/components/site/nav";
+import { DonatePill, SiteNav } from "@/components/site/nav";
 import { ScrollProgress } from "@/components/site/ui";
 
 export const Route = createFileRoute("/")({
@@ -48,6 +48,7 @@ function Index() {
       <FollowSection />
       <FinaleSection />
       <FooterSection />
+      <DonatePill />
     </main>
   );
 }

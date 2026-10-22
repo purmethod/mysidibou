@@ -542,34 +542,46 @@ section.scroll-scrub .scroll-scrub__tags li {
   }
 }
 
-/* sticky donate pill (appears while scrolling) */
+/* Floating support action, revealed after the visitor starts scrolling. */
 .donate-pill {
   position: fixed;
   z-index: 39;
-  right: clamp(1rem, 3vw, 2rem);
+  right: max(clamp(1rem, 3vw, 2rem), env(safe-area-inset-right, 0px));
   bottom: calc(clamp(1rem, 3vw, 2rem) + env(safe-area-inset-bottom, 0px));
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: var(--color-bougainvillea);
+  background: var(--color-cobalt);
   color: #fff;
   font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   text-decoration: none;
+  min-height: 3rem;
+  border-radius: 999px;
   padding: 0.85rem 1.3rem;
-  box-shadow: 0 12px 32px rgb(152 46 85 / 0.35);
+  box-shadow: 0 8px 24px rgb(30 78 140 / 0.28);
+  visibility: hidden;
+  pointer-events: none;
   transform: translateY(150%);
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
     background-color 0.2s ease;
 }
 
 .donate-pill.is-visible {
+  visibility: visible;
+  pointer-events: auto;
   transform: translateY(0);
 }
 
 .donate-pill:hover {
-  background: var(--color-bougainvillea-deep);
+  background: #163e72;
+}
+
+.donate-pill:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .donate-pill { transition: none; }
 }
 
 .donate-pill:active {

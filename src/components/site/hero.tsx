@@ -5,7 +5,7 @@
  */
 import { site } from "@/config/site";
 import { useI18n } from "@/lib/i18n";
-import { InstagramIcon } from "./ui";
+import { DonateButton } from "./ui";
 
 export function HeroSection() {
   const { dict } = useI18n();
@@ -27,10 +27,7 @@ export function HeroSection() {
         <h1 className="hero__title">{hero.title}</h1>
         <p className="hero__body">{hero.body}</p>
         <div className="hero__actions">
-          <a className="btn-donate btn-donate--wide" href={site.social.instagram}>
-            {dict.cta.follow}
-            <InstagramIcon className="ig-mark" />
-          </a>
+          <DonateButton wide />
         </div>
         <p className="hero-line">{dict.heroLine}</p>
       </div>

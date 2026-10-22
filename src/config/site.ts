@@ -15,9 +15,9 @@ export const site = {
   },
 
   /* ---------- Donation ---------- */
-  // Replace "[DONATION_LINK]" with the real donation URL (one tap on mobile).
+  // All support actions lead to the existing contribution landing page.
   donate: {
-    link: "[DONATION_LINK]",
+    link: "/go",
     // When the QR code is ready, drop its file into public/assets/ and set
     // the path here. The QR tile only shows on desktop (mobile opens the link).
     qrImage: "",
