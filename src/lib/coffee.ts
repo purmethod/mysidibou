@@ -1,8 +1,8 @@
 /** Public coffee price data. The signed token is verified on the server. */
 export type CoffeeFallbackReason = "unknown_region" | "unsupported_currency" | "rate_unavailable" | null;
 
-/** Fixed coffee price in Tunisian millimes (5 TND). */
-export const COFFEE_BASE_AMOUNT = 5000 as const;
+/** Fixed coffee price in Tunisian millimes (10 TND). */
+export const COFFEE_BASE_AMOUNT = 10000 as const;
 
 export interface CoffeePrice {
   amount: number;

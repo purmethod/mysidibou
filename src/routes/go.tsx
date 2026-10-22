@@ -18,7 +18,7 @@ import { STRIPE_JS, loadStripeJs } from "@/lib/go-stripe";
 import { site } from "@/config/site";
 import { HeartIcon, SealIcon } from "@/components/site/ui";
 import { COFFEE_CURRENCIES, formatCoffeePrice } from "@/lib/coffee";
-import { CUSTOM_MIN_TND, CUSTOM_MAX_TND, type DonationQuote } from "@/lib/donation";
+import { type DonationMenu, type DonationQuote } from "@/lib/donation";
 import { visitorLang } from "@/lib/lang.server";
 
 
@@ -52,7 +52,7 @@ export const Route = createFileRoute("/go")({
       {
         name: "description",
         content:
-          "Architecture students protecting our UNESCO World Heritage. Support the project with 10 TND.",
+          "Architecture students protecting our UNESCO World Heritage. Support the project.",
       },
     ],
     links: [
@@ -87,25 +87,34 @@ function GoPage() {
   const [coffeePaid, setCoffeePaid] = useState<{ amount: number; currency: string } | null>(null);
   const [paidPrice, setPaidPrice] = useState<{ amount: number; currency: string } | null>(null);
   const [choice, setChoice] = useState<Choice>(10);
-  const [customTnd, setCustomTnd] = useState(String(CUSTOM_MIN_TND));
+  const [menuResult, setMenuResult] = useState<{ menu: DonationMenu; locale: string } | null>(null);
+  const previousCurrencyRef = useRef('');
+  const menu = menuResult?.locale === locale ? menuResult.menu : null;
+  const currency = menu?.choices[0].currency ?? '';
+  const currencyFactor = 10 ** (COFFEE_CURRENCIES[currency] ?? 2);
+  const customMin = menu ? menu.choices[3].amount / currencyFactor : 0;
+  const customMax = menu ? menu.customMax / currencyFactor : 0;
+  const currencySymbol = currency ? new Intl.NumberFormat(locale || 'en', { style: 'currency', currency }).formatToParts(0).find((part) => part.type === 'currency')?.value ?? currency.toUpperCase() : '';
+  const [customLocal, setCustomLocal] = useState('');
   const customInputRef = useRef<HTMLInputElement>(null);
-  const customValue = Number(customTnd);
-  const customValid = customTnd.trim() !== "" && Number.isSafeInteger(customValue) && customValue >= CUSTOM_MIN_TND && customValue <= CUSTOM_MAX_TND;
-  const amountTnd = choice === "custom" ? (customValid ? customValue : CUSTOM_MIN_TND) : choice;
-  const amountValid = choice !== 'custom' || customValid;
+  const customValue = Number(customLocal);
+  const customValid = !!menu && /^[0-9]+$/.test(customLocal) && Number.isSafeInteger(customValue) && customValue >= customMin && customValue <= customMax;
+  const amountValid = !!menu && (choice !== 'custom' || customValid);
   const amountValidRef = useRef(amountValid);
   amountValidRef.current = amountValid;
   const [quoted, setQuoted] = useState<{ price: DonationQuote; locale: string } | null>(null);
   const [quoteRefresh, setQuoteRefresh] = useState(0);
-  // Never reuse the previous tier's quote while a new selection is loading.
-  const quote = amountValid && quoted?.locale === locale && quoted.price.baseAmount === amountTnd * 1000 ? quoted.price : null;
+  // Presets come from one currency/rate snapshot; custom input is already local.
+  const quote = !amountValid ? null : choice === 'custom'
+    ? quoted?.locale === locale && quoted.price.custom === true && quoted.price.currency === currency && quoted.price.amount === customValue * currencyFactor ? quoted.price : null
+    : menu?.choices.find((price) => price.baseAmount === choice * 1000) ?? null;
   const quoteRef = useRef(quote);
   quoteRef.current = quote;
   const quoteReady = !!quote && quote.expiresAt > Date.now();
   const chooseAmount = (value: Choice) => {
     if (value === 'custom') {
       // Commit and focus within the tap: an effect runs too late for the iOS keyboard.
-      flushSync(() => setChoice(value));
+      flushSync(() => { if (!customLocal) setCustomLocal(String(customMin)); setChoice(value); });
       customInputRef.current?.focus({ preventScroll: true });
       customInputRef.current?.select();
     } else setChoice(value);
@@ -162,33 +171,65 @@ function GoPage() {
   const walletRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!supportMounted || !locale || !amountValid || isPaid) return;
+    if (!supportMounted || !locale || isPaid) return;
     const abort = new AbortController();
     let cancelled = false;
     let refreshTimer: ReturnType<typeof setTimeout>;
-    setQuoted(null);
+    setMenuResult(null);
     setError(null);
     (async () => {
       try {
-        const response = await fetch(`/api/donation-quote?locale=${encodeURIComponent(locale)}&amountTnd=${amountTnd}`, { signal: abort.signal });
-        const price: DonationQuote = await response.json();
-        if (!response.ok || !Number.isSafeInteger(price.amount) || price.amount <= 0 ||
-            !Object.hasOwn(COFFEE_CURRENCIES, price.currency) || price.baseAmount !== amountTnd * 1000 ||
-            price.baseCurrency !== 'tnd' || !price.token || !(price.expiresAt > Date.now())) throw new Error('quote_unavailable');
+        const response = await fetch(`/api/donation-quote?locale=${encodeURIComponent(locale)}&menu=1`, { signal: abort.signal });
+        const result: DonationMenu = await response.json();
+        if (!response.ok || !Array.isArray(result.choices) || result.choices.length !== 4 ||
+            result.choices.some((price, index) => !Number.isSafeInteger(price.amount) || price.amount <= 0 ||
+              !Object.hasOwn(COFFEE_CURRENCIES, price.currency) || price.currency !== result.choices[0].currency ||
+              price.amount % 10 ** COFFEE_CURRENCIES[price.currency] !== 0 || price.baseAmount !== [10, 20, 50, 80][index] * 1000 ||
+              price.baseCurrency !== 'tnd' || price.custom || !price.token || !(price.expiresAt > Date.now())) ||
+            !Number.isSafeInteger(result.customMax) || result.customMax < result.choices[3].amount ||
+            result.customMax % 10 ** COFFEE_CURRENCIES[result.choices[0].currency] !== 0) throw new Error('quote_unavailable');
         if (cancelled) return;
-        setQuoted({ price, locale });
+        if (previousCurrencyRef.current && previousCurrencyRef.current !== result.choices[0].currency) {
+          // Never reinterpret an entered amount when a rate fallback changes currency.
+          setChoice(10);
+          setCustomLocal('');
+          setQuoted(null);
+        }
+        previousCurrencyRef.current = result.choices[0].currency;
+        setMenuResult({ menu: result, locale });
         const refreshWhenIdle = () => {
           if (paymentPendingRef.current) return;
           if (busyRef.current) refreshTimer = setTimeout(refreshWhenIdle, 1000);
           else setQuoteRefresh((value) => value + 1);
         };
-        refreshTimer = setTimeout(refreshWhenIdle, Math.max(1000, price.expiresAt - Date.now() - 60000));
+        refreshTimer = setTimeout(refreshWhenIdle, Math.max(1000, Math.min(...result.choices.map((price) => price.expiresAt)) - Date.now() - 60000));
       } catch {
         if (!cancelled) setError(GO_COPY[lang].error);
       }
     })();
     return () => { cancelled = true; abort.abort(); clearTimeout(refreshTimer); };
-  }, [supportMounted, locale, amountTnd, amountValid, quoteRefresh, isPaid, lang]);
+  }, [supportMounted, locale, quoteRefresh, isPaid, lang]);
+
+  useEffect(() => {
+    if (!supportMounted || choice !== 'custom' || !customValid || !menu || isPaid) return;
+    const abort = new AbortController();
+    let cancelled = false;
+    setQuoted(null);
+    setError(null);
+    (async () => {
+      try {
+        const response = await fetch(`/api/donation-quote?locale=${encodeURIComponent(locale)}&amountLocal=${customValue}&currency=${currency}`, { signal: abort.signal });
+        const price: DonationQuote = await response.json();
+        if (!response.ok || price.custom !== true || price.amount !== customValue * currencyFactor ||
+            price.currency !== currency || price.baseAmount !== price.amount || price.baseCurrency !== currency ||
+            !price.token || !(price.expiresAt > Date.now())) throw new Error('quote_unavailable');
+        if (!cancelled) setQuoted({ price, locale });
+      } catch {
+        if (!cancelled) setError(GO_COPY[lang].error);
+      }
+    })();
+    return () => { cancelled = true; abort.abort(); };
+  }, [supportMounted, choice, customValid, customValue, currency, currencyFactor, menu, locale, lang, isPaid]);
 
   // Only a Stripe-verified status may produce a thank-you message.
   useEffect(() => {
@@ -472,50 +513,47 @@ function GoPage() {
                 </p>
               </div>
 
-              <div aria-label="Amount (TND)" className="go-amounts" role="radiogroup" dir="ltr">
-                {(
-                  [
-                    [10, "10"],
-                    [20, "20"],
-                    [50, "50"],
-                    ["custom", "80+"],
-                  ] as const
-                ).map(([value, label]) =>
+              <div aria-label={`Amount${currency ? ` (${currency.toUpperCase()})` : ''}`} className="go-amounts" role="radiogroup" dir="ltr">
+                {([10, 20, 50, 'custom'] as const).map((value, index) => {
+                  const label = menu ? `${formatCoffeePrice(menu.choices[index], locale || lang)}${value === 'custom' ? '+' : ''}` : '—';
+                  return (
                   value === "custom" && choice === "custom" ? (
                     // Own amount, typed right inside the chip: no extra row needed
-                    <label className="go-amount is-active is-input" key={label}>
+                    <label className="go-amount is-active is-input" key={value}>
                       <input
                         ref={customInputRef}
-                        disabled={busy}
-                        aria-label={copy.custom}
+                        disabled={busy || !menu}
+                        aria-label={`${copy.custom} (${currency.toUpperCase()})`}
                         aria-invalid={!customValid}
                         aria-describedby={!customValid ? 'custom-amount-error' : undefined}
                         inputMode="numeric"
-                        onChange={(e) => setCustomTnd(e.target.value.replace(/[^0-9]/g, "").slice(0, 5))}
+                        onChange={(e) => setCustomLocal(e.target.value)}
+                        maxLength={16}
                         pattern="[0-9]*"
                         type="text"
-                        value={customTnd}
-                      />{' '}<span className="go-amount__currency">TND</span>
+                        value={customLocal}
+                      />{' '}<span className="go-amount__currency">{currencySymbol}</span>
                     </label>
                   ) : (
                     <button
                       aria-checked={choice === value}
-                      disabled={busy}
+                      disabled={busy || !menu}
                       className={`go-amount ${choice === value ? "is-active" : ""}`}
-                      key={label}
+                      key={value}
+                      style={label.length > 7 ? { fontSize: `${Math.max(0.65, 0.98 - (label.length - 7) * 0.065)}rem` } : undefined}
                       onClick={() => chooseAmount(value)}
                       role="radio"
                       type="button"
                     >
-                      <span>{label}</span>{' '}<span className="go-amount__currency">TND</span>
+                      <bdi>{label}</bdi>
                     </button>
-                  ),
-                )}
+                  )
+                ); })}
               </div>
 
-              {!amountValid && <p id="custom-amount-error" className="go-support__error" role="alert">{copy.range}</p>}
-              {amountValid && <p className="go-support__conversion" role="status" lang={lang} dir={lang === 'ar' ? 'rtl' : 'ltr'}>
-                {quoteReady ? <><bdi>{amountTnd} TND</bdi> · {copy.charge} <bdi>{formatCoffeePrice(quote, locale || lang)}</bdi>{quote.fallbackReason ? ` · ${copy.euroFallback}` : ''}</> : copy.preparing}
+              {menu && !amountValid && <p id="custom-amount-error" className="go-support__error" role="alert">{copy.range.replace('{min}', formatCoffeePrice(menu.choices[3], locale || lang)).replace('{max}', formatCoffeePrice({ amount: menu.customMax, currency }, locale || lang))}</p>}
+              {(!menu || amountValid) && <p className="go-support__conversion" role="status" lang={lang} dir={lang === 'ar' ? 'rtl' : 'ltr'}>
+                {quoteReady ? <>{copy.charge} <bdi>{formatCoffeePrice(quote, locale || lang)}</bdi>{quote.fallbackReason ? ` · ${copy.euroFallback}` : ''}</> : copy.preparing}
               </p>}
               <div className={`go-pay__slot is-${wallet}`} inert={!amountValid || !quoteReady || busy} aria-disabled={!amountValid || !quoteReady || busy}>
                 <div className="go-pay__ece" ref={walletRef} />
@@ -538,6 +576,7 @@ function GoPage() {
               {error ? (
                 <p className="go-support__error" role="alert">
                   {error}
+                  {!busy && (!menu || (choice === 'custom' && !quote)) && <>{' '}<button className="go-support__retry" type="button" onClick={() => { setQuoted(null); setQuoteRefresh((value) => value + 1); }}>{copy.retry}</button></>}
                 </p>
               ) : (
                 <p className="go-support__secure">

@@ -5,7 +5,7 @@ import { test } from "node:test";
 import { coffeeCurrencyForLocale, formatCoffeePrice, roundUpCurrencyAmount } from "../src/lib/coffee.ts";
 import type { CoffeePrice } from "../src/lib/coffee.ts";
 import { DONATION_TND_CHOICES, isDonationTndAmount, tndToEurCents } from "../src/lib/donation.ts";
-import { donationPriceForLocale, DONATION_QUOTE_TTL_MS, signDonationQuote, verifyDonationQuote } from "../src/lib/donation.server.ts";
+import { customDonationPriceForLocale, donationPriceForLocale, DONATION_QUOTE_TTL_MS, getDonationMenu, signDonationQuote, verifyDonationQuote } from "../src/lib/donation.server.ts";
 import { coffeePriceForLocale, COFFEE_QUOTE_TTL_MS, getEuroRate, signCoffeeQuote, verifyCoffeeQuote } from "../src/lib/coffee.server.ts";
 import { coffeeIdempotencyKey, resolvePayment } from "../src/lib/payment.server.ts";
 import { checkoutPaymentStatus, verifiedCheckoutStatus } from "../src/lib/payment-status.server.ts";
@@ -13,7 +13,7 @@ import { getMerchantCountry, PaymentInputError, stripeRequest } from "../src/lib
 
 const TEST_KEY = "test-only-quote-key-not-a-stripe-key";
 const NOW = 1792573200000;
-const eurPrice = { amount: 200, currency: "eur", baseAmount: 5000, baseCurrency: "tnd", fallbackReason: null } as const;
+const eurPrice = { amount: 300, currency: "eur", baseAmount: 10000, baseCurrency: "tnd", fallbackReason: null } as const;
 const testTndRate = async () => 0.297;
 
 async function withTestKey(run: () => Promise<void>) {
@@ -49,17 +49,17 @@ test("charges round UP to the next whole currency unit without a spurious extra 
   assert.equal(formatCoffeePrice({ amount: 400, currency: "eur" }, "invalid_locale"), "4 EUR");
 });
 
-test("coffee fixes a 5 TND base and converts once into the charged currency", async () => {
+test("coffee fixes a 10 TND base and converts once into the charged currency", async () => {
   assert.deepEqual(await coffeePriceForLocale("de-DE", undefined, testTndRate), eurPrice);
   const usd = await coffeePriceForLocale("en-US", async () => 1.0865, testTndRate);
-  assert.equal(usd.amount, 200);
+  assert.equal(usd.amount, 400);
   assert.equal(usd.currency, "usd");
-  assert.equal(usd.baseAmount, 5000);
+  assert.equal(usd.baseAmount, 10000);
   assert.equal(usd.baseCurrency, "tnd");
   const jpy = await coffeePriceForLocale("ja-JP", async () => 163.78, testTndRate);
-  // Converting the rounded €2 intermediate would incorrectly produce ¥328.
-  assert.equal(jpy.amount, 244);
-  assert.equal(formatCoffeePrice(jpy, "en-US"), "¥244");
+  // Converting the rounded €3 intermediate would incorrectly produce ¥492.
+  assert.equal(jpy.amount, 487);
+  assert.equal(formatCoffeePrice(jpy, "en-US"), "¥487");
 });
 
 test("unknown regions never perform a guessed exchange", async () => {
@@ -69,7 +69,7 @@ test("unknown regions never perform a guessed exchange", async () => {
   assert.deepEqual(price, { ...eurPrice, fallbackReason: "unknown_region" });
 });
 
-test("unavailable or malformed target FX falls back to the EUR equivalent of 5 TND", async () => {
+test("unavailable or malformed target FX falls back to the EUR equivalent of 10 TND", async () => {
   for (const rate of [null, NaN, Infinity, -1, 0, 1000000]) {
     const price = await coffeePriceForLocale("en-US", async () => rate, testTndRate);
     assert.deepEqual(price, { ...eurPrice, fallbackReason: "rate_unavailable" });
@@ -93,6 +93,14 @@ test("previous €3 and €5 quotes are rejected even with a valid signature and
   }
 });
 
+test("previous 5 TND coffee quotes are rejected after the base changes to 10 TND", () => {
+  const oldPrice = { ...eurPrice, amount: 200, baseAmount: 5000, expiresAt: NOW + COFFEE_QUOTE_TTL_MS };
+  const payload = Buffer.from(JSON.stringify(oldPrice)).toString("base64url");
+  const signature = createHmac("sha256", TEST_KEY).update(`mysidibou:coffee:v2:${payload}`).digest("base64url");
+  assert.throws(() => verifyCoffeeQuote(`${payload}.${signature}`, TEST_KEY, NOW + 1000), /invalid_coffee_quote/);
+  assert.throws(() => signCoffeeQuote(oldPrice as unknown as CoffeePrice, TEST_KEY, NOW), /invalid_coffee_quote/);
+});
+
 test("altering the signed coffee amount or using a different key is rejected", () => {
   const quote = signCoffeeQuote(eurPrice, TEST_KEY, NOW);
   const [payload, signature] = quote.token.split(".");
@@ -114,11 +122,11 @@ test("coffee API ignores a client-supplied amount and currency", async () => {
     const result = await resolvePayment(new Request("https://example.test/api/checkout", {
       method: "POST", body: JSON.stringify({ purpose: "coffee", quote: quote.token, amount: 1, currency: "usd" }),
     }));
-    assert.equal(result.amount, 200);
+    assert.equal(result.amount, 300);
     assert.equal(result.currency, "eur");
     assert.equal(result.purpose, "coffee");
     assert.equal(result.metadata.purpose, "coffee");
-    assert.equal(result.metadata.base_amount, "5000");
+    assert.equal(result.metadata.base_amount, "10000");
     assert.equal(result.metadata.base_currency, "tnd");
   } finally {
     if (previous === undefined) delete process.env.STRIPE_SECRET_KEY;
@@ -161,6 +169,79 @@ test("donation quotes convert TND tiers into whole local-currency amounts", asyn
   for (const amount of [5, 79, 80.5, 10001, "80"]) {
     await assert.rejects(donationPriceForLocale("ja", amount, undefined, testTndRate), /invalid_donation_amount/);
   }
+});
+
+test("donation menus return four signed local-currency choices and a matching custom cap", async () => {
+  await withTestKey(async () => {
+    let tndReads = 0;
+    const eur = await getDonationMenu("de-DE", undefined, async () => { tndReads++; return 0.3; });
+    assert.equal(tndReads, 1);
+    assert.deepEqual(eur.choices.map((quote) => quote.amount), [300, 600, 1500, 2400]);
+    assert.deepEqual(eur.choices.map((quote) => quote.baseAmount), [10000, 20000, 50000, 80000]);
+    assert.equal(eur.customMax, 300000);
+    for (const quote of eur.choices) {
+      assert.equal(quote.currency, "eur");
+      assert.equal(verifyDonationQuote(quote.token).amount, quote.amount);
+    }
+    let targetReads = 0;
+    const jpy = await getDonationMenu("ja", async () => { targetReads++; return 160; }, async () => 0.3);
+    assert.equal(targetReads, 1);
+    assert.deepEqual(jpy.choices.map((quote) => quote.amount), [480, 960, 2400, 3840]);
+    assert.equal(jpy.customMax, 480000);
+    assert.ok(jpy.choices.every((quote) => quote.currency === "jpy"));
+  });
+});
+
+test("a high-value IDR custom ceiling is capped locally without breaking the menu or currency", async () => {
+  await withTestKey(async () => {
+    let rateReads = 0;
+    const menu = await getDonationMenu("id-ID", async () => { rateReads++; return 10000; }, async () => 0.3);
+    assert.equal(rateReads, 1);
+    assert.ok(menu.choices.every((quote) => quote.currency === "idr"));
+    assert.deepEqual(menu.choices.map((quote) => quote.amount), [3000000, 6000000, 15000000, 24000000]);
+    assert.equal(menu.customMax, 99999900);
+    const accepted = await customDonationPriceForLocale("id-ID", 999999, "idr", async () => 10000, async () => 0.3);
+    assert.equal(accepted.currency, "idr");
+    assert.equal(accepted.amount, menu.customMax);
+    await assert.rejects(customDonationPriceForLocale("id-ID", 1000000, "idr", async () => 10000, async () => 0.3), /invalid_donation_amount/);
+  });
+});
+
+test("custom €25 means exactly €25, with bounds from the 80–10000 TND equivalents", async () => {
+  const price = await customDonationPriceForLocale("de-DE", 25, "eur", undefined, async () => 0.3);
+  assert.deepEqual(price, {
+    amount: 2500, currency: "eur", baseAmount: 2500, baseCurrency: "eur", custom: true, fallbackReason: null,
+  });
+  for (const amount of [24, 3000]) {
+    assert.equal((await customDonationPriceForLocale("de-DE", amount, "eur", undefined, async () => 0.3)).amount, amount * 100);
+  }
+  for (const amount of [23, 3001, 25.5, "25", 0, -1]) {
+    await assert.rejects(customDonationPriceForLocale("de-DE", amount, "eur", undefined, async () => 0.3), /invalid_donation_amount/);
+  }
+  await assert.rejects(customDonationPriceForLocale("de-DE", 25, "usd", undefined, async () => 0.3), /currency_changed/);
+  const yen = await customDonationPriceForLocale("ja", 3900, "jpy", async () => 160, async () => 0.3);
+  assert.equal(yen.amount, 3900);
+  assert.equal(yen.baseAmount, 3900);
+  assert.equal(yen.baseCurrency, "jpy");
+});
+
+test("signed custom donation retains its exact local base and requires matching echoed amount", async () => {
+  await withTestKey(async () => {
+    const price = await customDonationPriceForLocale("de-DE", 25, "eur", undefined, async () => 0.3);
+    const quote = signDonationQuote(price);
+    assert.deepEqual(verifyDonationQuote(quote.token), price);
+    const payment = await resolvePayment(new Request("https://example.test/api/checkout", {
+      method: "POST", body: JSON.stringify({ purpose: "donation", quote: quote.token, amount: 2500, currency: "eur" }),
+    }));
+    assert.equal(payment.amount, 2500);
+    assert.equal(payment.metadata.base_amount, "2500");
+    assert.equal(payment.metadata.base_currency, "eur");
+    await assert.rejects(resolvePayment(new Request("https://example.test/api/checkout", {
+      method: "POST", body: JSON.stringify({ purpose: "donation", quote: quote.token, amount: 25, currency: "eur" }),
+    })), /donation_quote_mismatch/);
+    assert.throws(() => signDonationQuote({ ...price, baseCurrency: "tnd" }), /invalid_donation_quote/);
+    assert.throws(() => signDonationQuote({ ...price, baseAmount: 2600 }), /invalid_donation_quote/);
+  });
 });
 
 test("donation quotes lock their exact amount and currency for 30 minutes", async () => {

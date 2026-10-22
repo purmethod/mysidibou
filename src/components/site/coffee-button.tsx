@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { COFFEE_BASE_AMOUNT, formatCoffeePrice, type CoffeeQuote } from '@/lib/coffee';
+import { formatCoffeePrice, type CoffeeQuote } from '@/lib/coffee';
 import { GO_COPY, type GoLanguage } from '@/lib/go-copy';
 import { loadStripeJs } from '@/lib/go-stripe';
 
@@ -195,7 +195,7 @@ export function CoffeeButton({ locale, lang, completed = null, compact = false }
   }, []);
 
   const price = completed ? formatCoffeePrice(completed, locale || 'en') : quote ? formatCoffeePrice(quote, locale || 'en') : '';
-  const displayPrice = completed ? price : price ? `${COFFEE_BASE_AMOUNT / 1000} TND · ${copy.charge} ${price}` : '';
+  const displayPrice = price;
   return (
     <div className="go-coffee" lang={lang} dir={lang === 'ar' ? 'rtl' : 'ltr'}>
       <button className={`go-insta go-coffee__button ${compact ? 'go-insta--nav' : ''}`} type="button" onClick={openCoffee}

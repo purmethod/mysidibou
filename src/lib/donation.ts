@@ -8,15 +8,23 @@ export const CUSTOM_MAX_TND = 10000;
 export interface DonationPrice {
   amount: number;
   currency: string;
-  /** Donation base in Tunisian millimes, before currency conversion and rounding. */
+  /** Presets: Tunisian millimes. Custom: the exact local-currency minor-unit amount. */
   baseAmount: number;
-  baseCurrency: "tnd";
+  baseCurrency: string;
+  custom?: true;
   fallbackReason: CoffeeFallbackReason;
 }
 
 export interface DonationQuote extends DonationPrice {
   token: string;
   expiresAt: number;
+}
+
+export interface DonationMenu {
+  /** Preset quotes in the order 10, 20, 50, then the 80 TND custom minimum. */
+  choices: DonationQuote[];
+  /** Highest accepted custom amount, in the same currency's minor units. */
+  customMax: number;
 }
 
 export function isDonationTndAmount(amount: unknown): amount is number {

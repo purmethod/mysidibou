@@ -1448,7 +1448,7 @@ html[dir="rtl"] .marquee__track {
   grid-template-columns: 1fr;
 }
 
-/* Amount choice: 10 TND · 20 TND · 50 TND · 80+ TND */
+/* Amount choices use the visitor’s local currency. */
 .go-amounts {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1510,7 +1510,7 @@ html[dir="rtl"] .marquee__track {
 }
 
 .go-amount.is-input input {
-  width: 3.1em; /* up to 5 digits, with TND alongside */
+  width: 3.1em; /* Local amount, with its currency symbol alongside */
   min-width: 0;
   padding: 0;
   border: 0;
@@ -1643,6 +1643,16 @@ html[dir="rtl"] .marquee__track {
   font-size: 0.82rem;
   font-weight: 600;
   line-height: 1.3;
+}
+
+.go-support__retry {
+  padding: 0.25rem;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .go-thanks {

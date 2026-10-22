@@ -62,7 +62,7 @@ export async function resolvePayment(request: Request): Promise<PaymentDetails> 
       ...CONTRIBUTION.metadata,
       purpose: "donation",
       base_amount: String(price.baseAmount),
-      base_currency: "tnd",
+      base_currency: price.baseCurrency,
     },
   };
 }
