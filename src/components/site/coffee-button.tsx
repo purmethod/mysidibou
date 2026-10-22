@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { formatCoffeePrice, type CoffeeQuote } from '@/lib/coffee';
+import { COFFEE_BASE_AMOUNT, formatCoffeePrice, type CoffeeQuote } from '@/lib/coffee';
 import { GO_COPY, type GoLanguage } from '@/lib/go-copy';
 import { loadStripeJs } from '@/lib/go-stripe';
 
@@ -147,15 +147,16 @@ export function CoffeeButton({ locale, lang, completed = null }: { locale: strin
   }, []);
 
   const price = completed ? formatCoffeePrice(completed, locale || 'en') : quote ? formatCoffeePrice(quote, locale || 'en') : '';
+  const displayPrice = completed ? price : price ? `${COFFEE_BASE_AMOUNT / 1000} TND · ${copy.charge} ${price}` : '';
   return (
     <div className="go-coffee" lang={lang} dir={lang === 'ar' ? 'rtl' : 'ltr'}>
       <button className="go-insta go-coffee__button" type="button" onClick={openCoffee}
         disabled={!!completed || status === 'loading' || status === 'busy' || status === 'paid' || status === 'pending'}
-        aria-label={`${copy.coffee}${price ? ` · ${price}` : ''}`}>
+        aria-label={`${copy.coffee}${displayPrice ? ` · ${displayPrice}` : ''}`}>
         <span className="go-insta__text">
           {copy.coffee}
           <span className="go-coffee__price">
-            {completed ? price : status === 'loading' ? copy.preparing : status === 'busy' ? copy.opening : price}
+            {completed ? price : status === 'loading' ? copy.preparing : status === 'busy' ? copy.opening : displayPrice}
             {quote?.fallbackReason ? ` · ${copy.euroFallback}` : ''}
           </span>
         </span>

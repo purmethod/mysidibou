@@ -1,9 +1,10 @@
 /**
- * Live TND → EUR rate for the /go page. The page shows "10 TND ≈ €x.xx" and
- * charges exactly that euro amount. Cached per server instance; two free
- * sources plus a hard fallback so the page never breaks.
+ * Shared TND → EUR rate used as the intermediate conversion for signed local
+ * currency quotes. Cached per server instance; two free sources plus the
+ * existing fallback rate when neither source is available.
  */
-const TND = 10;
+import { DONATION_TND_CHOICES, tndToEurCents } from "./donation.ts";
+
 const FALLBACK_RATE = 0.297;
 const TTL_MS = 6 * 60 * 60 * 1000;
 
@@ -37,37 +38,5 @@ export async function getTndEurRate(): Promise<number> {
 
 /** 10 TND in euro cents at the current rate. */
 export async function contributionCents(): Promise<number> {
-  return Math.round(TND * (await getTndEurRate()) * 100);
-}
-
-/** Fixed euro choices on /go, and the range for a custom "€20+" amount. */
-export const FIXED_EURO_CENTS = [500, 1000];
-export const CUSTOM_MIN_CENTS = 2000;
-export const CUSTOM_MAX_CENTS = 1000000; // €10,000
-
-/**
- * The amount the visitor chose on the page (and saw in the Apple Pay sheet) is
- * the one we charge, if it is one of the allowed choices:
- *  - 10 TND at the current rate (within 3% of the server's own rate)
- *  - €5 or €10
- *  - a custom amount from €20 to €10,000 (whole euros)
- * Anything else falls back to 10 TND.
- */
-export function validDonationCents(amount: unknown, tnd: number): number | null {
-  if (typeof amount !== "number" || !Number.isInteger(amount)) return null;
-  if (Math.abs(amount - tnd) <= tnd * 0.03) return amount;
-  if (FIXED_EURO_CENTS.includes(amount)) return amount;
-  if (amount >= CUSTOM_MIN_CENTS && amount <= CUSTOM_MAX_CENTS && amount % 100 === 0) return amount;
-  return null;
-}
-
-export async function resolveCents(request: Request): Promise<number> {
-  const tnd = await contributionCents();
-  try {
-    const { amount } = (await request.json()) as { amount?: unknown };
-    return validDonationCents(amount, tnd) ?? tnd;
-  } catch {
-    // no / invalid body
-  }
-  return tnd;
+  return tndToEurCents(DONATION_TND_CHOICES[0], await getTndEurRate());
 }

@@ -1,5 +1,5 @@
 import { verifyCoffeeQuote } from "./coffee.server.ts";
-import { contributionCents, validDonationCents } from "./rate.server.ts";
+import { verifyDonationQuote } from "./donation.server.ts";
 import { CONTRIBUTION, PaymentInputError } from "./stripe.server.ts";
 
 export interface PaymentDetails {
@@ -47,15 +47,22 @@ export async function resolvePayment(request: Request): Promise<PaymentDetails> 
     };
   }
   if (body.purpose !== undefined && body.purpose !== "donation") throw new PaymentInputError("invalid_payment_purpose");
-  const tnd = await contributionCents();
-  const amount = body.amount === undefined ? tnd : validDonationCents(body.amount, tnd);
-  // Invalid custom amounts must not silently charge a different contribution.
-  if (amount === null) throw new PaymentInputError("invalid_donation_amount");
+  const price = verifyDonationQuote(body.quote);
+  // The signed quote fixes both the charge and currency; the frontend must echo
+  // exactly the total shown in the wallet or Checkout CTA, never a stale quote.
+  if (body.amount !== price.amount || body.currency !== price.currency) {
+    throw new PaymentInputError("donation_quote_mismatch");
+  }
   return {
     purpose: "donation",
-    amount,
-    currency: CONTRIBUTION.currency,
+    amount: price.amount,
+    currency: price.currency,
     description: CONTRIBUTION.description,
-    metadata: { ...CONTRIBUTION.metadata, purpose: "donation" },
+    metadata: {
+      ...CONTRIBUTION.metadata,
+      purpose: "donation",
+      base_amount: String(price.baseAmount),
+      base_currency: "tnd",
+    },
   };
 }

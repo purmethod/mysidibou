@@ -17,6 +17,7 @@ import { Route as ApiCheckoutRouteImport } from './routes/api/checkout'
 import { Route as ApiCoffeeQuoteRouteImport } from './routes/api/coffee-quote'
 import { Route as ApiConfigRouteImport } from './routes/api/config'
 import { Route as ApiCreatePaymentIntentRouteImport } from './routes/api/create-payment-intent'
+import { Route as ApiDonationQuoteRouteImport } from './routes/api/donation-quote'
 import { Route as ApiPaymentStatusRouteImport } from './routes/api/payment-status'
 
 const IndexRoute = IndexRouteImport.update({
@@ -59,6 +60,11 @@ const ApiCreatePaymentIntentRoute = ApiCreatePaymentIntentRouteImport.update({
   path: '/api/create-payment-intent',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiDonationQuoteRoute = ApiDonationQuoteRouteImport.update({
+  id: '/api/donation-quote',
+  path: '/api/donation-quote',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiPaymentStatusRoute = ApiPaymentStatusRouteImport.update({
   id: '/api/payment-status',
   path: '/api/payment-status',
@@ -74,6 +80,7 @@ export interface FileRoutesByFullPath {
   '/api/coffee-quote': typeof ApiCoffeeQuoteRoute
   '/api/config': typeof ApiConfigRoute
   '/api/create-payment-intent': typeof ApiCreatePaymentIntentRoute
+  '/api/donation-quote': typeof ApiDonationQuoteRoute
   '/api/payment-status': typeof ApiPaymentStatusRoute
 }
 export interface FileRoutesByTo {
@@ -85,6 +92,7 @@ export interface FileRoutesByTo {
   '/api/coffee-quote': typeof ApiCoffeeQuoteRoute
   '/api/config': typeof ApiConfigRoute
   '/api/create-payment-intent': typeof ApiCreatePaymentIntentRoute
+  '/api/donation-quote': typeof ApiDonationQuoteRoute
   '/api/payment-status': typeof ApiPaymentStatusRoute
 }
 export interface FileRoutesById {
@@ -97,6 +105,7 @@ export interface FileRoutesById {
   '/api/coffee-quote': typeof ApiCoffeeQuoteRoute
   '/api/config': typeof ApiConfigRoute
   '/api/create-payment-intent': typeof ApiCreatePaymentIntentRoute
+  '/api/donation-quote': typeof ApiDonationQuoteRoute
   '/api/payment-status': typeof ApiPaymentStatusRoute
 }
 export interface FileRouteTypes {
@@ -110,6 +119,7 @@ export interface FileRouteTypes {
     | '/api/coffee-quote'
     | '/api/config'
     | '/api/create-payment-intent'
+    | '/api/donation-quote'
     | '/api/payment-status'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -121,6 +131,7 @@ export interface FileRouteTypes {
     | '/api/coffee-quote'
     | '/api/config'
     | '/api/create-payment-intent'
+    | '/api/donation-quote'
     | '/api/payment-status'
   id:
     | '__root__'
@@ -132,6 +143,7 @@ export interface FileRouteTypes {
     | '/api/coffee-quote'
     | '/api/config'
     | '/api/create-payment-intent'
+    | '/api/donation-quote'
     | '/api/payment-status'
   fileRoutesById: FileRoutesById
 }
@@ -144,6 +156,7 @@ export interface RootRouteChildren {
   ApiCoffeeQuoteRoute: typeof ApiCoffeeQuoteRoute
   ApiConfigRoute: typeof ApiConfigRoute
   ApiCreatePaymentIntentRoute: typeof ApiCreatePaymentIntentRoute
+  ApiDonationQuoteRoute: typeof ApiDonationQuoteRoute
   ApiPaymentStatusRoute: typeof ApiPaymentStatusRoute
 }
 
@@ -205,6 +218,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiCreatePaymentIntentRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/donation-quote': {
+      id: '/api/donation-quote'
+      path: '/api/donation-quote'
+      fullPath: '/api/donation-quote'
+      preLoaderRoute: typeof ApiDonationQuoteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/payment-status': {
       id: '/api/payment-status'
       path: '/api/payment-status'
@@ -224,6 +244,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiCoffeeQuoteRoute: ApiCoffeeQuoteRoute,
   ApiConfigRoute: ApiConfigRoute,
   ApiCreatePaymentIntentRoute: ApiCreatePaymentIntentRoute,
+  ApiDonationQuoteRoute: ApiDonationQuoteRoute,
   ApiPaymentStatusRoute: ApiPaymentStatusRoute,
 }
 export const routeTree = rootRouteImport

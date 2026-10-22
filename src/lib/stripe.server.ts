@@ -55,7 +55,7 @@ export async function stripeRequest<T = any>(
   return data as T;
 }
 
-/** Contribution: 10 TND, charged in EUR at the current rate (see rate.server.ts). */
+/** Shared project identity; each payment uses its signed, localized currency quote. */
 export const CONTRIBUTION = {
   currency: "eur",
   description: "MYSIDIBOU student project contribution",

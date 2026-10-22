@@ -63,6 +63,12 @@ function inputValue(input, value) {
   Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set.call(input, value);
   input.dispatchEvent(new Event('input',{bubbles:true}));
 }
+const normalizedText = (element) => element.textContent.replace(/\s+/g, ' ').trim();
+function amountChoice(app, label) {
+  const button=[...app.div.querySelectorAll('button.go-amount')].find(element=>normalizedText(element)===label);
+  assert.ok(button,`missing contribution choice: ${label}`);
+  return button;
+}
 async function openSupport(app) {
   const toggle=app.div.querySelector('#go-support-toggle');
   assert.ok(toggle,'the landing must provide a SUPPORT toggle');
@@ -77,14 +83,18 @@ async function openSupport(app) {
 const tests = [];
 function test(name, fn) { tests.push({name,fn}); }
 
-function donationHarness({search={}, verified={paid:false}, intentStatus='succeeded', realCoffee=false}={}) {
-  const elements = [], events = [], requests = [], wallets=[];
+function donationHarness({search={}, verified={paid:false}, intentStatus='succeeded', realCoffee=false, intentResponse={}, languages=['de-DE','en'], deferQuotes=false}={}) {
+  const elements = [], events = [], requests = [], wallets=[], confirms=[];
+  const quotes=new Map(),pendingQuotes=[];
+  let intentAmount=300;
+  let intentCurrency='eur';
+  Object.defineProperty(navigator,'languages',{configurable:true,value:languages});
   let cancelled = 0;
   const stripe = {elements(options) {
     const handlers = {};
     const group = {options, updates:[], update(value){this.updates.push(value)}, submit:async()=>({}), create() { return { on(event,handler){handlers[event]=handler}, mount(){handlers.ready?.({availablePaymentMethods:{applePay:true}})}, destroy(){cancelled++} }; }};
     elements.push(group); events.push(handlers); return group;
-  }, confirmPayment: async()=>({paymentIntent:{status:intentStatus, amount:3500}}),
+  }, confirmPayment: async(options)=>{confirms.push(options);return {paymentIntent:{status:intentStatus,amount:intentAmount,currency:intentCurrency}}},
   paymentRequest(options) {
     const handlers={};
     const wallet={options,handlers,showCalls:0,on(name,handler){handlers[name]=handler},off(name){delete handlers[name]},canMakePayment:async()=>({applePay:true}),show(){this.showCalls++}};
@@ -94,20 +104,39 @@ function donationHarness({search={}, verified={paid:false}, intentStatus='succee
   globalThis.fetch = async (url, options) => {
     requests.push({url, body:options?.body ? JSON.parse(options.body):null});
     if (url === '/api/config') return response({publishableKey:'pk_test', merchantCountry:'DE'});
-    if (String(url).startsWith('/api/coffee-quote')) return response({amount:300,currency:'eur',baseAmount:300,baseCurrency:'eur',fallbackReason:null,token:'signed-token',expiresAt:Date.now()+1800000});
+    if (String(url).startsWith('/api/coffee-quote')) return response({amount:200,currency:'eur',baseAmount:5000,baseCurrency:'tnd',fallbackReason:null,token:'signed-token',expiresAt:Date.now()+1800000});
+    if (String(url).startsWith('/api/donation-quote')) {
+      const query=new URL(url,'https://mysidibou.com').searchParams;
+      const amountTnd=Number(query.get('amountTnd'));
+      const locale=query.get('locale');
+      const currency=locale==='ja-JP'?'jpy':'eur';
+      const amount=currency==='jpy'?Math.ceil(amountTnd*50):Math.ceil(amountTnd*0.3)*100;
+      const token=`donation-${locale}-${amountTnd}`;
+      const quote={amount,currency,baseAmount:amountTnd*1000,baseCurrency:'tnd',fallbackReason:null,token,expiresAt:Date.now()+1800000};
+      quotes.set(token,quote);
+      if(deferQuotes) return new Promise(resolve=>pendingQuotes.push({amountTnd,quote,release:()=>resolve(response(quote))}));
+      return response(quote);
+    }
     if (String(url).startsWith('/api/payment-status')) return response(verified);
     if (url === '/api/checkout') return response({error:'mock checkout blocked'},false);
-    if (url === '/api/create-payment-intent') return response({client_secret:'pi_test_secret_test',...(JSON.parse(options.body).purpose==='coffee'?{amount:300,currency:'eur'}:{})});
+    if (url === '/api/create-payment-intent') {
+      const body=JSON.parse(options.body);
+      if(body.purpose==='coffee') return response({client_secret:'pi_test_secret_test',amount:200,currency:'eur'});
+      const quote=quotes.get(body.quote);
+      assert.ok(quote,'donation must submit a token returned by the quote endpoint');
+      intentAmount=quote.amount;intentCurrency=quote.currency;
+      return response({client_secret:'pi_test_secret_test',amount:quote.amount,currency:quote.currency,purpose:'donation',...intentResponse});
+    }
     throw new Error(`Unexpected URL ${url}`);
   };
   const load = loader({
-    '@tanstack/react-router':{createFileRoute:() => config => ({...config, useSearch:()=>search, useLoaderData:()=>({cents:304,lang:'de'})})},
+    '@tanstack/react-router':{createFileRoute:() => config => ({...config, useSearch:()=>search, useLoaderData:()=>({lang:'de'})})},
     '@tanstack/react-start':{createServerFn:()=>({handler:()=>()=>({})})},
-    '@/lib/rate.server':{contributionCents:async()=>304}, '@/lib/lang.server':{visitorLang:()=> 'de'},
+    '@/lib/rate.server':{contributionCents:async()=>300,tndToEurRate:async()=>0.3}, '@/lib/lang.server':{visitorLang:()=> 'de'},
     ...(!realCoffee?{'@/components/site/coffee-button':{CoffeeButton:({completed})=>completed?React.createElement('div',{'data-coffee-completed':true},`${completed.amount}:${completed.currency}`):null}}:{}),
     '@/lib/go-stripe':{STRIPE_JS:'https://js.stripe.com/v3/',loadStripeJs:async()=>{}},
   });
-  return {Component:load(path.join(root,'src/routes/go.tsx')).Route.component, elements, events, requests, wallets, cancelled:()=>cancelled};
+  return {Component:load(path.join(root,'src/routes/go.tsx')).Route.component, elements, events, requests, wallets, confirms, quotes, pendingQuotes, cancelled:()=>cancelled};
 }
 
 test('landing shows three compact actions and mounts payments only after SUPPORT opens',async()=>{
@@ -139,7 +168,7 @@ test('closing and reopening SUPPORT preserves confirmed coffee and prevents anot
   try {
     await openSupport(app);
     const wallet=h.wallets[0],button=app.div.querySelector('.go-coffee__button');
-    assert.equal(wallet.options.total.amount,300);
+    assert.equal(wallet.options.total.amount,200);
     await act(async()=>button.click());
     await act(async()=>wallet.handlers.paymentmethod({paymentMethod:{id:'pm_test'},complete:()=>{}}));
     assert.equal(button.disabled,true);
@@ -155,29 +184,79 @@ test('closing and reopening SUPPORT preserves confirmed coffee and prevents anot
   } finally {await app.close();}
 });
 
-test('€20+ mounts, focuses and selects the amount synchronously in the click', async()=>{
+test('80+ TND mounts, focuses and selects the dinar amount synchronously in the click', async()=>{
   const h=donationHarness(), app=await mounted(h.Component);
   try {
     await openSupport(app);
-    const button=[...app.div.querySelectorAll('button')].find(x=>x.textContent==='€20+');
+    const button=amountChoice(app,'80+ TND');
     act(()=>{
       button.click();
       const input=app.div.querySelector('.go-amount input');
       assert.ok(input, 'input must exist before click returns');
       assert.equal(document.activeElement,input,'input must be focused before click returns');
-      assert.equal(input.value,'20');
+      assert.equal(input.value,'80');
+      assert.equal(input.getAttribute('aria-label'),'Dein Beitrag in tunesischen Dinar');
       assert.equal(input.selectionStart,0); assert.equal(input.selectionEnd,2);
     });
   } finally {await app.close();}
+});
+
+test('every TND tier displays the signed local-currency quote and sends it unchanged to Checkout',async()=>{
+  const h=donationHarness(),app=await mounted(h.Component);
+  try {
+    await openSupport(app);
+    assert.deepEqual([...app.div.querySelectorAll('button.go-amount')].map(normalizedText),['10 TND','20 TND','50 TND','80+ TND']);
+    for(const [amountTnd,eurCents,label] of [[10,300,'10 TND'],[20,600,'20 TND'],[50,1500,'50 TND'],[80,2400,'80+ TND']]) {
+      await act(async()=>amountChoice(app,label).click());
+      await settle();
+      const conversion=app.div.querySelector('.go-support__conversion');
+      assert.ok(conversion,'the charge currency must be explained before starting payment');
+      const formatted=new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR',minimumFractionDigits:0,maximumFractionDigits:0}).format(eurCents/100).replace(/\s+/g,' ');
+      assert.equal(normalizedText(conversion),`${amountTnd} TND · Abrechnung: ${formatted}`);
+      const group=h.elements.at(-1);
+      assert.equal(group.options.currency,'eur','wallet must use the disclosed settlement currency');
+      assert.equal(group.updates.at(-1)?.amount??group.options.amount,eurCents);
+      await act(async()=>app.div.querySelector('.go-tile').click());await settle();
+      const submitted=h.requests.filter(request=>request.url==='/api/checkout').at(-1).body;
+      assert.equal(submitted.purpose,'donation');
+      assert.equal(h.quotes.get(submitted.quote).baseAmount,amountTnd*1000);
+      assert.equal(submitted.amount,eurCents);
+      assert.equal(submitted.currency,'eur');
+    }
+  } finally {await app.close();}
+});
+
+test('payments wait for the current quote and a slower earlier quote cannot replace it',async()=>{
+  const h=donationHarness({deferQuotes:true}),app=await mounted(h.Component);
+  try {
+    await openSupport(app);
+    assert.equal(app.div.querySelector('.go-tile').disabled,true);
+    const initial=h.pendingQuotes.find(item=>item.amountTnd===10);
+    assert.ok(initial,'opening SUPPORT must request the selected tier price');
+    await act(async()=>amountChoice(app,'20 TND').click());await settle();
+    assert.equal(app.div.querySelector('.go-tile').disabled,true,'selecting a new tier must disable payments until its quote arrives');
+    act(()=>app.div.querySelector('.go-tile').click());
+    assert.equal(h.requests.filter(request=>request.url==='/api/checkout').length,0);
+    const current=h.pendingQuotes.find(item=>item.amountTnd===20);
+    assert.ok(current);
+    await act(async()=>current.release());await settle();
+    assert.equal(app.div.querySelector('.go-tile').disabled,false);
+    assert.equal(normalizedText(app.div.querySelector('.go-support__conversion')),'20 TND · Abrechnung: 6 €');
+    await act(async()=>initial.release());await settle();
+    assert.equal(normalizedText(app.div.querySelector('.go-support__conversion')),'20 TND · Abrechnung: 6 €','late 10 TND response must not overwrite the 20 TND quote');
+    await act(async()=>app.div.querySelector('.go-tile').click());await settle();
+    const submitted=h.requests.find(request=>request.url==='/api/checkout').body;
+    assert.equal(submitted.quote,current.quote.token);assert.equal(submitted.amount,600);assert.equal(submitted.currency,'eur');
+  } finally {for(const quote of h.pendingQuotes)quote.release();await app.close();}
 });
 
 test('invalid custom amount cannot start Card or wallet payment; valid input updates Stripe', async()=>{
   const h=donationHarness(), app=await mounted(h.Component);
   try {
     await openSupport(app);
-    await act(async()=>[...app.div.querySelectorAll('button')].find(x=>x.textContent==='€20+').click());
+    await act(async()=>amountChoice(app,'80+ TND').click());
     const input=app.div.querySelector('.go-amount input');
-    for (const value of ['', '19', '10001']) {
+    for (const value of ['', '79', '10001']) {
       await act(async()=>inputValue(input,value));
       assert.equal(input.getAttribute('aria-invalid'),'true');
       assert.equal(app.div.querySelector('.go-tile').disabled,true);
@@ -188,12 +267,69 @@ test('invalid custom amount cannot start Card or wallet payment; valid input upd
       assert.equal(resolved,false); assert.equal(failed,true);
       assert.equal(h.requests.filter(x=>x.url==='/api/create-payment-intent'||x.url==='/api/checkout').length,0);
     }
-    await act(async()=>inputValue(input,'35'));
+    await act(async()=>inputValue(input,'85'));
     assert.equal(input.getAttribute('aria-invalid'),'false');
     assert.equal(app.div.querySelector('.go-tile').disabled,false);
-    assert.deepEqual(h.elements.at(-1).updates.at(-1),{amount:3500});
+    await settle();
+    const group=h.elements.at(-1);
+    assert.equal(group.updates.at(-1)?.amount??group.options.amount,2600,'25.50 EUR must round up to a whole 26 EUR');
+    assert.equal(normalizedText(app.div.querySelector('.go-support__conversion')),'85 TND · Abrechnung: 26 €');
     await act(async()=>app.div.querySelector('.go-tile').click()); await settle();
-    assert.equal(h.requests.find(x=>x.url==='/api/checkout').body.amount,3500);
+    const submitted=h.requests.find(x=>x.url==='/api/checkout').body;
+    assert.equal(submitted.amount,2600);
+    assert.equal(submitted.currency,'eur');
+    assert.equal(h.quotes.get(submitted.quote).baseAmount,85000);
+  } finally {await app.close();}
+});
+
+test('donation wallet submits the selected signed quote and confirms only the disclosed amount',async()=>{
+  const h=donationHarness(),app=await mounted(h.Component);
+  try {
+    await openSupport(app);
+    await act(async()=>amountChoice(app,'20 TND').click());
+    await settle();
+    await act(async()=>h.events.at(-1).confirm({paymentFailed:()=>{throw Error('valid conversion must not fail')}}));
+    const body=h.requests.find(request=>request.url==='/api/create-payment-intent').body;
+    assert.equal(body.purpose,'donation');assert.equal(h.quotes.get(body.quote).baseAmount,20000);
+    assert.equal(body.amount,600);assert.equal(body.currency,'eur');
+    assert.equal(h.confirms.length,1);
+    assert.ok(app.div.querySelector('.go-thanks'));
+  } finally {await app.close();}
+});
+
+test('donation wallet refuses a stale amount or mismatched currency before confirmation',async()=>{
+  for(const intentResponse of [{amount:601,currency:'eur'},{amount:600,currency:'usd'}]) {
+    const h=donationHarness({intentResponse}),app=await mounted(h.Component);
+    try {
+      await openSupport(app);
+      await act(async()=>amountChoice(app,'20 TND').click());
+      await settle();
+      let failed=false;
+      await act(async()=>h.events.at(-1).confirm({paymentFailed:()=>failed=true}));
+      assert.equal(failed,true);
+      assert.equal(h.confirms.length,0,'the visitor must never authorize a different amount or currency');
+      assert.equal(app.div.querySelector('.go-thanks'),null);
+      assert.ok(app.div.querySelector('.go-support__error'));
+    } finally {await app.close();}
+  }
+});
+
+test('Japanese phone locale uses a JPY quote, wallet and payment confirmation',async()=>{
+  const h=donationHarness({languages:['ja-JP']}),app=await mounted(h.Component);
+  try {
+    await openSupport(app);
+    const group=h.elements.at(-1);
+    assert.equal(group.options.currency,'jpy');assert.equal(group.options.amount,500);
+    const conversion=normalizedText(app.div.querySelector('.go-support__conversion'));
+    assert.match(conversion,/10 TND/);
+    assert.ok(conversion.includes(new Intl.NumberFormat('ja-JP',{style:'currency',currency:'JPY'}).format(500)),'the visitor must see the JPY charge before paying');
+    assert.doesNotMatch(conversion,/EUR|€/);
+    await act(async()=>h.events.at(-1).confirm({paymentFailed:()=>{throw Error('valid JPY quote must not fail')}}));
+    const body=h.requests.find(request=>request.url==='/api/create-payment-intent').body;
+    assert.equal(body.amount,500);assert.equal(body.currency,'jpy');
+    assert.equal(h.quotes.get(body.quote).currency,'jpy');
+    assert.equal(h.confirms.length,1);
+    assert.ok(app.div.querySelector('.go-thanks'),'a successful non-EUR donation must show its confirmation');
   } finally {await app.close();}
 });
 
@@ -210,13 +346,13 @@ test('forged paid query cannot show a success message',async()=>{
 
 test('verified donation and coffee Checkout returns use separate thank-you states',async()=>{
   for(const purpose of ['donation','coffee']) {
-    const amount=purpose==='coffee'?300:500;
+    const amount=purpose==='coffee'?200:500;
     const h=donationHarness({search:{session_id:'cs_test_123'},verified:{paid:true,purpose,amount,currency:'eur'}}),app=await mounted(h.Component);
     try {
       assert.equal(app.div.querySelector('#go-support-toggle').getAttribute('aria-expanded'),'true','payment returns must open SUPPORT automatically');
       assert.equal(app.div.querySelector('#go-support-panel').hidden,false);
       if(purpose==='donation'){assert.ok(app.div.querySelector('.go-thanks'));assert.equal(app.div.querySelector('[data-coffee-completed]'),null);}
-      else {assert.equal(app.div.querySelector('.go-thanks'),null);assert.equal(app.div.querySelector('[data-coffee-completed]').textContent,'300:eur');}
+      else {assert.equal(app.div.querySelector('.go-thanks'),null);assert.equal(app.div.querySelector('[data-coffee-completed]').textContent,'200:eur');}
     } finally {await app.close();}
   }
 });
@@ -235,12 +371,12 @@ test('processing donation wallet result does not claim successful payment',async
 
 function coffeeHarness({available=true, mismatch=false, quoteLife=1800000, confirmResult={paymentIntent:{status:'succeeded'}}}={}) {
   const requests=[], wallets=[], confirms=[];
-  const quote={amount:300,currency:'eur',baseAmount:300,baseCurrency:'eur',fallbackReason:null,token:'signed-token',expiresAt:Date.now()+quoteLife};
+  const quote={amount:200,currency:'eur',baseAmount:5000,baseCurrency:'tnd',fallbackReason:null,token:'signed-token',expiresAt:Date.now()+quoteLife};
   globalThis.fetch=async(url,options)=>{
     requests.push({url,body:options?.body?JSON.parse(options.body):null});
     if(String(url).startsWith('/api/coffee-quote')) return response({...quote});
     if(url==='/api/config') return response({publishableKey:'pk_test',merchantCountry:'DE'});
-    if(url==='/api/create-payment-intent') return response({client_secret:'pi_test_secret',amount:mismatch?400:300,currency:'eur'});
+    if(url==='/api/create-payment-intent') return response({client_secret:'pi_test_secret',amount:mismatch?300:200,currency:'eur'});
     if(url==='/api/checkout') return response({error:'mock unavailable'},false);
     throw Error(`Unexpected URL ${url}`);
   };
@@ -260,7 +396,7 @@ test('coffee opens prepared Apple Pay synchronously and ignores duplicate taps',
   const h=coffeeHarness(),app=await mounted(h.Component,{locale:'de-DE',lang:'de'});
   try {
     const wallet=h.wallets[0],button=app.div.querySelector('button');
-    assert.equal(wallet.options.currency,'eur');assert.equal(wallet.options.total.amount,300);assert.equal(wallet.options.country,'DE');
+    assert.equal(wallet.options.currency,'eur');assert.equal(wallet.options.total.amount,200);assert.equal(wallet.options.country,'DE');
     assert.match(button.textContent,/Kaufe dem Team einen Kaffee/);
     const before=h.requests.length;
     act(()=>{button.click();assert.equal(wallet.showCalls,1);button.click();assert.equal(wallet.showCalls,1)});

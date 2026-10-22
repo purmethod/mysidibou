@@ -1,6 +1,6 @@
 /**
  * /go — QR landing page on café tables. One white screen, no scrolling.
- * Shows "10 TND ≈ €x.xx" at the live rate and charges exactly that in EUR.
+ * TND choices use signed, rounded local-currency quotes for display and payment.
  * Payment: Stripe Express Checkout Element (deferred intent) as one big
  * wallet button (Apple Pay on Apple devices, Google Pay on Android), plus
  * hosted Stripe Checkout for card / PayPal. The logo row is informational.
@@ -17,25 +17,19 @@ import { STRIPE_JS, loadStripeJs } from "@/lib/go-stripe";
 
 import { site } from "@/config/site";
 import { HeartIcon, SealIcon } from "@/components/site/ui";
-import { contributionCents } from "@/lib/rate.server";
+import { COFFEE_CURRENCIES, formatCoffeePrice } from "@/lib/coffee";
+import { CUSTOM_MIN_TND, CUSTOM_MAX_TND, type DonationQuote } from "@/lib/donation";
 import { visitorLang } from "@/lib/lang.server";
 
 
 type Slot = "loading" | "on" | "off";
 
-// Rendered on the server, so the price is in the first paint.
+// Payment quotes are prepared only after the visitor opens SUPPORT.
 const getContribution = createServerFn({ method: "GET" }).handler(async () => ({
-  cents: await contributionCents(),
   lang: visitorLang(),
 }));
 
-const euro = (cents: number) => `€${(cents / 100).toFixed(2)}`;
-const euroShort = (cents: number) => (cents % 100 === 0 ? `€${cents / 100}` : euro(cents));
-
-// Amount choices: 10 TND (live rate) · €5 · €10 · €20+ (own amount, €20–€10,000)
-type Choice = "tnd" | 500 | 1000 | "custom";
-const CUSTOM_MIN = 20;
-const CUSTOM_MAX = 10000;
+type Choice = 10 | 20 | 50 | "custom";
 
 declare global {
   interface Window {
@@ -75,7 +69,7 @@ const isAppleDevice = () =>
 
 function GoPage() {
   const { session_id, payment_intent, payment_intent_client_secret, redirect_status } = Route.useSearch();
-  const { cents, lang: serverLang } = Route.useLoaderData();
+  const { lang: serverLang } = Route.useLoaderData();
   const [locale, setLocale] = useState('');
   const [lang, setLang] = useState(goLanguage([serverLang]));
   useEffect(() => {
@@ -91,20 +85,23 @@ function GoPage() {
   const [supportMounted, setSupportMounted] = useState(hasPaymentReturn);
   const [isPaid, setPaid] = useState(false);
   const [coffeePaid, setCoffeePaid] = useState<{ amount: number; currency: string } | null>(null);
-  const [paidCents, setPaidCents] = useState<number | undefined>();
-  const [choice, setChoice] = useState<Choice>("tnd");
-  const [customEuro, setCustomEuro] = useState(String(CUSTOM_MIN));
+  const [paidPrice, setPaidPrice] = useState<{ amount: number; currency: string } | null>(null);
+  const [choice, setChoice] = useState<Choice>(10);
+  const [customTnd, setCustomTnd] = useState(String(CUSTOM_MIN_TND));
   const customInputRef = useRef<HTMLInputElement>(null);
-  const customValue = Math.round(Number(customEuro));
-  const customValid = customEuro.trim() !== "" && Number.isFinite(customValue) && customValue >= CUSTOM_MIN && customValue <= CUSTOM_MAX;
-  const amount =
-    choice === "tnd" ? cents : choice === "custom" ? (customValid ? customValue : CUSTOM_MIN) * 100 : choice;
-  const amountRef = useRef(amount);
-  amountRef.current = amount;
-  const groupsRef = useRef<any[]>([]);
+  const customValue = Number(customTnd);
+  const customValid = customTnd.trim() !== "" && Number.isSafeInteger(customValue) && customValue >= CUSTOM_MIN_TND && customValue <= CUSTOM_MAX_TND;
+  const amountTnd = choice === "custom" ? (customValid ? customValue : CUSTOM_MIN_TND) : choice;
   const amountValid = choice !== 'custom' || customValid;
   const amountValidRef = useRef(amountValid);
   amountValidRef.current = amountValid;
+  const [quoted, setQuoted] = useState<{ price: DonationQuote; locale: string } | null>(null);
+  const [quoteRefresh, setQuoteRefresh] = useState(0);
+  // Never reuse the previous tier's quote while a new selection is loading.
+  const quote = amountValid && quoted?.locale === locale && quoted.price.baseAmount === amountTnd * 1000 ? quoted.price : null;
+  const quoteRef = useRef(quote);
+  quoteRef.current = quote;
+  const quoteReady = !!quote && quote.expiresAt > Date.now();
   const chooseAmount = (value: Choice) => {
     if (value === 'custom') {
       // Commit and focus within the tap: an effect runs too late for the iOS keyboard.
@@ -156,12 +153,42 @@ function GoPage() {
   const [wallet, setWallet] = useState<Slot>("loading");
   const [busy, setBusy] = useState(false);
   const paymentPendingRef = useRef(false);
+  const confirmingRef = useRef(false);
   const busyRef = useRef(false);
   busyRef.current = busy;
   const [error, setError] = useState<string | null>(
     redirect_status === "failed" ? "Payment failed. Please try again." : null,
   );
   const walletRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!supportMounted || !locale || !amountValid || isPaid) return;
+    const abort = new AbortController();
+    let cancelled = false;
+    let refreshTimer: ReturnType<typeof setTimeout>;
+    setQuoted(null);
+    setError(null);
+    (async () => {
+      try {
+        const response = await fetch(`/api/donation-quote?locale=${encodeURIComponent(locale)}&amountTnd=${amountTnd}`, { signal: abort.signal });
+        const price: DonationQuote = await response.json();
+        if (!response.ok || !Number.isSafeInteger(price.amount) || price.amount <= 0 ||
+            !Object.hasOwn(COFFEE_CURRENCIES, price.currency) || price.baseAmount !== amountTnd * 1000 ||
+            price.baseCurrency !== 'tnd' || !price.token || !(price.expiresAt > Date.now())) throw new Error('quote_unavailable');
+        if (cancelled) return;
+        setQuoted({ price, locale });
+        const refreshWhenIdle = () => {
+          if (paymentPendingRef.current) return;
+          if (busyRef.current) refreshTimer = setTimeout(refreshWhenIdle, 1000);
+          else setQuoteRefresh((value) => value + 1);
+        };
+        refreshTimer = setTimeout(refreshWhenIdle, Math.max(1000, price.expiresAt - Date.now() - 60000));
+      } catch {
+        if (!cancelled) setError(GO_COPY[lang].error);
+      }
+    })();
+    return () => { cancelled = true; abort.abort(); clearTimeout(refreshTimer); };
+  }, [supportMounted, locale, amountTnd, amountValid, quoteRefresh, isPaid, lang]);
 
   // Only a Stripe-verified status may produce a thank-you message.
   useEffect(() => {
@@ -175,8 +202,8 @@ function GoPage() {
           const result = await response.json();
           if (!cancelled && result.paid) {
             if (result.purpose === 'coffee') setCoffeePaid({ amount: result.amount, currency: result.currency });
-            else if (result.purpose === 'donation' && result.currency === 'eur') {
-              setPaidCents(result.amount); setPaid(true);
+            else if (result.purpose === 'donation' && Object.hasOwn(COFFEE_CURRENCIES, result.currency)) {
+              setPaidPrice({ amount: result.amount, currency: result.currency }); setPaid(true);
             }
           }
         } else {
@@ -186,8 +213,8 @@ function GoPage() {
           const result = await stripe.retrievePaymentIntent(payment_intent_client_secret);
           const intent = result.paymentIntent;
           if (result.error) throw result.error;
-          if (!cancelled && intent?.id === payment_intent && intent.status === 'succeeded' && intent.currency === 'eur') {
-            setPaidCents(intent.amount); setPaid(true);
+          if (!cancelled && intent?.id === payment_intent && intent.status === 'succeeded' && Object.hasOwn(COFFEE_CURRENCIES, intent.currency)) {
+            setPaidPrice({ amount: intent.amount, currency: intent.currency }); setPaid(true);
           }
         }
       } catch { if (!cancelled) setError(GO_COPY[lang].error); }
@@ -197,28 +224,27 @@ function GoPage() {
 
 
   const payWithCard = useCallback(async () => {
-    if (!amountValidRef.current) return;
+    const price = quoteRef.current;
+    if (!amountValidRef.current || busyRef.current || !price) return;
+    if (price.expiresAt <= Date.now()) { setQuoteRefresh((value) => value + 1); setError(copy.retry); return; }
+    busyRef.current = true;
     setError(null);
     setBusy(true);
     try {
       const res = await fetch("/api/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ amount: amountRef.current }),
+        body: JSON.stringify({ purpose: 'donation', quote: price.token, amount: price.amount, currency: price.currency }),
       });
       const data = await res.json();
       if (!res.ok || !data.url) throw new Error(data.error);
       window.location.href = data.url;
     } catch {
-      setError("Card payment is unavailable right now. Please try again.");
+      setError(copy.error);
+      busyRef.current = false;
       setBusy(false);
     }
-  }, []);
-
-  // Keep the Apple Pay / Google Pay / PayPal amount in sync with the choice.
-  useEffect(() => {
-    groupsRef.current.forEach((elements) => elements.update?.({ amount }));
-  }, [amount]);
+  }, [copy]);
 
   // Back from Stripe Checkout via the browser back button (bfcache): re-enable buttons.
   useEffect(() => {
@@ -228,7 +254,9 @@ function GoPage() {
   }, []);
 
   useEffect(() => {
-    if (!supportMounted || isPaid) return;
+    if (!supportMounted || isPaid || !quote) return;
+    const price = quote;
+    setWallet("loading");
     let cancelled = false;
     const mounted: any[] = [];
     // If Stripe never reports back (blocked script, slow network), leave the card button.
@@ -258,11 +286,10 @@ function GoPage() {
           if (!container) return setSlot("off");
           const elements = stripe.elements({
             mode: "payment",
-            amount: amountRef.current,
-            currency: "eur",
+            amount: price.amount,
+            currency: price.currency,
             appearance: { variables: { borderRadius: "12px" } },
           });
-          groupsRef.current.push(elements);
           const element = elements.create("expressCheckout", {
             // Name shown in the Apple Pay / Google Pay sheet ("Pay MYSIDIBOU").
             // Set here so it never falls back to an older Stripe account name.
@@ -285,28 +312,37 @@ function GoPage() {
           );
 
           element.on("click", (event: any) => {
-            if (!amountValidRef.current) return;
+            if (!amountValidRef.current || busyRef.current || quoteRef.current?.token !== price.token) return;
+            if (price.expiresAt <= Date.now()) { setQuoteRefresh((value) => value + 1); setError(copy.retry); return; }
+            busyRef.current = true;
+            setBusy(true);
             event.resolve();
           });
+          element.on("cancel", () => {
+            if (!confirmingRef.current && !paymentPendingRef.current) { busyRef.current = false; setBusy(false); }
+          });
           element.on("confirm", async (event: any) => {
-            if (!amountValidRef.current) { event.paymentFailed?.({ reason: 'fail' }); return; }
-            const paymentAmount = amountRef.current;
+            if (!amountValidRef.current || quoteRef.current?.token !== price.token || confirmingRef.current || paymentPendingRef.current) {
+              event.paymentFailed?.({ reason: 'fail' }); return;
+            }
+            if (price.expiresAt <= Date.now()) {
+              event.paymentFailed?.({ reason: 'fail' }); busyRef.current = false; setBusy(false);
+              setQuoteRefresh((value) => value + 1); setError(copy.retry); return;
+            }
+            confirmingRef.current = true;
+            busyRef.current = true;
             setBusy(true);
             setError(null);
-            const { error: submitError } = await elements.submit();
-            if (submitError) {
-              setError(submitError.message ?? "Payment could not be started.");
-              setBusy(false);
-              return;
-            }
             try {
+              const { error: submitError } = await elements.submit();
+              if (submitError) throw new Error(submitError.message);
               const res = await fetch("/api/create-payment-intent", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ amount: paymentAmount }),
+                body: JSON.stringify({ purpose: 'donation', quote: price.token, amount: price.amount, currency: price.currency }),
               });
               const data = await res.json();
-              if (!res.ok || !data.client_secret) throw new Error(data.error);
+              if (!res.ok || !data.client_secret || data.amount !== price.amount || data.currency !== price.currency) throw new Error('payment_unavailable');
 
               const { error: confirmError, paymentIntent } = await stripe.confirmPayment({
                 elements,
@@ -317,19 +353,17 @@ function GoPage() {
                 },
               });
               if (confirmError) throw new Error(confirmError.message);
-              if (paymentIntent?.status === 'succeeded') {
-                setPaidCents(paymentIntent.amount);
+              if (paymentIntent?.status === 'succeeded' && paymentIntent.amount === price.amount && paymentIntent.currency === price.currency) {
+                paymentPendingRef.current = true;
+                setPaidPrice({ amount: paymentIntent.amount, currency: paymentIntent.currency });
                 setPaid(true);
               } else { paymentPendingRef.current = true; setError(GO_COPY[lang].pending); }
-            } catch (err) {
+            } catch {
               event.paymentFailed?.({ reason: "fail" });
+              busyRef.current = false;
               setBusy(false);
-              setError(
-                err instanceof Error && err.message && err.message !== "not_configured"
-                  ? err.message
-                  : "Payment failed. Please try again.",
-              );
-            }
+              setError(GO_COPY[lang].error);
+            } finally { confirmingRef.current = false; }
           });
 
           element.mount(container);
@@ -360,14 +394,12 @@ function GoPage() {
       cancelled = true;
       window.clearTimeout(fallback);
       mounted.forEach((el) => el.destroy?.());
-      groupsRef.current = [];
     };
-    // Mount once; later amount changes go through elements.update().
+    // Recreate Elements for each signed quote, including changes of currency.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isPaid, lang, supportMounted]);
+  }, [isPaid, lang, supportMounted, quote]);
 
-  const paidLabel =
-    !paidCents || Math.abs(paidCents - cents) <= cents * 0.03 ? "10 TND" : euroShort(paidCents);
+  const paidLabel = paidPrice ? formatCoffeePrice(paidPrice, locale || lang) : '';
 
   return (
     <main className="go" ref={screenRef}>
@@ -439,19 +471,18 @@ function GoPage() {
                 </p>
               </div>
 
-              <div aria-label="Amount" className="go-amounts" role="radiogroup">
+              <div aria-label="Amount (TND)" className="go-amounts" role="radiogroup" dir="ltr">
                 {(
                   [
-                    ["tnd", "10 TND"],
-                    [500, "€5"],
-                    [1000, "€10"],
-                    ["custom", "€20+"],
+                    [10, "10"],
+                    [20, "20"],
+                    [50, "50"],
+                    ["custom", "80+"],
                   ] as const
                 ).map(([value, label]) =>
                   value === "custom" && choice === "custom" ? (
                     // Own amount, typed right inside the chip: no extra row needed
                     <label className="go-amount is-active is-input" key={label}>
-                      €
                       <input
                         ref={customInputRef}
                         disabled={busy}
@@ -459,11 +490,11 @@ function GoPage() {
                         aria-invalid={!customValid}
                         aria-describedby={!customValid ? 'custom-amount-error' : undefined}
                         inputMode="numeric"
-                        onChange={(e) => setCustomEuro(e.target.value.replace(/[^0-9]/g, "").slice(0, 5))}
+                        onChange={(e) => setCustomTnd(e.target.value.replace(/[^0-9]/g, "").slice(0, 5))}
                         pattern="[0-9]*"
                         type="text"
-                        value={customEuro}
-                      />
+                        value={customTnd}
+                      />{' '}<span className="go-amount__currency">TND</span>
                     </label>
                   ) : (
                     <button
@@ -475,18 +506,21 @@ function GoPage() {
                       role="radio"
                       type="button"
                     >
-                      {label}
+                      <span>{label}</span>{' '}<span className="go-amount__currency">TND</span>
                     </button>
                   ),
                 )}
               </div>
 
               {!amountValid && <p id="custom-amount-error" className="go-support__error" role="alert">{copy.range}</p>}
-              <div className={`go-pay__slot is-${wallet}`} inert={!amountValid || busy} aria-disabled={!amountValid || busy}>
+              {amountValid && <p className="go-support__conversion" role="status" lang={lang} dir={lang === 'ar' ? 'rtl' : 'ltr'}>
+                {quoteReady ? <><bdi>{amountTnd} TND</bdi> · {copy.charge} <bdi>{formatCoffeePrice(quote, locale || lang)}</bdi>{quote.fallbackReason ? ` · ${copy.euroFallback}` : ''}</> : copy.preparing}
+              </p>}
+              <div className={`go-pay__slot is-${wallet}`} inert={!amountValid || !quoteReady || busy} aria-disabled={!amountValid || !quoteReady || busy}>
                 <div className="go-pay__ece" ref={walletRef} />
               </div>
               <div className="go-pay__row is-single">
-                <button className="go-tile" disabled={busy || !amountValid} onClick={payWithCard} type="button" aria-label={`Card ${copy.or} PayPal`}>
+                <button className="go-tile" disabled={busy || !amountValid || !quoteReady} onClick={payWithCard} type="button" aria-label={`Card ${copy.or} PayPal`}>
                   <CardIcon className="go-tile__icon" />
                   {busy ? copy.opening : <><span>Card</span><span className="go-tile__or">{copy.or}</span><span className="go-tile__paypal"><PayPalMark /></span></>}
                 </button>

@@ -13,6 +13,8 @@ export const Route = createFileRoute("/api/checkout")({
           const payment = await resolvePayment(request);
           const session = await stripeRequest<{ url: string }>("POST", "/checkout/sessions", {
             mode: "payment",
+            // Keep the signed local-currency quote; do not reconvert in Checkout.
+            adaptive_pricing: { enabled: false },
             submit_type: payment.purpose === "coffee" ? "pay" : "donate",
             line_items: {
               0: {
