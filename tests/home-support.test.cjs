@@ -95,12 +95,23 @@ test('homepage SUPPORT pill appears only after scrolling and hides again at the 
   } finally { await app.close(); }
 });
 
-test('hero, donation and finale primary actions say Support and open /go', async () => {
+test('hero shows a non-clickable official badge while lower Support and Instagram links remain', async () => {
   await scrollTo(0);
   const app = await mounted(Home);
   try {
     assert.equal(site.donate.link, '/go', 'all primary donations must use the central support route');
-    for (const selector of ['.hero__actions .btn-donate', '#donate .btn-donate', '.finale .btn-donate']) {
+    const hero = app.div.querySelector('.hero');
+    const badge = hero.querySelector('.hero__badge');
+    assert.ok(badge, 'the hero must display its official membership badge');
+    assert.equal(badge.textContent.replace(/\s+/g, ' ').trim(), 'Official Member of the Scientific Committee UNESCO Report 2027');
+    assert.equal(badge.closest('a,button'), null, 'the official badge is informational, not a button');
+    assert.equal(badge.querySelector('a,button'), null);
+    assert.equal(hero.querySelector('.btn-donate, a[href="/go"]'), null, 'the previous hero Support CTA must be removed');
+    const seal = badge.querySelector('svg');
+    assert.ok(seal, 'the official badge must include the seal');
+    assert.equal(seal.getAttribute('aria-hidden'), 'true', 'the seal is decorative beside the badge text');
+    assert.equal(seal.querySelectorAll('path').length, 2, 'the seal retains its emblem and white check mark');
+    for (const selector of ['#donate .btn-donate', '.finale .btn-donate']) {
       const link = app.div.querySelector(selector);
       assert.ok(link, `missing primary action: ${selector}`);
       assert.equal(link.getAttribute('href'), '/go', selector);

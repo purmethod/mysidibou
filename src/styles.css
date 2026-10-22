@@ -989,6 +989,33 @@ html[dir="rtl"] .marquee__track {
   align-items: center;
 }
 
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 100%;
+  margin: 0;
+  padding: 0.85rem 1rem;
+  border: 1px solid #dfe3ea;
+  border-radius: 0.75rem;
+  background: rgb(255 255 255 / 0.9);
+  color: var(--color-ink);
+  font-size: clamp(0.8rem, 1.2vw, 0.95rem);
+  line-height: 1.4;
+  text-align: left;
+}
+
+.hero__badge-icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  flex-shrink: 0;
+  color: #3980d3;
+}
+
+.hero__badge > span { min-width: 0; }
+.hero__badge strong { display: block; font-weight: 600; }
+.hero__badge-report { display: block; color: var(--color-cobalt); font-weight: 600; }
+
 .hero-line {
   margin-top: 1.7rem;
   font-family: var(--font-display);
