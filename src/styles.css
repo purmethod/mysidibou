@@ -547,11 +547,12 @@ section.scroll-scrub .scroll-scrub__tags li {
   position: fixed;
   z-index: 39;
   right: max(clamp(1rem, 3vw, 2rem), env(safe-area-inset-right, 0px));
-  bottom: calc(clamp(1rem, 3vw, 2rem) + env(safe-area-inset-bottom, 0px));
+  bottom: calc(15vh + clamp(1rem, 3vw, 2rem) + env(safe-area-inset-bottom, 0px));
+  bottom: calc(15dvh + clamp(1rem, 3vw, 2rem) + env(safe-area-inset-bottom, 0px));
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: var(--color-cobalt);
+  background: var(--color-bougainvillea);
   color: #fff;
   font-size: 0.9rem;
   font-weight: 600;
@@ -560,7 +561,7 @@ section.scroll-scrub .scroll-scrub__tags li {
   min-height: 3rem;
   border-radius: 999px;
   padding: 0.85rem 1.3rem;
-  box-shadow: 0 8px 24px rgb(30 78 140 / 0.28);
+  box-shadow: 0 8px 24px rgb(178 58 104 / 0.28);
   visibility: hidden;
   pointer-events: none;
   transform: translateY(150%);
@@ -575,7 +576,7 @@ section.scroll-scrub .scroll-scrub__tags li {
 }
 
 .donate-pill:hover {
-  background: #163e72;
+  background: var(--color-bougainvillea-deep);
 }
 
 .donate-pill:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
