@@ -1451,7 +1451,8 @@ html[dir="rtl"] .marquee__track {
 
 .go-amount {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  gap: 0.2rem;
   align-items: center;
   justify-content: center;
   line-height: 1.1;
@@ -1469,9 +1470,9 @@ html[dir="rtl"] .marquee__track {
 }
 
 .go-amount__currency {
-  font-size: 0.62rem;
+  flex-shrink: 0;
+  font-size: 0.75rem;
   font-weight: 600;
-  margin-block-start: 2px;
 }
 
 .go-support__conversion {
@@ -1503,7 +1504,7 @@ html[dir="rtl"] .marquee__track {
 }
 
 .go-amount.is-input input {
-  width: 100%; /* up to 5 digits (10000 TND), with the currency below */
+  width: 3.1em; /* up to 5 digits, with TND alongside */
   min-width: 0;
   padding: 0;
   border: 0;
