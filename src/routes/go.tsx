@@ -424,6 +424,7 @@ function GoPage() {
 
       <div className="go__cards">
         <div className="go__links">
+          <CoffeeButton locale={locale} lang={lang} completed={coffeePaid} compact />
           <a
             className="go-insta go-insta--nav"
             href={site.social.instagram}
@@ -452,7 +453,6 @@ function GoPage() {
             <span className="go-insta__text">SUPPORT</span>
             <svg className="go-support-toggle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
           </button>
-          <CoffeeButton locale={locale} lang={lang} completed={coffeePaid} compact />
         </div>
 
         <div id="go-support-panel" className="go-support-panel" hidden={!supportOpen}>

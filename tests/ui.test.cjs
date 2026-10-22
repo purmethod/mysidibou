@@ -142,7 +142,7 @@ function donationHarness({search={}, verified={paid:false}, intentStatus='succee
 test('landing shows four compact actions with independent coffee and deferred donation controls',async()=>{
   const h=donationHarness({realCoffee:true}),app=await mounted(h.Component);
   try {
-    assert.deepEqual([...app.div.querySelectorAll('.go__links .go-insta__text')].map(el=>el.textContent.trim()),['INSTAGRAM','MYSIDIBOU.COM','SUPPORT','Kaufe dem Team einen Kaffee']);
+    assert.deepEqual([...app.div.querySelectorAll('.go__links .go-insta__text')].map(el=>el.textContent.trim()),['Kaufe dem Team einen Kaffee','INSTAGRAM','MYSIDIBOU.COM','SUPPORT']);
     const toggle=app.div.querySelector('#go-support-toggle');
     assert.equal(toggle.getAttribute('aria-expanded'),'false');
     assert.equal(toggle.getAttribute('aria-controls'),'go-support-panel');
