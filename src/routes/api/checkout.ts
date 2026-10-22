@@ -11,7 +11,7 @@ export const Route = createFileRoute("/api/checkout")({
         const origin = new URL(request.url).origin;
         try {
           const payment = await resolvePayment(request);
-          const session = await stripeRequest<{ url: string }>("POST", "/checkout/sessions", {
+          const session = await stripeRequest<{ url: string; payment_method_types?: string[] }>("POST", "/checkout/sessions", {
             mode: "payment",
             // Keep the signed local-currency quote; do not reconvert in Checkout.
             adaptive_pricing: { enabled: false },
@@ -35,7 +35,7 @@ export const Route = createFileRoute("/api/checkout")({
             success_url: `${origin}/go?session_id={CHECKOUT_SESSION_ID}`,
             cancel_url: `${origin}/go`,
           }, { idempotencyKey: payment.idempotencyKey ? `${payment.idempotencyKey}:checkout` : undefined });
-          return json({ url: session.url });
+          return json({ url: session.url, paymentMethods: session.payment_method_types ?? [] });
         } catch (error) {
           return stripeErrorResponse(error);
         }

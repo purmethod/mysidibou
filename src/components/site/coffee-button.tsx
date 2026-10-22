@@ -3,6 +3,15 @@ import { COFFEE_BASE_AMOUNT, formatCoffeePrice, type CoffeeQuote } from '@/lib/c
 import { GO_COPY, type GoLanguage } from '@/lib/go-copy';
 import { loadStripeJs } from '@/lib/go-stripe';
 
+// A blocked wallet check must not leave the coffee action disabled indefinitely.
+const WALLET_READY_TIMEOUT_MS = 3000;
+function within<T>(promise: Promise<T>, milliseconds: number): Promise<T> {
+  return new Promise((resolve, reject) => {
+    const timer = setTimeout(() => reject(new Error('wallet_timeout')), milliseconds);
+    promise.then((value) => { clearTimeout(timer); resolve(value); }, (error) => { clearTimeout(timer); reject(error); });
+  });
+}
+
 /** The custom coffee card opens a prepared wallet in the original tap gesture. */
 export function CoffeeButton({ locale, lang, completed = null, compact = false }: { locale: string; lang: GoLanguage; completed?: { amount: number; currency: string } | null; compact?: boolean }) {
   const copy = GO_COPY[lang];
@@ -13,6 +22,9 @@ export function CoffeeButton({ locale, lang, completed = null, compact = false }
   const confirmingRef = useRef(false);
   const paymentLockedRef = useRef(false);
   const attemptRef = useRef<string | undefined>(undefined);
+  const walletCancelledRef = useRef(false);
+  const walletSubmittedRef = useRef(false);
+  const checkoutStartedRef = useRef(false);
   const [quote, setQuote] = useState<CoffeeQuote | null>(null);
   const [status, setStatus] = useState<'loading' | 'ready' | 'busy' | 'paid' | 'pending' | 'error'>('loading');
   const [message, setMessage] = useState('');
@@ -23,26 +35,28 @@ export function CoffeeButton({ locale, lang, completed = null, compact = false }
     let cancelled = false;
     const abort = new AbortController();
     let paymentRequest: any;
+    let walletPreparationActive = true;
     let refreshTimer: ReturnType<typeof setTimeout>;
     walletRef.current = null;
     setStatus('loading');
     setQuote(null);
     (async () => {
       try {
-        const [priceResponse, configResponse] = await Promise.all([
-          fetch(`/api/coffee-quote?locale=${encodeURIComponent(locale)}`, { signal: abort.signal }),
-          fetch('/api/config', { signal: abort.signal }),
-        ]);
+        // Configuration is optional for hosted Checkout, unlike the signed price.
+        const configPromise = fetch('/api/config', { signal: abort.signal })
+          .then((response) => response.ok ? response.json() : null).catch(() => null);
+        const priceResponse = await fetch(`/api/coffee-quote?locale=${encodeURIComponent(locale)}`, { signal: abort.signal });
         if (!priceResponse.ok) throw new Error('quote_unavailable');
         const price: CoffeeQuote = await priceResponse.json();
         if (cancelled) return;
         setQuote(price);
-        // A missing wallet still leaves hosted Checkout available.
+        // Detect the wallet actually available in this browser, not just its user agent.
         try {
-          const config = await configResponse.json();
-          if (config.publishableKey && config.merchantCountry) {
+          await within((async () => {
+            const config = await configPromise;
+            if (!config?.publishableKey || !config?.merchantCountry) throw new Error('wallet_unavailable');
             await loadStripeJs();
-            if (cancelled || !window.Stripe) return;
+            if (cancelled || !walletPreparationActive || !window.Stripe) throw new Error('wallet_unavailable');
             const stripe = window.Stripe(config.publishableKey, { locale: lang });
             paymentRequest = stripe.paymentRequest({
               country: config.merchantCountry,
@@ -52,10 +66,11 @@ export function CoffeeButton({ locale, lang, completed = null, compact = false }
               disableWallets: ['link', 'browserCard'],
             });
             paymentRequest.on('cancel', () => {
-              if (!cancelled && !confirmingRef.current && !paymentLockedRef.current) { busyRef.current = false; setStatus('ready'); }
+              if (!cancelled && !confirmingRef.current && !paymentLockedRef.current) { walletCancelledRef.current = true; busyRef.current = false; setStatus('ready'); }
             });
             paymentRequest.on('paymentmethod', async (event: any) => {
-              if (confirmingRef.current) { event.complete('fail'); return; }
+              if (cancelled || !walletPreparationActive || confirmingRef.current || paymentLockedRef.current || checkoutStartedRef.current) { event.complete('fail'); return; }
+              walletSubmittedRef.current = true;
               confirmingRef.current = true;
               let completed = null;
               try {
@@ -87,9 +102,14 @@ export function CoffeeButton({ locale, lang, completed = null, compact = false }
               } finally { busyRef.current = false; confirmingRef.current = false; }
             });
             const available = await paymentRequest.canMakePayment();
-            if (!cancelled && (available?.applePay || available?.googlePay)) walletRef.current = paymentRequest;
-          }
-        } catch { /* Hosted Checkout is the explicit fallback for unsupported wallets. */ }
+            if (!cancelled && walletPreparationActive && (available?.applePay || available?.googlePay)) walletRef.current = paymentRequest;
+          })(), WALLET_READY_TIMEOUT_MS);
+        } catch {
+          // Late capability responses must not replace the fallback already shown.
+          walletPreparationActive = false;
+          paymentRequest?.off?.('paymentmethod');
+          paymentRequest?.off?.('cancel');
+        }
         if (cancelled) return;
         setStatus('ready');
         refreshTimer = setTimeout(() => {
@@ -102,6 +122,7 @@ export function CoffeeButton({ locale, lang, completed = null, compact = false }
     })();
     return () => {
       cancelled = true;
+      walletPreparationActive = false;
       abort.abort();
       clearTimeout(refreshTimer);
       walletRef.current = null;
@@ -109,6 +130,25 @@ export function CoffeeButton({ locale, lang, completed = null, compact = false }
       paymentRequest?.off?.('cancel');
     };
   }, [locale, lang, refresh, completed]);
+
+  const openCheckout = (price: CoffeeQuote) => {
+    if (checkoutStartedRef.current || confirmingRef.current || paymentLockedRef.current) return;
+    checkoutStartedRef.current = true;
+    const attemptId = attemptRef.current;
+    fetch('/api/checkout', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ purpose: 'coffee', quote: price.token, paymentRequestId: attemptRef.current }),
+    }).then(async (response) => {
+      const data = await response.json();
+      if (attemptRef.current !== attemptId) return;
+      if (!response.ok || !data.url) throw new Error('checkout_unavailable');
+      window.location.assign(data.url);
+    }).catch(() => {
+      if (attemptRef.current !== attemptId) return;
+      checkoutStartedRef.current = false;
+      busyRef.current = false; setStatus('ready'); setMessage(copyRef.current.error);
+    });
+  };
 
   const openCoffee = () => {
     if (busyRef.current || paymentLockedRef.current) return;
@@ -118,30 +158,38 @@ export function CoffeeButton({ locale, lang, completed = null, compact = false }
       return;
     }
     setMessage('');
-    attemptRef.current = crypto.randomUUID();
+    const attemptId = crypto.randomUUID();
+    attemptRef.current = attemptId;
+    walletCancelledRef.current = false;
+    walletSubmittedRef.current = false;
+    checkoutStartedRef.current = false;
     busyRef.current = true;
     setStatus('busy');
     if (walletRef.current) {
+      const unavailable = (error: unknown) => {
+        if (attemptRef.current !== attemptId) return;
+        // A deliberate dismissal must not unexpectedly redirect the visitor.
+        if (walletCancelledRef.current || (error as { name?: string } | null)?.name === 'AbortError') {
+          if (!confirmingRef.current && !paymentLockedRef.current && !checkoutStartedRef.current) {
+            busyRef.current = false; setStatus('ready');
+          }
+          return;
+        }
+        // Never start a second payment after wallet authorization has begun.
+        if (walletSubmittedRef.current || confirmingRef.current || paymentLockedRef.current) return;
+        walletRef.current = null;
+        openCheckout(quote);
+      };
       // No fetch or await here: iOS requires show() in the user's tap handler.
-      try {
-        Promise.resolve(walletRef.current.show()).catch(() => {
-          busyRef.current = false; setStatus('ready'); setMessage(copy.error);
-        });
-      } catch { busyRef.current = false; setStatus('ready'); setMessage(copy.error); }
+      try { Promise.resolve(walletRef.current.show()).catch(unavailable); }
+      catch (error) { unavailable(error); }
       return;
     }
-    fetch('/api/checkout', {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ purpose: 'coffee', quote: quote.token, paymentRequestId: attemptRef.current }),
-    }).then(async (response) => {
-      const data = await response.json();
-      if (!response.ok || !data.url) throw new Error('checkout_unavailable');
-      window.location.assign(data.url);
-    }).catch(() => { busyRef.current = false; setStatus('ready'); setMessage(copy.error); });
+    openCheckout(quote);
   };
 
   useEffect(() => {
-    const reset = () => { if (!paymentLockedRef.current && !confirmingRef.current) { busyRef.current = false; setRefresh((value) => value + 1); } };
+    const reset = () => { if (!paymentLockedRef.current && !confirmingRef.current) { busyRef.current = false; checkoutStartedRef.current = false; setRefresh((value) => value + 1); } };
     window.addEventListener('pageshow', reset);
     return () => window.removeEventListener('pageshow', reset);
   }, []);

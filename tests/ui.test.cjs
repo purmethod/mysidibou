@@ -401,13 +401,16 @@ test('processing donation wallet result does not claim successful payment',async
   } finally {await app.close();}
 });
 
-function coffeeHarness({available=true, mismatch=false, quoteLife=1800000, confirmResult={paymentIntent:{status:'succeeded'}}}={}) {
+function coffeeHarness({available=true, mismatch=false, quoteLife=1800000, confirmResult={paymentIntent:{status:'succeeded'}}, capability, showBehavior, configFailure=false, missingStripe=false}={}) {
   const requests=[], wallets=[], confirms=[];
   const quote={amount:200,currency:'eur',baseAmount:5000,baseCurrency:'tnd',fallbackReason:null,token:'signed-token',expiresAt:Date.now()+quoteLife};
   globalThis.fetch=async(url,options)=>{
     requests.push({url,body:options?.body?JSON.parse(options.body):null});
     if(String(url).startsWith('/api/coffee-quote')) return response({...quote});
-    if(url==='/api/config') return response({publishableKey:'pk_test',merchantCountry:'DE'});
+    if(url==='/api/config') {
+      if(configFailure) throw new Error('config network unavailable');
+      return response({publishableKey:'pk_test',merchantCountry:'DE'});
+    }
     if(url==='/api/create-payment-intent') return response({client_secret:'pi_test_secret',amount:mismatch?300:200,currency:'eur'});
     if(url==='/api/checkout') return response({error:'mock unavailable'},false);
     throw Error(`Unexpected URL ${url}`);
@@ -415,12 +418,14 @@ function coffeeHarness({available=true, mismatch=false, quoteLife=1800000, confi
   window.Stripe = () => ({
     paymentRequest(options) {
       const handlers={};
-      const wallet={options, handlers, showCalls:0, offCalls:[], on(name,fn){handlers[name]=fn}, off(name){this.offCalls.push(name);delete handlers[name]}, canMakePayment:async()=>available?{applePay:true}:null, show(){this.showCalls++; return Promise.resolve()}};
+      const wallet={options, handlers, showCalls:0, offCalls:[], on(name,fn){handlers[name]=fn}, off(name){this.offCalls.push(name);delete handlers[name]},
+        canMakePayment:async()=>capability?capability():typeof available==='object'?available:available?{applePay:true}:null,
+        show(){this.showCalls++; return showBehavior?showBehavior():Promise.resolve()}};
       wallets.push(wallet); return wallet;
     },
     confirmCardPayment:async(...args)=>{confirms.push(args);return typeof confirmResult==='function'?confirmResult():confirmResult},
   });
-  const load=loader({'@/lib/go-stripe':{loadStripeJs:async()=>{}}});
+  const load=loader({'@/lib/go-stripe':{loadStripeJs:async()=>{if(missingStripe)delete window.Stripe}}});
   return {Component:load(path.join(root,'src/components/site/coffee-button.tsx')).CoffeeButton,requests,wallets,confirms,quote};
 }
 
@@ -435,6 +440,128 @@ test('coffee opens prepared Apple Pay synchronously and ignores duplicate taps',
     assert.equal(h.requests.length,before,'opening wallet must not await network');
     await act(async()=>wallet.handlers.cancel());
     assert.equal(button.disabled,false);
+  } finally {await app.close();}
+});
+
+test('coffee opens available Google Pay synchronously without starting Checkout',async()=>{
+  const h=coffeeHarness({available:{googlePay:true,applePay:false}}),app=await mounted(h.Component,{locale:'de-DE',lang:'de'});
+  try {
+    const before=h.requests.length;
+    const wallet=h.wallets[0];
+    act(()=>{
+      app.div.querySelector('button').click();
+      assert.equal(wallet.showCalls,1,'Google Pay must open inside the original tap');
+    });
+    assert.equal(h.requests.length,before);
+    assert.equal(h.requests.filter(request=>request.url==='/api/checkout').length,0);
+    await act(async()=>wallet.handlers.cancel());
+  } finally {await app.close();}
+});
+
+function assertOneCoffeeCheckout(h) {
+  const checkouts=h.requests.filter(request=>request.url==='/api/checkout');
+  assert.equal(checkouts.length,1,'one tap must create exactly one hosted Checkout request');
+  assert.equal(checkouts[0].body.purpose,'coffee');
+  assert.equal(checkouts[0].body.quote,h.quote.token);
+  assert.match(checkouts[0].body.paymentRequestId,/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i);
+  assert.equal(h.requests.filter(request=>request.url==='/api/create-payment-intent').length,0);
+  return checkouts[0].body;
+}
+
+test('unavailable wallets or wallet setup failures fall back directly to hosted coffee Checkout',async()=>{
+  const scenarios=[
+    ['no supported wallet',{available:false}],
+    ['capability rejection',{capability:()=>Promise.reject(new Error('wallet capability unavailable'))}],
+    ['config fetch failure',{configFailure:true}],
+    ['Stripe script without a usable Stripe global',{missingStripe:true}],
+  ];
+  for(const [name,options] of scenarios) {
+    const h=coffeeHarness(options),app=await mounted(h.Component,{locale:'de-DE',lang:'de'});
+    try {
+      const button=app.div.querySelector('button');
+      assert.equal(button.disabled,false,`${name}: the valid signed quote must keep Checkout available`);
+      await act(async()=>button.click());await settle();
+      assertOneCoffeeCheckout(h);
+      assert.equal(h.wallets.reduce((count,wallet)=>count+wallet.showCalls,0),0,`${name}: an unavailable wallet must not open`);
+    } finally {await app.close();}
+  }
+});
+
+test('technical wallet show errors fall back on the same tap and keep the original payment attempt',async()=>{
+  for(const behavior of ['throw','reject']) {
+    const h=coffeeHarness({showBehavior:()=>{
+      const error=new Error('wallet could not open');
+      if(behavior==='throw')throw error;
+      return Promise.reject(error);
+    }}),app=await mounted(h.Component,{locale:'de-DE',lang:'de'});
+    const original=globalThis.crypto.randomUUID;
+    const attempts=[];
+    globalThis.crypto.randomUUID=function(){const id=original.call(this);attempts.push(id);return id};
+    try {
+      act(()=>{
+        app.div.querySelector('button').click();
+        assert.equal(h.wallets[0].showCalls,1);
+      });
+      await settle();
+      const body=assertOneCoffeeCheckout(h);
+      assert.equal(attempts.length,1,'wallet failure must not create a second payment attempt');
+      assert.equal(body.paymentRequestId,attempts[0]);
+    } finally {globalThis.crypto.randomUUID=original;await app.close();}
+  }
+});
+
+test('wallet cancellation and AbortError never redirect the visitor into Checkout',async()=>{
+  for(const behavior of ['cancel','abortThrow','abortReject']) {
+    const h=coffeeHarness({showBehavior:()=>{
+      if(behavior==='cancel')return Promise.resolve();
+      const error=Object.assign(new Error('user canceled the wallet'),{name:'AbortError'});
+      if(behavior==='abortThrow')throw error;
+      return Promise.reject(error);
+    }}),app=await mounted(h.Component,{locale:'de-DE',lang:'de'});
+    try {
+      await act(async()=>app.div.querySelector('button').click());
+      if(behavior==='cancel')await act(async()=>h.wallets[0].handlers.cancel());
+      await settle();
+      assert.equal(h.requests.filter(request=>request.url==='/api/checkout').length,0,`${behavior}: cancellation must not launch another payment flow`);
+      assert.equal(h.requests.filter(request=>request.url==='/api/create-payment-intent').length,0);
+      assert.equal(app.div.querySelector('button').disabled,false,'cancellation must permit an intentional later retry');
+    } finally {await app.close();}
+  }
+});
+
+test('a canceled wallet attempt cannot redirect or unlock a newer active attempt after a late rejection',async()=>{
+  const pending=[];
+  const h=coffeeHarness({showBehavior:()=>new Promise((resolve,reject)=>pending.push({resolve,reject}))});
+  const app=await mounted(h.Component,{locale:'de-DE',lang:'de'});
+  try {
+    const button=app.div.querySelector('button'),wallet=h.wallets[0];
+    act(()=>button.click());
+    assert.equal(pending.length,1);
+    assert.equal(button.disabled,true);
+    await act(async()=>wallet.handlers.cancel());
+    assert.equal(button.disabled,false);
+    act(()=>button.click());
+    assert.equal(pending.length,2);
+    assert.equal(button.disabled,true);
+    await act(async()=>pending[0].reject(new Error('the canceled wallet failed late')));
+    await settle();
+    assert.equal(h.requests.filter(request=>request.url==='/api/checkout').length,0,'an old rejection must not launch Checkout for the new attempt');
+    assert.equal(h.requests.filter(request=>request.url==='/api/create-payment-intent').length,0);
+    assert.equal(button.disabled,true,'the newer wallet must remain locked while it is open');
+    act(()=>button.click());
+    assert.equal(wallet.showCalls,2,'the active wallet must still reject duplicate taps');
+    await act(async()=>{pending[1].resolve();wallet.handlers.cancel();});
+  } finally {await app.close();}
+});
+
+test('unresponsive wallet detection becomes a usable Checkout fallback within a bounded wait',async()=>{
+  const h=coffeeHarness({capability:()=>new Promise(()=>{})}),app=await mounted(h.Component,{locale:'de-DE',lang:'de'});
+  try {
+    await act(async()=>new Promise(resolve=>setTimeout(resolve,3200)));
+    assert.equal(app.div.querySelector('button').disabled,false,'wallet detection must not block the signed quote indefinitely');
+    await act(async()=>app.div.querySelector('button').click());await settle();
+    assertOneCoffeeCheckout(h);
+    assert.equal(h.wallets[0].showCalls,0);
   } finally {await app.close();}
 });
 
