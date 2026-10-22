@@ -1315,7 +1315,7 @@ html[dir="rtl"] .marquee__track {
   text-transform: uppercase;
 }
 
-/* Cards: two link cards, then (set apart) the support card */
+/* Four standalone actions; donation controls expand below them. */
 .go__cards {
   display: grid;
   gap: clamp(0.6rem, 1.8dvh, 1.1rem);
@@ -1829,8 +1829,12 @@ html[dir="rtl"] .marquee__track {
 .go-tile__paypal { display: inline-flex; width: 3.7rem; }
 .go-tile__paypal svg { width: 100%; height: 1.65rem; }
 .go-pay__slot[aria-disabled="true"] { opacity: 0.5; pointer-events: none; }
-.go-coffee__button { width: 100%; font-family: inherit; }
+.go-coffee__button { width: 100%; font-family: inherit; background: #8a6248; }
+.go-coffee__button:hover { background: #75513b; }
+.go-coffee__button.go-insta--nav { width: calc(100% + 1rem); }
 .go-coffee__button .go-insta__text { font-size: clamp(0.82rem, 3.9vw, 1.05rem); }
+.go-coffee__button.go-insta--nav .go-insta__text { font-size: clamp(0.82rem, 3.9vw, 1rem); }
+.go-coffee__button.go-insta--nav .go-coffee__icon { width: 1.75rem; height: 1.75rem; margin-inline: 0; }
 .go-coffee__button:disabled { cursor: default; }
 .go-coffee__price { display: block; font-size: 0.72rem; font-weight: 400; line-height: 1.3; margin-top: 0.1rem; }
 .go-coffee__icon { width: 2rem; height: 2rem; margin-inline: 0.2rem; flex-shrink: 0; }

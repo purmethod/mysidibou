@@ -139,40 +139,72 @@ function donationHarness({search={}, verified={paid:false}, intentStatus='succee
   return {Component:load(path.join(root,'src/routes/go.tsx')).Route.component, elements, events, requests, wallets, confirms, quotes, pendingQuotes, cancelled:()=>cancelled};
 }
 
-test('landing shows three compact actions and mounts payments only after SUPPORT opens',async()=>{
+test('landing shows four compact actions with independent coffee and deferred donation controls',async()=>{
   const h=donationHarness({realCoffee:true}),app=await mounted(h.Component);
   try {
-    assert.deepEqual([...app.div.querySelectorAll('.go__links .go-insta__text')].map(el=>el.textContent.trim()),['INSTAGRAM','MYSIDIBOU.COM','SUPPORT']);
+    assert.deepEqual([...app.div.querySelectorAll('.go__links .go-insta__text')].map(el=>el.textContent.trim()),['INSTAGRAM','MYSIDIBOU.COM','SUPPORT','Kaufe dem Team einen Kaffee']);
     const toggle=app.div.querySelector('#go-support-toggle');
     assert.equal(toggle.getAttribute('aria-expanded'),'false');
     assert.equal(toggle.getAttribute('aria-controls'),'go-support-panel');
     assert.equal(app.div.querySelector('.go-amounts'),null);
     assert.equal(app.div.querySelector('.go-pay__ece'),null);
     assert.equal(app.div.querySelector('.go-tile'),null);
-    assert.equal(app.div.querySelector('.go-coffee'),null);
-    assert.equal(h.elements.length,0,'closed landing should not initialize a payment wallet');
-    assert.equal(h.requests.some(request=>String(request.url).startsWith('/api/coffee-quote')),false);
+    const coffee=app.div.querySelector('.go-coffee');
+    assert.ok(coffee,'coffee must be available before SUPPORT opens');
+    assert.ok(coffee.closest('.go__links'));
+    assert.equal(coffee.closest('#go-support-panel'),null);
+    assert.ok(coffee.querySelector('.go-coffee__icon'));
+    assert.equal(coffee.querySelector('.go-coffee__price'),null,'the compact landing bar must not show a price');
+    assert.equal(coffee.querySelector('.go-insta__text').textContent.trim(),'Kaufe dem Team einen Kaffee');
+    assert.match(coffee.querySelector('button').getAttribute('aria-label'),/2\s*€/,'the accessible label retains the actual wallet charge');
+    assert.equal(h.wallets.length,1,'the independent coffee wallet must prepare on the closed landing');
+    assert.equal(h.wallets[0].options.total.amount,200);
+    assert.equal(h.elements.length,0,'closed SUPPORT must not initialize the donation wallet');
+    assert.equal(h.requests.some(request=>String(request.url).startsWith('/api/coffee-quote')),true);
+    assert.equal(h.requests.some(request=>String(request.url).startsWith('/api/donation-quote')),false);
     const panel=await openSupport(app);
     assert.ok(panel.querySelector('.go-amounts'));
     assert.ok(panel.querySelector('.go-pay__ece'));
     assert.ok(panel.querySelector('.go-tile'));
-    assert.ok(panel.querySelector('.go-coffee'));
+    assert.equal(panel.querySelector('.go-coffee'),null,'the coffee action must remain outside the donation panel');
     await act(async()=>toggle.click());
     assert.equal(toggle.getAttribute('aria-expanded'),'false');
-    assert.equal(panel.hidden,true,'closed panel must hide every payment control');
+    assert.equal(panel.hidden,true,'closed panel must hide the donation controls');
+    assert.equal(coffee.closest('[hidden]'),null,'closing SUPPORT must not hide the independent coffee action');
+  } finally {await app.close();}
+});
+
+test('coffee opens its prepared wallet synchronously while SUPPORT remains closed',async()=>{
+  const h=donationHarness({realCoffee:true}),app=await mounted(h.Component);
+  try {
+    const toggle=app.div.querySelector('#go-support-toggle');
+    const button=app.div.querySelector('.go-coffee__button');
+    const wallet=h.wallets[0];
+    assert.equal(button.disabled,false);
+    assert.equal(wallet.options.currency,'eur');assert.equal(wallet.options.total.amount,200);
+    const requestCount=h.requests.length;
+    act(()=>{
+      button.click();
+      assert.equal(wallet.showCalls,1,'show must run in the original user click');
+      assert.equal(toggle.getAttribute('aria-expanded'),'false');
+    });
+    assert.equal(h.requests.length,requestCount,'opening coffee must not await a new server request');
+    assert.equal(app.div.querySelector('.go-amounts'),null);
+    assert.equal(h.elements.length,0);
+    await act(async()=>wallet.handlers.cancel());
   } finally {await app.close();}
 });
 
 test('closing and reopening SUPPORT preserves confirmed coffee and prevents another charge',async()=>{
   const h=donationHarness({realCoffee:true}),app=await mounted(h.Component);
   try {
-    await openSupport(app);
     const wallet=h.wallets[0],button=app.div.querySelector('.go-coffee__button');
     assert.equal(wallet.options.total.amount,200);
     await act(async()=>button.click());
     await act(async()=>wallet.handlers.paymentmethod({paymentMethod:{id:'pm_test'},complete:()=>{}}));
     assert.equal(button.disabled,true);
     assert.match(app.div.querySelector('.go-coffee').textContent,/Danke für den Kaffee/);
+    await openSupport(app);
     await act(async()=>app.div.querySelector('#go-support-toggle').click());
     await openSupport(app);
     assert.equal(app.div.querySelector('.go-coffee__button').disabled,true);

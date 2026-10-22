@@ -4,7 +4,7 @@ import { GO_COPY, type GoLanguage } from '@/lib/go-copy';
 import { loadStripeJs } from '@/lib/go-stripe';
 
 /** The custom coffee card opens a prepared wallet in the original tap gesture. */
-export function CoffeeButton({ locale, lang, completed = null }: { locale: string; lang: GoLanguage; completed?: { amount: number; currency: string } | null }) {
+export function CoffeeButton({ locale, lang, completed = null, compact = false }: { locale: string; lang: GoLanguage; completed?: { amount: number; currency: string } | null; compact?: boolean }) {
   const copy = GO_COPY[lang];
   const copyRef = useRef(copy);
   copyRef.current = copy;
@@ -150,15 +150,15 @@ export function CoffeeButton({ locale, lang, completed = null }: { locale: strin
   const displayPrice = completed ? price : price ? `${COFFEE_BASE_AMOUNT / 1000} TND · ${copy.charge} ${price}` : '';
   return (
     <div className="go-coffee" lang={lang} dir={lang === 'ar' ? 'rtl' : 'ltr'}>
-      <button className="go-insta go-coffee__button" type="button" onClick={openCoffee}
+      <button className={`go-insta go-coffee__button ${compact ? 'go-insta--nav' : ''}`} type="button" onClick={openCoffee}
         disabled={!!completed || status === 'loading' || status === 'busy' || status === 'paid' || status === 'pending'}
         aria-label={`${copy.coffee}${displayPrice ? ` · ${displayPrice}` : ''}`}>
         <span className="go-insta__text">
           {copy.coffee}
-          <span className="go-coffee__price">
+          {!compact && <span className="go-coffee__price">
             {completed ? price : status === 'loading' ? copy.preparing : status === 'busy' ? copy.opening : displayPrice}
             {quote?.fallbackReason ? ` · ${copy.euroFallback}` : ''}
-          </span>
+          </span>}
         </span>
         <svg className="go-coffee__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
           <path d="M4 8h13v8a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4zM17 9h2a3 3 0 0 1 0 6h-2M7 2v3M11 2v3M15 2v3M3 23h16" />
