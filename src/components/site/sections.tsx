@@ -7,7 +7,7 @@ import type { ReactNode } from "react";
 
 import { site } from "@/config/site";
 import { useI18n } from "@/lib/i18n";
-import { DonateButton, FollowLink, HeartIcon, InstagramIcon, Reveal, socialIcons } from "./ui";
+import { BrandWordmark, DonateButton, FollowLink, HeartIcon, InstagramIcon, Reveal, socialIcons } from "./ui";
 
 /* ------------------------------------------------------------------ */
 /* Layout helpers                                                      */
@@ -674,7 +674,7 @@ export function FooterSection() {
     <footer className="border-t border-line bg-paper">
       <div className="mx-auto grid w-full max-w-6xl gap-10 px-[1.25rem] py-16 md:grid-cols-2 md:px-10">
         <div>
-          <p className="font-display text-3xl font-semibold">mysidibou</p>
+          <p className="text-3xl"><BrandWordmark /></p>
           <p className="mt-3 max-w-sm text-sm text-ink-soft">{dict.footer.missionLine}</p>
           <p className="mt-6 font-display text-lg italic text-cobalt">{dict.footer.tagline}</p>
         </div>

@@ -6,7 +6,7 @@
 import { useEffect, useState } from "react";
 
 import { LANGS, useI18n, type Lang } from "@/lib/i18n";
-import { HeartIcon, useDonation } from "./ui";
+import { BrandWordmark, HeartIcon, useDonation } from "./ui";
 
 const anchors = [
   { key: "mission", href: "#mission" },
@@ -55,8 +55,7 @@ export function SiteNav() {
     <header className={`site-nav ${solid || open ? "is-solid" : ""}`}>
       <div className="site-nav__left">
         <a className="site-nav__wordmark" href="#top" aria-label="mysidibou">
-          mysidibou
-          <HeartIcon className="wordmark-heart" />
+          <BrandWordmark />
         </a>
         <LanguageSwitch />
       </div>

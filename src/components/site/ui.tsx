@@ -138,6 +138,17 @@ export function FollowLink({
   );
 }
 
+/** The /go wordmark, sized by its surrounding header or footer. */
+export function BrandWordmark() {
+  return (
+    <span className="brand-wordmark" role="img" aria-label="mysidibou" dir="ltr">
+      <span className="brand-wordmark__my">MY</span>
+      <span className="brand-wordmark__name">SIDIBOU</span>
+      <HeartIcon className="brand-wordmark__heart" />
+    </span>
+  );
+}
+
 /* ------------------------------------------------------------------ */
 /* Social brand glyphs (minimal geometric marks)                       */
 /* ------------------------------------------------------------------ */
