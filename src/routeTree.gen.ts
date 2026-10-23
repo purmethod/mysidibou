@@ -14,7 +14,6 @@ import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as GoRouteImport } from './routes/go'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ApiPaymentStatusRouteImport } from './routes/api/payment-status'
-import { Route as ApiPaymentDebugRouteImport } from './routes/api/payment-debug'
 import { Route as ApiDonationQuoteRouteImport } from './routes/api/donation-quote'
 import { Route as ApiCreatePaymentIntentRouteImport } from './routes/api/create-payment-intent'
 import { Route as ApiConfigRouteImport } from './routes/api/config'
@@ -44,11 +43,6 @@ const IndexRoute = IndexRouteImport.update({
 const ApiPaymentStatusRoute = ApiPaymentStatusRouteImport.update({
   id: '/api/payment-status',
   path: '/api/payment-status',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ApiPaymentDebugRoute = ApiPaymentDebugRouteImport.update({
-  id: '/api/payment-debug',
-  path: '/api/payment-debug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiDonationQuoteRoute = ApiDonationQuoteRouteImport.update({
@@ -87,7 +81,6 @@ export interface FileRoutesByFullPath {
   '/api/config': typeof ApiConfigRoute
   '/api/create-payment-intent': typeof ApiCreatePaymentIntentRoute
   '/api/donation-quote': typeof ApiDonationQuoteRoute
-  '/api/payment-debug': typeof ApiPaymentDebugRoute
   '/api/payment-status': typeof ApiPaymentStatusRoute
 }
 export interface FileRoutesByTo {
@@ -100,7 +93,6 @@ export interface FileRoutesByTo {
   '/api/config': typeof ApiConfigRoute
   '/api/create-payment-intent': typeof ApiCreatePaymentIntentRoute
   '/api/donation-quote': typeof ApiDonationQuoteRoute
-  '/api/payment-debug': typeof ApiPaymentDebugRoute
   '/api/payment-status': typeof ApiPaymentStatusRoute
 }
 export interface FileRoutesById {
@@ -114,7 +106,6 @@ export interface FileRoutesById {
   '/api/config': typeof ApiConfigRoute
   '/api/create-payment-intent': typeof ApiCreatePaymentIntentRoute
   '/api/donation-quote': typeof ApiDonationQuoteRoute
-  '/api/payment-debug': typeof ApiPaymentDebugRoute
   '/api/payment-status': typeof ApiPaymentStatusRoute
 }
 export interface FileRouteTypes {
@@ -129,7 +120,6 @@ export interface FileRouteTypes {
     | '/api/config'
     | '/api/create-payment-intent'
     | '/api/donation-quote'
-    | '/api/payment-debug'
     | '/api/payment-status'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -142,7 +132,6 @@ export interface FileRouteTypes {
     | '/api/config'
     | '/api/create-payment-intent'
     | '/api/donation-quote'
-    | '/api/payment-debug'
     | '/api/payment-status'
   id:
     | '__root__'
@@ -155,7 +144,6 @@ export interface FileRouteTypes {
     | '/api/config'
     | '/api/create-payment-intent'
     | '/api/donation-quote'
-    | '/api/payment-debug'
     | '/api/payment-status'
   fileRoutesById: FileRoutesById
 }
@@ -169,7 +157,6 @@ export interface RootRouteChildren {
   ApiConfigRoute: typeof ApiConfigRoute
   ApiCreatePaymentIntentRoute: typeof ApiCreatePaymentIntentRoute
   ApiDonationQuoteRoute: typeof ApiDonationQuoteRoute
-  ApiPaymentDebugRoute: typeof ApiPaymentDebugRoute
   ApiPaymentStatusRoute: typeof ApiPaymentStatusRoute
 }
 
@@ -208,13 +195,6 @@ declare module '@tanstack/react-router' {
       path: '/api/payment-status'
       fullPath: '/api/payment-status'
       preLoaderRoute: typeof ApiPaymentStatusRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/api/payment-debug': {
-      id: '/api/payment-debug'
-      path: '/api/payment-debug'
-      fullPath: '/api/payment-debug'
-      preLoaderRoute: typeof ApiPaymentDebugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/donation-quote': {
@@ -265,7 +245,6 @@ const rootRouteChildren: RootRouteChildren = {
   ApiConfigRoute: ApiConfigRoute,
   ApiCreatePaymentIntentRoute: ApiCreatePaymentIntentRoute,
   ApiDonationQuoteRoute: ApiDonationQuoteRoute,
-  ApiPaymentDebugRoute: ApiPaymentDebugRoute,
   ApiPaymentStatusRoute: ApiPaymentStatusRoute,
 }
 export const routeTree = rootRouteImport

@@ -3,7 +3,7 @@ import type { CoffeeFallbackReason } from "./coffee.ts";
 
 export const DONATION_TND_CHOICES = [10, 20, 50] as const;
 export const CUSTOM_MIN_TND = 80;
-export const CUSTOM_MAX_TND = 10000;
+export const CUSTOM_MAX_TND = 340000; // ≈ €100,000: free amount, practically no upper limit
 
 export interface DonationPrice {
   amount: number;

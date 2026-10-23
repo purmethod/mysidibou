@@ -140,10 +140,10 @@ test("malformed payment bodies and unknown purposes are rejected before any paym
   }
 });
 
-test("donations accept 10, 20, 50 TND and whole dinars from 80 through 10000", () => {
+test("donations accept 10, 20, 50 TND and whole dinars from 80 through 340000 (≈ €100,000)", () => {
   assert.deepEqual(DONATION_TND_CHOICES, [10, 20, 50]);
-  for (const amount of [10, 20, 50, 80, 81, 10000]) assert.equal(isDonationTndAmount(amount), true);
-  for (const amount of [undefined, 0, -10, 5, 19, 49, 79, 80.5, 10001, "80", NaN, Infinity]) {
+  for (const amount of [10, 20, 50, 80, 81, 10000, 340000]) assert.equal(isDonationTndAmount(amount), true);
+  for (const amount of [undefined, 0, -10, 5, 19, 49, 79, 80.5, 340001, "80", NaN, Infinity]) {
     assert.equal(isDonationTndAmount(amount), false);
   }
   assert.equal(tndToEurCents(5, 0.297), 149);
@@ -166,7 +166,7 @@ test("donation quotes convert TND tiers into whole local-currency amounts", asyn
   const won = await donationPriceForLocale("ko", 10, async () => 1450, testTndRate);
   assert.equal(won.currency, "krw");
   assert.equal(won.amount, 4307);
-  for (const amount of [5, 79, 80.5, 10001, "80"]) {
+  for (const amount of [5, 79, 80.5, 340001, "80"]) {
     await assert.rejects(donationPriceForLocale("ja", amount, undefined, testTndRate), /invalid_donation_amount/);
   }
 });
@@ -178,7 +178,7 @@ test("donation menus return four signed local-currency choices and a matching cu
     assert.equal(tndReads, 1);
     assert.deepEqual(eur.choices.map((quote) => quote.amount), [300, 600, 1500, 2400]);
     assert.deepEqual(eur.choices.map((quote) => quote.baseAmount), [10000, 20000, 50000, 80000]);
-    assert.equal(eur.customMax, 300000);
+    assert.equal(eur.customMax, 10200000); // 340000 TND × 0.3 = €102,000
     for (const quote of eur.choices) {
       assert.equal(quote.currency, "eur");
       assert.equal(verifyDonationQuote(quote.token).amount, quote.amount);
@@ -187,7 +187,7 @@ test("donation menus return four signed local-currency choices and a matching cu
     const jpy = await getDonationMenu("ja", async () => { targetReads++; return 160; }, async () => 0.3);
     assert.equal(targetReads, 1);
     assert.deepEqual(jpy.choices.map((quote) => quote.amount), [480, 960, 2400, 3840]);
-    assert.equal(jpy.customMax, 480000);
+    assert.equal(jpy.customMax, 16320000); // 340000 TND × 0.3 × 160
     assert.ok(jpy.choices.every((quote) => quote.currency === "jpy"));
   });
 });
@@ -207,15 +207,15 @@ test("a high-value IDR custom ceiling is capped locally without breaking the men
   });
 });
 
-test("custom €25 means exactly €25, with bounds from the 80–10000 TND equivalents", async () => {
+test("custom €25 means exactly €25, with bounds from the 80–340000 TND equivalents", async () => {
   const price = await customDonationPriceForLocale("de-DE", 25, "eur", undefined, async () => 0.3);
   assert.deepEqual(price, {
     amount: 2500, currency: "eur", baseAmount: 2500, baseCurrency: "eur", custom: true, fallbackReason: null,
   });
-  for (const amount of [24, 3000]) {
+  for (const amount of [24, 3000, 102000]) {
     assert.equal((await customDonationPriceForLocale("de-DE", amount, "eur", undefined, async () => 0.3)).amount, amount * 100);
   }
-  for (const amount of [23, 3001, 25.5, "25", 0, -1]) {
+  for (const amount of [23, 102001, 25.5, "25", 0, -1]) {
     await assert.rejects(customDonationPriceForLocale("de-DE", amount, "eur", undefined, async () => 0.3), /invalid_donation_amount/);
   }
   await assert.rejects(customDonationPriceForLocale("de-DE", 25, "usd", undefined, async () => 0.3), /currency_changed/);
