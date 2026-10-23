@@ -55,8 +55,9 @@ export function HeroSection() {
             <p className="hero-mission__invitation">{copy.invitation}</p>
             <div className="hero-mission__actions">
               <a className="hero-mission__support" data-action="support" href={site.donate.link}><HeartIcon /><span>{dict.cta.donate}</span></a>
-              <a data-action="like" href={site.social.instagramMissionReel} target="_blank" rel="noopener noreferrer" aria-label={copy.likeLabel}><MissionIcon name="like" /><span>{copy.like}</span></a>
-              <a data-action="share" href={site.social.instagramMissionReel} target="_blank" rel="noopener noreferrer" aria-label={copy.shareLabel}><MissionIcon name="share" /><span>{copy.share}</span></a>
+              {/* Let the OS handle the directly tapped Instagram link without requesting a new tab. */}
+              <a data-action="like" href={site.social.instagramMissionReel} rel="noopener noreferrer" aria-label={copy.likeLabel}><MissionIcon name="like" /><span>{copy.like}</span></a>
+              <a data-action="share" href={site.social.instagramMissionReel} rel="noopener noreferrer" aria-label={copy.shareLabel}><MissionIcon name="share" /><span>{copy.share}</span></a>
             </div>
           </div>
           <p className="hero__badge" lang="en" dir="ltr">

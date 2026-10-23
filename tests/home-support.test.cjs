@@ -116,7 +116,7 @@ test('mission hero keeps its official badge and exposes the approved Support, Li
     assert.equal(normalizedText(actions[0]), 'Support');
     for (const link of actions.slice(1)) {
       assert.equal(link.getAttribute('href'), approvedReel, 'Like and Share must open the approved Instagram reel');
-      assert.equal(link.getAttribute('target'), '_blank');
+      assert.equal(link.getAttribute('target'), null, 'Instagram handoff must not force a new browser tab');
       assert.ok(link.relList.contains('noopener'));
       assert.ok(link.relList.contains('noreferrer'));
     }
@@ -192,7 +192,7 @@ test('mission hero renders its approved copy and four commitments after every la
         assert.equal(normalizedText(link), copy[action]);
         assert.equal(link.getAttribute('aria-label'), copy[`${action}Label`]);
         assert.equal(link.getAttribute('href'), approvedReel);
-        assert.equal(link.getAttribute('target'), '_blank');
+        assert.equal(link.getAttribute('target'), null, 'Instagram handoff must not force a new browser tab');
         assert.ok(link.relList.contains('noopener') && link.relList.contains('noreferrer'));
       }
       assert.equal(hero.querySelector('img, picture, video, iframe'), null);
