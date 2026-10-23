@@ -9,25 +9,21 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as GoRouteImport } from './routes/go'
-import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as ApiCheckoutRouteImport } from './routes/api/checkout'
-import { Route as ApiCoffeeQuoteRouteImport } from './routes/api/coffee-quote'
-import { Route as ApiConfigRouteImport } from './routes/api/config'
-import { Route as ApiCreatePaymentIntentRouteImport } from './routes/api/create-payment-intent'
-import { Route as ApiDonationQuoteRouteImport } from './routes/api/donation-quote'
+import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
+import { Route as GoRouteImport } from './routes/go'
+import { Route as IndexRouteImport } from './routes/index'
 import { Route as ApiPaymentStatusRouteImport } from './routes/api/payment-status'
+import { Route as ApiPaymentDebugRouteImport } from './routes/api/payment-debug'
+import { Route as ApiDonationQuoteRouteImport } from './routes/api/donation-quote'
+import { Route as ApiCreatePaymentIntentRouteImport } from './routes/api/create-payment-intent'
+import { Route as ApiConfigRouteImport } from './routes/api/config'
+import { Route as ApiCoffeeQuoteRouteImport } from './routes/api/coffee-quote'
+import { Route as ApiCheckoutRouteImport } from './routes/api/checkout'
 
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GoRoute = GoRouteImport.update({
-  id: '/go',
-  path: '/go',
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
@@ -35,29 +31,24 @@ const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
   path: '/robots.txt',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
+const GoRoute = GoRouteImport.update({
+  id: '/go',
+  path: '/go',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiCheckoutRoute = ApiCheckoutRouteImport.update({
-  id: '/api/checkout',
-  path: '/api/checkout',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiCoffeeQuoteRoute = ApiCoffeeQuoteRouteImport.update({
-  id: '/api/coffee-quote',
-  path: '/api/coffee-quote',
+const ApiPaymentStatusRoute = ApiPaymentStatusRouteImport.update({
+  id: '/api/payment-status',
+  path: '/api/payment-status',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiConfigRoute = ApiConfigRouteImport.update({
-  id: '/api/config',
-  path: '/api/config',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ApiCreatePaymentIntentRoute = ApiCreatePaymentIntentRouteImport.update({
-  id: '/api/create-payment-intent',
-  path: '/api/create-payment-intent',
+const ApiPaymentDebugRoute = ApiPaymentDebugRouteImport.update({
+  id: '/api/payment-debug',
+  path: '/api/payment-debug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiDonationQuoteRoute = ApiDonationQuoteRouteImport.update({
@@ -65,9 +56,24 @@ const ApiDonationQuoteRoute = ApiDonationQuoteRouteImport.update({
   path: '/api/donation-quote',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiPaymentStatusRoute = ApiPaymentStatusRouteImport.update({
-  id: '/api/payment-status',
-  path: '/api/payment-status',
+const ApiCreatePaymentIntentRoute = ApiCreatePaymentIntentRouteImport.update({
+  id: '/api/create-payment-intent',
+  path: '/api/create-payment-intent',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiConfigRoute = ApiConfigRouteImport.update({
+  id: '/api/config',
+  path: '/api/config',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiCoffeeQuoteRoute = ApiCoffeeQuoteRouteImport.update({
+  id: '/api/coffee-quote',
+  path: '/api/coffee-quote',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiCheckoutRoute = ApiCheckoutRouteImport.update({
+  id: '/api/checkout',
+  path: '/api/checkout',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -81,6 +87,7 @@ export interface FileRoutesByFullPath {
   '/api/config': typeof ApiConfigRoute
   '/api/create-payment-intent': typeof ApiCreatePaymentIntentRoute
   '/api/donation-quote': typeof ApiDonationQuoteRoute
+  '/api/payment-debug': typeof ApiPaymentDebugRoute
   '/api/payment-status': typeof ApiPaymentStatusRoute
 }
 export interface FileRoutesByTo {
@@ -93,6 +100,7 @@ export interface FileRoutesByTo {
   '/api/config': typeof ApiConfigRoute
   '/api/create-payment-intent': typeof ApiCreatePaymentIntentRoute
   '/api/donation-quote': typeof ApiDonationQuoteRoute
+  '/api/payment-debug': typeof ApiPaymentDebugRoute
   '/api/payment-status': typeof ApiPaymentStatusRoute
 }
 export interface FileRoutesById {
@@ -106,6 +114,7 @@ export interface FileRoutesById {
   '/api/config': typeof ApiConfigRoute
   '/api/create-payment-intent': typeof ApiCreatePaymentIntentRoute
   '/api/donation-quote': typeof ApiDonationQuoteRoute
+  '/api/payment-debug': typeof ApiPaymentDebugRoute
   '/api/payment-status': typeof ApiPaymentStatusRoute
 }
 export interface FileRouteTypes {
@@ -120,6 +129,7 @@ export interface FileRouteTypes {
     | '/api/config'
     | '/api/create-payment-intent'
     | '/api/donation-quote'
+    | '/api/payment-debug'
     | '/api/payment-status'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -132,6 +142,7 @@ export interface FileRouteTypes {
     | '/api/config'
     | '/api/create-payment-intent'
     | '/api/donation-quote'
+    | '/api/payment-debug'
     | '/api/payment-status'
   id:
     | '__root__'
@@ -144,6 +155,7 @@ export interface FileRouteTypes {
     | '/api/config'
     | '/api/create-payment-intent'
     | '/api/donation-quote'
+    | '/api/payment-debug'
     | '/api/payment-status'
   fileRoutesById: FileRoutesById
 }
@@ -157,23 +169,17 @@ export interface RootRouteChildren {
   ApiConfigRoute: typeof ApiConfigRoute
   ApiCreatePaymentIntentRoute: typeof ApiCreatePaymentIntentRoute
   ApiDonationQuoteRoute: typeof ApiDonationQuoteRoute
+  ApiPaymentDebugRoute: typeof ApiPaymentDebugRoute
   ApiPaymentStatusRoute: typeof ApiPaymentStatusRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/go': {
-      id: '/go'
-      path: '/go'
-      fullPath: '/go'
-      preLoaderRoute: typeof GoRouteImport
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/robots.txt': {
@@ -183,39 +189,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RobotsDottxtRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
+    '/go': {
+      id: '/go'
+      path: '/go'
+      fullPath: '/go'
+      preLoaderRoute: typeof GoRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/checkout': {
-      id: '/api/checkout'
-      path: '/api/checkout'
-      fullPath: '/api/checkout'
-      preLoaderRoute: typeof ApiCheckoutRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/coffee-quote': {
-      id: '/api/coffee-quote'
-      path: '/api/coffee-quote'
-      fullPath: '/api/coffee-quote'
-      preLoaderRoute: typeof ApiCoffeeQuoteRouteImport
+    '/api/payment-status': {
+      id: '/api/payment-status'
+      path: '/api/payment-status'
+      fullPath: '/api/payment-status'
+      preLoaderRoute: typeof ApiPaymentStatusRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/config': {
-      id: '/api/config'
-      path: '/api/config'
-      fullPath: '/api/config'
-      preLoaderRoute: typeof ApiConfigRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/api/create-payment-intent': {
-      id: '/api/create-payment-intent'
-      path: '/api/create-payment-intent'
-      fullPath: '/api/create-payment-intent'
-      preLoaderRoute: typeof ApiCreatePaymentIntentRouteImport
+    '/api/payment-debug': {
+      id: '/api/payment-debug'
+      path: '/api/payment-debug'
+      fullPath: '/api/payment-debug'
+      preLoaderRoute: typeof ApiPaymentDebugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/donation-quote': {
@@ -225,11 +224,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiDonationQuoteRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/payment-status': {
-      id: '/api/payment-status'
-      path: '/api/payment-status'
-      fullPath: '/api/payment-status'
-      preLoaderRoute: typeof ApiPaymentStatusRouteImport
+    '/api/create-payment-intent': {
+      id: '/api/create-payment-intent'
+      path: '/api/create-payment-intent'
+      fullPath: '/api/create-payment-intent'
+      preLoaderRoute: typeof ApiCreatePaymentIntentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/config': {
+      id: '/api/config'
+      path: '/api/config'
+      fullPath: '/api/config'
+      preLoaderRoute: typeof ApiConfigRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/coffee-quote': {
+      id: '/api/coffee-quote'
+      path: '/api/coffee-quote'
+      fullPath: '/api/coffee-quote'
+      preLoaderRoute: typeof ApiCoffeeQuoteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/checkout': {
+      id: '/api/checkout'
+      path: '/api/checkout'
+      fullPath: '/api/checkout'
+      preLoaderRoute: typeof ApiCheckoutRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -245,6 +265,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiConfigRoute: ApiConfigRoute,
   ApiCreatePaymentIntentRoute: ApiCreatePaymentIntentRoute,
   ApiDonationQuoteRoute: ApiDonationQuoteRoute,
+  ApiPaymentDebugRoute: ApiPaymentDebugRoute,
   ApiPaymentStatusRoute: ApiPaymentStatusRoute,
 }
 export const routeTree = rootRouteImport
