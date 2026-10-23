@@ -27,6 +27,7 @@ export const site = {
   /* ---------- Social media ---------- */
   social: {
     instagram: "https://instagram.com/mysidibou",
+    instagramMissionReel: "https://www.instagram.com/reel/Dej34X7scRm/?vrfl=ZmExOHNxdWd2ZXNl",
     instagramHandle: "@mysidibou",
     tiktok: "https://www.tiktok.com/@mysidibou",
     tiktokHandle: "@mysidibou",

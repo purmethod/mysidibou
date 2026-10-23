@@ -1,5 +1,5 @@
 /**
- * mysidibou — translation dictionaries (en / fr / ar) and the i18n context.
+ * mysidibou — translation dictionaries (en / fr / de / ar) and the i18n context.
  *
  * English is the default international language. Arabic renders RTL.
  * Add or edit copy here only; the layout never changes.
@@ -40,6 +40,43 @@ const en = {
   cta: {
     donate: "Support",
     follow: "follow the mission",
+  },
+  homeHero: {
+    "ourRole": "OUR ROLE",
+    "identity": "We are architects.",
+    "responsibility": [
+      "We take",
+      "responsibility."
+    ],
+    "work": "Protect. Build. Shape the future.",
+    "community": "Architects and students worldwide for Sidi Bou Saïd.",
+    "mission": "Our mission: the cleanest and most beautiful village in the world.",
+    "commitments": [
+      {
+        "first": "No plastic",
+        "second": "on the streets."
+      },
+      {
+        "first": "Not a single",
+        "second": "cigarette butt."
+      },
+      {
+        "first": "Protect",
+        "second": "the environment."
+      },
+      {
+        "first": "Preserve",
+        "second": "nature."
+      }
+    ],
+    "yourRole": "YOUR CONTRIBUTION",
+    "participate": "Support. Like. Share.",
+    "invitation": "Join us and help spread the mission.",
+    "like": "Like",
+    "share": "Share",
+    "likeLabel": "Open the Instagram video and like it",
+    "shareLabel": "Open the Instagram video and share it there",
+    "discover": "DISCOVER OUR MISSION"
   },
   heroLine: "students. locals. one village. one mission.",
   marquee: "Protected since 1915. Protected by us.",
@@ -228,6 +265,43 @@ const fr: Dict = {
     donate: "Soutenir",
     follow: "suivre la mission",
   },
+  homeHero: {
+    "ourRole": "NOTRE RÔLE",
+    "identity": "Nous sommes architectes.",
+    "responsibility": [
+      "Nous prenons",
+      "nos responsabilités."
+    ],
+    "work": "Protéger. Construire. Façonner l’avenir.",
+    "community": "Des architectes et des étudiants du monde entier pour Sidi Bou Saïd.",
+    "mission": "Notre mission : le village le plus propre et le plus beau du monde.",
+    "commitments": [
+      {
+        "first": "Pas de plastique",
+        "second": "dans les rues."
+      },
+      {
+        "first": "Pas un seul",
+        "second": "mégot."
+      },
+      {
+        "first": "Protéger",
+        "second": "l’environnement."
+      },
+      {
+        "first": "Préserver",
+        "second": "la nature."
+      }
+    ],
+    "yourRole": "VOTRE CONTRIBUTION",
+    "participate": "Soutenir. Aimer. Partager.",
+    "invitation": "Rejoignez-nous et faites connaître la mission.",
+    "like": "J’aime",
+    "share": "Partager",
+    "likeLabel": "Ouvrir la vidéo Instagram et l’aimer",
+    "shareLabel": "Ouvrir la vidéo Instagram et la partager sur Instagram",
+    "discover": "DÉCOUVRIR NOTRE MISSION"
+  },
   heroLine: "étudiants. habitants. un village. une mission.",
   marquee: "Protégé depuis 1915. Protégé par nous.",
   journey: [
@@ -413,6 +487,43 @@ const ar: Dict = {
     donate: "ادعمنا",
     follow: "تابع المهمّة",
   },
+  homeHero: {
+    "ourRole": "دورنا",
+    "identity": "نحن معماريون.",
+    "responsibility": [
+      "نتحمل",
+      "المسؤولية."
+    ],
+    "work": "نحمي. نبني. نصنع المستقبل.",
+    "community": "معماريون وطلاب من جميع أنحاء العالم من أجل سيدي بوسعيد.",
+    "mission": "مهمتنا: أنظف وأجمل قرية في العالم.",
+    "commitments": [
+      {
+        "first": "لا بلاستيك",
+        "second": "في الشوارع."
+      },
+      {
+        "first": "ولا عقب سيجارة",
+        "second": "واحد."
+      },
+      {
+        "first": "حماية",
+        "second": "البيئة."
+      },
+      {
+        "first": "صون",
+        "second": "الطبيعة."
+      }
+    ],
+    "yourRole": "مساهمتك",
+    "participate": "ادعم. سجّل إعجابك. شارك.",
+    "invitation": "انضم إلينا وساهم في نشر رسالتنا.",
+    "like": "أعجبني",
+    "share": "مشاركة",
+    "likeLabel": "افتح فيديو إنستغرام وسجّل إعجابك به",
+    "shareLabel": "افتح فيديو إنستغرام وشاركه هناك",
+    "discover": "اكتشف مهمتنا"
+  },
   heroLine: "طلّاب. أهل القرية. قرية واحدة. مهمة واحدة.",
   marquee: "محمية منذ 1915. محمية بنا.",
   journey: [
@@ -596,6 +707,43 @@ const de: Dict = {
   cta: {
     donate: "Unterstützen",
     follow: "Die Mission verfolgen",
+  },
+  homeHero: {
+    "ourRole": "UNSER JOB",
+    "identity": "Wir sind Architekten.",
+    "responsibility": [
+      "Wir übernehmen",
+      "Verantwortung."
+    ],
+    "work": "Schützen. Bauen. Zukunft gestalten.",
+    "community": "Architekten und Studierende weltweit für Sidi Bou Saïd.",
+    "mission": "Unsere Mission: das sauberste und schönste Dorf der Welt.",
+    "commitments": [
+      {
+        "first": "Kein Plastik",
+        "second": "auf den Straßen."
+      },
+      {
+        "first": "Kein einziger",
+        "second": "Zigarettenstummel."
+      },
+      {
+        "first": "Umwelt",
+        "second": "schützen."
+      },
+      {
+        "first": "Natur",
+        "second": "bewahren."
+      }
+    ],
+    "yourRole": "DEIN BEITRAG",
+    "participate": "Unterstützen. Liken. Teilen.",
+    "invitation": "Mach mit und trage die Mission weiter.",
+    "like": "Like",
+    "share": "Teilen",
+    "likeLabel": "Instagramvideo öffnen und liken",
+    "shareLabel": "Instagramvideo öffnen und dort teilen",
+    "discover": "UNSERE MISSION ENTDECKEN"
   },
   heroLine: "Studierende. Einheimische. Ein Dorf. Eine Mission.",
   marquee: "Geschützt seit 1915. Geschützt von uns.",
