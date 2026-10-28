@@ -100,12 +100,11 @@ html.is-home, html.is-home body { height: 100%; overflow: hidden; overscroll-beh
   .is-home footer { padding-block: 0; }
 }
 
-/* The KOMPAS wordmark occupies the approved MYKOTAO brand footprint. */
+/* The MYSIDIBOU wordmark occupies the approved MYKOTAO brand footprint. */
 .compass-wordmark { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-decoration: none; gap: 12px; }
 .compass-wordmark span { font-size: clamp(16px, 3.8dvh, 28px); line-height: 1.2; font-weight: 400; letter-spacing: .2em; margin-right: -.2em; }
 .compass-wordmark small { font-size: 10px; line-height: 1.4; font-weight: 400; letter-spacing: .12em; }
 h1 { aspect-ratio: 1; }
-.village-home { position: absolute; left: max(18px, env(safe-area-inset-left)); bottom: max(20px, env(safe-area-inset-bottom)); font-size: 9px; letter-spacing: .08em; text-decoration: none; }
 footer { position: relative; }
 
 .compass-wordmark .logo { width: 100%; height: 100%; object-fit: contain; }
