@@ -5,8 +5,10 @@ export function KompasEntry() {
       <span className="kompas-entry__art">
         <img src="/kompas/compass-rose.jpeg" width="612" height="612" alt="" decoding="async" />
       </span>
-      <span className="kompas-entry__tagline">EXPLORE SIDI BOU</span>
-      <span className="kompas-entry__click">CLICK THE COMPASS</span>
+      <span className="kompas-entry__caption">
+        <span className="kompas-entry__tagline">EXPLORE SIDI BOU</span>
+        <span className="kompas-entry__click">CLICK THE COMPASS</span>
+      </span>
     </a>
   );
 }

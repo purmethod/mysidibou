@@ -1962,26 +1962,29 @@ html[dir="rtl"] .hero-mission__discover { letter-spacing: 0; }
 /* One aligned mission block, divided into text and compass columns. */
 .hero-mission__copy { display: block; }
 .hero-mission__intro { margin-bottom: 0; }
-.hero-mission__layout { --column-gap: clamp(24px, 5vw, 48px); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--column-gap); align-items: stretch; padding-block: clamp(20px, 4vw, 32px); border-bottom: 1px solid var(--color-line); direction: ltr; }
+.hero-mission__layout { --column-gap: clamp(24px, 5vw, 48px); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--column-gap); row-gap: 16px; grid-template-rows: auto auto; align-items: stretch; padding-block: clamp(20px, 4vw, 32px); border-bottom: 1px solid var(--color-line); direction: ltr; }
 .hero-mission__roles .hero-mission__eyebrow, .hero-mission__roles .hero-mission__responsibility, .hero-mission__roles .hero-mission__statement { color: var(--color-cobalt); }
-.hero-mission__roles { min-width: 0; container-type: inline-size; text-align: start; -webkit-hyphens: none; hyphens: none; overflow-wrap: normal; word-break: normal; }
-.hero-mission__guide { position: relative; display: flex; align-items: center; min-width: 0; }
+.hero-mission__roles { display: grid; grid-template-rows: subgrid; grid-row: 1 / 3; grid-column: 1; min-width: 0; text-align: start; -webkit-hyphens: none; hyphens: none; overflow-wrap: normal; word-break: normal; }
+.hero-mission__guide { position: relative; display: grid; grid-template-rows: subgrid; grid-row: 1 / 3; grid-column: 2; min-width: 0; }
 .hero-mission__guide::before { content: ""; position: absolute; top: 0; bottom: 0; left: calc(var(--column-gap) / -2 - .5px); width: 1px; background: var(--color-line); pointer-events: none; }
-.hero-mission__roles .hero-mission__identity { font-size: clamp(16px, 3.8vw, 26px); line-height: 1.3; text-wrap: balance; }
-.hero-mission__roles .hero-mission__responsibility { margin-top: 14px; font-size: clamp(18px, 11.5cqw, 42px); font-weight: 550; line-height: 1.2; letter-spacing: -.015em; overflow-wrap: normal; text-wrap: balance; }
-.hero-mission__roles .hero-mission__work-line { font-size: clamp(13px, 2.9vw, 18px); margin-top: 12px; }
-.hero-mission__roles .hero-mission__community { font-size: clamp(13px, 2.7vw, 14px); margin-top: 12px; line-height: 1.5; }
-.hero-mission__roles .hero-mission__statement { max-width: none; font-size: clamp(13px, 2.9vw, 18px); font-weight: 550; line-height: 1.45; margin-top: 16px; }
+.hero-mission__work { container-type: inline-size; }
+.hero-mission__roles .hero-mission__identity { font-size: clamp(14px, 3.3vw, 22px); line-height: 1.3; text-wrap: balance; }
+.hero-mission__roles .hero-mission__responsibility { margin-top: 14px; font-size: clamp(16px, 10cqw, 32px); font-weight: 550; line-height: 1.2; letter-spacing: -.015em; overflow-wrap: normal; text-wrap: balance; }
+.hero-mission__roles .hero-mission__work-line { font-size: clamp(12px, 2.6vw, 16px); margin-top: 12px; }
+.hero-mission__roles .hero-mission__community { font-size: clamp(12px, 2.5vw, 13px); margin-top: 12px; line-height: 1.5; }
+.hero-mission__roles .hero-mission__statement { max-width: none; font-size: clamp(12px, 2.6vw, 16px); font-weight: 550; line-height: 1.45; margin: 0; }
 .hero-mission__participate { margin-top: 28px; }
 .hero-mission__actions { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
 .hero-mission__support { grid-column: 1 / -1; }
 .hero-mission__actions a { min-height: 46px; font-size: 14px; }
 .hero-mission__impact { margin-top: 28px; }
-.kompas-entry { display: flex; flex-direction: column; align-items: center; width: 100%; margin: 0; padding: 0; color: #35382e; text-align: center; text-decoration: none; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-tap-highlight-color: transparent; }
-.kompas-entry__art { position: relative; display: block; width: 100%; max-width: 280px; aspect-ratio: 1; overflow: hidden; margin-bottom: 14px; }
+.hero-mission__roles .hero-mission__eyebrow { font-size: clamp(11px, 2.5vw, 13px); }
+.kompas-entry { display: grid; grid-template-rows: subgrid; grid-row: 1 / 3; justify-items: center; align-items: end; width: 100%; margin: 0; padding: 0; color: #35382e; text-align: center; text-decoration: none; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-tap-highlight-color: transparent; }
+.kompas-entry__art { position: relative; display: block; width: 100%; max-width: 280px; aspect-ratio: 1; overflow: hidden; margin-bottom: 0; }
 .kompas-entry__art img { position: absolute; width: 112%; max-width: none; height: auto; top: -6%; left: -6%; mix-blend-mode: multiply; }
-.kompas-entry__tagline { white-space: nowrap; font-size: clamp(9px, 2.2vw, 13px); line-height: 1.5; font-weight: 500; letter-spacing: .07em; }
-.kompas-entry__click { white-space: nowrap; margin-top: 7px; font-size: clamp(7px, 1.7vw, 10px); line-height: 1.5; font-weight: 400; letter-spacing: .07em; opacity: .7; }
+.kompas-entry__caption { display: flex; flex-direction: column; align-items: center; align-self: start; width: 100%; container-type: inline-size; }
+.kompas-entry__tagline { white-space: nowrap; font-size: clamp(11px, 8cqw, 19px); line-height: 1.45; font-weight: 600; letter-spacing: .025em; }
+.kompas-entry__click { white-space: nowrap; margin-top: 8px; font-size: clamp(9px, 6.8cqw, 14px); line-height: 1.5; font-weight: 500; letter-spacing: .035em; opacity: .85; }
 .kompas-entry:focus-visible { outline: 2px solid currentColor; outline-offset: 6px; border-radius: 3px; }
 html[dir="rtl"] .hero-mission__roles { direction: rtl; }
 @media (min-width: 800px) {

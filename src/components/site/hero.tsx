@@ -41,8 +41,8 @@ export function HeroSection() {
               </h1>
               <p className="hero-mission__work-line">{copy.work}</p>
               <p className="hero-mission__community">{copy.community}</p>
-              <p className="hero-mission__statement">{copy.mission}</p>
             </div>
+            <p className="hero-mission__statement">{copy.mission}</p>
           </div>
           <aside className="hero-mission__guide" aria-label="Discover Sidi Bou">
             <KompasEntry />
