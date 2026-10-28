@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-28T13:40:36.885323+01:00",
+  "updatedAt": "2026-10-28T13:43:00.198333+01:00",
   "timezone": "Africa/Tunis",
   "horizonMonths": 12,
   "refreshSchedule": {
@@ -19,19 +19,15 @@
       "kind": "calendar",
       "status": "partial",
       "coverage": "Public calendars across Tunis, Sidi Bou Saïd, Carthage, La Marsa and Gammarth",
-      "pagesChecked": 44,
-      "eventsFound": 70,
+      "pagesChecked": 90,
+      "eventsFound": 83,
       "errors": [
-        {
-          "url": "https://tunis.events/events/mE2Ql3/projection-film-bakma-المركب-الثقافي-أسد-بن-الفرات-بالقيروان",
-          "error": "'ascii' codec can't encode characters in position 41-46: ordinal not in range(128)"
-        },
         {
           "url": "https://tunis.events/",
           "error": "Collection page/time budget reached"
         }
       ],
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -50,7 +46,7 @@
           "error": "Collection page/time budget reached"
         }
       ],
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -64,7 +60,7 @@
       "pagesChecked": 1,
       "eventsFound": 0,
       "errors": [],
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -78,7 +74,7 @@
       "pagesChecked": 10,
       "eventsFound": 34,
       "errors": [],
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -97,7 +93,7 @@
           "error": "HTTP Error 404: Not Found"
         }
       ],
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -111,7 +107,7 @@
       "pagesChecked": 27,
       "eventsFound": 13,
       "errors": [],
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -123,9 +119,9 @@
       "status": "ok",
       "coverage": "El Teatro · official programme · published dates",
       "pagesChecked": 1,
-      "eventsFound": 7,
+      "eventsFound": 9,
       "errors": [],
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -139,7 +135,7 @@
       "pagesChecked": 1,
       "eventsFound": 4,
       "errors": [],
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -148,13 +144,18 @@
       "name": "Houdou · Dar Kbira yoga retreats",
       "url": "https://www.bookyogaretreats.com/houdou/5-day-mediterranean-yoga-and-meditation-retreat-in-the-heart-of-sidi-bou-said-tunisia",
       "kind": "organizer",
-      "status": "ok",
+      "status": "error",
       "coverage": "Houdou · Dar Kbira yoga retreats · published dates",
       "pagesChecked": 1,
-      "eventsFound": 1,
-      "errors": [],
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
-      "rootSuccess": true,
+      "eventsFound": 0,
+      "errors": [
+        {
+          "url": "https://www.bookyogaretreats.com/houdou/5-day-mediterranean-yoga-and-meditation-retreat-in-the-heart-of-sidi-bou-said-tunisia",
+          "error": "HTTP Error 403: Forbidden"
+        }
+      ],
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
+      "rootSuccess": false,
       "cancelledUrls": []
     },
     {
@@ -167,7 +168,7 @@
       "pagesChecked": 1,
       "eventsFound": 1,
       "errors": [],
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -181,7 +182,7 @@
       "pagesChecked": 10,
       "eventsFound": 0,
       "errors": [],
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -195,35 +196,7 @@
       "pagesChecked": 1,
       "eventsFound": 0,
       "errors": [],
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
-      "rootSuccess": true,
-      "cancelledUrls": []
-    },
-    {
-      "id": "gatepass",
-      "name": "Gate Pass · public listings",
-      "url": "https://gate-pass.tn/",
-      "kind": "calendar",
-      "status": "monitor_only",
-      "coverage": "Gate Pass · public listings · published dates",
-      "pagesChecked": 1,
-      "eventsFound": 0,
-      "errors": [],
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
-      "rootSuccess": true,
-      "cancelledUrls": []
-    },
-    {
-      "id": "jaou",
-      "name": "Jaou Tunis · official programme",
-      "url": "https://jaou.tn/",
-      "kind": "organizer",
-      "status": "monitor_only",
-      "coverage": "Jaou Tunis · official programme · published dates",
-      "pagesChecked": 1,
-      "eventsFound": 0,
-      "errors": [],
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -237,7 +210,7 @@
       "pagesChecked": 1,
       "eventsFound": 0,
       "errors": [],
-      "checkedAt": "2026-10-28T13:40:36.885323+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -251,7 +224,7 @@
       "pagesChecked": 1,
       "eventsFound": 2,
       "errors": [],
-      "checkedAt": "2026-10-28T13:40:36.885323+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -265,7 +238,35 @@
       "pagesChecked": 1,
       "eventsFound": 5,
       "errors": [],
-      "checkedAt": "2026-10-28T13:40:36.885323+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
+      "rootSuccess": true,
+      "cancelledUrls": []
+    },
+    {
+      "id": "gatepass",
+      "name": "Gate Pass · public listings",
+      "url": "https://gate-pass.tn/",
+      "kind": "calendar",
+      "status": "monitor_only",
+      "coverage": "Gate Pass · public listings · published dates",
+      "pagesChecked": 1,
+      "eventsFound": 0,
+      "errors": [],
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
+      "rootSuccess": true,
+      "cancelledUrls": []
+    },
+    {
+      "id": "jaou",
+      "name": "Jaou Tunis · official programme",
+      "url": "https://jaou.tn/",
+      "kind": "organizer",
+      "status": "monitor_only",
+      "coverage": "Jaou Tunis · official programme · published dates",
+      "pagesChecked": 1,
+      "eventsFound": 0,
+      "errors": [],
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     }
@@ -286,7 +287,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -310,7 +311,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -334,7 +335,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -358,12 +359,16 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Tunis Events · Greater Tunis",
           "url": "https://tunis.events/events/8vqaK3/jaou-tunis-26-full-fest-access-tunis"
+        },
+        {
+          "name": "Meeps · Tunis agenda",
+          "url": "https://joinmeeps.com/fr/event/jaou-tunis-26-full-fest-access-g4r0k4sk"
         }
       ]
     },
@@ -382,7 +387,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -406,7 +411,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -430,7 +435,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -454,7 +459,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -478,7 +483,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -502,7 +507,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -526,7 +531,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -550,7 +555,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -581,7 +586,8 @@
           "name": "Houdou · Dar Kbira yoga retreats",
           "url": "https://www.bookyogaretreats.com/houdou/5-day-mediterranean-yoga-and-meditation-retreat-in-the-heart-of-sidi-bou-said-tunisia"
         }
-      ]
+      ],
+      "stale": true
     },
     {
       "id": "dad32f74fa2b23a4",
@@ -598,7 +604,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -622,7 +628,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -646,7 +652,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -670,11 +676,15 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Sociale · Sidi Bou Saïd",
+          "url": "https://tunis.events/events/mE22x3/yoga-for-busy-minds-with-judit-yoga_in_sidibousaid-sociale-sidi-bou-said"
+        },
+        {
+          "name": "Tunis Events · Greater Tunis",
           "url": "https://tunis.events/events/mE22x3/yoga-for-busy-minds-with-judit-yoga_in_sidibousaid-sociale-sidi-bou-said"
         }
       ]
@@ -694,7 +704,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:40:36.885323+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -718,7 +728,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -742,7 +752,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -766,7 +776,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -790,7 +800,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -814,7 +824,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:40:36.885323+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -838,7 +848,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -862,7 +872,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -886,7 +896,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -910,7 +920,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -934,7 +944,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -958,7 +968,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -982,7 +992,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1006,12 +1016,16 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Tunis Events · Greater Tunis",
           "url": "https://tunis.events/events/k6E998/big-murk-x-toumba-x-julmud-b7l9-art-centre"
+        },
+        {
+          "name": "Meeps · Tunis agenda",
+          "url": "https://joinmeeps.com/fr/event/concert-big-murk-x-toumba-x-julmud-k20j7dj8"
         }
       ]
     },
@@ -1030,7 +1044,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1054,12 +1068,36 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Teskerti · tickets & screenings",
           "url": "https://teskerti.tn/evenement/soiree-bal-masque-avec-monguii"
+        }
+      ]
+    },
+    {
+      "id": "b0c6d3ec80cbea12",
+      "title": "Jaune Orange",
+      "category": "community",
+      "start": "2026-10-29T21:00:00+01:00",
+      "end": "2026-10-30T04:00:00+01:00",
+      "dateOnly": false,
+      "location": "Molo",
+      "summary": "Community event at Molo.",
+      "url": "https://tunis.events/events/ext_mdwKnk/jaune-orange-molo",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/ext_mdwKnk/jaune-orange-molo"
         }
       ]
     },
@@ -1078,12 +1116,60 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Teskerti · tickets & screenings",
           "url": "https://teskerti.tn/evenement/weekend-2910"
+        }
+      ]
+    },
+    {
+      "id": "bc913e9b29b82dd2",
+      "title": "Soirée Bal masqué avec Monguii",
+      "category": "parties",
+      "start": "2026-10-29T21:30:00+01:00",
+      "end": "2026-10-29T23:30:00+01:00",
+      "dateOnly": false,
+      "location": "Hôtel Belvédère Fourati",
+      "summary": "Party at Hôtel Belvédère Fourati.",
+      "url": "https://tunis.events/events/ext_8ylRw3/soiree-bal-masque-avec-monguii-hotel-belvedere-fourati",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/ext_8ylRw3/soiree-bal-masque-avec-monguii-hotel-belvedere-fourati"
+        }
+      ]
+    },
+    {
+      "id": "21049b77e85811ab",
+      "title": "Alianza Live Band ️",
+      "category": "live-music",
+      "start": "2026-10-30T10:00:00+01:00",
+      "end": "2026-10-31T07:00:00+01:00",
+      "dateOnly": false,
+      "location": "Hôtel Acqua Viva Gammarth",
+      "summary": "Live music at Hôtel Acqua Viva Gammarth.",
+      "url": "https://tunis.events/events/ext_mwlvj3/alianza-live-band-hotel-acqua-viva-gammarth",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/ext_mwlvj3/alianza-live-band-hotel-acqua-viva-gammarth"
         }
       ]
     },
@@ -1102,7 +1188,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1126,11 +1212,15 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Sociale · Sidi Bou Saïd",
+          "url": "https://tunis.events/events/3DRRMk/sketchy-things-sangria-sketching-with-molkabrk-sociale"
+        },
+        {
+          "name": "Tunis Events · Greater Tunis",
           "url": "https://tunis.events/events/3DRRMk/sketchy-things-sangria-sketching-with-molkabrk-sociale"
         }
       ]
@@ -1150,7 +1240,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1181,7 +1271,8 @@
           "name": "Tunis Events · Greater Tunis",
           "url": "https://tunis.events/events/8yX0J3/sur-une-autre-rive-espace-lartisto"
         }
-      ]
+      ],
+      "stale": true
     },
     {
       "id": "ca984f9f02e62aa9",
@@ -1198,12 +1289,16 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Tunis Events · Greater Tunis",
           "url": "https://tunis.events/events/mnMMdk/couscous-connexion-dungeon-master-edition-el-firma-restaurant"
+        },
+        {
+          "name": "Meeps · Tunis agenda",
+          "url": "https://joinmeeps.com/fr/event/couscous-connexion-dungeon-master-edition-5cv91yja"
         }
       ]
     },
@@ -1222,7 +1317,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1246,7 +1341,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1270,7 +1365,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1294,12 +1389,36 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Teskerti · tickets & screenings",
           "url": "https://teskerti.tn/evenement/le-fou"
+        }
+      ]
+    },
+    {
+      "id": "17518af5f085376a",
+      "title": "Tounsi w noss",
+      "category": "community",
+      "start": "2026-10-30T21:00:00+01:00",
+      "end": "2026-10-30T23:00:00+01:00",
+      "dateOnly": false,
+      "location": "Zéphyr La Marsa",
+      "summary": "Community event at Zéphyr La Marsa.",
+      "url": "https://tunis.events/events/ext_kYxJN8/tounsi-w-noss-zephyr-la-marsa",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/ext_kYxJN8/tounsi-w-noss-zephyr-la-marsa"
         }
       ]
     },
@@ -1318,12 +1437,60 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Teskerti · tickets & screenings",
           "url": "https://teskerti.tn/evenement/najaa-el-fen-sinouj"
+        }
+      ]
+    },
+    {
+      "id": "3123bee367be3215",
+      "title": "Najaa el Fen - Sinouj",
+      "category": "community",
+      "start": "2026-10-30T23:00:00+01:00",
+      "end": "2026-10-31T01:00:00+01:00",
+      "dateOnly": false,
+      "location": "Tunisie",
+      "summary": "Community event at Tunisie.",
+      "url": "https://tunis.events/events/ext_32rA03/najaa-el-fen-sinouj-tunisie",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/ext_32rA03/najaa-el-fen-sinouj-tunisie"
+        }
+      ]
+    },
+    {
+      "id": "5b4e5cbba8857c1a",
+      "title": "حواس |Feelings",
+      "category": "arts-culture",
+      "start": "2026-10-31T00:00:00+01:00",
+      "end": null,
+      "dateOnly": true,
+      "location": "El Teatro, Tunis",
+      "summary": "Cultural event at El Teatro, Tunis.",
+      "url": "https://www.billetterie.elteatrotunis.com/fr/programme/feelings",
+      "sourceId": "elteatro",
+      "sourceName": "El Teatro · official programme",
+      "sourceKind": "organizer",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "El Teatro · official programme",
+          "url": "https://www.billetterie.elteatrotunis.com/fr/programme/feelings"
         }
       ]
     },
@@ -1342,7 +1509,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:40:36.885323+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1366,12 +1533,36 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:40:36.885323+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "AIO Events · public listings",
           "url": "https://aio.events/e/raad-games-edition-1-week-2"
+        }
+      ]
+    },
+    {
+      "id": "3f3f223a39b9e0b3",
+      "title": "Myli goes live - StudioFan",
+      "category": "community",
+      "start": "2026-10-31T18:00:00+01:00",
+      "end": "2026-10-31T20:00:00+01:00",
+      "dateOnly": false,
+      "location": "My li studio",
+      "summary": "Community event at My li studio.",
+      "url": "https://tunis.events/events/ext_mwl2b3/myli-goes-live-studiofan-my-li-studio",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/ext_mwl2b3/myli-goes-live-studiofan-my-li-studio"
         }
       ]
     },
@@ -1390,7 +1581,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1414,12 +1605,36 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:40:36.885323+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "AIO Events · public listings",
           "url": "https://aio.events/e/project-x-halloween-edition"
+        }
+      ]
+    },
+    {
+      "id": "9e6faab5c9e824db",
+      "title": "QUEEN & SYMPHONY",
+      "category": "community",
+      "start": "2026-10-31T19:00:00+01:00",
+      "end": "2026-11-01T02:00:00+01:00",
+      "dateOnly": false,
+      "location": "Institut français de Tunisie",
+      "summary": "Community event at Institut français de Tunisie.",
+      "url": "https://tunis.events/events/ext_32VWx3/queen-symphony-institut-francais-de-tunisie",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/ext_32VWx3/queen-symphony-institut-francais-de-tunisie"
         }
       ]
     },
@@ -1438,7 +1653,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1462,7 +1677,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1486,12 +1701,40 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Tunis Events · Greater Tunis",
           "url": "https://tunis.events/events/mE2EK3/nadah-el-shazly-b7l9-art-centre"
+        },
+        {
+          "name": "Meeps · Tunis agenda",
+          "url": "https://joinmeeps.com/fr/event/concert-nadah-el-shazly-r6s7xgj1"
+        }
+      ]
+    },
+    {
+      "id": "da6d2c668e641e05",
+      "title": "The Last Shot",
+      "category": "community",
+      "start": "2026-10-31T19:30:00+01:00",
+      "end": "2026-10-31T21:00:00+01:00",
+      "dateOnly": false,
+      "location": "Espace \"L'Artisto\"",
+      "summary": "Community event at Espace \"L'Artisto\".",
+      "url": "https://tunis.events/events/kYG7j3/the-last-shot-espace-lartisto",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/kYG7j3/the-last-shot-espace-lartisto"
         }
       ]
     },
@@ -1510,12 +1753,36 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Tunis Events · Greater Tunis",
           "url": "https://tunis.events/events/8yXZJ3/frkn-halloween-aina"
+        }
+      ]
+    },
+    {
+      "id": "bcf461fd8edc2e31",
+      "title": "Halloween Night",
+      "category": "parties",
+      "start": "2026-10-31T20:00:00+01:00",
+      "end": "2026-11-01T04:00:00+01:00",
+      "dateOnly": false,
+      "location": "Hôtel Acqua Viva Gammarth",
+      "summary": "Party at Hôtel Acqua Viva Gammarth.",
+      "url": "https://tunis.events/events/ext_kX2y03/halloween-night-hotel-acqua-viva-gammarth",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/ext_kX2y03/halloween-night-hotel-acqua-viva-gammarth"
         }
       ]
     },
@@ -1534,7 +1801,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1558,7 +1825,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1582,7 +1849,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1606,7 +1873,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:40:36.885323+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1630,7 +1897,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1654,7 +1921,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1678,7 +1945,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1702,7 +1969,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1726,7 +1993,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1750,7 +2017,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1774,7 +2041,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1798,7 +2065,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1817,14 +2084,18 @@
       "location": "Sociale.",
       "summary": "Wellness session at Sociale..",
       "url": "https://tunis.events/events/85Vwek/power-yoga-with-nicole-skarpness-nskarp-sociale",
-      "sourceId": "tunis-events",
-      "sourceName": "Tunis Events · Greater Tunis",
-      "sourceKind": "calendar",
+      "sourceId": "sociale",
+      "sourceName": "Sociale · Sidi Bou Saïd",
+      "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
+        {
+          "name": "Sociale · Sidi Bou Saïd",
+          "url": "https://tunis.events/events/85Vwek/power-yoga-with-nicole-skarpness-nskarp-sociale"
+        },
         {
           "name": "Tunis Events · Greater Tunis",
           "url": "https://tunis.events/events/85Vwek/power-yoga-with-nicole-skarpness-nskarp-sociale"
@@ -1846,12 +2117,36 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Teskerti · tickets & screenings",
           "url": "https://teskerti.tn/evenement/cloche"
+        }
+      ]
+    },
+    {
+      "id": "ec720e28929e70a2",
+      "title": "ليلة خريف |Une Nuit d’automne",
+      "category": "arts-culture",
+      "start": "2026-11-04T00:00:00+01:00",
+      "end": null,
+      "dateOnly": true,
+      "location": "El Teatro, Tunis",
+      "summary": "Cultural event at El Teatro, Tunis.",
+      "url": "https://www.billetterie.elteatrotunis.com/fr/programme/une_nuit_dautomne",
+      "sourceId": "elteatro",
+      "sourceName": "El Teatro · official programme",
+      "sourceKind": "organizer",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "El Teatro · official programme",
+          "url": "https://www.billetterie.elteatrotunis.com/fr/programme/une_nuit_dautomne"
         }
       ]
     },
@@ -1870,7 +2165,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1894,11 +2189,15 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Sociale · Sidi Bou Saïd",
+          "url": "https://tunis.events/events/3DRYdk/yoga-for-busy-minds-with-judit-yoga_in_sidibousaid-sociale-sidi-bou-said"
+        },
+        {
+          "name": "Tunis Events · Greater Tunis",
           "url": "https://tunis.events/events/3DRYdk/yoga-for-busy-minds-with-judit-yoga_in_sidibousaid-sociale-sidi-bou-said"
         }
       ]
@@ -1918,7 +2217,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1942,7 +2241,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1966,7 +2265,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1990,7 +2289,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2014,11 +2313,15 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Sociale · Sidi Bou Saïd",
+          "url": "https://tunis.events/events/moEXl8/movie-night-un-fils-sociale-sidi-bou-said"
+        },
+        {
+          "name": "Tunis Events · Greater Tunis",
           "url": "https://tunis.events/events/moEXl8/movie-night-un-fils-sociale-sidi-bou-said"
         }
       ]
@@ -2038,7 +2341,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2062,7 +2365,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2086,7 +2389,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2110,7 +2413,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2134,12 +2437,36 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Teskerti · tickets & screenings",
           "url": "https://teskerti.tn/evenement/nouma-le-0611"
+        }
+      ]
+    },
+    {
+      "id": "9984a72f1cac6615",
+      "title": "Weld Talyani",
+      "category": "community",
+      "start": "2026-11-06T21:00:00+01:00",
+      "end": "2026-11-06T23:00:00+01:00",
+      "dateOnly": false,
+      "location": "Zéphyr La Marsa",
+      "summary": "Community event at Zéphyr La Marsa.",
+      "url": "https://tunis.events/events/ext_3A0Pdm/weld-talyani-zephyr-la-marsa",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/ext_3A0Pdm/weld-talyani-zephyr-la-marsa"
         }
       ]
     },
@@ -2158,7 +2485,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2182,7 +2509,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2206,12 +2533,36 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Teskerti · tickets & screenings",
           "url": "https://teskerti.tn/evenement/tchaika"
+        }
+      ]
+    },
+    {
+      "id": "cf995294620d77e0",
+      "title": "Crème de la crème - The Opening",
+      "category": "community",
+      "start": "2026-11-07T22:00:00+01:00",
+      "end": "2026-11-08T04:00:00+01:00",
+      "dateOnly": false,
+      "location": "Radisson Hotel Tunis City Center",
+      "summary": "Community event at Radisson Hotel Tunis City Center.",
+      "url": "https://tunis.events/events/ext_37NqJm/creme-de-la-creme-the-opening-radisson-hotel-tunis-city-center",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/ext_37NqJm/creme-de-la-creme-the-opening-radisson-hotel-tunis-city-center"
         }
       ]
     },
@@ -2225,14 +2576,18 @@
       "location": "Sociale.",
       "summary": "Wellness session at Sociale..",
       "url": "https://tunis.events/events/3O67Bm/power-yoga-with-nicole-skarpness-nskarp-sociale",
-      "sourceId": "tunis-events",
-      "sourceName": "Tunis Events · Greater Tunis",
-      "sourceKind": "calendar",
+      "sourceId": "sociale",
+      "sourceName": "Sociale · Sidi Bou Saïd",
+      "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
+        {
+          "name": "Sociale · Sidi Bou Saïd",
+          "url": "https://tunis.events/events/3O67Bm/power-yoga-with-nicole-skarpness-nskarp-sociale"
+        },
         {
           "name": "Tunis Events · Greater Tunis",
           "url": "https://tunis.events/events/3O67Bm/power-yoga-with-nicole-skarpness-nskarp-sociale"
@@ -2254,11 +2609,15 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Sociale · Sidi Bou Saïd",
+          "url": "https://tunis.events/events/kM610m/yoga-for-busy-minds-with-judit-yoga_in_sidibousaid-sociale-sidi-bou-said"
+        },
+        {
+          "name": "Tunis Events · Greater Tunis",
           "url": "https://tunis.events/events/kM610m/yoga-for-busy-minds-with-judit-yoga_in_sidibousaid-sociale-sidi-bou-said"
         }
       ]
@@ -2284,8 +2643,13 @@
         {
           "name": "Sociale · Sidi Bou Saïd",
           "url": "https://tunis.events/events/kQn7qm/movie-night-regarde-moi-sociale-sidi-bou-said"
+        },
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/kQn7qm/movie-night-regarde-moi-sociale-sidi-bou-said"
         }
-      ]
+      ],
+      "stale": true
     },
     {
       "id": "7502597a4c57fa43",
@@ -2302,7 +2666,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2332,8 +2696,13 @@
         {
           "name": "Sociale · Sidi Bou Saïd",
           "url": "https://tunis.events/events/8KQRGm/yoga-for-busy-minds-with-judit-yoga_in_sidibousaid-sociale-sidi-bou-said"
+        },
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/8KQRGm/yoga-for-busy-minds-with-judit-yoga_in_sidibousaid-sociale-sidi-bou-said"
         }
-      ]
+      ],
+      "stale": true
     },
     {
       "id": "4e8b54a9c03f04f4",
@@ -2350,7 +2719,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2374,7 +2743,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2398,7 +2767,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2422,7 +2791,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2446,7 +2815,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2470,12 +2839,36 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Tunis Events · Greater Tunis",
           "url": "https://tunis.events/events/klvgE3/hyperculte-b7l9-art-centre"
+        }
+      ]
+    },
+    {
+      "id": "77189e4ecabaa490",
+      "title": "Tunis with my eyes",
+      "category": "community",
+      "start": "2026-11-23T00:00:00+01:00",
+      "end": "2026-11-30T00:00:00+01:00",
+      "dateOnly": false,
+      "location": "Tunis (Tunis, Tunisia)",
+      "summary": "Community event at Tunis (Tunis, Tunisia).",
+      "url": "https://tunis.events/events/ext_mEWWp8/tunis-with-my-eyes-tunis-tunis-tunisia",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/ext_mEWWp8/tunis-with-my-eyes-tunis-tunis-tunisia"
         }
       ]
     },
@@ -2494,12 +2887,36 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Tunis Events · Greater Tunis",
           "url": "https://tunis.events/events/kW1G53/yoga-for-busy-minds-with-judit-yoga_in_sidibousaid-sociale-sidi-bou-said"
+        }
+      ]
+    },
+    {
+      "id": "9fa7d26ad7babf27",
+      "title": "Violent Night 2",
+      "category": "community",
+      "start": "2026-12-02T00:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "Pathé Tunis City",
+      "summary": "Community event at Pathé Tunis City.",
+      "url": "https://tunis.events/events/ext_8vKyLk/violent-night-2-pathe-tunis-city",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/ext_8vKyLk/violent-night-2-pathe-tunis-city"
         }
       ]
     },
@@ -2518,7 +2935,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:40:36.885323+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2542,7 +2959,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2566,7 +2983,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": "Multi-stop travel retreat including Tunis and southern Tunisia. Confirm the itinerary with the organizer.",
-      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
       "personallyTested": false,
       "sources": [
         {
