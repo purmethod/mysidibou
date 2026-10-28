@@ -37,7 +37,7 @@ export function HeroSection() {
               <p className="hero-mission__eyebrow">{copy.ourRole}</p>
               <p className="hero-mission__identity">{copy.identity}</p>
               <h1 className="hero-mission__responsibility" id="home-mission-title">
-                {copy.responsibility.map((line) => <span key={line}>{line}</span>)}
+                {copy.responsibility.join(" ")}
               </h1>
               <p className="hero-mission__work-line">{copy.work}</p>
               <p className="hero-mission__community">{copy.community}</p>

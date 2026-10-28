@@ -27,7 +27,7 @@ export const site = {
   /* ---------- Social media ---------- */
   social: {
     instagram: "https://instagram.com/mysidibou",
-    instagramMissionReel: "https://www.instagram.com/reel/Dej34X7scRm/?vrfl=ZmExOHNxdWd2ZXNl",
+    instagramMissionReel: "https://www.instagram.com/reel/DfAjdQiRWnv/?obrf=MWk3bGRzNXlvdHN5Mw==",
     instagramHandle: "@mysidibou",
     tiktok: "https://www.tiktok.com/@mysidibou",
     tiktokHandle: "@mysidibou",
@@ -89,3 +89,4 @@ export const site = {
     // No logo is used: the platform/logo is only shown when legally provided.
   },
 };
+

@@ -1,20 +1,12 @@
-/** Compact compass beside the mission copy. */
+/** The supplied compass rose links directly to the local guide. */
 export function KompasEntry() {
   return (
     <a className="kompas-entry" href="/kompas" aria-label="Explore Sidi Bou — open KOMPAS" lang="en" dir="ltr">
-      <svg viewBox="0 0 72 72" fill="none" aria-hidden="true">
-        <circle cx="36" cy="36" r="33" stroke="currentColor" strokeOpacity=".2" />
-        {Array.from({ length: 24 }, (_, i) => (
-          <path key={i} d={i % 6 === 0 ? "M36 7v7" : "M36 8v4"} stroke="currentColor" strokeOpacity={i % 6 === 0 ? ".8" : ".4"} transform={`rotate(${i * 15} 36 36)`} />
-        ))}
-        <g className="kompas-entry__needle">
-          <path d="m45 20-4 21-14 11 4-21 14-11Z" stroke="currentColor" strokeWidth="1.25" />
-          <path d="m45 20-4 21-10-10 14-11Z" fill="currentColor" />
-          <circle cx="36" cy="36" r="2.5" fill="var(--color-paper)" stroke="currentColor" />
-        </g>
-      </svg>
-      <span className="kompas-entry__tagline">EXPLORE<br />SIDI BOU</span>
-      <span className="kompas-entry__click">CLICK</span>
+      <span className="kompas-entry__art">
+        <img src="/kompas/compass-rose.jpeg" width="612" height="612" alt="" decoding="async" />
+      </span>
+      <span className="kompas-entry__tagline">EXPLORE SIDI BOU</span>
+      <span className="kompas-entry__click">CLICK THE COMPASS</span>
     </a>
   );
 }

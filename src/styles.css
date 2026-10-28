@@ -1050,8 +1050,6 @@ html[dir="rtl"] .marquee__track {
 
 .hero-mission__actions svg { width: 1.125rem; height: 1.125rem; flex-shrink: 0; }
 .hero-mission__actions a:hover { background: var(--color-mist); }
-.hero-mission__actions .hero-mission__support { background: var(--color-bougainvillea); border-color: var(--color-bougainvillea); color: #fff; font-weight: 600; }
-.hero-mission__actions .hero-mission__support:hover { background: var(--color-bougainvillea-deep); border-color: var(--color-bougainvillea-deep); }
 .hero-mission__support svg { width: 1.25rem; height: 1.25rem; }
 
 .hero--mission .hero__badge {
@@ -1963,12 +1961,12 @@ html[dir="rtl"] .hero-mission__discover { letter-spacing: 0; }
 /* One aligned mission block, divided into text and compass columns. */
 .hero-mission__copy { display: block; }
 .hero-mission__intro { margin-bottom: 0; }
-.hero-mission__layout { --column-gap: clamp(24px, 5vw, 48px); display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); column-gap: var(--column-gap); align-items: stretch; padding-block: clamp(20px, 4vw, 32px); border-bottom: 1px solid var(--color-line); direction: ltr; }
-.hero-mission__roles { min-width: 0; text-align: start; }
+.hero-mission__layout { --column-gap: clamp(24px, 5vw, 48px); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--column-gap); align-items: stretch; padding-block: clamp(20px, 4vw, 32px); border-bottom: 1px solid var(--color-line); direction: ltr; }
+.hero-mission__roles { min-width: 0; text-align: justify; text-align-last: start; -webkit-hyphens: auto; hyphens: auto; overflow-wrap: break-word; }
 .hero-mission__guide { position: relative; display: flex; align-items: center; min-width: 0; }
-.hero-mission__guide::before { content: ""; position: absolute; top: 0; bottom: 0; left: calc(var(--column-gap) / -2); width: 1px; background: var(--color-line); pointer-events: none; }
+.hero-mission__guide::before { content: ""; position: absolute; top: 0; bottom: 0; left: calc(var(--column-gap) / -2 - .5px); width: 1px; background: var(--color-line); pointer-events: none; }
 .hero-mission__roles .hero-mission__identity { font-size: clamp(16px, 3.8vw, 26px); }
-.hero-mission__roles .hero-mission__responsibility { font-size: clamp(23px, 5.6vw, 52px); line-height: 1.06; overflow-wrap: normal; }
+.hero-mission__roles .hero-mission__responsibility { font-size: clamp(21px, 5vw, 46px); line-height: 1.12; overflow-wrap: break-word; }
 .hero-mission__roles .hero-mission__work-line { font-size: clamp(13px, 2.9vw, 18px); margin-top: 12px; }
 .hero-mission__roles .hero-mission__community { font-size: clamp(13px, 2.7vw, 14px); }
 .hero-mission__roles .hero-mission__statement { max-width: none; font-size: clamp(13px, 2.8vw, 16px); margin-top: 12px; }
@@ -1978,11 +1976,10 @@ html[dir="rtl"] .hero-mission__discover { letter-spacing: 0; }
 .hero-mission__actions a { min-height: 46px; font-size: 14px; }
 .hero-mission__impact { margin-top: 28px; }
 .kompas-entry { display: flex; flex-direction: column; align-items: center; width: 100%; margin: 0; padding: 0; color: #35382e; text-align: center; text-decoration: none; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-tap-highlight-color: transparent; }
-.kompas-entry > svg { display: block; width: 100%; max-width: 200px; height: auto; margin: 0 0 12px; }
-.kompas-entry__tagline, .kompas-entry__click { font-size: clamp(10px, 2.3vw, 12px); line-height: 1.65; font-weight: 500; letter-spacing: .12em; }
-.kompas-entry__click { margin-top: 8px; padding: 8px; font-size: 10px; opacity: .7; }
-.kompas-entry__needle { transform-origin: 36px 36px; transition: transform .3s ease; }
-.kompas-entry:hover .kompas-entry__needle { transform: rotate(25deg); }
+.kompas-entry__art { position: relative; display: block; width: 100%; max-width: 280px; aspect-ratio: 1; overflow: hidden; margin-bottom: 14px; }
+.kompas-entry__art img { position: absolute; width: 112%; max-width: none; height: auto; top: -6%; left: -6%; mix-blend-mode: multiply; }
+.kompas-entry__tagline { white-space: nowrap; font-size: clamp(9px, 2.2vw, 13px); line-height: 1.5; font-weight: 500; letter-spacing: .07em; }
+.kompas-entry__click { white-space: nowrap; margin-top: 7px; font-size: clamp(7px, 1.7vw, 10px); line-height: 1.5; font-weight: 400; letter-spacing: .07em; opacity: .7; }
 .kompas-entry:focus-visible { outline: 2px solid currentColor; outline-offset: 6px; border-radius: 3px; }
 html[dir="rtl"] .hero-mission__roles { direction: rtl; }
 @media (min-width: 800px) {
@@ -1990,4 +1987,3 @@ html[dir="rtl"] .hero-mission__roles { direction: rtl; }
   .hero-mission__commitments li:nth-child(-n+2) { border-bottom: 0; }
   .hero-mission__commitments li:not(:last-child) { border-inline-end: 1px solid #e8e8e3; }
 }
-@media (prefers-reduced-motion: reduce) { .kompas-entry__needle { transition: none; } }

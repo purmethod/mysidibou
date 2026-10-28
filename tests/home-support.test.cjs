@@ -73,7 +73,7 @@ async function scrollTo(y) {
 const tests = [];
 const test = (name, fn) => tests.push({ name, fn });
 const normalizedText = element => element.textContent.replace(/\s+/g, ' ').trim();
-const approvedReel = 'https://www.instagram.com/reel/Dej34X7scRm/?vrfl=ZmExOHNxdWd2ZXNl';
+const approvedReel = 'https://www.instagram.com/reel/DfAjdQiRWnv/?obrf=MWk3bGRzNXlvdHN5Mw==';
 
 test('homepage SUPPORT pill appears only after scrolling and hides again at the top', async () => {
   await scrollTo(0);
@@ -104,7 +104,7 @@ test('mission hero keeps its official badge and exposes the approved Support, Li
     assert.equal(site.donate.link, '/go', 'all primary donations must use the central support route');
     const hero = app.div.querySelector('.hero');
     assert.ok(hero.classList.contains('hero--mission'));
-    assert.equal(hero.querySelector('img, picture, video, iframe'), null, 'the approved mission hero must not load a town image or video');
+    assert.equal(hero.querySelector('img:not(.kompas-entry img), picture, video, iframe'), null, 'the mission hero keeps imagery limited to the requested compass');
     const badge = hero.querySelector('.hero__badge');
     assert.ok(badge, 'the hero must display its official membership badge');
     assert.equal(badge.textContent.replace(/\s+/g, ' ').trim(), 'Official Member of the Scientific Committee UNESCO Report 2027');
@@ -195,7 +195,7 @@ test('mission hero renders its approved copy and four commitments after every la
         assert.equal(link.getAttribute('target'), null, 'Instagram handoff must not force a new browser tab');
         assert.ok(link.relList.contains('noopener') && link.relList.contains('noreferrer'));
       }
-      assert.equal(hero.querySelector('img, picture, video, iframe'), null);
+      assert.equal(hero.querySelector('img:not(.kompas-entry img), picture, video, iframe'), null);
       assert.equal(app.div.querySelector('.donate-pill').textContent.trim(), dictionaries[lang].nav.donate);
     }
   } finally { await app.close(); }
@@ -238,3 +238,4 @@ test('floating SUPPORT handles a restored scroll position and removes its listen
   console.log(JSON.stringify({ tests: tests.length, passed: tests.length - failures, failed: failures }));
   process.exitCode = failures ? 1 : 0;
 })();
+
