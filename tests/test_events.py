@@ -15,10 +15,10 @@ class EventsTests(unittest.TestCase):
     def test_local_time(self):
         self.assertEqual(self.event()['start'], '2026-10-28T19:00:00+01:00')
     def test_other_cities_and_description_mentions_do_not_qualify(self):
-        for place in ['Koh Tao', 'Tunis', 'Carthage Theatre', 'La Marsa']:
+        for place in ['Koh Tao', 'Sousse', 'Hammamet', 'Djerba']:
             self.assertIsNone(self.event(location={'name':place},description='Visitors from Sidi Bou Said welcome'))
     def test_palace_and_spelling_variants(self):
-        for place in ['Sidi Bou Said','Sidi Bou Saïd','Palais Ennejma Ezzahra']:
+        for place in ['Sidi Bou Said','Sidi Bou Saïd','Palais Ennejma Ezzahra','Tunis','Carthage Theatre','La Marsa','Gammarth']:
             self.assertIsNotNone(self.event(location={'name':place}))
     def test_twelve_month_boundary(self):
         self.assertIsNotNone(self.event(startDate='2027-10-28'))
@@ -42,5 +42,28 @@ class EventsTests(unittest.TestCase):
         self.assertEqual(len(c.deduplicate([event,dict(event)])),1)
         later=self.event(startDate='2026-10-28T20:00:00Z')
         self.assertEqual(len(c.deduplicate([event,later])),2)
+
+class RegionalAdaptersTests(unittest.TestCase):
+    def test_explicit_retreat_dates_and_missing_year(self):
+        from event_adapters import bookyoga, french_date
+        page='<h1>Yoga Retreat</h1><span class="js-sc1-inquiry-modal-arrival">Wednesday October 28, 2026</span><span class="js-sc1-inquiry-modal-departure">Sunday November 1, 2026</span>'
+        rows=bookyoga(page,{'location':'Sidi Bou Said'},'https://example.org',None)
+        self.assertEqual(rows[0]['endDate'],'2026-11-01')
+        self.assertIsNone(french_date('28 octobre'))
+    def test_sql_style_timestamp_has_time(self):
+        e=c.normalize({'name':'Show','startDate':'2026-11-01 18:30:00','location':'Tunis'}, {'id':'x','name':'X','kind':'calendar'},'https://example.org',c.parse_date('2026-10-28'))
+        self.assertFalse(e['dateOnly'])
+    def test_public_api_region_and_dates(self):
+        from event_adapters import aio
+        import json
+        rows=aio(json.dumps({'success':True,'responseObject':[{'id':1,'slug':'yoga','name':'Yoga','startTime':'2026-11-01T18:00:00Z','venue':{'name':'Studio','city':'La Marsa'}}]}),{},'',None)
+        e=c.normalize(rows[0],{'id':'aio','name':'AIO','kind':'calendar'},'https://aio.events',c.parse_date('2026-10-28'))
+        self.assertEqual(e['start'],'2026-11-01T19:00:00+01:00')
+    def test_exact_schedule(self):
+        from zoneinfo import ZoneInfo
+        when=c.datetime(2026,10,28,22,59,tzinfo=ZoneInfo('UTC')).astimezone(c.TZ)
+        self.assertEqual(when.strftime('%H:%M'),'23:59')
+        workflow=(c.ROOT/'.github/workflows/refresh-events.yml').read_text()
+        self.assertIn("59 22 * * *",workflow)
 
 if __name__ == '__main__': unittest.main()

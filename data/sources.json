@@ -1,16 +1,23 @@
 [
   {
     "id": "tunis-events",
-    "name": "Tunis Events · Sidi Bou listings",
+    "name": "Tunis Events · Greater Tunis",
     "kind": "calendar",
-    "url": "https://tunis.events/billetterie-tunisie",
+    "url": "https://tunis.events/",
     "parser": "jsonld",
     "hosts": [
       "tunis.events"
     ],
-    "linkPattern": "^/events/.*(?:sidi|sociale|ennejma)",
-    "maxPages": 15,
-    "coverage": "Published Sidi Bou event listings; surrounding Tunis events excluded"
+    "linkPattern": "^/events/[^/]+/[^/]+$",
+    "maxPages": 90,
+    "coverage": "Public calendars across Tunis, Sidi Bou Saïd, Carthage, La Marsa and Gammarth",
+    "budgetSeconds": 240,
+    "seeds": [
+      "https://tunis.events/billetterie-tunisie",
+      "https://tunis.events/nightlife",
+      "https://tunis.events/health_wellness",
+      "https://tunis.events/concerts"
+    ]
   },
   {
     "id": "sociale",
@@ -22,8 +29,9 @@
       "tunis.events"
     ],
     "linkPattern": "^/events/",
-    "maxPages": 20,
-    "coverage": "Dated events at Sociale, through its public venue calendar"
+    "maxPages": 8,
+    "coverage": "Dated events at Sociale, through its public venue calendar",
+    "allowEmpty": true
   },
   {
     "id": "cmam",
@@ -38,6 +46,233 @@
     "location": "Palais Ennejma Ezzahra, Sidi Bou Saïd",
     "linkPattern": "a^",
     "maxPages": 1,
-    "coverage": "Official programme; past editions are excluded and missing times stay unconfirmed"
+    "coverage": "Official programme; past editions are excluded and missing times stay unconfirmed",
+    "allowEmpty": true
+  },
+  {
+    "id": "teskerti",
+    "name": "Teskerti · tickets & screenings",
+    "url": "https://teskerti.tn/",
+    "parser": "teskerti",
+    "kind": "calendar",
+    "hosts": [
+      "teskerti.tn"
+    ],
+    "linkPattern": "^/category/",
+    "maxPages": 12,
+    "budgetSeconds": 180,
+    "coverage": "Teskerti · tickets & screenings · published dates"
+  },
+  {
+    "id": "guichet",
+    "name": "Guichet · shows & events",
+    "url": "https://guichet.tn/fr",
+    "parser": "jsonld",
+    "kind": "calendar",
+    "hosts": [
+      "guichet.tn",
+      "psy.guichet.tn"
+    ],
+    "linkPattern": "^/(?:fr/)?event/",
+    "maxPages": 25,
+    "budgetSeconds": 180,
+    "coverage": "Guichet · shows & events · published dates",
+    "seeds": [
+      "https://psy.guichet.tn/fr/event/3459/jaafour-psy"
+    ]
+  },
+  {
+    "id": "meeps",
+    "name": "Meeps · Tunis agenda",
+    "url": "https://joinmeeps.com/fr/playlist/quoi-faire-a-tunis-e00w0dzv",
+    "parser": "jsonld",
+    "kind": "calendar",
+    "hosts": [
+      "joinmeeps.com"
+    ],
+    "linkPattern": "^/fr/event/",
+    "maxPages": 45,
+    "budgetSeconds": 180,
+    "coverage": "Meeps · Tunis agenda · published dates"
+  },
+  {
+    "id": "elteatro",
+    "name": "El Teatro · official programme",
+    "url": "https://www.billetterie.elteatrotunis.com/fr/programmes",
+    "parser": "elteatro",
+    "kind": "organizer",
+    "hosts": [
+      "www.billetterie.elteatrotunis.com"
+    ],
+    "linkPattern": "a^",
+    "maxPages": 1,
+    "budgetSeconds": 180,
+    "coverage": "El Teatro · official programme · published dates",
+    "allowEmpty": true,
+    "location": "El Teatro, Tunis"
+  },
+  {
+    "id": "artexplora",
+    "name": "Art Explora · Tunis programme",
+    "url": "https://www.artexplora.org/festival/ville/tunis",
+    "parser": "artexplora",
+    "kind": "organizer",
+    "hosts": [
+      "www.artexplora.org"
+    ],
+    "linkPattern": "a^",
+    "maxPages": 1,
+    "budgetSeconds": 180,
+    "coverage": "Art Explora · Tunis programme · published dates",
+    "allowEmpty": true
+  },
+  {
+    "id": "houdou",
+    "name": "Houdou · Dar Kbira yoga retreats",
+    "url": "https://www.bookyogaretreats.com/houdou/5-day-mediterranean-yoga-and-meditation-retreat-in-the-heart-of-sidi-bou-said-tunisia",
+    "parser": "bookyoga",
+    "kind": "organizer",
+    "hosts": [
+      "www.bookyogaretreats.com"
+    ],
+    "linkPattern": "a^",
+    "maxPages": 1,
+    "budgetSeconds": 180,
+    "coverage": "Houdou · Dar Kbira yoga retreats · published dates",
+    "allowEmpty": true,
+    "location": "Dar Kbira, Sidi Bou Saïd"
+  },
+  {
+    "id": "yogatribes",
+    "name": "YogaTribes · Tunisia retreats",
+    "url": "https://yogamonde.yogatribes.com/fr/tunisie/",
+    "parser": "yogatribes",
+    "kind": "organizer",
+    "hosts": [
+      "yogamonde.yogatribes.com"
+    ],
+    "linkPattern": "a^",
+    "maxPages": 1,
+    "budgetSeconds": 180,
+    "coverage": "YogaTribes · Tunisia retreats · published dates",
+    "allowEmpty": true,
+    "location": "Tunis · multi-stop Tunisia retreat"
+  },
+  {
+    "id": "darkbira",
+    "name": "Dar Kbira · retreat programme",
+    "url": "https://darkbira.tn/english/retraites-yoga/",
+    "parser": "jsonld",
+    "kind": "organizer",
+    "hosts": [
+      "darkbira.tn"
+    ],
+    "linkPattern": "/yoga-|/retraite",
+    "maxPages": 10,
+    "budgetSeconds": 180,
+    "coverage": "Dar Kbira · retreat programme · published dates",
+    "allowEmpty": true,
+    "coverageNote": "Undated retreats stay outside the calendar until dates are published",
+    "location": "Dar Kbira, Sidi Bou Saïd",
+    "monitorOnly": true
+  },
+  {
+    "id": "ift",
+    "name": "Institut français de Tunisie",
+    "url": "https://www.institutfrancais-tunisie.com/agenda/",
+    "parser": "jsonld",
+    "kind": "calendar",
+    "hosts": [
+      "www.institutfrancais-tunisie.com"
+    ],
+    "linkPattern": "/agenda/[^/]+",
+    "maxPages": 20,
+    "budgetSeconds": 180,
+    "coverage": "Institut français de Tunisie · published dates",
+    "allowEmpty": true,
+    "monitorOnly": true
+  },
+  {
+    "id": "goethe",
+    "name": "Goethe-Institut Tunis",
+    "url": "https://www.goethe.de/ins/tn/fr/ver.cfm",
+    "parser": "ical",
+    "kind": "organizer",
+    "hosts": [
+      "www.goethe.de"
+    ],
+    "linkPattern": "a^",
+    "maxPages": 1,
+    "budgetSeconds": 180,
+    "coverage": "Goethe-Institut Tunis · published dates",
+    "allowEmpty": true,
+    "location": "Goethe-Institut Tunis",
+    "dataUrl": "https://www.goethe.de/ins/tn/fr/ver/ver/calendar.ics?cd=i&configId=26183914&langId=3&viewMode=-1&filterData=%7B%22calendar_page_id%22%3A+%22651238%22%7D"
+  },
+  {
+    "id": "lagora",
+    "name": "L’Agora · La Marsa cinema",
+    "url": "https://lagora.tn/programme/",
+    "parser": "lagora",
+    "kind": "organizer",
+    "hosts": [
+      "lagora.tn"
+    ],
+    "linkPattern": "a^",
+    "maxPages": 1,
+    "budgetSeconds": 180,
+    "coverage": "L’Agora · La Marsa cinema · published dates",
+    "allowEmpty": true,
+    "location": "L’Agora, La Marsa"
+  },
+  {
+    "id": "aio",
+    "name": "AIO Events · public listings",
+    "url": "https://aio.events/events",
+    "parser": "aio",
+    "kind": "calendar",
+    "hosts": [
+      "aio.events",
+      "api.production.aio.events"
+    ],
+    "linkPattern": "a^",
+    "maxPages": 1,
+    "budgetSeconds": 180,
+    "coverage": "AIO Events · public listings · published dates",
+    "allowEmpty": true,
+    "dataUrl": "https://api.production.aio.events/api/events/public"
+  },
+  {
+    "id": "gatepass",
+    "name": "Gate Pass · public listings",
+    "url": "https://gate-pass.tn/",
+    "parser": "jsonld",
+    "kind": "calendar",
+    "hosts": [
+      "gate-pass.tn"
+    ],
+    "linkPattern": "event|evenement",
+    "maxPages": 15,
+    "budgetSeconds": 180,
+    "coverage": "Gate Pass · public listings · published dates",
+    "allowEmpty": true,
+    "monitorOnly": true
+  },
+  {
+    "id": "jaou",
+    "name": "Jaou Tunis · official programme",
+    "url": "https://jaou.tn/",
+    "parser": "jsonld",
+    "kind": "organizer",
+    "hosts": [
+      "jaou.tn"
+    ],
+    "linkPattern": "a^",
+    "maxPages": 1,
+    "budgetSeconds": 180,
+    "coverage": "Jaou Tunis · official programme · published dates",
+    "allowEmpty": true,
+    "location": "Tunis · multiple venues",
+    "monitorOnly": true
   }
 ]

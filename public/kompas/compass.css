@@ -100,11 +100,9 @@ html.is-home, html.is-home body { height: 100%; overflow: hidden; overscroll-beh
   .is-home footer { padding-block: 0; }
 }
 
-/* The MYSIDIBOU wordmark occupies the approved MYKOTAO brand footprint. */
-.compass-wordmark { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-decoration: none; gap: 12px; }
-.compass-wordmark span { font-size: clamp(16px, 3.8dvh, 28px); line-height: 1.2; font-weight: 400; letter-spacing: .2em; margin-right: -.2em; }
-.compass-wordmark small { font-size: 10px; line-height: 1.4; font-weight: 400; letter-spacing: .12em; }
-h1 { aspect-ratio: 1; }
-footer { position: relative; }
+/* Same responsive logo box as MYKOTAO; SVG artwork includes matching whitespace. */
+.compass-wordmark { display: block; text-decoration: none; }
 
-.compass-wordmark .logo { width: 100%; height: 100%; object-fit: contain; }
+/* Keep the longest label clear of the ring at both sides of the rotating dial. */
+.dial-option[data-category="essentials"] { font-size: clamp(8px, 2.2vw, 10px); transform: translate(calc(-50% + var(--label-shift, 0px)), -50%); }
+@supports (width: 100cqh) { .is-home .island-dial { width: min(440px, calc(100cqw - 16px), 100cqh); } }

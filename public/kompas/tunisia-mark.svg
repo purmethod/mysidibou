@@ -1,11 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360" role="img" aria-labelledby="title desc">
   <title id="title">MYSIDIBOU — Sidi Bou Saïd, Tunisia</title>
   <desc id="desc">An outline of mainland Tunisia with one dot at Sidi Bou Saïd on the northeast coast.</desc>
+  <g transform="translate(54.18 46.8) scale(.699)">
   <g transform="translate(53 12) scale(.63)" fill="none" stroke="#101d31" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
     <path d="M109 84 L119 78 128 69 124 63 140 61 154 55 169 48 184 40 197 39 205 35 219 35 225 40 235 43 242 48 242 55 248 60 251 65 246 70 255 74 264 73 274 66 287 62 303 54 309 52 308 65 304 74 299 83 287 91 278 96 271 106 266 119 270 128 278 138 291 142 303 148 301 156 307 166 305 176 299 183 294 190 290 200 281 209 269 216 258 229 246 235 239 251 239 264 246 273 262 280 279 283 285 286 283 294 289 298 301 297 309 291 312 281 318 283 326 294 332 305 343 313 342 331 341 344 344 355 350 362 348 369 332 376 316 384 295 387 275 393 254 402 249 412 247 427 248 446 254 464 257 473 257 479 247 488 239 501 229 508 216 512 203 518 170 394 117 362 117 345 111 332 102 321 83 320 74 315 76 300 69 293 67 284 61 278 59 267 63 255 70 250 79 247 82 237 94 229 104 222 112 216 112 205 116 194 118 182 126 177 122 172 118 171 115 164 115 155 121 147 118 142 114 135 113 128 117 115 121 102 118 95 111 92 Z"/>
   </g>
   <circle cx="208" cy="53" r="4" fill="#101d31"/>
-  <path d="M20 156h320v46H20z" fill="#f7f5ef"/>
+  </g>
+  <path d="M20 160h320v45H20z" fill="#f7f5ef"/>
+  <g transform="translate(10.6 14.2) scale(.942)">
   <!-- Fixed vector capitals: wide geometric proportions and light strokes, matching the MYKOTAO artwork style. -->
   <g aria-label="MYSIDIBOU" fill="none" stroke="#101d31" stroke-width="2.1" stroke-linecap="butt" stroke-linejoin="miter">
     <path transform="translate(30.5 163)" d="M0 32V0L17 24 34 0V32"/>
@@ -17,5 +20,6 @@
     <path transform="translate(219.5 163)" d="M0 0V32H12C31 32 31 16 12 16H0M0 0H11C28 0 28 16 11 16"/>
     <path transform="translate(256.5 163)" d="M17 0C-6 0-6 32 17 32C40 32 40 0 17 0Z"/>
     <path transform="translate(300.5 163)" d="M0 0V19C0 37 29 37 29 19V0"/>
+  </g>
   </g>
 </svg>

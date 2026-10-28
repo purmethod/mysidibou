@@ -4,7 +4,7 @@
   const list = document.getElementById('events');
   const status = document.getElementById('feed-status');
   const sourceList = document.getElementById('sources');
-  const types = {'parties':'PARTIES','raves':'RAVES','retreats':'RETREATS','yoga-retreats':'YOGA RETREATS','workshops':'WORKSHOPS','live-music':'LIVE MUSIC','community':'COMMUNITY','wellness':'YOGA & WELLNESS','sports':'SPORTS & ADVENTURE','conservation':'CONSERVATION'};
+  const types = {'parties':'PARTIES','raves':'RAVES','retreats':'RETREATS','yoga-retreats':'YOGA RETREATS','workshops':'WORKSHOPS','live-music':'LIVE MUSIC','community':'COMMUNITY','wellness':'YOGA & WELLNESS','sports':'SPORTS & ADVENTURE','conservation':'CONSERVATION','cinema':'CINEMA','arts-culture':'ARTS & CULTURE','festivals':'FESTIVALS'};
   const requestedCategory = new URLSearchParams(location.search).get('category');
   if (requestedCategory === 'all' || Object.hasOwn(types, requestedCategory)) category.value = requestedCategory;
   const dateFormat = new Intl.DateTimeFormat('en-GB', {timeZone:'Africa/Tunis',day:'numeric',month:'short',year:'numeric'});
@@ -49,7 +49,7 @@
       return category.value === 'all' || e.category === category.value || (category.value === 'retreats' && e.category === 'yoga-retreats');
     }).sort((a,b) => Date.parse(a.start)-Date.parse(b.start));
     const old = Date.now()-Date.parse(feed.updatedAt)>48*3600000;
-    status.textContent = events.length+' EVENT'+(events.length===1?'':'S')+' · NEXT 12 MONTHS · UPDATED '+dateFormat.format(new Date(feed.updatedAt))+(fallback?' · SAVED COPY':'')+(old?' · UPDATE DELAYED':'');
+    status.textContent = events.length+' EVENT'+(events.length===1?'':'S')+' · NEXT 12 MONTHS · UPDATED '+dateFormat.format(new Date(feed.updatedAt))+' '+timeFormat.format(new Date(feed.updatedAt))+(fallback?' · SAVED COPY':'')+(old?' · UPDATE DELAYED':'');
     if (!events.length) {
       list.append(node('p','No upcoming events listed for this selection yet. Try another category or check back soon.','empty'));
       return;
@@ -57,18 +57,18 @@
     for (const e of events) {
       const article = node('article',undefined,'event');
       const date = node('p',dateFormat.format(new Date(e.start)).toUpperCase(),'event-date');
-      if (e.end && dateKey(e.start)!==dateKey(e.end) && ['retreats','yoga-retreats'].includes(e.category)) {
+      if (e.end && dateKey(e.start)!==dateKey(e.end)) {
         date.textContent += ' – '+dateFormat.format(new Date(e.end)).toUpperCase();
       }
       if (!e.dateOnly) {
         let times = timeFormat.format(new Date(e.start));
         if (e.end && !['retreats','yoga-retreats'].includes(e.category)) {
           times += ' – '+timeFormat.format(new Date(e.end));
-          if (dateKey(e.start)!==dateKey(e.end)) times += ' (+1 DAY)';
+          if (dateKey(e.start)!==dateKey(e.end)) times += ' (END DATE ABOVE)';
         }
         date.append(node('span',times,'event-time'));
       }
-      if (e.dateOnly) date.append(node('span','TIME TO BE CONFIRMED','event-time'));
+      if (e.dateOnly) date.append(node('span',e.end?'SEE ORIGINAL FOR OPENING TIMES':'TIME TO BE CONFIRMED','event-time'));
       const body = node('div');
       body.append(node('p',types[e.category] || 'EVENT','event-type'),node('h2',e.title),node('p',e.location,'event-location'),node('p',e.summary,'event-description'));
       if (e.schedule) body.append(node('p',e.schedule==='weekly-program'?'WEEKLY PROGRAM · CONFIRM WITH VENUE':'PUBLISHED RECURRING EVENT','event-type'));
@@ -77,7 +77,9 @@
       const link = node('a','VIEW ORIGINAL','source-link');
       link.href = safeURL(e.url); link.target='_blank'; link.rel='noopener noreferrer';
       link.setAttribute('aria-label','View original listing for '+e.title);
-      body.append(link); article.append(date,body); list.append(article);
+      body.append(link);
+      if (e.sources?.length > 1) body.append(node('p','Cross-checked across '+e.sources.length+' listings.','event-type'));
+      article.append(date,body); list.append(article);
     }
   }
   async function getFeed(url) {
@@ -102,7 +104,9 @@
       if (url) { link.href=url; link.target='_blank'; link.rel='noopener noreferrer'; item.append(link); }
       else item.textContent=source.name;
       if (source.status==='ok') item.append(document.createTextNode(' · '+source.eventsFound+' upcoming listings'));
-      if (source.status!=='ok') item.append(document.createTextNode(' · latest check incomplete'));
+      if (source.status==='no_dates') item.append(document.createTextNode(' · no upcoming published dates'));
+      else if (source.status==='monitor_only') item.append(document.createTextNode(' · monitored; calendar import not available'));
+      else if (source.status!=='ok') item.append(document.createTextNode(' · latest check incomplete'));
       if (source.coverage) item.append(node('p',source.coverage));
       sourceList.append(item);
     }

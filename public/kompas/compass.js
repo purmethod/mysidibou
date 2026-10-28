@@ -21,6 +21,10 @@
       const angle = (i - position) * step * Math.PI / 180;
       option.style.setProperty('--x', (50 + 39 * Math.sin(angle)) + '%');
       option.style.setProperty('--y', (50 - 39 * Math.cos(angle)) + '%');
+      if (option.dataset.category === 'essentials') {
+        const clearance = Math.max(0, option.offsetWidth / 2 + 6 - dial.clientWidth * .08);
+        option.style.setProperty('--label-shift', (Math.sin(angle) * clearance) + 'px');
+      }
       if (i === selected) option.setAttribute('aria-current', 'true');
       else option.removeAttribute('aria-current');
     });

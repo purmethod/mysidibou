@@ -1,36 +1,58 @@
 {
-  "updatedAt": "2026-10-28T12:40:23.509767+01:00",
+  "updatedAt": "2026-10-28T13:40:36.885323+01:00",
   "timezone": "Africa/Tunis",
   "horizonMonths": 12,
+  "refreshSchedule": {
+    "time": "23:59",
+    "timezone": "Africa/Tunis",
+    "cronUTC": "59 22 * * *"
+  },
+  "coverage": "Sidi Bou Saïd and Greater Tunis; published dates only",
   "instagram": {
     "status": "not_connected"
   },
   "sources": [
     {
       "id": "tunis-events",
-      "name": "Tunis Events · Sidi Bou listings",
-      "url": "https://tunis.events/billetterie-tunisie",
+      "name": "Tunis Events · Greater Tunis",
+      "url": "https://tunis.events/",
       "kind": "calendar",
-      "status": "ok",
-      "coverage": "Published Sidi Bou event listings; surrounding Tunis events excluded",
-      "pagesChecked": 6,
-      "eventsFound": 5,
-      "errors": [],
-      "checkedAt": "2026-10-28T12:40:23.509767+01:00",
-      "rootSuccess": true
+      "status": "partial",
+      "coverage": "Public calendars across Tunis, Sidi Bou Saïd, Carthage, La Marsa and Gammarth",
+      "pagesChecked": 44,
+      "eventsFound": 70,
+      "errors": [
+        {
+          "url": "https://tunis.events/events/mE2Ql3/projection-film-bakma-المركب-الثقافي-أسد-بن-الفرات-بالقيروان",
+          "error": "'ascii' codec can't encode characters in position 41-46: ordinal not in range(128)"
+        },
+        {
+          "url": "https://tunis.events/",
+          "error": "Collection page/time budget reached"
+        }
+      ],
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "rootSuccess": true,
+      "cancelledUrls": []
     },
     {
       "id": "sociale",
       "name": "Sociale · Sidi Bou Saïd",
       "url": "https://tunis.events/venues/L8JBr8/sociale-sidi-bou-said",
       "kind": "organizer",
-      "status": "ok",
+      "status": "partial",
       "coverage": "Dated events at Sociale, through its public venue calendar",
-      "pagesChecked": 20,
-      "eventsFound": 6,
-      "errors": [],
-      "checkedAt": "2026-10-28T12:40:23.509767+01:00",
-      "rootSuccess": true
+      "pagesChecked": 8,
+      "eventsFound": 7,
+      "errors": [
+        {
+          "url": "https://tunis.events/venues/L8JBr8/sociale-sidi-bou-said",
+          "error": "Collection page/time budget reached"
+        }
+      ],
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "rootSuccess": true,
+      "cancelledUrls": []
     },
     {
       "id": "cmam",
@@ -42,11 +64,597 @@
       "pagesChecked": 1,
       "eventsFound": 0,
       "errors": [],
-      "checkedAt": "2026-10-28T12:40:23.509767+01:00",
-      "rootSuccess": true
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "rootSuccess": true,
+      "cancelledUrls": []
+    },
+    {
+      "id": "teskerti",
+      "name": "Teskerti · tickets & screenings",
+      "url": "https://teskerti.tn/",
+      "kind": "calendar",
+      "status": "ok",
+      "coverage": "Teskerti · tickets & screenings · published dates",
+      "pagesChecked": 10,
+      "eventsFound": 34,
+      "errors": [],
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "rootSuccess": true,
+      "cancelledUrls": []
+    },
+    {
+      "id": "guichet",
+      "name": "Guichet · shows & events",
+      "url": "https://guichet.tn/fr",
+      "kind": "calendar",
+      "status": "partial",
+      "coverage": "Guichet · shows & events · published dates",
+      "pagesChecked": 4,
+      "eventsFound": 2,
+      "errors": [
+        {
+          "url": "https://guichet.tn/event/1976/mina-nader-wagef-comedy-roadtour",
+          "error": "HTTP Error 404: Not Found"
+        }
+      ],
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "rootSuccess": true,
+      "cancelledUrls": []
+    },
+    {
+      "id": "meeps",
+      "name": "Meeps · Tunis agenda",
+      "url": "https://joinmeeps.com/fr/playlist/quoi-faire-a-tunis-e00w0dzv",
+      "kind": "calendar",
+      "status": "ok",
+      "coverage": "Meeps · Tunis agenda · published dates",
+      "pagesChecked": 27,
+      "eventsFound": 13,
+      "errors": [],
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "rootSuccess": true,
+      "cancelledUrls": []
+    },
+    {
+      "id": "elteatro",
+      "name": "El Teatro · official programme",
+      "url": "https://www.billetterie.elteatrotunis.com/fr/programmes",
+      "kind": "organizer",
+      "status": "ok",
+      "coverage": "El Teatro · official programme · published dates",
+      "pagesChecked": 1,
+      "eventsFound": 7,
+      "errors": [],
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "rootSuccess": true,
+      "cancelledUrls": []
+    },
+    {
+      "id": "artexplora",
+      "name": "Art Explora · Tunis programme",
+      "url": "https://www.artexplora.org/festival/ville/tunis",
+      "kind": "organizer",
+      "status": "ok",
+      "coverage": "Art Explora · Tunis programme · published dates",
+      "pagesChecked": 1,
+      "eventsFound": 4,
+      "errors": [],
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "rootSuccess": true,
+      "cancelledUrls": []
+    },
+    {
+      "id": "houdou",
+      "name": "Houdou · Dar Kbira yoga retreats",
+      "url": "https://www.bookyogaretreats.com/houdou/5-day-mediterranean-yoga-and-meditation-retreat-in-the-heart-of-sidi-bou-said-tunisia",
+      "kind": "organizer",
+      "status": "ok",
+      "coverage": "Houdou · Dar Kbira yoga retreats · published dates",
+      "pagesChecked": 1,
+      "eventsFound": 1,
+      "errors": [],
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "rootSuccess": true,
+      "cancelledUrls": []
+    },
+    {
+      "id": "yogatribes",
+      "name": "YogaTribes · Tunisia retreats",
+      "url": "https://yogamonde.yogatribes.com/fr/tunisie/",
+      "kind": "organizer",
+      "status": "ok",
+      "coverage": "YogaTribes · Tunisia retreats · published dates",
+      "pagesChecked": 1,
+      "eventsFound": 1,
+      "errors": [],
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "rootSuccess": true,
+      "cancelledUrls": []
+    },
+    {
+      "id": "darkbira",
+      "name": "Dar Kbira · retreat programme",
+      "url": "https://darkbira.tn/english/retraites-yoga/",
+      "kind": "organizer",
+      "status": "monitor_only",
+      "coverage": "Dar Kbira · retreat programme · published dates",
+      "pagesChecked": 10,
+      "eventsFound": 0,
+      "errors": [],
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "rootSuccess": true,
+      "cancelledUrls": []
+    },
+    {
+      "id": "ift",
+      "name": "Institut français de Tunisie",
+      "url": "https://www.institutfrancais-tunisie.com/agenda/",
+      "kind": "calendar",
+      "status": "monitor_only",
+      "coverage": "Institut français de Tunisie · published dates",
+      "pagesChecked": 1,
+      "eventsFound": 0,
+      "errors": [],
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "rootSuccess": true,
+      "cancelledUrls": []
+    },
+    {
+      "id": "gatepass",
+      "name": "Gate Pass · public listings",
+      "url": "https://gate-pass.tn/",
+      "kind": "calendar",
+      "status": "monitor_only",
+      "coverage": "Gate Pass · public listings · published dates",
+      "pagesChecked": 1,
+      "eventsFound": 0,
+      "errors": [],
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "rootSuccess": true,
+      "cancelledUrls": []
+    },
+    {
+      "id": "jaou",
+      "name": "Jaou Tunis · official programme",
+      "url": "https://jaou.tn/",
+      "kind": "organizer",
+      "status": "monitor_only",
+      "coverage": "Jaou Tunis · official programme · published dates",
+      "pagesChecked": 1,
+      "eventsFound": 0,
+      "errors": [],
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "rootSuccess": true,
+      "cancelledUrls": []
+    },
+    {
+      "id": "goethe",
+      "name": "Goethe-Institut Tunis",
+      "url": "https://www.goethe.de/ins/tn/fr/ver.cfm",
+      "kind": "organizer",
+      "status": "no_dates",
+      "coverage": "Goethe-Institut Tunis · published dates",
+      "pagesChecked": 1,
+      "eventsFound": 0,
+      "errors": [],
+      "checkedAt": "2026-10-28T13:40:36.885323+01:00",
+      "rootSuccess": true,
+      "cancelledUrls": []
+    },
+    {
+      "id": "lagora",
+      "name": "L’Agora · La Marsa cinema",
+      "url": "https://lagora.tn/programme/",
+      "kind": "organizer",
+      "status": "ok",
+      "coverage": "L’Agora · La Marsa cinema · published dates",
+      "pagesChecked": 1,
+      "eventsFound": 2,
+      "errors": [],
+      "checkedAt": "2026-10-28T13:40:36.885323+01:00",
+      "rootSuccess": true,
+      "cancelledUrls": []
+    },
+    {
+      "id": "aio",
+      "name": "AIO Events · public listings",
+      "url": "https://aio.events/events",
+      "kind": "calendar",
+      "status": "ok",
+      "coverage": "AIO Events · public listings · published dates",
+      "pagesChecked": 1,
+      "eventsFound": 5,
+      "errors": [],
+      "checkedAt": "2026-10-28T13:40:36.885323+01:00",
+      "rootSuccess": true,
+      "cancelledUrls": []
     }
   ],
   "events": [
+    {
+      "id": "9cff61645c91a1ae",
+      "title": "Exposition : Sebastián Espejo – Winged Stone",
+      "category": "arts-culture",
+      "start": "2026-09-19T00:00:00+01:00",
+      "end": "2026-11-15T00:00:00+01:00",
+      "dateOnly": true,
+      "location": "Selma Feriani Gallery, 32 Rue Ibn Nafis, Z.I. Kheireddine, 2015 La Goulette, Tunisia",
+      "summary": "Cultural event at Selma Feriani Gallery, 32 Rue Ibn Nafis, Z.I. Kheireddine, 2015 La Goulette, Tunisia.",
+      "url": "https://joinmeeps.com/fr/event/exposition-sebastian-espejo-winged-stone-jvhscxbv",
+      "sourceId": "meeps",
+      "sourceName": "Meeps · Tunis agenda",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Meeps · Tunis agenda",
+          "url": "https://joinmeeps.com/fr/event/exposition-sebastian-espejo-winged-stone-jvhscxbv"
+        }
+      ]
+    },
+    {
+      "id": "8e29caabffea7b0c",
+      "title": "Street & Fast Food Fest 2026",
+      "category": "festivals",
+      "start": "2026-10-17T11:00:00+01:00",
+      "end": "2026-10-31T23:00:00+01:00",
+      "dateOnly": false,
+      "location": "Complexe Lac 2, Corniche Les Berges du Lac II, 1053 Tunis, Tunisie",
+      "summary": "Festival at Complexe Lac 2, Corniche Les Berges du Lac II, 1053 Tunis, Tunisie.",
+      "url": "https://joinmeeps.com/fr/event/street-fast-food-fest-2026-1pxxww00",
+      "sourceId": "meeps",
+      "sourceName": "Meeps · Tunis agenda",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Meeps · Tunis agenda",
+          "url": "https://joinmeeps.com/fr/event/street-fast-food-fest-2026-1pxxww00"
+        }
+      ]
+    },
+    {
+      "id": "86e1690cef1ec483",
+      "title": "Zyoland",
+      "category": "community",
+      "start": "2026-10-21T14:00:00+01:00",
+      "end": "2026-11-01T18:30:00+01:00",
+      "dateOnly": false,
+      "location": "Grafiflow V7JH+6J7",
+      "summary": "Community event at Grafiflow V7JH+6J7.",
+      "url": "https://tunis.events/events/mnMOgk/zyoland-grafiflow-v7jh6j7",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/mnMOgk/zyoland-grafiflow-v7jh6j7"
+        }
+      ]
+    },
+    {
+      "id": "625fedca92646e3b",
+      "title": "JAOU TUNIS 26 - Full Fest Access",
+      "category": "community",
+      "start": "2026-10-23T09:00:00+01:00",
+      "end": "2026-11-22T22:00:00+01:00",
+      "dateOnly": false,
+      "location": "Tunis",
+      "summary": "Community event at Tunis.",
+      "url": "https://tunis.events/events/8vqaK3/jaou-tunis-26-full-fest-access-tunis",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/8vqaK3/jaou-tunis-26-full-fest-access-tunis"
+        }
+      ]
+    },
+    {
+      "id": "f49847fda6c13bb4",
+      "title": "Becoming The Ocean - BIM'26",
+      "category": "community",
+      "start": "2026-10-24T14:00:00+01:00",
+      "end": "2026-11-22T18:00:00+01:00",
+      "dateOnly": false,
+      "location": "Caserne El Attarine",
+      "summary": "Community event at Caserne El Attarine.",
+      "url": "https://tunis.events/events/k4bdE3/becoming-the-ocean-bim26-caserne-el-attarine",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/k4bdE3/becoming-the-ocean-bim26-caserne-el-attarine"
+        }
+      ]
+    },
+    {
+      "id": "1c1a3ebfa7c70595",
+      "title": "Exposition - Contre ; Courant",
+      "category": "arts-culture",
+      "start": "2026-10-25T00:00:00+01:00",
+      "end": "2026-12-31T00:00:00+01:00",
+      "dateOnly": true,
+      "location": "B7L9 Art Centre, Tunis",
+      "summary": "Cultural event at B7L9 Art Centre, Tunis.",
+      "url": "https://www.artexplora.org/festival/performance/exposition-contre-courant--ma",
+      "sourceId": "artexplora",
+      "sourceName": "Art Explora · Tunis programme",
+      "sourceKind": "organizer",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Art Explora · Tunis programme",
+          "url": "https://www.artexplora.org/festival/performance/exposition-contre-courant--ma"
+        }
+      ]
+    },
+    {
+      "id": "9841c5b66cd109df",
+      "title": "Undertow / Contre ; Courant",
+      "category": "community",
+      "start": "2026-10-25T14:00:00+01:00",
+      "end": "2026-12-31T19:00:00+01:00",
+      "dateOnly": false,
+      "location": "B7L9 Art Centre",
+      "summary": "Community event at B7L9 Art Centre.",
+      "url": "https://tunis.events/events/31vlP8/undertow-contre-courant-b7l9-art-centre",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/31vlP8/undertow-contre-courant-b7l9-art-centre"
+        }
+      ]
+    },
+    {
+      "id": "380bd4d8ba1092c9",
+      "title": "Festival Pros d’Or 2026",
+      "category": "workshops",
+      "start": "2026-10-27T00:00:00+01:00",
+      "end": "2026-10-29T00:00:00+01:00",
+      "dateOnly": true,
+      "location": "Tunis, Tunisie",
+      "summary": "Workshop at Tunis, Tunisie.",
+      "url": "https://joinmeeps.com/fr/event/festival-pros-d-or-2026-prb887f7",
+      "sourceId": "meeps",
+      "sourceName": "Meeps · Tunis agenda",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Meeps · Tunis agenda",
+          "url": "https://joinmeeps.com/fr/event/festival-pros-d-or-2026-prb887f7"
+        }
+      ]
+    },
+    {
+      "id": "8bc1d8a954a9bd06",
+      "title": "Images de Syrie, Palmyre, Alep, Damas - Michel Eisenlohr",
+      "category": "arts-culture",
+      "start": "2026-10-27T17:00:00+01:00",
+      "end": "2026-11-27T19:00:00+01:00",
+      "dateOnly": false,
+      "location": "Institut Français de Tunis",
+      "summary": "Cultural event at Institut Français de Tunis.",
+      "url": "https://tunis.events/events/krn29k/images-de-syrie-palmyre-alep-damas-michel-eisenlohr-institut-francais-de-tunis",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/krn29k/images-de-syrie-palmyre-alep-damas-michel-eisenlohr-institut-francais-de-tunis"
+        }
+      ]
+    },
+    {
+      "id": "efb9dac0b36dee09",
+      "title": "Exposition : Michel Eisenlohr — Images de Syrie, Palmyre, Alep, Damas",
+      "category": "arts-culture",
+      "start": "2026-10-27T17:00:00+01:00",
+      "end": "2026-11-22T23:59:00+01:00",
+      "dateOnly": false,
+      "location": "Institut français de Tunisie, 20-22 avenue de Paris, Tunis, Tunisie",
+      "summary": "Cultural event at Institut français de Tunisie, 20-22 avenue de Paris, Tunis, Tunisie.",
+      "url": "https://joinmeeps.com/fr/event/exposition-michel-eisenlohr-images-de-syrie-palmyre-alep-dam-fz2g24k0",
+      "sourceId": "meeps",
+      "sourceName": "Meeps · Tunis agenda",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Meeps · Tunis agenda",
+          "url": "https://joinmeeps.com/fr/event/exposition-michel-eisenlohr-images-de-syrie-palmyre-alep-dam-fz2g24k0"
+        }
+      ]
+    },
+    {
+      "id": "0dbf5bc023a21c4e",
+      "title": "Zyoland",
+      "category": "community",
+      "start": "2026-10-28T00:00:00+01:00",
+      "end": "2026-10-28T23:59:59.999000+01:00",
+      "dateOnly": false,
+      "location": "Grafiflow V7JH+6J7",
+      "summary": "Community event at Grafiflow V7JH+6J7.",
+      "url": "https://tunis.events/events/mnMOgk/zyoland-grafiflow-v7jh6j7",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/mnMOgk/zyoland-grafiflow-v7jh6j7"
+        }
+      ]
+    },
+    {
+      "id": "601f27d611081b1d",
+      "title": "SIAT 2026 – Salon international de l’investissement agricole et de la technologie",
+      "category": "community",
+      "start": "2026-10-28T00:00:00+01:00",
+      "end": "2026-10-31T23:59:00+01:00",
+      "dateOnly": false,
+      "location": "Parc des Expositions du Kram, Route de la Goulette, Le Kram 2015, Tunis, Tunisie",
+      "summary": "Community event at Parc des Expositions du Kram, Route de la Goulette, Le Kram 2015, Tunis, Tunisie.",
+      "url": "https://joinmeeps.com/fr/event/siat-2026-salon-international-de-l-investissement-agricole-e-mxb9433j",
+      "sourceId": "meeps",
+      "sourceName": "Meeps · Tunis agenda",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Meeps · Tunis agenda",
+          "url": "https://joinmeeps.com/fr/event/siat-2026-salon-international-de-l-investissement-agricole-e-mxb9433j"
+        }
+      ]
+    },
+    {
+      "id": "cecea24e1a1f1d15",
+      "title": "5 Day Mediterranean Yoga and Meditation Retreat in the heart of Sidi Bou Said, Tunisia",
+      "category": "yoga-retreats",
+      "start": "2026-10-28T00:00:00+01:00",
+      "end": "2026-11-01T00:00:00+01:00",
+      "dateOnly": true,
+      "location": "Dar Kbira, Sidi Bou Saïd",
+      "summary": "5-day Yoga retreat at Dar Kbira, Sidi Bou Saïd.",
+      "url": "https://www.bookyogaretreats.com/houdou/5-day-mediterranean-yoga-and-meditation-retreat-in-the-heart-of-sidi-bou-said-tunisia",
+      "sourceId": "houdou",
+      "sourceName": "Houdou · Dar Kbira yoga retreats",
+      "sourceKind": "organizer",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Houdou · Dar Kbira yoga retreats",
+          "url": "https://www.bookyogaretreats.com/houdou/5-day-mediterranean-yoga-and-meditation-retreat-in-the-heart-of-sidi-bou-said-tunisia"
+        }
+      ]
+    },
+    {
+      "id": "dad32f74fa2b23a4",
+      "title": "Weekend 28/10",
+      "category": "cinema",
+      "start": "2026-10-28T15:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "Ciné Alhambra Zéphyr",
+      "summary": "Film screening at Ciné Alhambra Zéphyr.",
+      "url": "https://teskerti.tn/evenement/weekend-2810",
+      "sourceId": "teskerti",
+      "sourceName": "Teskerti · tickets & screenings",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Teskerti · tickets & screenings",
+          "url": "https://teskerti.tn/evenement/weekend-2810"
+        }
+      ]
+    },
+    {
+      "id": "d8174939e6d873a8",
+      "title": "Beiti Jerusalem - Samar Haddad King",
+      "category": "cinema",
+      "start": "2026-10-28T17:30:00+01:00",
+      "end": "2026-10-28T19:30:00+01:00",
+      "dateOnly": false,
+      "location": "B7L9 Art Centre",
+      "summary": "Film screening at B7L9 Art Centre.",
+      "url": "https://tunis.events/events/klvvd3/beiti-jerusalem-samar-haddad-king-b7l9-art-centre",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/klvvd3/beiti-jerusalem-samar-haddad-king-b7l9-art-centre"
+        }
+      ]
+    },
+    {
+      "id": "e44a0d29882d5d24",
+      "title": "Dar el 3ers 28/10",
+      "category": "cinema",
+      "start": "2026-10-28T18:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "Ciné Alhambra Zéphyr",
+      "summary": "Film screening at Ciné Alhambra Zéphyr.",
+      "url": "https://teskerti.tn/evenement/dar-el-3ers-2810",
+      "sourceId": "teskerti",
+      "sourceName": "Teskerti · tickets & screenings",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Teskerti · tickets & screenings",
+          "url": "https://teskerti.tn/evenement/dar-el-3ers-2810"
+        }
+      ]
+    },
     {
       "id": "2db530f61c77469c",
       "title": "Yoga for Busy Minds with Judit @yoga_in_sidibousaid",
@@ -62,8 +670,446 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T12:40:23.509767+01:00",
-      "personallyTested": false
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Sociale · Sidi Bou Saïd",
+          "url": "https://tunis.events/events/mE22x3/yoga-for-busy-minds-with-judit-yoga_in_sidibousaid-sociale-sidi-bou-said"
+        }
+      ]
+    },
+    {
+      "id": "c2f4faf6e92c5360",
+      "title": "Bakma",
+      "category": "cinema",
+      "start": "2026-10-28T19:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "L’Agora, La Marsa",
+      "summary": "Film screening at L’Agora, La Marsa.",
+      "url": "https://lagora.tn/movie/bakma/",
+      "sourceId": "lagora",
+      "sourceName": "L’Agora · La Marsa cinema",
+      "sourceKind": "organizer",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:40:36.885323+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "L’Agora · La Marsa cinema",
+          "url": "https://lagora.tn/movie/bakma/"
+        }
+      ]
+    },
+    {
+      "id": "6c494b318faeb7db",
+      "title": "Performance - TUQUS, Khalil Epi",
+      "category": "arts-culture",
+      "start": "2026-10-28T20:00:00+01:00",
+      "end": "2026-10-28T21:15:00+01:00",
+      "dateOnly": false,
+      "location": "Théâtre des Régions - Cité de La Culture, R56P+PF9, Rue De La Jordanie, Tunis",
+      "summary": "Cultural event at Théâtre des Régions - Cité de La Culture, R56P+PF9, Rue De La Jordanie, Tunis.",
+      "url": "https://www.artexplora.org/festival/performance/performance---tuqs-khalil-epi-ma",
+      "sourceId": "artexplora",
+      "sourceName": "Art Explora · Tunis programme",
+      "sourceKind": "organizer",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Art Explora · Tunis programme",
+          "url": "https://www.artexplora.org/festival/performance/performance---tuqs-khalil-epi-ma"
+        }
+      ]
+    },
+    {
+      "id": "ef97df320f73cc5b",
+      "title": "Tuqus - Khalil Epi",
+      "category": "arts-culture",
+      "start": "2026-10-28T20:00:00+01:00",
+      "end": "2026-10-28T21:15:00+01:00",
+      "dateOnly": false,
+      "location": "Cité de la Culture - Théâtre des régions",
+      "summary": "Cultural event at Cité de la Culture - Théâtre des régions.",
+      "url": "https://tunis.events/events/8va2z3/tuqus-khalil-epi-cite-de-la-culture-theatre-des-regions",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/8va2z3/tuqus-khalil-epi-cite-de-la-culture-theatre-des-regions"
+        }
+      ]
+    },
+    {
+      "id": "4146be49a93d2e8b",
+      "title": "Crescendo",
+      "category": "community",
+      "start": "2026-10-28T20:00:00+01:00",
+      "end": "2026-10-29T03:00:00+01:00",
+      "dateOnly": false,
+      "location": "Molo",
+      "summary": "Community event at Molo.",
+      "url": "https://tunis.events/events/ext_krG2xm/crescendo-molo",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/ext_krG2xm/crescendo-molo"
+        }
+      ]
+    },
+    {
+      "id": "708fa5e32eaf77df",
+      "title": "Masquerade Off Edition",
+      "category": "parties",
+      "start": "2026-10-28T20:00:00+01:00",
+      "end": "2026-10-29T04:00:00+01:00",
+      "dateOnly": false,
+      "location": "Marty Club",
+      "summary": "Party at Marty Club.",
+      "url": "https://tunis.events/events/ext_kgJK78/masquerade-off-edition-marty-club",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/ext_kgJK78/masquerade-off-edition-marty-club"
+        }
+      ]
+    },
+    {
+      "id": "0ebce4bf803696b7",
+      "title": "Le fantôme de l’opéra",
+      "category": "cinema",
+      "start": "2026-10-28T21:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "L’Agora, La Marsa",
+      "summary": "Film screening at L’Agora, La Marsa.",
+      "url": "https://lagora.tn/movie/le-fantome-de-lopera/",
+      "sourceId": "lagora",
+      "sourceName": "L’Agora · La Marsa cinema",
+      "sourceKind": "organizer",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:40:36.885323+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "L’Agora · La Marsa cinema",
+          "url": "https://lagora.tn/movie/le-fantome-de-lopera/"
+        }
+      ]
+    },
+    {
+      "id": "c0de8172b1946a04",
+      "title": "Jaou Nights - Mogli",
+      "category": "community",
+      "start": "2026-10-28T21:00:00+01:00",
+      "end": "2026-10-29T00:00:00+01:00",
+      "dateOnly": false,
+      "location": "Habibi Downtown",
+      "summary": "Community event at Habibi Downtown.",
+      "url": "https://tunis.events/events/3AoPzk/jaou-nights-mogli-habibi-downtown",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/3AoPzk/jaou-nights-mogli-habibi-downtown"
+        }
+      ]
+    },
+    {
+      "id": "95cff674f9cfeb29",
+      "title": "Bakma 28/10",
+      "category": "cinema",
+      "start": "2026-10-28T21:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "Ciné Alhambra Zéphyr",
+      "summary": "Film screening at Ciné Alhambra Zéphyr.",
+      "url": "https://teskerti.tn/evenement/bakma-2810",
+      "sourceId": "teskerti",
+      "sourceName": "Teskerti · tickets & screenings",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Teskerti · tickets & screenings",
+          "url": "https://teskerti.tn/evenement/bakma-2810"
+        }
+      ]
+    },
+    {
+      "id": "56204ba85d05408b",
+      "title": "Harmonie | تناغم",
+      "category": "arts-culture",
+      "start": "2026-10-29T00:00:00+01:00",
+      "end": null,
+      "dateOnly": true,
+      "location": "El Teatro, Tunis",
+      "summary": "Cultural event at El Teatro, Tunis.",
+      "url": "https://www.billetterie.elteatrotunis.com/fr/programme/harmonie",
+      "sourceId": "elteatro",
+      "sourceName": "El Teatro · official programme",
+      "sourceKind": "organizer",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "El Teatro · official programme",
+          "url": "https://www.billetterie.elteatrotunis.com/fr/programme/harmonie"
+        }
+      ]
+    },
+    {
+      "id": "9ded88e88ba233c7",
+      "title": "Dar el 3ers 29/10",
+      "category": "cinema",
+      "start": "2026-10-29T15:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "Ciné Alhambra Zéphyr",
+      "summary": "Film screening at Ciné Alhambra Zéphyr.",
+      "url": "https://teskerti.tn/evenement/dar-el-3ers-2910",
+      "sourceId": "teskerti",
+      "sourceName": "Teskerti · tickets & screenings",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Teskerti · tickets & screenings",
+          "url": "https://teskerti.tn/evenement/dar-el-3ers-2910"
+        }
+      ]
+    },
+    {
+      "id": "24763e919cdc451f",
+      "title": "Bakma 29/10",
+      "category": "cinema",
+      "start": "2026-10-29T18:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "Ciné Alhambra Zéphyr",
+      "summary": "Film screening at Ciné Alhambra Zéphyr.",
+      "url": "https://teskerti.tn/evenement/bakma-2910",
+      "sourceId": "teskerti",
+      "sourceName": "Teskerti · tickets & screenings",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Teskerti · tickets & screenings",
+          "url": "https://teskerti.tn/evenement/bakma-2910"
+        }
+      ]
+    },
+    {
+      "id": "346c12ec65b099f8",
+      "title": "Performance - Révélations, Cyrine Kalai",
+      "category": "arts-culture",
+      "start": "2026-10-29T19:00:00+01:00",
+      "end": "2026-10-29T20:00:00+01:00",
+      "dateOnly": false,
+      "location": "Le 4ème Art, Tunis",
+      "summary": "Cultural event at Le 4ème Art, Tunis.",
+      "url": "https://www.artexplora.org/festival/performance/performance---revelations--ma",
+      "sourceId": "artexplora",
+      "sourceName": "Art Explora · Tunis programme",
+      "sourceKind": "organizer",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Art Explora · Tunis programme",
+          "url": "https://www.artexplora.org/festival/performance/performance---revelations--ma"
+        }
+      ]
+    },
+    {
+      "id": "016bd2ec04448580",
+      "title": "Révélation - Cyrine Kalai",
+      "category": "community",
+      "start": "2026-10-29T19:00:00+01:00",
+      "end": "2026-10-29T20:00:00+01:00",
+      "dateOnly": false,
+      "location": "Le 4ème Art",
+      "summary": "Community event at Le 4ème Art.",
+      "url": "https://tunis.events/events/8B1413/revelation-cyrine-kalai-le-4eme-art",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/8B1413/revelation-cyrine-kalai-le-4eme-art"
+        }
+      ]
+    },
+    {
+      "id": "8db24eff730744cc",
+      "title": "Big Murk x Toumba x Julmud",
+      "category": "community",
+      "start": "2026-10-29T19:30:00+01:00",
+      "end": "2026-10-29T21:30:00+01:00",
+      "dateOnly": false,
+      "location": "B7L9 Art Centre",
+      "summary": "Community event at B7L9 Art Centre.",
+      "url": "https://tunis.events/events/k6E998/big-murk-x-toumba-x-julmud-b7l9-art-centre",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/k6E998/big-murk-x-toumba-x-julmud-b7l9-art-centre"
+        }
+      ]
+    },
+    {
+      "id": "04f7b163799223b0",
+      "title": "Hommage à Michael Jackson",
+      "category": "community",
+      "start": "2026-10-29T19:30:00+01:00",
+      "end": "2026-10-29T21:30:00+01:00",
+      "dateOnly": false,
+      "location": "Théâtre de l'Opéra de Tunis, Cité de la Culture Chedly Klibi",
+      "summary": "Community event at Théâtre de l'Opéra de Tunis, Cité de la Culture Chedly Klibi.",
+      "url": "https://joinmeeps.com/fr/event/hommage-a-michael-jackson-4ap1e947",
+      "sourceId": "meeps",
+      "sourceName": "Meeps · Tunis agenda",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Meeps · Tunis agenda",
+          "url": "https://joinmeeps.com/fr/event/hommage-a-michael-jackson-4ap1e947"
+        }
+      ]
+    },
+    {
+      "id": "daa3d807e7fb60ba",
+      "title": "Soirée Bal masqué avec Monguii",
+      "category": "parties",
+      "start": "2026-10-29T20:30:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "Hôtel Belvédère Fourati",
+      "summary": "Party at Hôtel Belvédère Fourati.",
+      "url": "https://teskerti.tn/evenement/soiree-bal-masque-avec-monguii",
+      "sourceId": "teskerti",
+      "sourceName": "Teskerti · tickets & screenings",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Teskerti · tickets & screenings",
+          "url": "https://teskerti.tn/evenement/soiree-bal-masque-avec-monguii"
+        }
+      ]
+    },
+    {
+      "id": "31dbd462c351f40c",
+      "title": "Weekend 29/10",
+      "category": "cinema",
+      "start": "2026-10-29T21:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "Ciné Alhambra Zéphyr",
+      "summary": "Film screening at Ciné Alhambra Zéphyr.",
+      "url": "https://teskerti.tn/evenement/weekend-2910",
+      "sourceId": "teskerti",
+      "sourceName": "Teskerti · tickets & screenings",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Teskerti · tickets & screenings",
+          "url": "https://teskerti.tn/evenement/weekend-2910"
+        }
+      ]
+    },
+    {
+      "id": "163f1037576237cd",
+      "title": "Jaafour PSY",
+      "category": "arts-culture",
+      "start": "2026-10-30T18:00:00+01:00",
+      "end": "2026-10-30T21:00:00+01:00",
+      "dateOnly": false,
+      "location": "Centre Culturel Menzah 6",
+      "summary": "Cultural event at Centre Culturel Menzah 6.",
+      "url": "https://psy.guichet.tn/fr/event/3459/jaafour-psy",
+      "sourceId": "guichet",
+      "sourceName": "Guichet · shows & events",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Guichet · shows & events",
+          "url": "https://psy.guichet.tn/fr/event/3459/jaafour-psy"
+        }
+      ]
     },
     {
       "id": "8e337e84420edb7c",
@@ -80,8 +1126,758 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T12:40:23.509767+01:00",
-      "personallyTested": false
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Sociale · Sidi Bou Saïd",
+          "url": "https://tunis.events/events/3DRRMk/sketchy-things-sangria-sketching-with-molkabrk-sociale"
+        }
+      ]
+    },
+    {
+      "id": "73242a86badc5caf",
+      "title": "Sacred Disorientation - Sara Dziri / I, The Hybrid and the Antidote - Liliane Chlela",
+      "category": "community",
+      "start": "2026-10-30T19:30:00+01:00",
+      "end": "2026-10-30T21:30:00+01:00",
+      "dateOnly": false,
+      "location": "B7L9 Art Centre",
+      "summary": "Community event at B7L9 Art Centre.",
+      "url": "https://tunis.events/events/mZrggm/sacred-disorientation-sara-dziri-i-the-hybrid-and-the-antidote-liliane-chlela-b7",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/mZrggm/sacred-disorientation-sara-dziri-i-the-hybrid-and-the-antidote-liliane-chlela-b7"
+        }
+      ]
+    },
+    {
+      "id": "ad1a0b77d799632e",
+      "title": "Sur une autre Rive",
+      "category": "community",
+      "start": "2026-10-30T19:30:00+01:00",
+      "end": "2026-10-30T21:00:00+01:00",
+      "dateOnly": false,
+      "location": "Espace \"L'Artisto\"",
+      "summary": "Community event at Espace \"L'Artisto\".",
+      "url": "https://tunis.events/events/8yX0J3/sur-une-autre-rive-espace-lartisto",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/8yX0J3/sur-une-autre-rive-espace-lartisto"
+        }
+      ]
+    },
+    {
+      "id": "ca984f9f02e62aa9",
+      "title": "Couscous Connexion | Dungeon Master Edition",
+      "category": "community",
+      "start": "2026-10-30T20:00:00+01:00",
+      "end": "2026-10-31T02:00:00+01:00",
+      "dateOnly": false,
+      "location": "El Firma Restaurant",
+      "summary": "Community event at El Firma Restaurant.",
+      "url": "https://tunis.events/events/mnMMdk/couscous-connexion-dungeon-master-edition-el-firma-restaurant",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/mnMMdk/couscous-connexion-dungeon-master-edition-el-firma-restaurant"
+        }
+      ]
+    },
+    {
+      "id": "51e5a996690f6be8",
+      "title": "Uptown @ Le TwentyEight Lafayette",
+      "category": "community",
+      "start": "2026-10-30T20:00:00+01:00",
+      "end": "2026-10-31T02:00:00+01:00",
+      "dateOnly": false,
+      "location": "Hôtel Lafayette",
+      "summary": "Community event at Hôtel Lafayette.",
+      "url": "https://tunis.events/events/8B12x3/uptown-le-twentyeight-lafayette-hotel-lafayette",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/8B12x3/uptown-le-twentyeight-lafayette-hotel-lafayette"
+        }
+      ]
+    },
+    {
+      "id": "5e466e1985371841",
+      "title": "Tounsi w noss",
+      "category": "community",
+      "start": "2026-10-30T20:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "Zéphyr La Marsa",
+      "summary": "Community event at Zéphyr La Marsa.",
+      "url": "https://teskerti.tn/evenement/tounsi-w-noss",
+      "sourceId": "teskerti",
+      "sourceName": "Teskerti · tickets & screenings",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Teskerti · tickets & screenings",
+          "url": "https://teskerti.tn/evenement/tounsi-w-noss"
+        }
+      ]
+    },
+    {
+      "id": "a61dda9ec1ed830d",
+      "title": "Tounsi w noss",
+      "category": "arts-culture",
+      "start": "2026-10-30T20:00:00+01:00",
+      "end": "2026-10-30T23:00:00+01:00",
+      "dateOnly": false,
+      "location": "Avenue Habib Bourguiba, La Marsa, Tunis",
+      "summary": "Cultural event at Avenue Habib Bourguiba, La Marsa, Tunis.",
+      "url": "https://joinmeeps.com/fr/event/tounsi-w-noss-ct8n2xpk",
+      "sourceId": "meeps",
+      "sourceName": "Meeps · Tunis agenda",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Meeps · Tunis agenda",
+          "url": "https://joinmeeps.com/fr/event/tounsi-w-noss-ct8n2xpk"
+        }
+      ]
+    },
+    {
+      "id": "72819a42270a6f9d",
+      "title": "Le Fou",
+      "category": "community",
+      "start": "2026-10-30T20:30:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "Théâtre Le 4ème Art",
+      "summary": "Community event at Théâtre Le 4ème Art.",
+      "url": "https://teskerti.tn/evenement/le-fou",
+      "sourceId": "teskerti",
+      "sourceName": "Teskerti · tickets & screenings",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Teskerti · tickets & screenings",
+          "url": "https://teskerti.tn/evenement/le-fou"
+        }
+      ]
+    },
+    {
+      "id": "45f24dc088f0ff60",
+      "title": "Najaa el Fen - Sinouj",
+      "category": "community",
+      "start": "2026-10-30T22:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "Tunis",
+      "summary": "Community event at Tunis.",
+      "url": "https://teskerti.tn/evenement/najaa-el-fen-sinouj",
+      "sourceId": "teskerti",
+      "sourceName": "Teskerti · tickets & screenings",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Teskerti · tickets & screenings",
+          "url": "https://teskerti.tn/evenement/najaa-el-fen-sinouj"
+        }
+      ]
+    },
+    {
+      "id": "69179d728f3a048b",
+      "title": "Les Assises d'Automne de la Zone A",
+      "category": "community",
+      "start": "2026-10-31T12:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "Hôtel El Mouradi El Menzah",
+      "summary": "Community event at Hôtel El Mouradi El Menzah.",
+      "url": "https://aio.events/e/les-assises-dautomne-de-la-zone-a",
+      "sourceId": "aio",
+      "sourceName": "AIO Events · public listings",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:40:36.885323+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "AIO Events · public listings",
+          "url": "https://aio.events/e/les-assises-dautomne-de-la-zone-a"
+        }
+      ]
+    },
+    {
+      "id": "44929aa833c735e2",
+      "title": "RAAD GAMES ÉDITION 1 - WEEK 2",
+      "category": "sports",
+      "start": "2026-10-31T13:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "Parc Sidi Dhrif",
+      "summary": "Activity at Parc Sidi Dhrif.",
+      "url": "https://aio.events/e/raad-games-edition-1-week-2",
+      "sourceId": "aio",
+      "sourceName": "AIO Events · public listings",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:40:36.885323+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "AIO Events · public listings",
+          "url": "https://aio.events/e/raad-games-edition-1-week-2"
+        }
+      ]
+    },
+    {
+      "id": "9b39369348977e63",
+      "title": "Khayel Jamil (spectacle théâtre pour famille)",
+      "category": "arts-culture",
+      "start": "2026-10-31T18:00:00+01:00",
+      "end": "2026-10-31T21:00:00+01:00",
+      "dateOnly": false,
+      "location": "Rue Othmen Tlili 2045, l'Aouina.",
+      "summary": "Cultural event at Rue Othmen Tlili 2045, l'Aouina..",
+      "url": "https://guichet.tn/fr/event/3458/khayel-jamil-spectacle-theatre-pour-famille",
+      "sourceId": "guichet",
+      "sourceName": "Guichet · shows & events",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Guichet · shows & events",
+          "url": "https://guichet.tn/fr/event/3458/khayel-jamil-spectacle-theatre-pour-famille"
+        }
+      ]
+    },
+    {
+      "id": "fd294ba801c51971",
+      "title": "Project X - Halloween Edition",
+      "category": "parties",
+      "start": "2026-10-31T18:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "Phebus Gammarth",
+      "summary": "Party at Phebus Gammarth.",
+      "url": "https://aio.events/e/project-x-halloween-edition",
+      "sourceId": "aio",
+      "sourceName": "AIO Events · public listings",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:40:36.885323+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "AIO Events · public listings",
+          "url": "https://aio.events/e/project-x-halloween-edition"
+        }
+      ]
+    },
+    {
+      "id": "c156e3cbcbbcfd1e",
+      "title": "Feeling",
+      "category": "community",
+      "start": "2026-10-31T19:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "El Teatro التياترو",
+      "summary": "Community event at El Teatro التياترو.",
+      "url": "https://teskerti.tn/evenement/feeling",
+      "sourceId": "teskerti",
+      "sourceName": "Teskerti · tickets & screenings",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Teskerti · tickets & screenings",
+          "url": "https://teskerti.tn/evenement/feeling"
+        }
+      ]
+    },
+    {
+      "id": "4c23f21a98f1ec30",
+      "title": "3 Rue Palestine",
+      "category": "community",
+      "start": "2026-10-31T19:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "Théâtre Le 4ème Art",
+      "summary": "Community event at Théâtre Le 4ème Art.",
+      "url": "https://teskerti.tn/evenement/3-rue-palestine",
+      "sourceId": "teskerti",
+      "sourceName": "Teskerti · tickets & screenings",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Teskerti · tickets & screenings",
+          "url": "https://teskerti.tn/evenement/3-rue-palestine"
+        }
+      ]
+    },
+    {
+      "id": "dfe89a8dba40b260",
+      "title": "Nadah El Shazly",
+      "category": "arts-culture",
+      "start": "2026-10-31T19:30:00+01:00",
+      "end": "2026-10-31T21:30:00+01:00",
+      "dateOnly": false,
+      "location": "B7L9 Art Centre",
+      "summary": "Cultural event at B7L9 Art Centre.",
+      "url": "https://tunis.events/events/mE2EK3/nadah-el-shazly-b7l9-art-centre",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/mE2EK3/nadah-el-shazly-b7l9-art-centre"
+        }
+      ]
+    },
+    {
+      "id": "104bdb357f6fde4d",
+      "title": "FRKN HALLOWEEN",
+      "category": "parties",
+      "start": "2026-10-31T20:00:00+01:00",
+      "end": "2026-11-01T04:00:00+01:00",
+      "dateOnly": false,
+      "location": "AÏNA",
+      "summary": "Party at AÏNA.",
+      "url": "https://tunis.events/events/8yXZJ3/frkn-halloween-aina",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/8yXZJ3/frkn-halloween-aina"
+        }
+      ]
+    },
+    {
+      "id": "a213584692862309",
+      "title": "FRKN Halloween",
+      "category": "raves",
+      "start": "2026-10-31T20:00:00+01:00",
+      "end": "2026-11-01T04:00:00+01:00",
+      "dateOnly": false,
+      "location": "AÏNA, W7CQ+4W5, Gammarth, Tunisie",
+      "summary": "Electronic music event at AÏNA, W7CQ+4W5, Gammarth, Tunisie.",
+      "url": "https://joinmeeps.com/fr/event/frkn-halloween-xcq3hbhy",
+      "sourceId": "meeps",
+      "sourceName": "Meeps · Tunis agenda",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Meeps · Tunis agenda",
+          "url": "https://joinmeeps.com/fr/event/frkn-halloween-xcq3hbhy"
+        }
+      ]
+    },
+    {
+      "id": "268468dd7b8f47cc",
+      "title": "الإنسوان | TÊTE À TÊTE",
+      "category": "arts-culture",
+      "start": "2026-11-01T00:00:00+01:00",
+      "end": null,
+      "dateOnly": true,
+      "location": "El Teatro, Tunis",
+      "summary": "Cultural event at El Teatro, Tunis.",
+      "url": "https://www.billetterie.elteatrotunis.com/fr/programme/tete_a_tete",
+      "sourceId": "elteatro",
+      "sourceName": "El Teatro · official programme",
+      "sourceKind": "organizer",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "El Teatro · official programme",
+          "url": "https://www.billetterie.elteatrotunis.com/fr/programme/tete_a_tete"
+        }
+      ]
+    },
+    {
+      "id": "12681446276e8882",
+      "title": "Tete à Tete - Le 01/11",
+      "category": "community",
+      "start": "2026-11-01T17:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "El Teatro التياترو",
+      "summary": "Community event at El Teatro التياترو.",
+      "url": "https://teskerti.tn/evenement/tete-a-tete-le-0111",
+      "sourceId": "teskerti",
+      "sourceName": "Teskerti · tickets & screenings",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Teskerti · tickets & screenings",
+          "url": "https://teskerti.tn/evenement/tete-a-tete-le-0111"
+        }
+      ]
+    },
+    {
+      "id": "fda11567a0cd2300",
+      "title": "Lucifer Halloween edition",
+      "category": "parties",
+      "start": "2026-11-01T17:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "AÏNA",
+      "summary": "Party at AÏNA.",
+      "url": "https://aio.events/e/lucifer-halloween-edition",
+      "sourceId": "aio",
+      "sourceName": "AIO Events · public listings",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:40:36.885323+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "AIO Events · public listings",
+          "url": "https://aio.events/e/lucifer-halloween-edition"
+        }
+      ]
+    },
+    {
+      "id": "2464298c9cdbd33b",
+      "title": "La chaussure",
+      "category": "community",
+      "start": "2026-11-01T19:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "Théâtre Le 4ème Art",
+      "summary": "Community event at Théâtre Le 4ème Art.",
+      "url": "https://teskerti.tn/evenement/la-chaussure",
+      "sourceId": "teskerti",
+      "sourceName": "Teskerti · tickets & screenings",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Teskerti · tickets & screenings",
+          "url": "https://teskerti.tn/evenement/la-chaussure"
+        }
+      ]
+    },
+    {
+      "id": "ad73db9391853cf7",
+      "title": "Ocheg el Mahfel - le 01/11",
+      "category": "community",
+      "start": "2026-11-01T19:30:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "Palais des Congrès",
+      "summary": "Community event at Palais des Congrès.",
+      "url": "https://teskerti.tn/evenement/ocheg-el-mahfel-le-0111",
+      "sourceId": "teskerti",
+      "sourceName": "Teskerti · tickets & screenings",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Teskerti · tickets & screenings",
+          "url": "https://teskerti.tn/evenement/ocheg-el-mahfel-le-0111"
+        }
+      ]
+    },
+    {
+      "id": "b13a7ff1ee64ffde",
+      "title": "هروب|FUITE",
+      "category": "arts-culture",
+      "start": "2026-11-02T00:00:00+01:00",
+      "end": null,
+      "dateOnly": true,
+      "location": "El Teatro, Tunis",
+      "summary": "Cultural event at El Teatro, Tunis.",
+      "url": "https://www.billetterie.elteatrotunis.com/fr/programme/fuite",
+      "sourceId": "elteatro",
+      "sourceName": "El Teatro · official programme",
+      "sourceKind": "organizer",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "El Teatro · official programme",
+          "url": "https://www.billetterie.elteatrotunis.com/fr/programme/fuite"
+        }
+      ]
+    },
+    {
+      "id": "83375113c9871be2",
+      "title": "Fuite",
+      "category": "community",
+      "start": "2026-11-02T17:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "El Teatro التياترو",
+      "summary": "Community event at El Teatro التياترو.",
+      "url": "https://teskerti.tn/evenement/fuite",
+      "sourceId": "teskerti",
+      "sourceName": "Teskerti · tickets & screenings",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Teskerti · tickets & screenings",
+          "url": "https://teskerti.tn/evenement/fuite"
+        }
+      ]
+    },
+    {
+      "id": "046a9ec47493c270",
+      "title": "Fuite",
+      "category": "community",
+      "start": "2026-11-02T19:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "El Teatro التياترو",
+      "summary": "Community event at El Teatro التياترو.",
+      "url": "https://teskerti.tn/evenement/fuite",
+      "sourceId": "teskerti",
+      "sourceName": "Teskerti · tickets & screenings",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Teskerti · tickets & screenings",
+          "url": "https://teskerti.tn/evenement/fuite"
+        }
+      ]
+    },
+    {
+      "id": "95a79bfbbec0f9ed",
+      "title": "Mirage - Le 02/11",
+      "category": "community",
+      "start": "2026-11-02T19:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "Théâtre Le 4ème Art",
+      "summary": "Community event at Théâtre Le 4ème Art.",
+      "url": "https://teskerti.tn/evenement/mirage-le-0211",
+      "sourceId": "teskerti",
+      "sourceName": "Teskerti · tickets & screenings",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Teskerti · tickets & screenings",
+          "url": "https://teskerti.tn/evenement/mirage-le-0211"
+        }
+      ]
+    },
+    {
+      "id": "050c3c2dac055db8",
+      "title": "بضع ثواني |Laps de Temps",
+      "category": "arts-culture",
+      "start": "2026-11-03T00:00:00+01:00",
+      "end": null,
+      "dateOnly": true,
+      "location": "El Teatro, Tunis",
+      "summary": "Cultural event at El Teatro, Tunis.",
+      "url": "https://www.billetterie.elteatrotunis.com/fr/programme/laps_de_temps",
+      "sourceId": "elteatro",
+      "sourceName": "El Teatro · official programme",
+      "sourceKind": "organizer",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "El Teatro · official programme",
+          "url": "https://www.billetterie.elteatrotunis.com/fr/programme/laps_de_temps"
+        }
+      ]
+    },
+    {
+      "id": "537f3124cd82478c",
+      "title": "Laps de temps - Le 03/11",
+      "category": "community",
+      "start": "2026-11-03T17:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "El Teatro التياترو",
+      "summary": "Community event at El Teatro التياترو.",
+      "url": "https://teskerti.tn/evenement/laps-de-temps-le-0311",
+      "sourceId": "teskerti",
+      "sourceName": "Teskerti · tickets & screenings",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Teskerti · tickets & screenings",
+          "url": "https://teskerti.tn/evenement/laps-de-temps-le-0311"
+        }
+      ]
+    },
+    {
+      "id": "e396b5418f950047",
+      "title": "Power Yoga with Nicole Skarpness @nskarp",
+      "category": "wellness",
+      "start": "2026-11-03T19:00:00+01:00",
+      "end": "2026-11-03T20:30:00+01:00",
+      "dateOnly": false,
+      "location": "Sociale.",
+      "summary": "Wellness session at Sociale..",
+      "url": "https://tunis.events/events/85Vwek/power-yoga-with-nicole-skarpness-nskarp-sociale",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/85Vwek/power-yoga-with-nicole-skarpness-nskarp-sociale"
+        }
+      ]
+    },
+    {
+      "id": "1f9864ae31f1f499",
+      "title": "Cloche",
+      "category": "community",
+      "start": "2026-11-03T19:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "Théâtre Le 4ème Art",
+      "summary": "Community event at Théâtre Le 4ème Art.",
+      "url": "https://teskerti.tn/evenement/cloche",
+      "sourceId": "teskerti",
+      "sourceName": "Teskerti · tickets & screenings",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Teskerti · tickets & screenings",
+          "url": "https://teskerti.tn/evenement/cloche"
+        }
+      ]
+    },
+    {
+      "id": "6d9d2275def87327",
+      "title": "Une nuit d'automne",
+      "category": "community",
+      "start": "2026-11-04T17:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "El Teatro التياترو",
+      "summary": "Community event at El Teatro التياترو.",
+      "url": "https://teskerti.tn/evenement/une-nuit-dautomne",
+      "sourceId": "teskerti",
+      "sourceName": "Teskerti · tickets & screenings",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Teskerti · tickets & screenings",
+          "url": "https://teskerti.tn/evenement/une-nuit-dautomne"
+        }
+      ]
     },
     {
       "id": "55618fc71c54c453",
@@ -98,62 +1894,686 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T12:40:23.509767+01:00",
-      "personallyTested": false
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Sociale · Sidi Bou Saïd",
+          "url": "https://tunis.events/events/3DRYdk/yoga-for-busy-minds-with-judit-yoga_in_sidibousaid-sociale-sidi-bou-said"
+        }
+      ]
+    },
+    {
+      "id": "3921e09a7bf27566",
+      "title": "Mort Express - Le 4/11",
+      "category": "community",
+      "start": "2026-11-04T19:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "Théâtre Le 4ème Art",
+      "summary": "Community event at Théâtre Le 4ème Art.",
+      "url": "https://teskerti.tn/evenement/mort-express-le-411",
+      "sourceId": "teskerti",
+      "sourceName": "Teskerti · tickets & screenings",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Teskerti · tickets & screenings",
+          "url": "https://teskerti.tn/evenement/mort-express-le-411"
+        }
+      ]
+    },
+    {
+      "id": "add49b8c9a136977",
+      "title": "هوما|Testostérone",
+      "category": "arts-culture",
+      "start": "2026-11-05T00:00:00+01:00",
+      "end": null,
+      "dateOnly": true,
+      "location": "El Teatro, Tunis",
+      "summary": "Cultural event at El Teatro, Tunis.",
+      "url": "https://www.billetterie.elteatrotunis.com/fr/programme/testosterone",
+      "sourceId": "elteatro",
+      "sourceName": "El Teatro · official programme",
+      "sourceKind": "organizer",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "El Teatro · official programme",
+          "url": "https://www.billetterie.elteatrotunis.com/fr/programme/testosterone"
+        }
+      ]
+    },
+    {
+      "id": "25173835fa8d445f",
+      "title": "Africa First Expo 2026",
+      "category": "arts-culture",
+      "start": "2026-11-05T08:00:00+01:00",
+      "end": "2026-11-07T22:00:00+01:00",
+      "dateOnly": false,
+      "location": "Parc International des Expositions du Kram, Le Kram, Tunis, Tunisie",
+      "summary": "Cultural event at Parc International des Expositions du Kram, Le Kram, Tunis, Tunisie.",
+      "url": "https://joinmeeps.com/fr/event/africa-first-expo-2026-064gcvwp",
+      "sourceId": "meeps",
+      "sourceName": "Meeps · Tunis agenda",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Meeps · Tunis agenda",
+          "url": "https://joinmeeps.com/fr/event/africa-first-expo-2026-064gcvwp"
+        }
+      ]
+    },
+    {
+      "id": "8ef6a4a6e0c069bd",
+      "title": "Testostérones - Le 5/11",
+      "category": "community",
+      "start": "2026-11-05T17:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "El Teatro التياترو",
+      "summary": "Community event at El Teatro التياترو.",
+      "url": "https://teskerti.tn/evenement/testosterones-le-511",
+      "sourceId": "teskerti",
+      "sourceName": "Teskerti · tickets & screenings",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Teskerti · tickets & screenings",
+          "url": "https://teskerti.tn/evenement/testosterones-le-511"
+        }
+      ]
     },
     {
       "id": "bf8f1429b12298de",
       "title": "Movie Night: UN FILS",
-      "category": "community",
+      "category": "cinema",
       "start": "2026-11-05T19:00:00+01:00",
       "end": "2026-11-05T21:00:00+01:00",
       "dateOnly": false,
       "location": "Sociale Sidi Bou Said",
-      "summary": "Community event at Sociale Sidi Bou Said.",
+      "summary": "Film screening at Sociale Sidi Bou Said.",
       "url": "https://tunis.events/events/moEXl8/movie-night-un-fils-sociale-sidi-bou-said",
       "sourceId": "sociale",
       "sourceName": "Sociale · Sidi Bou Saïd",
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T12:40:23.509767+01:00",
-      "personallyTested": false
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Sociale · Sidi Bou Saïd",
+          "url": "https://tunis.events/events/moEXl8/movie-night-un-fils-sociale-sidi-bou-said"
+        }
+      ]
+    },
+    {
+      "id": "f44e7a0eda1d0567",
+      "title": "Brouva",
+      "category": "community",
+      "start": "2026-11-05T19:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "Théâtre Le 4ème Art",
+      "summary": "Community event at Théâtre Le 4ème Art.",
+      "url": "https://teskerti.tn/evenement/brouva",
+      "sourceId": "teskerti",
+      "sourceName": "Teskerti · tickets & screenings",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Teskerti · tickets & screenings",
+          "url": "https://teskerti.tn/evenement/brouva"
+        }
+      ]
+    },
+    {
+      "id": "66bd754bb961be7d",
+      "title": "A Coeur Ouvert",
+      "category": "community",
+      "start": "2026-11-05T19:30:00+01:00",
+      "end": "2026-11-05T21:00:00+01:00",
+      "dateOnly": false,
+      "location": "Lartisto théâtre et cinéma",
+      "summary": "Community event at Lartisto théâtre et cinéma.",
+      "url": "https://tunis.events/events/8vq6N3/a-coeur-ouvert-lartisto-theatre-et-cinema",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/8vq6N3/a-coeur-ouvert-lartisto-theatre-et-cinema"
+        }
+      ]
+    },
+    {
+      "id": "393aff0011c38206",
+      "title": "هاملت كوميديا الموت | Hamlet 'comédie de la mort",
+      "category": "arts-culture",
+      "start": "2026-11-06T00:00:00+01:00",
+      "end": null,
+      "dateOnly": true,
+      "location": "El Teatro, Tunis",
+      "summary": "Cultural event at El Teatro, Tunis.",
+      "url": "https://www.billetterie.elteatrotunis.com/fr/programme/hamlet_comedie_de_la_mort",
+      "sourceId": "elteatro",
+      "sourceName": "El Teatro · official programme",
+      "sourceKind": "organizer",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "El Teatro · official programme",
+          "url": "https://www.billetterie.elteatrotunis.com/fr/programme/hamlet_comedie_de_la_mort"
+        }
+      ]
+    },
+    {
+      "id": "beb2f67a07d08fa7",
+      "title": "Hamlet",
+      "category": "community",
+      "start": "2026-11-06T17:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "El Teatro التياترو",
+      "summary": "Community event at El Teatro التياترو.",
+      "url": "https://teskerti.tn/evenement/hamlet",
+      "sourceId": "teskerti",
+      "sourceName": "Teskerti · tickets & screenings",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Teskerti · tickets & screenings",
+          "url": "https://teskerti.tn/evenement/hamlet"
+        }
+      ]
+    },
+    {
+      "id": "32ead30310575511",
+      "title": "Nouma - le 06/11",
+      "category": "community",
+      "start": "2026-11-06T19:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "Théâtre Le 4ème Art",
+      "summary": "Community event at Théâtre Le 4ème Art.",
+      "url": "https://teskerti.tn/evenement/nouma-le-0611",
+      "sourceId": "teskerti",
+      "sourceName": "Teskerti · tickets & screenings",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Teskerti · tickets & screenings",
+          "url": "https://teskerti.tn/evenement/nouma-le-0611"
+        }
+      ]
+    },
+    {
+      "id": "2d649c9a1a889836",
+      "title": "Le Fou | المجنون",
+      "category": "arts-culture",
+      "start": "2026-11-07T00:00:00+01:00",
+      "end": null,
+      "dateOnly": true,
+      "location": "El Teatro, Tunis",
+      "summary": "Cultural event at El Teatro, Tunis.",
+      "url": "https://www.billetterie.elteatrotunis.com/fr/programme/le_fou",
+      "sourceId": "elteatro",
+      "sourceName": "El Teatro · official programme",
+      "sourceKind": "organizer",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "El Teatro · official programme",
+          "url": "https://www.billetterie.elteatrotunis.com/fr/programme/le_fou"
+        }
+      ]
+    },
+    {
+      "id": "9fd0041d3e161e80",
+      "title": "L'Effet Papillon",
+      "category": "community",
+      "start": "2026-11-07T19:30:00+01:00",
+      "end": "2026-11-07T21:00:00+01:00",
+      "dateOnly": false,
+      "location": "Lartisto théâtre et cinéma",
+      "summary": "Community event at Lartisto théâtre et cinéma.",
+      "url": "https://tunis.events/events/mZrNZm/leffet-papillon-lartisto-theatre-et-cinema",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/mZrNZm/leffet-papillon-lartisto-theatre-et-cinema"
+        }
+      ]
+    },
+    {
+      "id": "cc59a80ba8d26aec",
+      "title": "Tchaika",
+      "category": "community",
+      "start": "2026-11-07T20:30:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "Théâtre Le 4ème Art",
+      "summary": "Community event at Théâtre Le 4ème Art.",
+      "url": "https://teskerti.tn/evenement/tchaika",
+      "sourceId": "teskerti",
+      "sourceName": "Teskerti · tickets & screenings",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Teskerti · tickets & screenings",
+          "url": "https://teskerti.tn/evenement/tchaika"
+        }
+      ]
+    },
+    {
+      "id": "74b7e1ac803eadf9",
+      "title": "Power Yoga with Nicole Skarpness @nskarp",
+      "category": "wellness",
+      "start": "2026-11-10T19:00:00+01:00",
+      "end": "2026-11-10T20:30:00+01:00",
+      "dateOnly": false,
+      "location": "Sociale.",
+      "summary": "Wellness session at Sociale..",
+      "url": "https://tunis.events/events/3O67Bm/power-yoga-with-nicole-skarpness-nskarp-sociale",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/3O67Bm/power-yoga-with-nicole-skarpness-nskarp-sociale"
+        }
+      ]
+    },
+    {
+      "id": "cfccf915bac68e6d",
+      "title": "Yoga for Busy Minds with Judit @yoga_in_sidibousaid",
+      "category": "wellness",
+      "start": "2026-11-11T19:00:00+01:00",
+      "end": "2026-11-11T20:00:00+01:00",
+      "dateOnly": false,
+      "location": "Sociale Sidi Bou Said",
+      "summary": "Wellness session at Sociale Sidi Bou Said.",
+      "url": "https://tunis.events/events/kM610m/yoga-for-busy-minds-with-judit-yoga_in_sidibousaid-sociale-sidi-bou-said",
+      "sourceId": "sociale",
+      "sourceName": "Sociale · Sidi Bou Saïd",
+      "sourceKind": "organizer",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Sociale · Sidi Bou Saïd",
+          "url": "https://tunis.events/events/kM610m/yoga-for-busy-minds-with-judit-yoga_in_sidibousaid-sociale-sidi-bou-said"
+        }
+      ]
     },
     {
       "id": "6257dba65abcf3f0",
       "title": "Movie Night: REGARDE MOI",
-      "category": "community",
+      "category": "cinema",
       "start": "2026-11-12T19:00:00+01:00",
       "end": "2026-11-12T21:00:00+01:00",
       "dateOnly": false,
       "location": "Sociale Sidi Bou Said",
-      "summary": "Community event at Sociale Sidi Bou Said.",
+      "summary": "Film screening at Sociale Sidi Bou Said.",
       "url": "https://tunis.events/events/kQn7qm/movie-night-regarde-moi-sociale-sidi-bou-said",
       "sourceId": "sociale",
       "sourceName": "Sociale · Sidi Bou Saïd",
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T12:40:23.509767+01:00",
-      "personallyTested": false
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Sociale · Sidi Bou Saïd",
+          "url": "https://tunis.events/events/kQn7qm/movie-night-regarde-moi-sociale-sidi-bou-said"
+        }
+      ]
     },
     {
-      "id": "aef338e9126b0318",
-      "title": "Movie Night: LA BELLE ET LA MEUTE",
-      "category": "community",
-      "start": "2026-11-19T19:00:00+01:00",
-      "end": "2026-11-19T21:00:00+01:00",
+      "id": "7502597a4c57fa43",
+      "title": "Power Yoga with Nicole Skarpness @nskarp",
+      "category": "wellness",
+      "start": "2026-11-17T19:00:00+01:00",
+      "end": "2026-11-17T20:30:00+01:00",
+      "dateOnly": false,
+      "location": "Sociale.",
+      "summary": "Wellness session at Sociale..",
+      "url": "https://tunis.events/events/kXErBm/power-yoga-with-nicole-skarpness-nskarp-sociale",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/kXErBm/power-yoga-with-nicole-skarpness-nskarp-sociale"
+        }
+      ]
+    },
+    {
+      "id": "107ab77389cbdb4e",
+      "title": "Yoga for Busy Minds with Judit @yoga_in_sidibousaid",
+      "category": "wellness",
+      "start": "2026-11-18T19:00:00+01:00",
+      "end": "2026-11-18T20:00:00+01:00",
       "dateOnly": false,
       "location": "Sociale Sidi Bou Said",
-      "summary": "Community event at Sociale Sidi Bou Said.",
-      "url": "https://tunis.events/events/3jQ5Ym/movie-night-la-belle-et-la-meute-sociale-sidi-bou-said",
+      "summary": "Wellness session at Sociale Sidi Bou Said.",
+      "url": "https://tunis.events/events/8KQRGm/yoga-for-busy-minds-with-judit-yoga_in_sidibousaid-sociale-sidi-bou-said",
       "sourceId": "sociale",
       "sourceName": "Sociale · Sidi Bou Saïd",
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T12:40:23.509767+01:00",
-      "personallyTested": false
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Sociale · Sidi Bou Saïd",
+          "url": "https://tunis.events/events/8KQRGm/yoga-for-busy-minds-with-judit-yoga_in_sidibousaid-sociale-sidi-bou-said"
+        }
+      ]
+    },
+    {
+      "id": "4e8b54a9c03f04f4",
+      "title": "6éme Edition de la journée tunisienne des tests logiciels",
+      "category": "community",
+      "start": "2026-11-19T09:30:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "LA CITÉ DES SCIENCES À TUNIS",
+      "summary": "Community event at LA CITÉ DES SCIENCES À TUNIS.",
+      "url": "https://teskerti.tn/evenement/6eme-edition-de-la-journee-tunisienne-des-tests-logiciels",
+      "sourceId": "teskerti",
+      "sourceName": "Teskerti · tickets & screenings",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Teskerti · tickets & screenings",
+          "url": "https://teskerti.tn/evenement/6eme-edition-de-la-journee-tunisienne-des-tests-logiciels"
+        }
+      ]
+    },
+    {
+      "id": "aef338e9126b0318",
+      "title": "Movie Night: LA BELLE ET LA MEUTE",
+      "category": "cinema",
+      "start": "2026-11-19T19:00:00+01:00",
+      "end": "2026-11-19T21:00:00+01:00",
+      "dateOnly": false,
+      "location": "Sociale Sidi Bou Said",
+      "summary": "Film screening at Sociale Sidi Bou Said.",
+      "url": "https://tunis.events/events/3jQ5Ym/movie-night-la-belle-et-la-meute-sociale-sidi-bou-said",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/3jQ5Ym/movie-night-la-belle-et-la-meute-sociale-sidi-bou-said"
+        }
+      ]
+    },
+    {
+      "id": "88681d2fbb32e3ac",
+      "title": "Performance - Labes, Selim Ben Safia, ​",
+      "category": "arts-culture",
+      "start": "2026-11-20T19:30:00+01:00",
+      "end": "2026-11-20T20:30:00+01:00",
+      "dateOnly": false,
+      "location": "Théâtre des Jeunes Créateurs, Cité de la Culture, R56P+C9J, Av. Mohamed 5, Tunis",
+      "summary": "Cultural event at Théâtre des Jeunes Créateurs, Cité de la Culture, R56P+C9J, Av. Mohamed 5, Tunis.",
+      "url": "https://www.artexplora.org/festival/performance/performance---selim-ben-safia-labes",
+      "sourceId": "artexplora",
+      "sourceName": "Art Explora · Tunis programme",
+      "sourceKind": "organizer",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Art Explora · Tunis programme",
+          "url": "https://www.artexplora.org/festival/performance/performance---selim-ben-safia-labes"
+        }
+      ]
+    },
+    {
+      "id": "38363d507b509f6c",
+      "title": "Labes - Selim Ben Safia",
+      "category": "community",
+      "start": "2026-11-20T19:30:00+01:00",
+      "end": "2026-11-20T20:30:00+01:00",
+      "dateOnly": false,
+      "location": "Salle des Jeunes Créateurs - Cité de la Culture",
+      "summary": "Community event at Salle des Jeunes Créateurs - Cité de la Culture.",
+      "url": "https://tunis.events/events/kVy7Q8/labes-selim-ben-safia-salle-des-jeunes-createurs-cite-de-la-culture",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/kVy7Q8/labes-selim-ben-safia-salle-des-jeunes-createurs-cite-de-la-culture"
+        }
+      ]
+    },
+    {
+      "id": "a77d9d704a530559",
+      "title": "Listening Session, Screening & Live Performance",
+      "category": "cinema",
+      "start": "2026-11-21T17:00:00+01:00",
+      "end": "2026-11-21T18:00:00+01:00",
+      "dateOnly": false,
+      "location": "B7L9 Art Centre",
+      "summary": "Film screening at B7L9 Art Centre.",
+      "url": "https://tunis.events/events/3G2Prm/listening-session-screening-live-performance-b7l9-art-centre",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/3G2Prm/listening-session-screening-live-performance-b7l9-art-centre"
+        }
+      ]
+    },
+    {
+      "id": "0e49965ce76b90f5",
+      "title": "Hyperculte",
+      "category": "community",
+      "start": "2026-11-22T18:00:00+01:00",
+      "end": "2026-11-22T19:30:00+01:00",
+      "dateOnly": false,
+      "location": "B7L9 Art Centre",
+      "summary": "Community event at B7L9 Art Centre.",
+      "url": "https://tunis.events/events/klvgE3/hyperculte-b7l9-art-centre",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/klvgE3/hyperculte-b7l9-art-centre"
+        }
+      ]
+    },
+    {
+      "id": "2b60248744bc86b2",
+      "title": "Yoga for Busy Minds with Judit @yoga_in_sidibousaid",
+      "category": "wellness",
+      "start": "2026-11-25T19:00:00+01:00",
+      "end": "2026-11-25T20:00:00+01:00",
+      "dateOnly": false,
+      "location": "Sociale Sidi Bou Said",
+      "summary": "Wellness session at Sociale Sidi Bou Said.",
+      "url": "https://tunis.events/events/kW1G53/yoga-for-busy-minds-with-judit-yoga_in_sidibousaid-sociale-sidi-bou-said",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/kW1G53/yoga-for-busy-minds-with-judit-yoga_in_sidibousaid-sociale-sidi-bou-said"
+        }
+      ]
+    },
+    {
+      "id": "fb0db61944904896",
+      "title": "Panorama International Short Film Festival 2027",
+      "category": "cinema",
+      "start": "2027-01-12T18:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "Centre Culturel Africa des Arts de Tunis",
+      "summary": "Film screening at Centre Culturel Africa des Arts de Tunis.",
+      "url": "https://aio.events/e/panorama-international-short-film-festival-2027",
+      "sourceId": "aio",
+      "sourceName": "AIO Events · public listings",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:40:36.885323+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "AIO Events · public listings",
+          "url": "https://aio.events/e/panorama-international-short-film-festival-2027"
+        }
+      ]
+    },
+    {
+      "id": "1058aff116fa1a1c",
+      "title": "Immersion artistique à Dar Ya, au cœur de la Médina de Tunis",
+      "category": "workshops",
+      "start": "2027-03-27T10:00:00+01:00",
+      "end": "2027-04-03T17:00:00+01:00",
+      "dateOnly": false,
+      "location": "Tunisia",
+      "summary": "Workshop at Tunisia.",
+      "url": "https://tunis.events/events/mwJJjk/immersion-artistique-a-dar-ya-au-cur-de-la-medina-de-tunis-tunisia",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/mwJJjk/immersion-artistique-a-dar-ya-au-cur-de-la-medina-de-tunis-tunisia"
+        }
+      ]
+    },
+    {
+      "id": "7567ce57873f501c",
+      "title": "YogaTribes — Tunisie Mer et Désert",
+      "category": "yoga-retreats",
+      "start": "2027-10-06T00:00:00+01:00",
+      "end": "2027-10-16T00:00:00+01:00",
+      "dateOnly": true,
+      "location": "Tunis · multi-stop Tunisia retreat",
+      "summary": "11-day Yoga retreat at Tunis · multi-stop Tunisia retreat.",
+      "url": "https://yogamonde.yogatribes.com/fr/tunisie/",
+      "sourceId": "yogatribes",
+      "sourceName": "YogaTribes · Tunisia retreats",
+      "sourceKind": "organizer",
+      "schedule": null,
+      "note": "Multi-stop travel retreat including Tunis and southern Tunisia. Confirm the itinerary with the organizer.",
+      "checkedAt": "2026-10-28T13:34:56.746225+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "YogaTribes · Tunisia retreats",
+          "url": "https://yogamonde.yogatribes.com/fr/tunisie/"
+        }
+      ]
     }
   ]
 }
