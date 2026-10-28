@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-28T12:28:23.392939+01:00",
+  "updatedAt": "2026-10-28T12:40:23.509767+01:00",
   "timezone": "Africa/Tunis",
   "horizonMonths": 12,
   "instagram": {
@@ -16,7 +16,7 @@
       "pagesChecked": 6,
       "eventsFound": 5,
       "errors": [],
-      "checkedAt": "2026-10-28T12:28:23.392939+01:00",
+      "checkedAt": "2026-10-28T12:40:23.509767+01:00",
       "rootSuccess": true
     },
     {
@@ -27,9 +27,9 @@
       "status": "ok",
       "coverage": "Dated events at Sociale, through its public venue calendar",
       "pagesChecked": 20,
-      "eventsFound": 2,
+      "eventsFound": 6,
       "errors": [],
-      "checkedAt": "2026-10-28T12:28:23.392939+01:00",
+      "checkedAt": "2026-10-28T12:40:23.509767+01:00",
       "rootSuccess": true
     },
     {
@@ -42,7 +42,7 @@
       "pagesChecked": 1,
       "eventsFound": 0,
       "errors": [],
-      "checkedAt": "2026-10-28T12:28:23.392939+01:00",
+      "checkedAt": "2026-10-28T12:40:23.509767+01:00",
       "rootSuccess": true
     }
   ],
@@ -62,7 +62,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T12:28:23.392939+01:00",
+      "checkedAt": "2026-10-28T12:40:23.509767+01:00",
       "personallyTested": false
     },
     {
@@ -80,7 +80,25 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T12:28:23.392939+01:00",
+      "checkedAt": "2026-10-28T12:40:23.509767+01:00",
+      "personallyTested": false
+    },
+    {
+      "id": "55618fc71c54c453",
+      "title": "Yoga for Busy Minds with Judit @yoga_in_sidibousaid",
+      "category": "wellness",
+      "start": "2026-11-04T19:00:00+01:00",
+      "end": "2026-11-04T20:00:00+01:00",
+      "dateOnly": false,
+      "location": "Sociale Sidi Bou Said",
+      "summary": "Wellness session at Sociale Sidi Bou Said.",
+      "url": "https://tunis.events/events/3DRYdk/yoga-for-busy-minds-with-judit-yoga_in_sidibousaid-sociale-sidi-bou-said",
+      "sourceId": "sociale",
+      "sourceName": "Sociale · Sidi Bou Saïd",
+      "sourceKind": "organizer",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-28T12:40:23.509767+01:00",
       "personallyTested": false
     },
     {
@@ -93,12 +111,12 @@
       "location": "Sociale Sidi Bou Said",
       "summary": "Community event at Sociale Sidi Bou Said.",
       "url": "https://tunis.events/events/moEXl8/movie-night-un-fils-sociale-sidi-bou-said",
-      "sourceId": "tunis-events",
-      "sourceName": "Tunis Events · Sidi Bou listings",
-      "sourceKind": "calendar",
+      "sourceId": "sociale",
+      "sourceName": "Sociale · Sidi Bou Saïd",
+      "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T12:28:23.392939+01:00",
+      "checkedAt": "2026-10-28T12:40:23.509767+01:00",
       "personallyTested": false
     },
     {
@@ -111,12 +129,12 @@
       "location": "Sociale Sidi Bou Said",
       "summary": "Community event at Sociale Sidi Bou Said.",
       "url": "https://tunis.events/events/kQn7qm/movie-night-regarde-moi-sociale-sidi-bou-said",
-      "sourceId": "tunis-events",
-      "sourceName": "Tunis Events · Sidi Bou listings",
-      "sourceKind": "calendar",
+      "sourceId": "sociale",
+      "sourceName": "Sociale · Sidi Bou Saïd",
+      "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T12:28:23.392939+01:00",
+      "checkedAt": "2026-10-28T12:40:23.509767+01:00",
       "personallyTested": false
     },
     {
@@ -129,12 +147,12 @@
       "location": "Sociale Sidi Bou Said",
       "summary": "Community event at Sociale Sidi Bou Said.",
       "url": "https://tunis.events/events/3jQ5Ym/movie-night-la-belle-et-la-meute-sociale-sidi-bou-said",
-      "sourceId": "tunis-events",
-      "sourceName": "Tunis Events · Sidi Bou listings",
-      "sourceKind": "calendar",
+      "sourceId": "sociale",
+      "sourceName": "Sociale · Sidi Bou Saïd",
+      "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T12:28:23.392939+01:00",
+      "checkedAt": "2026-10-28T12:40:23.509767+01:00",
       "personallyTested": false
     }
   ]
