@@ -1963,15 +1963,15 @@ html[dir="rtl"] .hero-mission__discover { letter-spacing: 0; }
 .hero-mission__copy { display: block; }
 .hero-mission__intro { margin-bottom: 0; }
 .hero-mission__layout { --column-gap: clamp(24px, 5vw, 48px); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--column-gap); align-items: stretch; padding-block: clamp(20px, 4vw, 32px); border-bottom: 1px solid var(--color-line); direction: ltr; }
-.hero-mission__roles .hero-mission__eyebrow, .hero-mission__roles .hero-mission__responsibility, .hero-mission__roles .hero-mission__statement { color: var(--color-ink); }
-.hero-mission__roles { min-width: 0; text-align: justify; text-align-last: start; -webkit-hyphens: auto; hyphens: auto; overflow-wrap: break-word; }
+.hero-mission__roles .hero-mission__eyebrow, .hero-mission__roles .hero-mission__responsibility, .hero-mission__roles .hero-mission__statement { color: var(--color-cobalt); }
+.hero-mission__roles { min-width: 0; container-type: inline-size; text-align: start; -webkit-hyphens: none; hyphens: none; overflow-wrap: normal; word-break: normal; }
 .hero-mission__guide { position: relative; display: flex; align-items: center; min-width: 0; }
 .hero-mission__guide::before { content: ""; position: absolute; top: 0; bottom: 0; left: calc(var(--column-gap) / -2 - .5px); width: 1px; background: var(--color-line); pointer-events: none; }
-.hero-mission__roles .hero-mission__identity { font-size: clamp(16px, 3.8vw, 26px); }
-.hero-mission__roles .hero-mission__responsibility { font-size: clamp(21px, 5vw, 46px); line-height: 1.12; overflow-wrap: break-word; }
+.hero-mission__roles .hero-mission__identity { font-size: clamp(16px, 3.8vw, 26px); line-height: 1.3; text-wrap: balance; }
+.hero-mission__roles .hero-mission__responsibility { margin-top: 14px; font-size: clamp(18px, 11.5cqw, 42px); font-weight: 550; line-height: 1.2; letter-spacing: -.015em; overflow-wrap: normal; text-wrap: balance; }
 .hero-mission__roles .hero-mission__work-line { font-size: clamp(13px, 2.9vw, 18px); margin-top: 12px; }
-.hero-mission__roles .hero-mission__community { font-size: clamp(13px, 2.7vw, 14px); }
-.hero-mission__roles .hero-mission__statement { max-width: none; font-size: clamp(13px, 2.9vw, 18px); font-weight: 550; line-height: 1.3; margin-top: 12px; }
+.hero-mission__roles .hero-mission__community { font-size: clamp(13px, 2.7vw, 14px); margin-top: 12px; line-height: 1.5; }
+.hero-mission__roles .hero-mission__statement { max-width: none; font-size: clamp(13px, 2.9vw, 18px); font-weight: 550; line-height: 1.45; margin-top: 16px; }
 .hero-mission__participate { margin-top: 28px; }
 .hero-mission__actions { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
 .hero-mission__support { grid-column: 1 / -1; }
