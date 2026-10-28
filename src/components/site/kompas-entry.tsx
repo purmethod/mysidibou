@@ -1,8 +1,7 @@
-/** Large in-flow compass beside the mission and participation copy. */
+/** Compact compass beside the mission copy. */
 export function KompasEntry() {
   return (
-    <a className="kompas-entry" href="/kompas" aria-label="Open KOMPAS — the best things in Sidi Bou" lang="en" dir="ltr">
-      <span className="kompas-entry__title">KOMPAS</span>
+    <a className="kompas-entry" href="/kompas" aria-label="Explore Sidi Bou — open KOMPAS" lang="en" dir="ltr">
       <svg viewBox="0 0 72 72" fill="none" aria-hidden="true">
         <circle cx="36" cy="36" r="33" stroke="currentColor" strokeOpacity=".2" />
         {Array.from({ length: 24 }, (_, i) => (
@@ -14,8 +13,7 @@ export function KompasEntry() {
           <circle cx="36" cy="36" r="2.5" fill="var(--color-paper)" stroke="currentColor" />
         </g>
       </svg>
-      <span className="kompas-entry__tagline">THE BEST THINGS<br />IN SIDI BOU</span>
-      <span className="kompas-entry__selection">HAND SELECTED</span>
+      <span className="kompas-entry__tagline">EXPLORE<br />SIDI BOU</span>
       <span className="kompas-entry__click">CLICK</span>
     </a>
   );

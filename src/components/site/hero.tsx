@@ -43,21 +43,21 @@ export function HeroSection() {
               <p className="hero-mission__community">{copy.community}</p>
               <p className="hero-mission__statement">{copy.mission}</p>
             </div>
-            <div className="hero-mission__participate">
-              <p className="hero-mission__eyebrow">{copy.yourRole}</p>
-              <h2>{copy.participate}</h2>
-              <p className="hero-mission__invitation">{copy.invitation}</p>
-              <div className="hero-mission__actions">
-                <a className="hero-mission__support" data-action="support" href={site.donate.link}><HeartIcon /><span>{dict.cta.donate}</span></a>
-                {/* Let the OS handle the directly tapped Instagram link without requesting a new tab. */}
-                <a data-action="like" href={site.social.instagramMissionReel} rel="noopener noreferrer" aria-label={copy.likeLabel}><MissionIcon name="like" /><span>{copy.like}</span></a>
-                <a data-action="share" href={site.social.instagramMissionReel} rel="noopener noreferrer" aria-label={copy.shareLabel}><MissionIcon name="share" /><span>{copy.share}</span></a>
-              </div>
-            </div>
           </div>
           <aside className="hero-mission__guide" aria-label="Discover Sidi Bou">
             <KompasEntry />
           </aside>
+        </div>
+        <div className="hero-mission__participate">
+          <p className="hero-mission__eyebrow">{copy.yourRole}</p>
+          <h2>{copy.participate}</h2>
+          <p className="hero-mission__invitation">{copy.invitation}</p>
+          <div className="hero-mission__actions">
+            <a className="hero-mission__support" data-action="support" href={site.donate.link}><HeartIcon /><span>{dict.cta.donate}</span></a>
+            {/* Let the OS handle the directly tapped Instagram link without requesting a new tab. */}
+            <a data-action="like" href={site.social.instagramMissionReel} rel="noopener noreferrer" aria-label={copy.likeLabel}><MissionIcon name="like" /><span>{copy.like}</span></a>
+            <a data-action="share" href={site.social.instagramMissionReel} rel="noopener noreferrer" aria-label={copy.shareLabel}><MissionIcon name="share" /><span>{copy.share}</span></a>
+          </div>
         </div>
         <div className="hero-mission__impact">
           <ul className="hero-mission__commitments">
