@@ -20,7 +20,6 @@ import {
 } from "@/components/site/sections";
 import { HeroSection } from "@/components/site/hero";
 import { DonatePill, SiteNav } from "@/components/site/nav";
-import { KompasEntry } from "@/components/site/kompas-entry";
 import { ScrollProgress } from "@/components/site/ui";
 
 export const Route = createFileRoute("/")({
@@ -50,7 +49,6 @@ function Index() {
       <FinaleSection />
       <FooterSection />
       <DonatePill />
-      <KompasEntry />
     </main>
   );
 }

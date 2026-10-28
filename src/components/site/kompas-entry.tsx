@@ -1,7 +1,8 @@
-/** A thumb-height entrance to the village's KOMPAS. */
+/** Large in-flow compass beside the mission and participation copy. */
 export function KompasEntry() {
   return (
-    <a className="kompas-entry" href="/kompas" aria-label="Open KOMPAS — everything in Sidi Bou">
+    <a className="kompas-entry" href="/kompas" aria-label="Open KOMPAS — the best things in Sidi Bou" lang="en" dir="ltr">
+      <span className="kompas-entry__title">KOMPAS</span>
       <svg viewBox="0 0 72 72" fill="none" aria-hidden="true">
         <circle cx="36" cy="36" r="33" stroke="currentColor" strokeOpacity=".2" />
         {Array.from({ length: 24 }, (_, i) => (
@@ -13,7 +14,9 @@ export function KompasEntry() {
           <circle cx="36" cy="36" r="2.5" fill="var(--color-paper)" stroke="currentColor" />
         </g>
       </svg>
-      <span>KOMPAS</span>
+      <span className="kompas-entry__tagline">THE BEST THINGS<br />IN SIDI BOU</span>
+      <span className="kompas-entry__selection">HAND SELECTED</span>
+      <span className="kompas-entry__click">CLICK</span>
     </a>
   );
 }

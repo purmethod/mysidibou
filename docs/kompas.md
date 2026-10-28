@@ -1,6 +1,6 @@
 # KOMPAS
 
-The homepage has a fixed thumb-height compass link to `/kompas`. It is independent of the existing Support action. `/kompas` reuses MYKOTAO's ring, vertical picker, momentum/snap, keyboard controls, selection, category panels and viewport fitting. Supporting copy is English. The destination uses mysidibou's paper/cobalt palette and a KOMPAS wordmark; it does not reuse the Koh Tao island silhouette.
+The homepage places Our Role and Your Role in the left column, with a large in-flow compass link to `/kompas` on the right, including on mobile. The existing Support action is preserved. `/kompas` reuses MYKOTAO's ring, vertical picker, momentum/snap, keyboard controls, selection, category panels and viewport fitting. Supporting copy is English. The destination uses mysidibou's paper/cobalt palette and a thin KOMPAS wordmark over a code-native Tunisia outline traced from the supplied map, with one dot at Sidi Bou Saïd.
 
 The two KOMPAS pages are standalone HTML documents served by TanStack Start GET routes. Their CSS and vanilla JS are isolated in `public/kompas/`, so they do not change the existing mission or donation flows. Links to these routes must be ordinary anchors (full document navigation), not client-side router transitions. `/kompas/whats-next` is a non-nested file route so its GET handler returns its own document.
 

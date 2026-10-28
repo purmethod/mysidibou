@@ -107,3 +107,5 @@ html.is-home, html.is-home body { height: 100%; overflow: hidden; overscroll-beh
 h1 { aspect-ratio: 1; }
 .village-home { position: absolute; left: max(18px, env(safe-area-inset-left)); bottom: max(20px, env(safe-area-inset-bottom)); font-size: 9px; letter-spacing: .08em; text-decoration: none; }
 footer { position: relative; }
+
+.compass-wordmark .logo { width: 100%; height: 100%; object-fit: contain; }

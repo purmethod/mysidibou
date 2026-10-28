@@ -1960,13 +1960,40 @@ html[dir="rtl"] .hero-mission__discover { letter-spacing: 0; }
 }
 
 
-/* Village guide: reachable with the thumb, separate from the support action. */
-.kompas-entry { position: fixed; z-index: 44; inset-inline-end: max(16px, env(safe-area-inset-right)); top: 64vh; top: 64dvh; transform: translateY(-50%); display: flex; flex-direction: column; align-items: center; gap: 6px; width: 76px; padding: 5px 5px 9px; border-radius: 42px; color: var(--color-cobalt); background: var(--color-paper); box-shadow: 0 3px 20px #101d3110; text-decoration: none; -webkit-tap-highlight-color: transparent; }
-.kompas-entry svg { display: block; width: 64px; height: 64px; }
-.kompas-entry span { font-size: 8px; line-height: 1.2; font-weight: 500; letter-spacing: .16em; }
+/* Mission and participation left; a generous compass entrance on the right. */
+.hero-mission__copy { display: block; }
+.hero-mission__layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: clamp(14px, 4vw, 48px); align-items: start; direction: ltr; }
+.hero-mission__roles { min-width: 0; text-align: start; }
+.hero-mission__guide { min-width: 0; padding-top: 8px; }
+.hero-mission__roles .hero-mission__identity { font-size: clamp(16px, 3.8vw, 26px); }
+.hero-mission__roles .hero-mission__responsibility { font-size: clamp(23px, 5.6vw, 52px); line-height: 1.06; overflow-wrap: normal; }
+.hero-mission__roles .hero-mission__work-line { font-size: clamp(12px, 2.9vw, 18px); margin-top: 12px; }
+.hero-mission__roles .hero-mission__community { font-size: clamp(11px, 2.7vw, 14px); }
+.hero-mission__roles .hero-mission__statement { font-size: clamp(12px, 2.8vw, 16px); margin-top: 12px; }
+.hero-mission__roles .hero-mission__participate { margin-top: 24px; }
+.hero-mission__roles .hero-mission__participate h2 { font-size: clamp(17px, 4vw, 26px); }
+.hero-mission__roles .hero-mission__invitation { font-size: clamp(11px, 2.7vw, 14px); }
+.hero-mission__roles .hero-mission__actions { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+.hero-mission__roles .hero-mission__support { grid-column: 1 / -1; }
+.hero-mission__roles .hero-mission__actions a { min-height: 44px; font-size: 11px; gap: 5px; }
+.hero-mission__impact { margin-top: 28px; }
+.kompas-entry { display: flex; flex-direction: column; align-items: center; width: 100%; margin: 0; padding: 0; color: var(--color-ink); text-align: center; text-decoration: none; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-tap-highlight-color: transparent; }
+.kompas-entry__title { font-size: clamp(15px, 3.5vw, 32px); line-height: 1.4; font-weight: 300; letter-spacing: .2em; padding-left: .2em; }
+.kompas-entry > svg { display: block; width: 100%; max-width: 370px; height: auto; margin: 18px 0; color: var(--color-cobalt); }
+.kompas-entry__tagline, .kompas-entry__selection, .kompas-entry__click { font-size: clamp(8px, 1.9vw, 12px); line-height: 1.8; font-weight: 500; letter-spacing: .16em; }
+.kompas-entry__selection { margin-top: 9px; }
+.kompas-entry__click { margin-top: 22px; padding: 10px; }
 .kompas-entry__needle { transform-origin: 36px 36px; transition: transform .3s ease; }
 .kompas-entry:hover .kompas-entry__needle { transform: rotate(25deg); }
-.kompas-entry:focus-visible { outline: 2px solid var(--color-cobalt); outline-offset: 4px; }
-@media (min-width: 800px) { .kompas-entry { inset-inline-end: 28px; } }
-@media (max-height: 500px) { .kompas-entry { top: 50dvh; width: 62px; } .kompas-entry svg { width: 50px; height: 50px; } }
+.kompas-entry:focus-visible { outline: 2px solid var(--color-cobalt); outline-offset: 6px; border-radius: 3px; }
+html[dir="rtl"] .hero-mission__roles { direction: rtl; }
+@media (min-width: 800px) {
+  .hero-mission__guide { padding-top: 22px; }
+  .hero-mission__roles .hero-mission__actions { grid-template-columns: 1.4fr 1fr 1fr; }
+  .hero-mission__roles .hero-mission__support { grid-column: auto; }
+  .hero-mission__roles .hero-mission__actions a { font-size: 14px; }
+  .hero-mission__commitments { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .hero-mission__commitments li:nth-child(-n+2) { border-bottom: 0; }
+  .hero-mission__commitments li:not(:last-child) { border-inline-end: 1px solid #e8e8e3; }
+}
 @media (prefers-reduced-motion: reduce) { .kompas-entry__needle { transition: none; } }

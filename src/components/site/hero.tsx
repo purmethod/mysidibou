@@ -3,6 +3,7 @@ import type { SVGProps } from "react";
 import { site } from "@/config/site";
 import { useI18n } from "@/lib/i18n";
 import { HeartIcon, SealIcon } from "./ui";
+import { KompasEntry } from "./kompas-entry";
 
 const commitmentIcons = ["plastic", "cigarette", "environment", "nature"] as const;
 type MissionIconName = typeof commitmentIcons[number] | "like" | "share";
@@ -30,15 +31,33 @@ export function HeroSection() {
           <p className="hero-mission__location">{dict.journey[0].kicker}</p>
           <p className="hero-mission__tagline" lang="en" dir="ltr">The World’s Most Beautiful Village.</p>
         </div>
-        <div className="hero-mission__work">
-          <p className="hero-mission__eyebrow">{copy.ourRole}</p>
-          <p className="hero-mission__identity">{copy.identity}</p>
-          <h1 className="hero-mission__responsibility" id="home-mission-title">
-            {copy.responsibility.map((line) => <span key={line}>{line}</span>)}
-          </h1>
-          <p className="hero-mission__work-line">{copy.work}</p>
-          <p className="hero-mission__community">{copy.community}</p>
-          <p className="hero-mission__statement">{copy.mission}</p>
+        <div className="hero-mission__layout">
+          <div className="hero-mission__roles">
+            <div className="hero-mission__work">
+              <p className="hero-mission__eyebrow">{copy.ourRole}</p>
+              <p className="hero-mission__identity">{copy.identity}</p>
+              <h1 className="hero-mission__responsibility" id="home-mission-title">
+                {copy.responsibility.map((line) => <span key={line}>{line}</span>)}
+              </h1>
+              <p className="hero-mission__work-line">{copy.work}</p>
+              <p className="hero-mission__community">{copy.community}</p>
+              <p className="hero-mission__statement">{copy.mission}</p>
+            </div>
+            <div className="hero-mission__participate">
+              <p className="hero-mission__eyebrow">{copy.yourRole}</p>
+              <h2>{copy.participate}</h2>
+              <p className="hero-mission__invitation">{copy.invitation}</p>
+              <div className="hero-mission__actions">
+                <a className="hero-mission__support" data-action="support" href={site.donate.link}><HeartIcon /><span>{dict.cta.donate}</span></a>
+                {/* Let the OS handle the directly tapped Instagram link without requesting a new tab. */}
+                <a data-action="like" href={site.social.instagramMissionReel} rel="noopener noreferrer" aria-label={copy.likeLabel}><MissionIcon name="like" /><span>{copy.like}</span></a>
+                <a data-action="share" href={site.social.instagramMissionReel} rel="noopener noreferrer" aria-label={copy.shareLabel}><MissionIcon name="share" /><span>{copy.share}</span></a>
+              </div>
+            </div>
+          </div>
+          <aside className="hero-mission__guide" aria-label="Discover Sidi Bou">
+            <KompasEntry />
+          </aside>
         </div>
         <div className="hero-mission__impact">
           <ul className="hero-mission__commitments">
@@ -49,17 +68,6 @@ export function HeroSection() {
               </li>
             ))}
           </ul>
-          <div className="hero-mission__participate">
-            <p className="hero-mission__eyebrow">{copy.yourRole}</p>
-            <h2>{copy.participate}</h2>
-            <p className="hero-mission__invitation">{copy.invitation}</p>
-            <div className="hero-mission__actions">
-              <a className="hero-mission__support" data-action="support" href={site.donate.link}><HeartIcon /><span>{dict.cta.donate}</span></a>
-              {/* Let the OS handle the directly tapped Instagram link without requesting a new tab. */}
-              <a data-action="like" href={site.social.instagramMissionReel} rel="noopener noreferrer" aria-label={copy.likeLabel}><MissionIcon name="like" /><span>{copy.like}</span></a>
-              <a data-action="share" href={site.social.instagramMissionReel} rel="noopener noreferrer" aria-label={copy.shareLabel}><MissionIcon name="share" /><span>{copy.share}</span></a>
-            </div>
-          </div>
           <p className="hero__badge" lang="en" dir="ltr">
             <SealIcon className="hero__badge-icon" />
             <span><strong>Official Member of the Scientific Committee</strong>{" "}<span className="hero__badge-report">UNESCO Report 2027</span></span>
