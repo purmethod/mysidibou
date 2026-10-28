@@ -1960,16 +1960,18 @@ html[dir="rtl"] .hero-mission__discover { letter-spacing: 0; }
 }
 
 
-/* Our Role takes two thirds; the compact compass sits beside it. */
+/* One aligned mission block, divided into text and compass columns. */
 .hero-mission__copy { display: block; }
-.hero-mission__layout { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); column-gap: clamp(14px, 4vw, 48px); align-items: center; direction: ltr; }
+.hero-mission__intro { margin-bottom: 0; }
+.hero-mission__layout { --column-gap: clamp(24px, 5vw, 48px); display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); column-gap: var(--column-gap); align-items: stretch; padding-block: clamp(20px, 4vw, 32px); border-bottom: 1px solid var(--color-line); direction: ltr; }
 .hero-mission__roles { min-width: 0; text-align: start; }
-.hero-mission__guide { min-width: 0; }
+.hero-mission__guide { position: relative; display: flex; align-items: center; min-width: 0; }
+.hero-mission__guide::before { content: ""; position: absolute; top: 0; bottom: 0; left: calc(var(--column-gap) / -2); width: 1px; background: var(--color-line); pointer-events: none; }
 .hero-mission__roles .hero-mission__identity { font-size: clamp(16px, 3.8vw, 26px); }
 .hero-mission__roles .hero-mission__responsibility { font-size: clamp(23px, 5.6vw, 52px); line-height: 1.06; overflow-wrap: normal; }
 .hero-mission__roles .hero-mission__work-line { font-size: clamp(13px, 2.9vw, 18px); margin-top: 12px; }
 .hero-mission__roles .hero-mission__community { font-size: clamp(13px, 2.7vw, 14px); }
-.hero-mission__roles .hero-mission__statement { font-size: clamp(13px, 2.8vw, 16px); margin-top: 12px; }
+.hero-mission__roles .hero-mission__statement { max-width: none; font-size: clamp(13px, 2.8vw, 16px); margin-top: 12px; }
 .hero-mission__participate { margin-top: 28px; }
 .hero-mission__actions { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
 .hero-mission__support { grid-column: 1 / -1; }
