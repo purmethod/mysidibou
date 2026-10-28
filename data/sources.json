@@ -1,0 +1,43 @@
+[
+  {
+    "id": "tunis-events",
+    "name": "Tunis Events · Sidi Bou listings",
+    "kind": "calendar",
+    "url": "https://tunis.events/billetterie-tunisie",
+    "parser": "jsonld",
+    "hosts": [
+      "tunis.events"
+    ],
+    "linkPattern": "^/events/.*(?:sidi|sociale|ennejma)",
+    "maxPages": 15,
+    "coverage": "Published Sidi Bou event listings; surrounding Tunis events excluded"
+  },
+  {
+    "id": "sociale",
+    "name": "Sociale · Sidi Bou Saïd",
+    "kind": "organizer",
+    "url": "https://tunis.events/venues/L8JBr8/sociale-sidi-bou-said",
+    "parser": "jsonld",
+    "hosts": [
+      "tunis.events"
+    ],
+    "linkPattern": "^/events/",
+    "maxPages": 20,
+    "coverage": "Dated events at Sociale, through its public venue calendar"
+  },
+  {
+    "id": "cmam",
+    "name": "Ennejma Ezzahra · CMAM",
+    "kind": "organizer",
+    "url": "https://www.cmam.tn/activites/fr.html",
+    "parser": "cmam",
+    "hosts": [
+      "www.cmam.tn",
+      "cmam.tn"
+    ],
+    "location": "Palais Ennejma Ezzahra, Sidi Bou Saïd",
+    "linkPattern": "a^",
+    "maxPages": 1,
+    "coverage": "Official programme; past editions are excluded and missing times stay unconfirmed"
+  }
+]

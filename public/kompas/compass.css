@@ -1,0 +1,109 @@
+:root { color-scheme: light; background: #f7f5ef; color: #101d31; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+a { color: inherit; }
+button { color: inherit; font: inherit; }
+button, a, summary { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 2px solid #1e4e8c; outline-offset: 5px; }
+[hidden] { display: none !important; }
+.island-home { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 18px 18px 20px; }
+.home-brand { display: flex; flex-direction: column; align-items: center; }
+.home-link { display: block; }
+.dial-stage { width: min(440px, 100%); display: flex; justify-content: center; align-items: center; }
+h1 { width: 170px; margin: 0 0 6px; font-size: 0; }
+.logo { display: block; width: 100%; height: auto; }
+.tagline, .selection, .follow, .eyebrow { font-size: 10px; font-weight: 500; line-height: 1.8; letter-spacing: .25em; text-transform: uppercase; }
+.tagline { margin: 0; }
+.selection { margin: 5px 0 0; font-size: 9px; }
+.island-dial { --turn: -135deg; position: relative; width: min(440px, 100%); aspect-ratio: 1; margin: 16px 0 0; touch-action: none; user-select: none; -webkit-user-select: none; cursor: grab; }
+.island-dial.is-dragging { cursor: grabbing; }
+.dial-ring { position: absolute; inset: 22%; border-radius: 50%; background: repeating-conic-gradient(from -1deg, #9aaabc 0deg 1deg, transparent 1deg 7.5deg); mask-image: radial-gradient(circle, transparent 63%, black 64%, black 70%, transparent 71%); -webkit-mask-image: radial-gradient(circle, transparent 63%, black 64%, black 70%, transparent 71%); transform: rotate(var(--turn)); transition: transform .45s cubic-bezier(.2,.7,.2,1); pointer-events: none; }
+.dial-marker { position: absolute; inset: 19%; border: 1px solid #101d3116; border-radius: 50%; pointer-events: none; }
+.dial-marker::before { content: ""; display: block; position: absolute; width: 6px; height: 6px; background: #1e4e8c; border-radius: 50%; top: -3px; left: calc(50% - 3px); }
+.dial-ring { transition: none; }
+.dial-center { position: absolute; inset: 25%; border: 1px solid #8297b648; border-radius: 50%; background: #f0ece1; overflow: hidden; cursor: ns-resize; }
+.picker-window { position: absolute; top: 17.5%; left: 7%; right: 7%; height: 65%; overflow: hidden; perspective: 350px; touch-action: none; mask-image: linear-gradient(transparent, black 22%, black 78%, transparent); -webkit-mask-image: linear-gradient(transparent, black 22%, black 78%, transparent); }
+.picker-option { position: absolute; top: calc(50% - 17px); left: 0; right: 0; height: 34px; line-height: 34px; font-size: clamp(10px, 3vw, 14px); letter-spacing: .09em; white-space: nowrap; font-weight: 400; text-align: center; backface-visibility: hidden; will-change: transform; cursor: pointer; }
+.picker-option[aria-selected="true"] { font-weight: 700; }
+.picker-window:focus, .picker-window:focus-visible { outline: none; }
+.dial-option { position: absolute; left: var(--x); top: var(--y); transform: translate(-50%, -50%); min-height: 44px; display: flex; align-items: center; justify-content: center; padding: 9px 4px; text-decoration: none; font-size: 10px; font-weight: 500; letter-spacing: .09em; white-space: nowrap; }
+.dial-option:hover { color: #1e4e8c; }
+.dial-option[aria-current="true"] { font-weight: 700; }
+.dial-hint { font-size: 10px; line-height: 1.8; letter-spacing: .16em; color: #627089; margin: 28px 0 0; padding: 10px 2px; }
+.text-link { display: inline-block; font-size: 10px; line-height: 1.8; letter-spacing: .16em; text-decoration: none; border-bottom: 1px solid #b0bac9; padding: 10px 2px; }
+.category-content { max-width: 680px; margin: auto; padding: 0 24px; }
+.category-panel { scroll-margin-top: 20px; padding: 24px 0 36px; border-top: 1px solid #b0bac980; }
+.back-to-wheel { display: inline-flex; align-items: center; min-height: 44px; margin-bottom: 24px; font-size: 9px; letter-spacing: .16em; text-decoration: none; }
+.eyebrow { font-size: 8px; color: #627089; margin: 0 0 16px; }
+h2 { font-size: clamp(32px, 8vw, 56px); font-weight: 400; letter-spacing: .08em; margin: 0; }
+.category-intro { font-size: 16px; line-height: 1.6; margin: 14px 0 30px; color: #43506a; }
+.choices { border-top: 1px solid #b0bac980; }
+.choice, .choice-detail { border-bottom: 1px solid #b0bac980; }
+.choice, .choice-detail summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 66px; padding: 18px 4px; font-size: 11px; letter-spacing: .16em; text-decoration: none; cursor: pointer; list-style: none; }
+.choice-detail summary::-webkit-details-marker { display: none; }
+.choice-detail summary span { font-size: 20px; font-weight: 300; }
+.choice-detail[open] summary span { transform: rotate(45deg); }
+.choice:hover, .choice-detail summary:hover { color: #1e4e8c; }
+.choice-detail > div { padding: 0 4px 24px; font-size: 14px; line-height: 1.7; color: #43506a; }
+.choice-detail p { margin: 0 0 12px; }
+.choice-detail .pending { font-size: 9px; letter-spacing: .12em; margin: 0; }
+.category-note { font-size: 12px; line-height: 1.8; color: #627089; margin: 24px 0 0; max-width: 460px; }
+.text-link { margin-top: 18px; }
+footer { text-align: center; padding: 6px 24px 28px; }
+.follow { display: inline-flex; flex-direction: column; align-items: center; gap: 4px; color: inherit; text-decoration: none; font-size: 8px; }
+.follow svg { width: 22px; height: 22px; }
+.instagram-icon { display: grid; place-items: center; width: 44px; height: 44px; }
+.follow:hover { opacity: .65; }
+@media (min-width: 800px) { .island-home { padding-top: 24px; } h1 { width: 185px; } .island-dial { margin-top: 10px; } .dial-option { font-size: 11px; letter-spacing: .13em; } }
+@media (max-width: 360px) { .island-home { padding-inline: 10px; } h1 { width: 145px; } .tagline { font-size: 9px; letter-spacing: .2em; } .dial-option { font-size: 9px; letter-spacing: .04em; } .dial-center { gap: 12px; } .dial-kicker { font-size: 7px; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; } }
+
+.stacked-label { display: inline-block; line-height: 1.1; white-space: normal; text-align: center; }
+.picker-option[data-picker-index="7"] { display: flex; align-items: center; justify-content: center; }
+
+/* Fit the landing view to the visible viewport, including mobile browser bars.
+   Category views retain normal document scrolling. */
+html.is-home, html.is-home body { height: 100%; overflow: hidden; overscroll-behavior: none; }
+.is-home main {
+  --screen-height: 100vh;
+  height: var(--screen-height);
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  overflow: hidden;
+}
+@supports (height: 100dvh) { .is-home main { --screen-height: 100dvh; } }
+.is-home .island-home {
+  min-height: 0;
+  padding: clamp(6px, 1.5dvh, 16px) max(18px, env(safe-area-inset-right)) 0 max(18px, env(safe-area-inset-left));
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  justify-items: center;
+  align-items: center;
+}
+.is-home h1 { width: clamp(90px, 22dvh, 170px); margin-bottom: 4px; }
+.is-home .dial-stage { width: 100%; height: 100%; min-width: 0; min-height: 0; container-type: size; }
+.is-home .island-dial { flex: none; margin: 0; width: min(440px, 100%, calc(var(--screen-height) - 300px)); }
+@supports (width: 100cqh) { .is-home .island-dial { width: min(440px, 100cqw, 100cqh); } }
+.is-home .dial-hint { margin: 0; padding: 4px 2px; }
+.is-home .category-content { display: none; }
+.is-home footer { padding: 4px 24px clamp(8px, 1.5dvh, 16px); }
+.is-home .follow { gap: 0; }
+@media (max-height: 500px) and (min-width: 600px) {
+  .is-home .island-home { grid-template-columns: minmax(160px, .8fr) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) auto; column-gap: 24px; }
+  .is-home .home-brand { grid-column: 1; grid-row: 1 / 3; }
+  .is-home h1 { width: clamp(90px, 35dvh, 160px); }
+  .is-home .dial-stage { grid-column: 2; grid-row: 1; }
+  .is-home .dial-hint { grid-column: 2; grid-row: 2; }
+  .is-home .follow { flex-direction: row; gap: 8px; }
+  .is-home footer { padding-block: 0; }
+}
+
+/* The KOMPAS wordmark occupies the approved MYKOTAO brand footprint. */
+.compass-wordmark { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-decoration: none; gap: 12px; }
+.compass-wordmark span { font-size: clamp(16px, 3.8dvh, 28px); line-height: 1.2; font-weight: 400; letter-spacing: .2em; margin-right: -.2em; }
+.compass-wordmark small { font-size: 10px; line-height: 1.4; font-weight: 400; letter-spacing: .12em; }
+h1 { aspect-ratio: 1; }
+.village-home { position: absolute; left: max(18px, env(safe-area-inset-left)); bottom: max(20px, env(safe-area-inset-bottom)); font-size: 9px; letter-spacing: .08em; text-decoration: none; }
+footer { position: relative; }

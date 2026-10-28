@@ -15,6 +15,8 @@ export const Route = createFileRoute("/sitemap.xml")({
           "    <changefreq>weekly</changefreq>",
           "    <priority>1.0</priority>",
           "  </url>",
+          `  <url><loc>${origin}/kompas</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>`,
+          `  <url><loc>${origin}/kompas/whats-next</loc><changefreq>daily</changefreq><priority>0.7</priority></url>`,
           "</urlset>",
         ].join("\n");
         return new Response(xml, {
@@ -27,3 +29,4 @@ export const Route = createFileRoute("/sitemap.xml")({
     },
   },
 });
+
