@@ -106,3 +106,9 @@ html.is-home, html.is-home body { height: 100%; overflow: hidden; overscroll-beh
 /* Keep the longest label clear of the ring at both sides of the rotating dial. */
 .dial-option[data-category="essentials"] { font-size: clamp(8px, 2.2vw, 10px); transform: translate(calc(-50% + var(--label-shift, 0px)), -50%); }
 @supports (width: 100cqh) { .is-home .island-dial { width: min(440px, calc(100cqw - 16px), 100cqh); } }
+
+/* COMPAZ mark and wordmark, same as mycompaz.com. */
+.is-home h1, .home-brand h1 { width: auto; }
+.home-brand .home-link { display: flex; flex-direction: column; align-items: center; }
+.home-brand .logo { width: clamp(34px, 5.2dvh, 46px); height: auto; }
+.home-brand .wordmark { display: block; width: clamp(124px, 19.4dvh, 181px); height: auto; margin: clamp(8px, 1.4dvh, 12px) 0 6px; }
