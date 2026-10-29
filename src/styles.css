@@ -1986,7 +1986,7 @@ html[dir="rtl"] .hero-mission__discover { letter-spacing: 0; }
 .kompas-entry__caption { display: flex; flex-direction: column; align-items: center; align-self: start; width: 100%; container-type: inline-size; }
 .kompas-entry__tagline { white-space: nowrap; font-size: clamp(11px, 8cqw, 19px); line-height: 1.45; font-weight: 600; letter-spacing: .025em; }
 .kompas-entry__click { white-space: nowrap; margin-top: 8px; font-size: clamp(9px, 6.8cqw, 14px); line-height: 1.5; font-weight: 500; letter-spacing: .035em; opacity: .85; }
-.kompas-entry { display: flex; flex-direction: column; align-items: center; justify-content: flex-start; align-self: start; }
+.kompas-entry { display: flex; flex-direction: column; align-items: center; justify-content: center; align-self: center; }
 .kompas-entry__tagline { font-size: clamp(10px, 6.4cqw, 15px); }
 .kompas-entry__click { margin-top: 4px; font-size: clamp(9px, 5.4cqw, 12px); }
 .kompas-entry:focus-visible { outline: 2px solid currentColor; outline-offset: 6px; border-radius: 3px; }
