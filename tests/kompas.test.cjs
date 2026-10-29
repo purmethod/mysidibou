@@ -24,7 +24,7 @@ class Element {
   querySelector() { return this.heading; }
 }
 function setup() {
-  const names = ['eat', 'relax', 'move', 'explore', 'connect', 'stay', 'essentials', 'whats-next'];
+  const names = ['eat', 'relax', 'move', 'explore', 'connect', 'stay', 'essentials', 'hand-selected', 'whats-next'];
   const dial = new Element('island-dial'), center = new Element('dial-center');
   const picker = new Element('picker-window');
   center.parentElement = dial; picker.parentElement = center;
