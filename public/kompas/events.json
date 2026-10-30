@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-29T03:10:34.239308+01:00",
+  "updatedAt": "2026-10-30T03:26:21.130346+01:00",
   "timezone": "Africa/Tunis",
   "horizonMonths": 12,
   "refreshSchedule": {
@@ -17,17 +17,12 @@
       "name": "Tunis Events · Greater Tunis",
       "url": "https://tunis.events/",
       "kind": "calendar",
-      "status": "partial",
+      "status": "ok",
       "coverage": "Public calendars across Tunis, Sidi Bou Saïd, Carthage, La Marsa and Gammarth",
-      "pagesChecked": 90,
+      "pagesChecked": 85,
       "eventsFound": 78,
-      "errors": [
-        {
-          "url": "https://tunis.events/",
-          "error": "Collection page/time budget reached"
-        }
-      ],
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "errors": [],
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -46,7 +41,7 @@
           "error": "Collection page/time budget reached"
         }
       ],
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -60,7 +55,7 @@
       "pagesChecked": 1,
       "eventsFound": 0,
       "errors": [],
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -72,9 +67,9 @@
       "status": "ok",
       "coverage": "Teskerti · tickets & screenings · published dates",
       "pagesChecked": 10,
-      "eventsFound": 34,
+      "eventsFound": 33,
       "errors": [],
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -93,7 +88,7 @@
           "error": "HTTP Error 404: Not Found"
         }
       ],
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -104,10 +99,10 @@
       "kind": "calendar",
       "status": "ok",
       "coverage": "Meeps · Tunis agenda · published dates",
-      "pagesChecked": 41,
-      "eventsFound": 20,
+      "pagesChecked": 35,
+      "eventsFound": 17,
       "errors": [],
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -121,7 +116,7 @@
       "pagesChecked": 1,
       "eventsFound": 9,
       "errors": [],
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -133,9 +128,9 @@
       "status": "ok",
       "coverage": "Art Explora · Tunis programme · published dates",
       "pagesChecked": 1,
-      "eventsFound": 3,
+      "eventsFound": 2,
       "errors": [],
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -154,7 +149,7 @@
           "error": "HTTP Error 403: Forbidden"
         }
       ],
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "rootSuccess": false,
       "cancelledUrls": []
     },
@@ -168,7 +163,7 @@
       "pagesChecked": 1,
       "eventsFound": 1,
       "errors": [],
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -182,7 +177,7 @@
       "pagesChecked": 10,
       "eventsFound": 0,
       "errors": [],
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -196,7 +191,7 @@
       "pagesChecked": 1,
       "eventsFound": 0,
       "errors": [],
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -210,7 +205,7 @@
       "pagesChecked": 1,
       "eventsFound": 0,
       "errors": [],
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -224,7 +219,7 @@
       "pagesChecked": 1,
       "eventsFound": 3,
       "errors": [],
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -238,7 +233,7 @@
       "pagesChecked": 1,
       "eventsFound": 5,
       "errors": [],
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -252,7 +247,7 @@
       "pagesChecked": 1,
       "eventsFound": 0,
       "errors": [],
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -266,7 +261,7 @@
       "pagesChecked": 1,
       "eventsFound": 0,
       "errors": [],
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     }
@@ -287,7 +282,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -311,7 +306,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -335,7 +330,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -359,7 +354,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -387,7 +382,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -411,7 +406,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -435,36 +430,12 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Tunis Events · Greater Tunis",
           "url": "https://tunis.events/events/31vlP8/undertow-contre-courant-b7l9-art-centre"
-        }
-      ]
-    },
-    {
-      "id": "380bd4d8ba1092c9",
-      "title": "Festival Pros d’Or 2026",
-      "category": "workshops",
-      "start": "2026-10-27T00:00:00+01:00",
-      "end": "2026-10-29T00:00:00+01:00",
-      "dateOnly": true,
-      "location": "Tunis, Tunisie",
-      "summary": "Workshop at Tunis, Tunisie.",
-      "url": "https://joinmeeps.com/fr/event/festival-pros-d-or-2026-prb887f7",
-      "sourceId": "meeps",
-      "sourceName": "Meeps · Tunis agenda",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Meeps · Tunis agenda",
-          "url": "https://joinmeeps.com/fr/event/festival-pros-d-or-2026-prb887f7"
         }
       ]
     },
@@ -483,7 +454,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -507,7 +478,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -531,7 +502,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -566,86 +537,11 @@
       "stale": true
     },
     {
-      "id": "4146be49a93d2e8b",
-      "title": "Crescendo",
-      "category": "community",
-      "start": "2026-10-28T20:00:00+01:00",
-      "end": "2026-10-29T03:00:00+01:00",
-      "dateOnly": false,
-      "location": "Molo",
-      "summary": "Community event at Molo.",
-      "url": "https://tunis.events/events/ext_krG2xm/crescendo-molo",
-      "sourceId": "tunis-events",
-      "sourceName": "Tunis Events · Greater Tunis",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Tunis Events · Greater Tunis",
-          "url": "https://tunis.events/events/ext_krG2xm/crescendo-molo"
-        }
-      ],
-      "stale": true
-    },
-    {
-      "id": "708fa5e32eaf77df",
-      "title": "Masquerade Off Edition",
-      "category": "parties",
-      "start": "2026-10-28T20:00:00+01:00",
-      "end": "2026-10-29T04:00:00+01:00",
-      "dateOnly": false,
-      "location": "Marty Club",
-      "summary": "Party at Marty Club.",
-      "url": "https://tunis.events/events/ext_kgJK78/masquerade-off-edition-marty-club",
-      "sourceId": "tunis-events",
-      "sourceName": "Tunis Events · Greater Tunis",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Tunis Events · Greater Tunis",
-          "url": "https://tunis.events/events/ext_kgJK78/masquerade-off-edition-marty-club"
-        }
-      ],
-      "stale": true
-    },
-    {
-      "id": "c0de8172b1946a04",
-      "title": "Jaou Nights - Mogli",
-      "category": "community",
-      "start": "2026-10-28T21:00:00+01:00",
-      "end": "2026-10-29T00:00:00+01:00",
-      "dateOnly": false,
-      "location": "Habibi Downtown",
-      "summary": "Community event at Habibi Downtown.",
-      "url": "https://tunis.events/events/3AoPzk/jaou-nights-mogli-habibi-downtown",
-      "sourceId": "tunis-events",
-      "sourceName": "Tunis Events · Greater Tunis",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Tunis Events · Greater Tunis",
-          "url": "https://tunis.events/events/3AoPzk/jaou-nights-mogli-habibi-downtown"
-        }
-      ],
-      "stale": true
-    },
-    {
-      "id": "07297dfffcabc0b8",
+      "id": "a20ab5b27154f034",
       "title": "Zyoland",
       "category": "community",
-      "start": "2026-10-29T00:00:00+01:00",
-      "end": "2026-10-29T23:59:59.999000+01:00",
+      "start": "2026-10-30T00:00:00+01:00",
+      "end": "2026-10-30T23:59:59.999000+01:00",
       "dateOnly": false,
       "location": "Grafiflow V7JH+6J7",
       "summary": "Community event at Grafiflow V7JH+6J7.",
@@ -655,7 +551,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -665,10 +561,10 @@
       ]
     },
     {
-      "id": "56204ba85d05408b",
+      "id": "b68d12f2ec7462d4",
       "title": "Harmonie | تناغم",
       "category": "arts-culture",
-      "start": "2026-10-29T00:00:00+01:00",
+      "start": "2026-10-30T00:00:00+01:00",
       "end": null,
       "dateOnly": true,
       "location": "El Teatro, Tunis",
@@ -679,329 +575,12 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "El Teatro · official programme",
           "url": "https://www.billetterie.elteatrotunis.com/fr/programme/harmonie"
-        }
-      ]
-    },
-    {
-      "id": "9ded88e88ba233c7",
-      "title": "Dar el 3ers 29/10",
-      "category": "cinema",
-      "start": "2026-10-29T15:00:00+01:00",
-      "end": null,
-      "dateOnly": false,
-      "location": "Ciné Alhambra Zéphyr",
-      "summary": "Film screening at Ciné Alhambra Zéphyr.",
-      "url": "https://teskerti.tn/evenement/dar-el-3ers-2910",
-      "sourceId": "teskerti",
-      "sourceName": "Teskerti · tickets & screenings",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Teskerti · tickets & screenings",
-          "url": "https://teskerti.tn/evenement/dar-el-3ers-2910"
-        }
-      ]
-    },
-    {
-      "id": "980a1962b4466e3c",
-      "title": "Le Mystère Lucy Lost",
-      "category": "cinema",
-      "start": "2026-10-29T16:30:00+01:00",
-      "end": null,
-      "dateOnly": false,
-      "location": "L’Agora, La Marsa",
-      "summary": "Film screening at L’Agora, La Marsa.",
-      "url": "https://lagora.tn/movie/le-mystere-lucy-lost/",
-      "sourceId": "lagora",
-      "sourceName": "L’Agora · La Marsa cinema",
-      "sourceKind": "organizer",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "L’Agora · La Marsa cinema",
-          "url": "https://lagora.tn/movie/le-mystere-lucy-lost/"
-        }
-      ]
-    },
-    {
-      "id": "24763e919cdc451f",
-      "title": "Bakma 29/10",
-      "category": "cinema",
-      "start": "2026-10-29T18:00:00+01:00",
-      "end": null,
-      "dateOnly": false,
-      "location": "Ciné Alhambra Zéphyr",
-      "summary": "Film screening at Ciné Alhambra Zéphyr.",
-      "url": "https://teskerti.tn/evenement/bakma-2910",
-      "sourceId": "teskerti",
-      "sourceName": "Teskerti · tickets & screenings",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Teskerti · tickets & screenings",
-          "url": "https://teskerti.tn/evenement/bakma-2910"
-        }
-      ]
-    },
-    {
-      "id": "b1342e8967a6a047",
-      "title": "Bakma",
-      "category": "cinema",
-      "start": "2026-10-29T18:30:00+01:00",
-      "end": null,
-      "dateOnly": false,
-      "location": "L’Agora, La Marsa",
-      "summary": "Film screening at L’Agora, La Marsa.",
-      "url": "https://lagora.tn/movie/bakma/",
-      "sourceId": "lagora",
-      "sourceName": "L’Agora · La Marsa cinema",
-      "sourceKind": "organizer",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "L’Agora · La Marsa cinema",
-          "url": "https://lagora.tn/movie/bakma/"
-        }
-      ]
-    },
-    {
-      "id": "346c12ec65b099f8",
-      "title": "Performance - Révélations, Cyrine Kalai",
-      "category": "arts-culture",
-      "start": "2026-10-29T19:00:00+01:00",
-      "end": "2026-10-29T20:00:00+01:00",
-      "dateOnly": false,
-      "location": "Le 4ème Art, Tunis",
-      "summary": "Cultural event at Le 4ème Art, Tunis.",
-      "url": "https://www.artexplora.org/festival/performance/performance---revelations--ma",
-      "sourceId": "artexplora",
-      "sourceName": "Art Explora · Tunis programme",
-      "sourceKind": "organizer",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Art Explora · Tunis programme",
-          "url": "https://www.artexplora.org/festival/performance/performance---revelations--ma"
-        }
-      ]
-    },
-    {
-      "id": "016bd2ec04448580",
-      "title": "Révélation - Cyrine Kalai",
-      "category": "community",
-      "start": "2026-10-29T19:00:00+01:00",
-      "end": "2026-10-29T20:00:00+01:00",
-      "dateOnly": false,
-      "location": "Le 4ème Art",
-      "summary": "Community event at Le 4ème Art.",
-      "url": "https://tunis.events/events/8B1413/revelation-cyrine-kalai-le-4eme-art",
-      "sourceId": "tunis-events",
-      "sourceName": "Tunis Events · Greater Tunis",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Tunis Events · Greater Tunis",
-          "url": "https://tunis.events/events/8B1413/revelation-cyrine-kalai-le-4eme-art"
-        }
-      ]
-    },
-    {
-      "id": "8db24eff730744cc",
-      "title": "Big Murk x Toumba x Julmud",
-      "category": "community",
-      "start": "2026-10-29T19:30:00+01:00",
-      "end": "2026-10-29T21:30:00+01:00",
-      "dateOnly": false,
-      "location": "B7L9 Art Centre",
-      "summary": "Community event at B7L9 Art Centre.",
-      "url": "https://tunis.events/events/k6E998/big-murk-x-toumba-x-julmud-b7l9-art-centre",
-      "sourceId": "tunis-events",
-      "sourceName": "Tunis Events · Greater Tunis",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Tunis Events · Greater Tunis",
-          "url": "https://tunis.events/events/k6E998/big-murk-x-toumba-x-julmud-b7l9-art-centre"
-        },
-        {
-          "name": "Meeps · Tunis agenda",
-          "url": "https://joinmeeps.com/fr/event/concert-big-murk-x-toumba-x-julmud-k20j7dj8"
-        }
-      ]
-    },
-    {
-      "id": "04f7b163799223b0",
-      "title": "Hommage à Michael Jackson",
-      "category": "community",
-      "start": "2026-10-29T19:30:00+01:00",
-      "end": "2026-10-29T21:30:00+01:00",
-      "dateOnly": false,
-      "location": "Théâtre de l'Opéra de Tunis, Cité de la Culture Chedly Klibi",
-      "summary": "Community event at Théâtre de l'Opéra de Tunis, Cité de la Culture Chedly Klibi.",
-      "url": "https://joinmeeps.com/fr/event/hommage-a-michael-jackson-4ap1e947",
-      "sourceId": "meeps",
-      "sourceName": "Meeps · Tunis agenda",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Meeps · Tunis agenda",
-          "url": "https://joinmeeps.com/fr/event/hommage-a-michael-jackson-4ap1e947"
-        }
-      ]
-    },
-    {
-      "id": "d8335edc3c4eae53",
-      "title": "Le fantôme de l’opéra",
-      "category": "cinema",
-      "start": "2026-10-29T20:30:00+01:00",
-      "end": null,
-      "dateOnly": false,
-      "location": "L’Agora, La Marsa",
-      "summary": "Film screening at L’Agora, La Marsa.",
-      "url": "https://lagora.tn/movie/le-fantome-de-lopera/",
-      "sourceId": "lagora",
-      "sourceName": "L’Agora · La Marsa cinema",
-      "sourceKind": "organizer",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "L’Agora · La Marsa cinema",
-          "url": "https://lagora.tn/movie/le-fantome-de-lopera/"
-        }
-      ]
-    },
-    {
-      "id": "daa3d807e7fb60ba",
-      "title": "Soirée Bal masqué avec Monguii",
-      "category": "parties",
-      "start": "2026-10-29T20:30:00+01:00",
-      "end": null,
-      "dateOnly": false,
-      "location": "Hôtel Belvédère Fourati",
-      "summary": "Party at Hôtel Belvédère Fourati.",
-      "url": "https://teskerti.tn/evenement/soiree-bal-masque-avec-monguii",
-      "sourceId": "teskerti",
-      "sourceName": "Teskerti · tickets & screenings",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Teskerti · tickets & screenings",
-          "url": "https://teskerti.tn/evenement/soiree-bal-masque-avec-monguii"
-        }
-      ]
-    },
-    {
-      "id": "b0c6d3ec80cbea12",
-      "title": "Jaune Orange",
-      "category": "community",
-      "start": "2026-10-29T21:00:00+01:00",
-      "end": "2026-10-30T04:00:00+01:00",
-      "dateOnly": false,
-      "location": "Molo",
-      "summary": "Community event at Molo.",
-      "url": "https://tunis.events/events/ext_mdwKnk/jaune-orange-molo",
-      "sourceId": "tunis-events",
-      "sourceName": "Tunis Events · Greater Tunis",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Tunis Events · Greater Tunis",
-          "url": "https://tunis.events/events/ext_mdwKnk/jaune-orange-molo"
-        }
-      ],
-      "stale": true
-    },
-    {
-      "id": "31dbd462c351f40c",
-      "title": "Weekend 29/10",
-      "category": "cinema",
-      "start": "2026-10-29T21:00:00+01:00",
-      "end": null,
-      "dateOnly": false,
-      "location": "Ciné Alhambra Zéphyr",
-      "summary": "Film screening at Ciné Alhambra Zéphyr.",
-      "url": "https://teskerti.tn/evenement/weekend-2910",
-      "sourceId": "teskerti",
-      "sourceName": "Teskerti · tickets & screenings",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Teskerti · tickets & screenings",
-          "url": "https://teskerti.tn/evenement/weekend-2910"
-        }
-      ]
-    },
-    {
-      "id": "bc913e9b29b82dd2",
-      "title": "Soirée Bal masqué avec Monguii",
-      "category": "parties",
-      "start": "2026-10-29T21:30:00+01:00",
-      "end": "2026-10-29T23:30:00+01:00",
-      "dateOnly": false,
-      "location": "Hôtel Belvédère Fourati",
-      "summary": "Party at Hôtel Belvédère Fourati.",
-      "url": "https://tunis.events/events/ext_8ylRw3/soiree-bal-masque-avec-monguii-hotel-belvedere-fourati",
-      "sourceId": "tunis-events",
-      "sourceName": "Tunis Events · Greater Tunis",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Tunis Events · Greater Tunis",
-          "url": "https://tunis.events/events/ext_8ylRw3/soiree-bal-masque-avec-monguii-hotel-belvedere-fourati"
         }
       ]
     },
@@ -1020,7 +599,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1044,12 +623,36 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Teskerti · tickets & screenings",
           "url": "https://teskerti.tn/evenement/last-chance-3010"
+        }
+      ]
+    },
+    {
+      "id": "6821c7a82ddc47bf",
+      "title": "L’Île des Souvenirs",
+      "category": "cinema",
+      "start": "2026-10-30T16:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "L’Agora, La Marsa",
+      "summary": "Film screening at L’Agora, La Marsa.",
+      "url": "https://lagora.tn/movie/lile-des-souvenirs/",
+      "sourceId": "lagora",
+      "sourceName": "L’Agora · La Marsa cinema",
+      "sourceKind": "organizer",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "L’Agora · La Marsa cinema",
+          "url": "https://lagora.tn/movie/lile-des-souvenirs/"
         }
       ]
     },
@@ -1068,7 +671,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1092,7 +695,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1102,6 +705,30 @@
         {
           "name": "Tunis Events · Greater Tunis",
           "url": "https://tunis.events/events/3DRRMk/sketchy-things-sangria-sketching-with-molkabrk-sociale"
+        }
+      ]
+    },
+    {
+      "id": "c684d1484da692e3",
+      "title": "Le spectacle de Imen Lahmar « Economy Class »",
+      "category": "cinema",
+      "start": "2026-10-30T19:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "L’Agora, La Marsa",
+      "summary": "Film screening at L’Agora, La Marsa.",
+      "url": "https://lagora.tn/movie/le-spectacle-de-imen-lahmar-economy-class/",
+      "sourceId": "lagora",
+      "sourceName": "L’Agora · La Marsa cinema",
+      "sourceKind": "organizer",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "L’Agora · La Marsa cinema",
+          "url": "https://lagora.tn/movie/le-spectacle-de-imen-lahmar-economy-class/"
         }
       ]
     },
@@ -1120,7 +747,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1144,7 +771,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1168,7 +795,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1192,7 +819,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1220,7 +847,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1244,7 +871,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1268,7 +895,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1292,12 +919,36 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Teskerti · tickets & screenings",
           "url": "https://teskerti.tn/evenement/le-fou"
+        }
+      ]
+    },
+    {
+      "id": "4fa466263317dd25",
+      "title": "Bakma",
+      "category": "cinema",
+      "start": "2026-10-30T21:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "L’Agora, La Marsa",
+      "summary": "Film screening at L’Agora, La Marsa.",
+      "url": "https://lagora.tn/movie/bakma/",
+      "sourceId": "lagora",
+      "sourceName": "L’Agora · La Marsa cinema",
+      "sourceKind": "organizer",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "L’Agora · La Marsa cinema",
+          "url": "https://lagora.tn/movie/bakma/"
         }
       ]
     },
@@ -1316,7 +967,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1340,7 +991,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1364,7 +1015,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1388,7 +1039,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1412,7 +1063,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1436,7 +1087,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1460,7 +1111,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1484,7 +1135,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1508,7 +1159,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1532,7 +1183,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1556,7 +1207,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1580,12 +1231,36 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Tunis Events · Greater Tunis",
           "url": "https://tunis.events/events/ext_mwl2b3/myli-goes-live-studiofan-my-li-studio"
+        }
+      ]
+    },
+    {
+      "id": "93c25f987135a68c",
+      "title": "Bakma le 31/10",
+      "category": "cinema",
+      "start": "2026-10-31T18:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "Ciné Alhambra Zéphyr",
+      "summary": "Film screening at Ciné Alhambra Zéphyr.",
+      "url": "https://teskerti.tn/evenement/bakma-le-3110",
+      "sourceId": "teskerti",
+      "sourceName": "Teskerti · tickets & screenings",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Teskerti · tickets & screenings",
+          "url": "https://teskerti.tn/evenement/bakma-le-3110"
         }
       ]
     },
@@ -1604,7 +1279,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1628,7 +1303,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1652,7 +1327,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1676,7 +1351,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1700,7 +1375,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1724,7 +1399,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1748,7 +1423,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1776,15 +1451,14 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-28T13:43:00.198333+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Tunis Events · Greater Tunis",
           "url": "https://tunis.events/events/kYG7j3/the-last-shot-espace-lartisto"
         }
-      ],
-      "stale": true
+      ]
     },
     {
       "id": "f4b42cc21b622d8a",
@@ -1801,7 +1475,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1825,7 +1499,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1849,7 +1523,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1873,7 +1547,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1897,7 +1571,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1921,12 +1595,60 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "El Teatro · official programme",
           "url": "https://www.billetterie.elteatrotunis.com/fr/programme/tete_a_tete"
+        }
+      ]
+    },
+    {
+      "id": "f1d4eee52dc56e76",
+      "title": "Dar el 3ers 01/11",
+      "category": "cinema",
+      "start": "2026-11-01T12:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "Ciné Alhambra Zéphyr",
+      "summary": "Film screening at Ciné Alhambra Zéphyr.",
+      "url": "https://teskerti.tn/evenement/dar-el-3ers-0111",
+      "sourceId": "teskerti",
+      "sourceName": "Teskerti · tickets & screenings",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Teskerti · tickets & screenings",
+          "url": "https://teskerti.tn/evenement/dar-el-3ers-0111"
+        }
+      ]
+    },
+    {
+      "id": "ad061a4a2578ffb7",
+      "title": "Last chance le 01/11",
+      "category": "cinema",
+      "start": "2026-11-01T15:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "Ciné Alhambra Zéphyr",
+      "summary": "Film screening at Ciné Alhambra Zéphyr.",
+      "url": "https://teskerti.tn/evenement/last-chance-le-0111",
+      "sourceId": "teskerti",
+      "sourceName": "Teskerti · tickets & screenings",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Teskerti · tickets & screenings",
+          "url": "https://teskerti.tn/evenement/last-chance-le-0111"
         }
       ]
     },
@@ -1945,7 +1667,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1969,7 +1691,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1993,7 +1715,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2017,7 +1739,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2041,7 +1763,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2065,7 +1787,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2089,7 +1811,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2113,7 +1835,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2137,7 +1859,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2161,7 +1883,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2185,7 +1907,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2213,7 +1935,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2237,7 +1959,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2261,7 +1983,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2285,7 +2007,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2313,7 +2035,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2337,7 +2059,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2361,7 +2083,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2385,7 +2107,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2409,15 +2131,11 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Sociale · Sidi Bou Saïd",
-          "url": "https://tunis.events/events/moEXl8/movie-night-un-fils-sociale-sidi-bou-said"
-        },
-        {
-          "name": "Tunis Events · Greater Tunis",
           "url": "https://tunis.events/events/moEXl8/movie-night-un-fils-sociale-sidi-bou-said"
         }
       ]
@@ -2437,36 +2155,12 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Teskerti · tickets & screenings",
           "url": "https://teskerti.tn/evenement/brouva"
-        }
-      ]
-    },
-    {
-      "id": "66bd754bb961be7d",
-      "title": "A Coeur Ouvert",
-      "category": "community",
-      "start": "2026-11-05T19:30:00+01:00",
-      "end": "2026-11-05T21:00:00+01:00",
-      "dateOnly": false,
-      "location": "Lartisto théâtre et cinéma",
-      "summary": "Community event at Lartisto théâtre et cinéma.",
-      "url": "https://tunis.events/events/8vq6N3/a-coeur-ouvert-lartisto-theatre-et-cinema",
-      "sourceId": "tunis-events",
-      "sourceName": "Tunis Events · Greater Tunis",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Tunis Events · Greater Tunis",
-          "url": "https://tunis.events/events/8vq6N3/a-coeur-ouvert-lartisto-theatre-et-cinema"
         }
       ]
     },
@@ -2485,7 +2179,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2509,7 +2203,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2533,7 +2227,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2557,7 +2251,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2581,7 +2275,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2605,7 +2299,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2629,7 +2323,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2653,7 +2347,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2677,7 +2371,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2705,7 +2399,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2733,7 +2427,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2743,6 +2437,30 @@
         {
           "name": "Tunis Events · Greater Tunis",
           "url": "https://tunis.events/events/kQn7qm/movie-night-regarde-moi-sociale-sidi-bou-said"
+        }
+      ]
+    },
+    {
+      "id": "b5ec83904b87f329",
+      "title": "Fennel Fantasy with Rafram Chaddad",
+      "category": "community",
+      "start": "2026-11-13T18:00:00+01:00",
+      "end": "2026-11-13T22:30:00+01:00",
+      "dateOnly": false,
+      "location": "Sociale.",
+      "summary": "Community event at Sociale..",
+      "url": "https://tunis.events/events/mqE2Bm/fennel-fantasy-with-rafram-chaddad-sociale",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/mqE2Bm/fennel-fantasy-with-rafram-chaddad-sociale"
         }
       ]
     },
@@ -2761,7 +2479,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2814,7 +2532,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2838,7 +2556,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2862,7 +2580,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2886,7 +2604,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2910,7 +2628,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2934,7 +2652,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2958,12 +2676,36 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Tunis Events · Greater Tunis",
           "url": "https://tunis.events/events/ext_mEWWp8/tunis-with-my-eyes-tunis-tunis-tunisia"
+        }
+      ]
+    },
+    {
+      "id": "a98ecab2c166f76d",
+      "title": "UNDER THE FULL MOON : Supermoon in Gemini Two-Hour Hatha & Vinyasa Flow with Sarah Farhat",
+      "category": "wellness",
+      "start": "2026-11-24T19:00:00+01:00",
+      "end": "2026-11-24T21:00:00+01:00",
+      "dateOnly": false,
+      "location": "Sociale.",
+      "summary": "Wellness session at Sociale..",
+      "url": "https://tunis.events/events/mwJM0k/under-the-full-moon-supermoon-in-gemini-two-hour-hatha-vinyasa-flow-with-sarah-f",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/mwJM0k/under-the-full-moon-supermoon-in-gemini-two-hour-hatha-vinyasa-flow-with-sarah-f"
         }
       ]
     },
@@ -2982,12 +2724,36 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Tunis Events · Greater Tunis",
           "url": "https://tunis.events/events/kW1G53/yoga-for-busy-minds-with-judit-yoga_in_sidibousaid-sociale-sidi-bou-said"
+        }
+      ]
+    },
+    {
+      "id": "eeee561d3293e286",
+      "title": "Convivial Couscous : Zarda with Couscous Apéro",
+      "category": "community",
+      "start": "2026-11-28T18:00:00+01:00",
+      "end": "2026-11-28T22:30:00+01:00",
+      "dateOnly": false,
+      "location": "Sociale.",
+      "summary": "Community event at Sociale..",
+      "url": "https://tunis.events/events/8JQOQ3/convivial-couscous-zarda-with-couscous-apero-sociale",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/8JQOQ3/convivial-couscous-zarda-with-couscous-apero-sociale"
         }
       ]
     },
@@ -3006,7 +2772,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -3030,12 +2796,36 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Tunis Events · Greater Tunis",
           "url": "https://tunis.events/events/ext_8B6L68/wildwood-la-prophetie-de-la-foret-pathe-tunis-city"
+        }
+      ]
+    },
+    {
+      "id": "949128305113608a",
+      "title": "Le chat chapeauté",
+      "category": "community",
+      "start": "2026-12-09T00:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "Pathé Tunis City",
+      "summary": "Community event at Pathé Tunis City.",
+      "url": "https://tunis.events/events/ext_3aqLg3/le-chat-chapeaute-pathe-tunis-city",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/ext_3aqLg3/le-chat-chapeaute-pathe-tunis-city"
         }
       ]
     },
@@ -3054,7 +2844,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -3078,7 +2868,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -3102,7 +2892,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -3126,7 +2916,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -3150,7 +2940,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -3174,7 +2964,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -3198,7 +2988,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -3222,7 +3012,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": "Multi-stop travel retreat including Tunis and southern Tunisia. Confirm the itinerary with the organizer.",
-      "checkedAt": "2026-10-29T03:10:34.239308+01:00",
+      "checkedAt": "2026-10-30T03:26:21.130346+01:00",
       "personallyTested": false,
       "sources": [
         {
