@@ -3,18 +3,27 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#fdfaf2">
-  <title>COMPAZ — Explore Sidi Bou Saïd</title>
-  <meta name="description" content="Arrive, eat, relax, move, explore, connect, stay and what’s next in Sidi Bou Saïd, with COMPAZ.">
+  <meta name="theme-color" content="#f7f5ef">
+  <title>MYSIDIBOU — Explore Sidi Bou Saïd</title>
+  <meta name="description" content="Arrive, eat, relax, move, explore, connect, stay and what’s next in Sidi Bou Saïd.">
   <link rel="canonical" href="https://mysidibou.com/kompas">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="COMPAZ — Explore Sidi Bou Saïd">
+  <meta property="og:title" content="MYSIDIBOU — Explore Sidi Bou Saïd">
   <meta property="og:url" content="https://mysidibou.com/kompas">
-  <!-- One COMPAZ for every site: this page shows mycompaz.com, set to Sidi Bou Saïd. Changes to COMPAZ appear here automatically. -->
-  <style>html,body{margin:0;height:100%;background:#fdfaf2}iframe{display:block;border:0;width:100%;height:100vh;height:100dvh}</style>
+  <!-- MYSIDIBOU's own head (Tunisia, with a dot at Sidi Bou Saïd) over the one COMPAZ from mycompaz.com,
+       set to Sidi Bou Saïd and dressed in MYSIDIBOU's colours. Changes to COMPAZ appear here automatically. -->
+  <style>
+    html,body{margin:0;height:100%;overflow:hidden;background:#f7f5ef}
+    body{display:flex;flex-direction:column;height:100vh;height:100dvh}
+    header{flex:none;display:flex;justify-content:center;padding:max(8px,env(safe-area-inset-top)) 16px 0}
+    header a{display:block;line-height:0}
+    header img{width:auto;height:clamp(76px,14dvh,132px)}
+    iframe{flex:1;display:block;border:0;width:100%;min-height:0}
+  </style>
 </head>
 <body>
-  <iframe src="https://mycompaz.com/?place=36.8706,10.3417&amp;name=Sidi%20Bou%20Said&amp;cc=TN&amp;country=Tunisia&amp;region=Tunis" title="COMPAZ — Sidi Bou Saïd" allow="geolocation"></iframe>
-  <noscript><p><a href="https://mycompaz.com/?place=36.8706,10.3417&amp;name=Sidi%20Bou%20Said&amp;cc=TN&amp;country=Tunisia&amp;region=Tunis">Open COMPAZ for Sidi Bou Saïd</a></p></noscript>
+  <header><a href="/" aria-label="MYSIDIBOU home"><img src="/kompas/tunisia-mark.svg" alt="MYSIDIBOU — Tunisia with a dot at Sidi Bou Saïd" width="360" height="360"></a></header>
+  <iframe src="https://mycompaz.com/?place=36.8706,10.3417&amp;name=Sidi%20Bou%20Said&amp;cc=TN&amp;country=Tunisia&amp;region=Tunis&amp;embed=1&amp;paper=f7f5ef&amp;ink=101d31&amp;accent=1e4e8c&amp;muted=627089" title="COMPAZ — Sidi Bou Saïd" allow="geolocation"></iframe>
+  <noscript><p><a href="https://mycompaz.com/?place=36.8706,10.3417&amp;name=Sidi%20Bou%20Said&amp;cc=TN&amp;country=Tunisia&amp;region=Tunis&amp;embed=1&amp;paper=f7f5ef&amp;ink=101d31&amp;accent=1e4e8c&amp;muted=627089">Open COMPAZ for Sidi Bou Saïd</a></p></noscript>
 </body>
 </html>
