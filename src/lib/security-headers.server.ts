@@ -14,14 +14,16 @@ export function applySecurityHeaders(response: Response): Response {
       "font-src 'self' https://fonts.gstatic.com; " +
       "img-src 'self' data: https:; media-src 'self' blob: https:; " +
       "connect-src 'self' https:; " +
-      "frame-src 'self' https://auth.higgsfield.app https://auth.higgsfield-dev.app " +
+      // mycompaz.com: /kompas embeds the one COMPAZ, set to Sidi Bou Saïd.
+      "frame-src 'self' https://mycompaz.com https://auth.higgsfield.app https://auth.higgsfield-dev.app " +
       "https://js.stripe.com https://*.js.stripe.com https://hooks.stripe.com https://pay.google.com; " +
       "base-uri 'self'; form-action 'self'",
   );
   headers.set("Strict-Transport-Security", "max-age=63072000; includeSubDomains; preload");
   headers.set("X-Content-Type-Options", "nosniff");
   headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
-  headers.set("Permissions-Policy", "camera=(), microphone=(), geolocation=()");
+  // COMPAZ's NEAR ME button may ask for location inside the embedded /kompas page only.
+  headers.set("Permissions-Policy", 'camera=(), microphone=(), geolocation=(self "https://mycompaz.com")');
   headers.set("X-XSS-Protection", "0");
   return new Response(response.body, {
     status: response.status,
