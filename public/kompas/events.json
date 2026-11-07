@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-06T04:15:01.537798+01:00",
+  "updatedAt": "2026-11-07T03:34:18.867065+01:00",
   "timezone": "Africa/Tunis",
   "horizonMonths": 12,
   "refreshSchedule": {
@@ -19,10 +19,10 @@
       "kind": "calendar",
       "status": "ok",
       "coverage": "Public calendars across Tunis, Sidi Bou Saïd, Carthage, La Marsa and Gammarth",
-      "pagesChecked": 58,
-      "eventsFound": 62,
+      "pagesChecked": 57,
+      "eventsFound": 61,
       "errors": [],
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -41,7 +41,7 @@
           "error": "Collection page/time budget reached"
         }
       ],
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -55,7 +55,7 @@
       "pagesChecked": 1,
       "eventsFound": 0,
       "errors": [],
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -67,9 +67,9 @@
       "status": "ok",
       "coverage": "Teskerti · tickets & screenings · published dates",
       "pagesChecked": 11,
-      "eventsFound": 31,
+      "eventsFound": 26,
       "errors": [],
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -96,7 +96,7 @@
           "error": "No structured events found; source may need a parser update"
         }
       ],
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -108,14 +108,14 @@
       "status": "partial",
       "coverage": "Meeps · Tunis agenda · published dates",
       "pagesChecked": 45,
-      "eventsFound": 22,
+      "eventsFound": 23,
       "errors": [
         {
           "url": "https://joinmeeps.com/fr/playlist/quoi-faire-a-tunis-e00w0dzv",
           "error": "Collection page/time budget reached"
         }
       ],
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -127,9 +127,9 @@
       "status": "ok",
       "coverage": "El Teatro · official programme · published dates",
       "pagesChecked": 1,
-      "eventsFound": 2,
+      "eventsFound": 1,
       "errors": [],
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -143,7 +143,7 @@
       "pagesChecked": 1,
       "eventsFound": 2,
       "errors": [],
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -162,7 +162,7 @@
           "error": "HTTP Error 403: Forbidden"
         }
       ],
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "rootSuccess": false,
       "cancelledUrls": []
     },
@@ -176,7 +176,7 @@
       "pagesChecked": 1,
       "eventsFound": 1,
       "errors": [],
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -190,7 +190,7 @@
       "pagesChecked": 6,
       "eventsFound": 0,
       "errors": [],
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -204,7 +204,7 @@
       "pagesChecked": 1,
       "eventsFound": 0,
       "errors": [],
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -218,7 +218,7 @@
       "pagesChecked": 1,
       "eventsFound": 2,
       "errors": [],
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -230,9 +230,9 @@
       "status": "ok",
       "coverage": "L’Agora · La Marsa cinema · published dates",
       "pagesChecked": 1,
-      "eventsFound": 2,
+      "eventsFound": 4,
       "errors": [],
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -244,9 +244,9 @@
       "status": "ok",
       "coverage": "AIO Events · public listings · published dates",
       "pagesChecked": 1,
-      "eventsFound": 4,
+      "eventsFound": 2,
       "errors": [],
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -260,7 +260,7 @@
       "pagesChecked": 1,
       "eventsFound": 0,
       "errors": [],
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -274,7 +274,7 @@
       "pagesChecked": 1,
       "eventsFound": 0,
       "errors": [],
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     }
@@ -295,7 +295,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -319,7 +319,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -343,7 +343,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -371,7 +371,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -395,7 +395,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -419,7 +419,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -443,7 +443,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -471,7 +471,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -495,7 +495,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -519,7 +519,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -543,7 +543,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -567,7 +567,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -591,7 +591,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -615,300 +615,12 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Meeps · Tunis agenda",
           "url": "https://joinmeeps.com/fr/event/africa-first-expo-2026-064gcvwp"
-        }
-      ]
-    },
-    {
-      "id": "393aff0011c38206",
-      "title": "هاملت كوميديا الموت | Hamlet 'comédie de la mort",
-      "category": "arts-culture",
-      "start": "2026-11-06T00:00:00+01:00",
-      "end": null,
-      "dateOnly": true,
-      "location": "El Teatro, Tunis",
-      "summary": "Cultural event at El Teatro, Tunis.",
-      "url": "https://www.billetterie.elteatrotunis.com/fr/programme/hamlet_comedie_de_la_mort",
-      "sourceId": "elteatro",
-      "sourceName": "El Teatro · official programme",
-      "sourceKind": "organizer",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "El Teatro · official programme",
-          "url": "https://www.billetterie.elteatrotunis.com/fr/programme/hamlet_comedie_de_la_mort"
-        }
-      ]
-    },
-    {
-      "id": "1fe84d7b43fa56fc",
-      "title": "IA4EARTH : Innover pour un monde durable",
-      "category": "community",
-      "start": "2026-11-06T09:00:00+01:00",
-      "end": null,
-      "dateOnly": false,
-      "location": "Centre International de Congrès de Tunis (CICT)",
-      "summary": "Community event at Centre International de Congrès de Tunis (CICT).",
-      "url": "https://aio.events/e/ia4earth-innover-pour-un-monde-durable",
-      "sourceId": "aio",
-      "sourceName": "AIO Events · public listings",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "AIO Events · public listings",
-          "url": "https://aio.events/e/ia4earth-innover-pour-un-monde-durable"
-        }
-      ]
-    },
-    {
-      "id": "ee19fa5104b51961",
-      "title": "Last chance 06/11",
-      "category": "cinema",
-      "start": "2026-11-06T15:00:00+01:00",
-      "end": null,
-      "dateOnly": false,
-      "location": "Ciné Alhambra Zéphyr",
-      "summary": "Film screening at Ciné Alhambra Zéphyr.",
-      "url": "https://teskerti.tn/evenement/last-chance-0611",
-      "sourceId": "teskerti",
-      "sourceName": "Teskerti · tickets & screenings",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Teskerti · tickets & screenings",
-          "url": "https://teskerti.tn/evenement/last-chance-0611"
-        }
-      ]
-    },
-    {
-      "id": "beb2f67a07d08fa7",
-      "title": "Hamlet",
-      "category": "community",
-      "start": "2026-11-06T17:00:00+01:00",
-      "end": null,
-      "dateOnly": false,
-      "location": "El Teatro التياترو",
-      "summary": "Community event at El Teatro التياترو.",
-      "url": "https://teskerti.tn/evenement/hamlet",
-      "sourceId": "teskerti",
-      "sourceName": "Teskerti · tickets & screenings",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Teskerti · tickets & screenings",
-          "url": "https://teskerti.tn/evenement/hamlet"
-        }
-      ]
-    },
-    {
-      "id": "31766cc4ab70e653",
-      "title": "Les misérables",
-      "category": "cinema",
-      "start": "2026-11-06T18:15:00+01:00",
-      "end": null,
-      "dateOnly": false,
-      "location": "L’Agora, La Marsa",
-      "summary": "Film screening at L’Agora, La Marsa.",
-      "url": "https://lagora.tn/movie/les-miserables/",
-      "sourceId": "lagora",
-      "sourceName": "L’Agora · La Marsa cinema",
-      "sourceKind": "organizer",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "L’Agora · La Marsa cinema",
-          "url": "https://lagora.tn/movie/les-miserables/"
-        }
-      ]
-    },
-    {
-      "id": "32ead30310575511",
-      "title": "Nouma - le 06/11",
-      "category": "community",
-      "start": "2026-11-06T19:00:00+01:00",
-      "end": null,
-      "dateOnly": false,
-      "location": "Théâtre Le 4ème Art",
-      "summary": "Community event at Théâtre Le 4ème Art.",
-      "url": "https://teskerti.tn/evenement/nouma-le-0611",
-      "sourceId": "teskerti",
-      "sourceName": "Teskerti · tickets & screenings",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Teskerti · tickets & screenings",
-          "url": "https://teskerti.tn/evenement/nouma-le-0611"
-        }
-      ]
-    },
-    {
-      "id": "43591d8ec65b4484",
-      "title": "A Coeur Ouvert",
-      "category": "community",
-      "start": "2026-11-06T19:30:00+01:00",
-      "end": "2026-11-06T21:00:00+01:00",
-      "dateOnly": false,
-      "location": "Lartisto théâtre et cinéma",
-      "summary": "Community event at Lartisto théâtre et cinéma.",
-      "url": "https://tunis.events/events/8vq6N3/a-coeur-ouvert-lartisto-theatre-et-cinema",
-      "sourceId": "tunis-events",
-      "sourceName": "Tunis Events · Greater Tunis",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Tunis Events · Greater Tunis",
-          "url": "https://tunis.events/events/8vq6N3/a-coeur-ouvert-lartisto-theatre-et-cinema"
-        }
-      ]
-    },
-    {
-      "id": "551235582b6cd7ca",
-      "title": "À Cœur Ouvert",
-      "category": "arts-culture",
-      "start": "2026-11-06T19:30:00+01:00",
-      "end": "2026-11-06T22:30:00+01:00",
-      "dateOnly": false,
-      "location": "Lartisto Théâtre et Cinéma, Tunis, Tunisie",
-      "summary": "Cultural event at Lartisto Théâtre et Cinéma, Tunis, Tunisie.",
-      "url": "https://joinmeeps.com/fr/event/a-coeur-ouvert-44zrbtv7",
-      "sourceId": "meeps",
-      "sourceName": "Meeps · Tunis agenda",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Meeps · Tunis agenda",
-          "url": "https://joinmeeps.com/fr/event/a-coeur-ouvert-44zrbtv7"
-        }
-      ]
-    },
-    {
-      "id": "0edd318e089b3cea",
-      "title": "Info Sessions ISSBAT - ISTMT",
-      "category": "community",
-      "start": "2026-11-06T19:30:00+01:00",
-      "end": null,
-      "dateOnly": false,
-      "location": "Institut Supérieur des Sciences biologiques Appliquées de Tunis (ISSBAT)",
-      "summary": "Community event at Institut Supérieur des Sciences biologiques Appliquées de Tunis (ISSBAT).",
-      "url": "https://aio.events/e/info-sessions-issbat-istmt",
-      "sourceId": "aio",
-      "sourceName": "AIO Events · public listings",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "AIO Events · public listings",
-          "url": "https://aio.events/e/info-sessions-issbat-istmt"
-        }
-      ]
-    },
-    {
-      "id": "25d0c47ab560ed33",
-      "title": "Weld Talyani",
-      "category": "community",
-      "start": "2026-11-06T20:00:00+01:00",
-      "end": null,
-      "dateOnly": false,
-      "location": "Zéphyr La Marsa",
-      "summary": "Community event at Zéphyr La Marsa.",
-      "url": "https://teskerti.tn/evenement/weld-talyani",
-      "sourceId": "teskerti",
-      "sourceName": "Teskerti · tickets & screenings",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Teskerti · tickets & screenings",
-          "url": "https://teskerti.tn/evenement/weld-talyani"
-        }
-      ]
-    },
-    {
-      "id": "06db286c58beb10d",
-      "title": "Weld Talyani",
-      "category": "arts-culture",
-      "start": "2026-11-06T20:00:00+01:00",
-      "end": "2026-11-06T22:00:00+01:00",
-      "dateOnly": false,
-      "location": "Zéphyr La Marsa, Avenue Habib Bourguiba, La Marsa, Tunisie",
-      "summary": "Cultural event at Zéphyr La Marsa, Avenue Habib Bourguiba, La Marsa, Tunisie.",
-      "url": "https://joinmeeps.com/fr/event/weld-talyani-4066ef3f",
-      "sourceId": "meeps",
-      "sourceName": "Meeps · Tunis agenda",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Meeps · Tunis agenda",
-          "url": "https://joinmeeps.com/fr/event/weld-talyani-4066ef3f"
-        }
-      ]
-    },
-    {
-      "id": "65e6bbcc74f0eb76",
-      "title": "Bakma",
-      "category": "cinema",
-      "start": "2026-11-06T21:30:00+01:00",
-      "end": null,
-      "dateOnly": false,
-      "location": "L’Agora, La Marsa",
-      "summary": "Film screening at L’Agora, La Marsa.",
-      "url": "https://lagora.tn/movie/bakma/",
-      "sourceId": "lagora",
-      "sourceName": "L’Agora · La Marsa cinema",
-      "sourceKind": "organizer",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "L’Agora · La Marsa cinema",
-          "url": "https://lagora.tn/movie/bakma/"
         }
       ]
     },
@@ -927,7 +639,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -951,7 +663,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -975,7 +687,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -999,12 +711,36 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Meeps · Tunis agenda",
           "url": "https://joinmeeps.com/fr/event/foot-esperance-de-tunis-vs-us-monastir-j30brnwm"
+        }
+      ]
+    },
+    {
+      "id": "b8965eb65132d5ce",
+      "title": "Le Mystère Lucy Lost",
+      "category": "cinema",
+      "start": "2026-11-07T15:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "L’Agora, La Marsa",
+      "summary": "Film screening at L’Agora, La Marsa.",
+      "url": "https://lagora.tn/movie/le-mystere-lucy-lost/",
+      "sourceId": "lagora",
+      "sourceName": "L’Agora · La Marsa cinema",
+      "sourceKind": "organizer",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "L’Agora · La Marsa cinema",
+          "url": "https://lagora.tn/movie/le-mystere-lucy-lost/"
         }
       ]
     },
@@ -1023,12 +759,36 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Teskerti · tickets & screenings",
           "url": "https://teskerti.tn/evenement/weekend-0711"
+        }
+      ]
+    },
+    {
+      "id": "90df57c35dee9fbc",
+      "title": "Dar El 3ers – دار العرس",
+      "category": "cinema",
+      "start": "2026-11-07T16:45:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "L’Agora, La Marsa",
+      "summary": "Film screening at L’Agora, La Marsa.",
+      "url": "https://lagora.tn/movie/dar-el-3ers-%d8%af%d8%a7%d8%b1-%d8%a7%d9%84%d8%b9%d8%b1%d8%b3/",
+      "sourceId": "lagora",
+      "sourceName": "L’Agora · La Marsa cinema",
+      "sourceKind": "organizer",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "L’Agora · La Marsa cinema",
+          "url": "https://lagora.tn/movie/dar-el-3ers-%d8%af%d8%a7%d8%b1-%d8%a7%d9%84%d8%b9%d8%b1%d8%b3/"
         }
       ]
     },
@@ -1047,7 +807,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1071,7 +831,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1095,7 +855,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1119,12 +879,36 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Meeps · Tunis agenda",
           "url": "https://joinmeeps.com/fr/event/red-lawn-hq60jmxd"
+        }
+      ]
+    },
+    {
+      "id": "d87c44cfd37027fb",
+      "title": "Weekend",
+      "category": "cinema",
+      "start": "2026-11-07T19:15:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "L’Agora, La Marsa",
+      "summary": "Film screening at L’Agora, La Marsa.",
+      "url": "https://lagora.tn/movie/weekend/",
+      "sourceId": "lagora",
+      "sourceName": "L’Agora · La Marsa cinema",
+      "sourceKind": "organizer",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "L’Agora · La Marsa cinema",
+          "url": "https://lagora.tn/movie/weekend/"
         }
       ]
     },
@@ -1143,7 +927,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1167,7 +951,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1191,7 +975,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1215,12 +999,36 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Teskerti · tickets & screenings",
           "url": "https://teskerti.tn/evenement/bakma-0711"
+        }
+      ]
+    },
+    {
+      "id": "69e88e56f91e3a29",
+      "title": "Bakma",
+      "category": "cinema",
+      "start": "2026-11-07T21:15:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "L’Agora, La Marsa",
+      "summary": "Film screening at L’Agora, La Marsa.",
+      "url": "https://lagora.tn/movie/bakma/",
+      "sourceId": "lagora",
+      "sourceName": "L’Agora · La Marsa cinema",
+      "sourceKind": "organizer",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "L’Agora · La Marsa cinema",
+          "url": "https://lagora.tn/movie/bakma/"
         }
       ]
     },
@@ -1239,7 +1047,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1263,7 +1071,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1287,7 +1095,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1311,12 +1119,36 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Teskerti · tickets & screenings",
           "url": "https://teskerti.tn/evenement/bakma-0811"
+        }
+      ]
+    },
+    {
+      "id": "bdd7605a1e340368",
+      "title": "Weekend 08/11",
+      "category": "cinema",
+      "start": "2026-11-08T21:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "Ciné Alhambra Zéphyr",
+      "summary": "Film screening at Ciné Alhambra Zéphyr.",
+      "url": "https://teskerti.tn/evenement/weekend-0811",
+      "sourceId": "teskerti",
+      "sourceName": "Teskerti · tickets & screenings",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Teskerti · tickets & screenings",
+          "url": "https://teskerti.tn/evenement/weekend-0811"
         }
       ]
     },
@@ -1335,7 +1167,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1363,7 +1195,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1387,7 +1219,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1411,7 +1243,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1439,7 +1271,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1463,7 +1295,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1491,7 +1323,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1515,7 +1347,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1539,7 +1371,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1563,7 +1395,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1587,7 +1419,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1615,7 +1447,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1639,7 +1471,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1667,7 +1499,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1691,7 +1523,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1715,7 +1547,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1739,7 +1571,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1763,7 +1595,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1787,7 +1619,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1811,7 +1643,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1835,7 +1667,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1859,7 +1691,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1883,7 +1715,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1907,7 +1739,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1931,7 +1763,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1955,7 +1787,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1983,7 +1815,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2007,7 +1839,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2031,7 +1863,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2059,7 +1891,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2083,7 +1915,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2107,7 +1939,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2131,15 +1963,14 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-05T04:15:06.879064+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Meeps · Tunis agenda",
           "url": "https://joinmeeps.com/fr/event/soiree-beaujolais-nouveau-2026-wfq75h8p"
         }
-      ],
-      "stale": true
+      ]
     },
     {
       "id": "e039ca4a21574305",
@@ -2156,7 +1987,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2180,7 +2011,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2204,7 +2035,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2228,15 +2059,14 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-05T04:15:06.879064+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Meeps · Tunis agenda",
           "url": "https://joinmeeps.com/fr/event/journees-theatrales-de-carthage-27e-edition-r9zppdqh"
         }
-      ],
-      "stale": true
+      ]
     },
     {
       "id": "a77d9d704a530559",
@@ -2253,7 +2083,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2277,7 +2107,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2301,7 +2131,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2325,7 +2155,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2349,7 +2179,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2373,15 +2203,14 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-05T04:15:06.879064+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Meeps · Tunis agenda",
           "url": "https://joinmeeps.com/fr/event/tunisia-art-fair-1f4kq3wt"
         }
-      ],
-      "stale": true
+      ]
     },
     {
       "id": "eeee561d3293e286",
@@ -2398,7 +2227,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2422,7 +2251,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2446,7 +2275,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2470,7 +2299,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2494,7 +2323,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2518,7 +2347,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2542,7 +2371,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2566,7 +2395,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2590,12 +2419,36 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Tunis Events · Greater Tunis",
           "url": "https://tunis.events/events/ext_37wJX3/dune-troisieme-partie-pathe-tunis-city"
+        }
+      ]
+    },
+    {
+      "id": "4365744c81299bce",
+      "title": "Kpop Universe Edition 7",
+      "category": "cinema",
+      "start": "2026-12-20T09:00:00+01:00",
+      "end": "2026-12-20T17:00:00+01:00",
+      "dateOnly": false,
+      "location": "UTICA UNION TUN. THE IND. TRADE & ART",
+      "summary": "Film screening at UTICA UNION TUN. THE IND. TRADE & ART.",
+      "url": "https://tunis.events/events/8pQMOk/kpop-universe-edition-7-utica-union-tun-the-ind-trade-art",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/8pQMOk/kpop-universe-edition-7-utica-union-tun-the-ind-trade-art"
         }
       ]
     },
@@ -2614,7 +2467,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2638,7 +2491,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2662,7 +2515,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2686,7 +2539,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": "Multi-stop travel retreat including Tunis and southern Tunisia. Confirm the itinerary with the organizer.",
-      "checkedAt": "2026-11-06T04:15:01.537798+01:00",
+      "checkedAt": "2026-11-07T03:34:18.867065+01:00",
       "personallyTested": false,
       "sources": [
         {
