@@ -339,7 +339,7 @@ export function EntranceSection() {
 export function ContributionSection() {
   const { dict } = useI18n();
   return (
-    <section className="bg-paper-deep">
+    <section className="bg-paper-deep" id="contribution">
       <Section className="section-pad">
         <Reveal>
           <Headline>{dict.contribution.headline}</Headline>

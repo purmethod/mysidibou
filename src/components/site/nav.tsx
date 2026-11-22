@@ -6,15 +6,25 @@
 import { useEffect, useState } from "react";
 
 import { LANGS, useI18n, type Lang } from "@/lib/i18n";
+import { story } from "@/lib/story";
 import { BrandWordmark, HeartIcon, useDonation } from "./ui";
 
 const anchors = [
-  { key: "mission", href: "#mission" },
-  { key: "people", href: "#people" },
+  { key: "story", href: "#story" },
   { key: "team", href: "#team" },
-  { key: "progress", href: "#progress" },
+  { key: "how", href: "#contribution" },
   { key: "transparency", href: "#transparency" },
 ] as const;
+
+/** COMPAZ stays available, but only as a small mark at the edge of the bar. */
+function CompazMini() {
+  return (
+    <a className="compaz-mini" href="/kompas" aria-label="Explore Sidi Bou with COMPAZ" lang="en" dir="ltr">
+      <img src="/kompas/compaz-mark.webp" width="144" height="147" alt="" decoding="async" />
+      <span>COMPAZ</span>
+    </a>
+  );
+}
 
 export function LanguageSwitch() {
   const { lang, setLang } = useI18n();
@@ -37,7 +47,9 @@ export function LanguageSwitch() {
 }
 
 export function SiteNav() {
-  const { dict } = useI18n();
+  const { dict, lang } = useI18n();
+  const label = (key: (typeof anchors)[number]["key"]) =>
+    key === "story" ? story[lang].nav.story : key === "how" ? story[lang].nav.how : dict.nav[key];
   const { configured, href } = useDonation();
   const [solid, setSolid] = useState(false);
   const [open, setOpen] = useState(false);
@@ -61,10 +73,11 @@ export function SiteNav() {
       </div>
 
       <div className="site-nav__right">
+        <CompazMini />
         <nav aria-label="Primary" className="site-nav__links">
           {anchors.map((item) => (
             <a className="site-nav__link" href={item.href} key={item.key}>
-              {dict.nav[item.key]}
+              {label(item.key)}
             </a>
           ))}
           <a className="site-nav__link site-nav__link--donate" href={donateHref}>
@@ -95,7 +108,7 @@ export function SiteNav() {
               key={item.key}
               onClick={() => setOpen(false)}
             >
-              {dict.nav[item.key]}
+              {label(item.key)}
             </a>
           ))}
           <div className="site-nav__menu-foot">
