@@ -2027,10 +2027,10 @@ html[dir="rtl"] .hero-mission__roles { direction: rtl; }
   min-height: 100svh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  padding: 6rem 1.25rem 0;
-  text-align: center;
+  padding: 6rem 1.25rem 0 3.75rem;
+  text-align: start;
   background: var(--color-paper);
 }
 .story-intro__copy { max-width: 46rem; }
@@ -2057,9 +2057,8 @@ html[dir="rtl"] .hero-mission__roles { direction: rtl; }
 }
 .story-intro__scroll {
   position: absolute;
-  bottom: 7.5rem;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 2.5rem;
+  inset-inline-start: 3.75rem;
   color: var(--color-ink-soft);
   font-size: 0.625rem;
   font-weight: 600;
@@ -2071,7 +2070,7 @@ html[dir="rtl"] .hero-mission__roles { direction: rtl; }
 .story-intro__rule {
   position: absolute;
   bottom: 0;
-  left: 50%;
+  inset-inline-start: calc(1.75rem);
   width: 1px;
   height: 6rem;
   background: var(--color-line);
@@ -2087,6 +2086,13 @@ html[dir="rtl"] .hero-mission__roles { direction: rtl; }
 @keyframes story-fade-x { from { opacity: 0; } to { opacity: 1; } }
 @keyframes story-draw { from { transform: scaleY(0); } to { transform: scaleY(1); } }
 
+@media (min-width: 860px) {
+  .story-intro { align-items: center; text-align: center; padding: 6rem 1.25rem 0; }
+  .story-intro__scroll { inset-inline-start: 50%; bottom: 7.5rem; transform: translateX(-50%); }
+  html[dir="rtl"] .story-intro__scroll { transform: translateX(50%); }
+  .story-intro__rule { inset-inline-start: 50%; }
+}
+
 /* The line */
 .story {
   position: relative;
@@ -2095,12 +2101,13 @@ html[dir="rtl"] .hero-mission__roles { direction: rtl; }
   padding: 0 1.25rem 4rem;
   --line-x: 1.25rem;
 }
-.story::before {
+.story__track { position: relative; padding-bottom: 0.5rem; }
+.story__track::before {
   content: "";
   position: absolute;
   top: 0;
-  bottom: 9rem;
-  inset-inline-start: calc(var(--line-x) + 0.5rem);
+  bottom: 0.9rem;
+  inset-inline-start: 0.5rem;
   width: 1px;
   background: var(--color-line);
 }
@@ -2112,6 +2119,8 @@ html[dir="rtl"] .hero-mission__roles { direction: rtl; }
   padding-inline-start: 2.5rem;
 }
 .story-chapter span {
+  position: relative;
+  z-index: 1;
   display: inline-block;
   padding: 0.35rem 0.85rem;
   background: var(--color-paper);
@@ -2239,6 +2248,7 @@ html[dir="rtl"] .hero-mission__roles { direction: rtl; }
 
 .story__end {
   position: relative;
+  z-index: 1;
   display: block;
   width: 9px;
   height: 9px;
@@ -2272,7 +2282,7 @@ html[dir="rtl"] .hero-mission__roles { direction: rtl; }
 /* Wide screens: line in the middle, photo and text alternate */
 @media (min-width: 860px) {
   .story { padding-bottom: 6rem; }
-  .story::before { inset-inline-start: 50%; }
+  .story__track::before { inset-inline-start: 50%; }
   .story-chapter { padding: 5rem 0 3.5rem; padding-inline-start: 0; text-align: center; }
   .station {
     grid-template-columns: minmax(0, 1fr) 6rem minmax(0, 1fr);

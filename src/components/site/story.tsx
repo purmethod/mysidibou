@@ -174,6 +174,7 @@ export function StorySection() {
 
   return (
     <section className="story" id="story" aria-label={copy.nav.story}>
+      <div className="story__track">
       <Chapter label={copy.chapters.village} />
       <ol className="story__list">
         {copy.history.map((station, i) => (
@@ -187,6 +188,7 @@ export function StorySection() {
         ))}
       </ol>
       <span className="story__end" aria-hidden="true" />
+      </div>
       <p className="story__credit">{copy.credit}</p>
     </section>
   );
