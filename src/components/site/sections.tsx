@@ -339,7 +339,7 @@ export function EntranceSection() {
 export function ContributionSection() {
   const { dict } = useI18n();
   return (
-    <section className="bg-paper-deep">
+    <section className="bg-paper-deep" id="contribution">
       <Section className="section-pad">
         <Reveal>
           <Headline>{dict.contribution.headline}</Headline>
@@ -680,7 +680,7 @@ export function FooterSection() {
         </div>
         <div className="flex flex-col items-start justify-between gap-6 md:items-end">
           <nav aria-label="Footer" className="flex flex-wrap gap-x-8 gap-y-2">
-            {(["mission", "people", "team", "progress", "transparency"] as const).map((key) => (
+            {(["mission", "team", "transparency"] as const).map((key) => (
               <a className="site-nav__link" href={`#${key}`} key={key}>
                 {dict.nav[key]}
               </a>

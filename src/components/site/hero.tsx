@@ -5,10 +5,10 @@ import { useI18n } from "@/lib/i18n";
 import { HeartIcon, SealIcon } from "./ui";
 import { KompasEntry } from "./kompas-entry";
 
-const commitmentIcons = ["plastic", "cigarette", "environment", "nature"] as const;
+export const commitmentIcons = ["plastic", "cigarette", "environment", "nature"] as const;
 type MissionIconName = typeof commitmentIcons[number] | "like" | "share";
 
-function MissionIcon({ name, ...props }: SVGProps<SVGSVGElement> & { name: MissionIconName }) {
+export function MissionIcon({ name, ...props }: SVGProps<SVGSVGElement> & { name: MissionIconName }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.55" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>
       {name === "plastic" && <><path d="M10 2h4v4l3 4v10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V10l3-4V2zM9 13h6M9 17h6M10 5h4" /><path className="hero-mission__slash" d="M3 21 21 3" strokeWidth="2" /></>}

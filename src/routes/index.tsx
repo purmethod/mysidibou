@@ -1,25 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import {
-  CleaningSection,
   ContributionSection,
-  DonateSection,
-  EntranceSection,
   FinaleSection,
-  FiveHundredSection,
   FollowSection,
   FooterSection,
-  LocalsSection,
-  MarqueeSection,
-  MissionSection,
-  PeopleSection,
-  ProgressSection,
   TeamSection,
   TransparencySection,
-  UnescoSection,
 } from "@/components/site/sections";
-import { HeroSection } from "@/components/site/hero";
-import { DonatePill, SiteNav } from "@/components/site/nav";
+import { IntroSection, ParticipateSection, StorySection } from "@/components/site/story";
+import { SiteNav } from "@/components/site/nav";
 import { ScrollProgress } from "@/components/site/ui";
 
 export const Route = createFileRoute("/")({
@@ -31,24 +21,15 @@ function Index() {
     <main id="top">
       <SiteNav />
       <ScrollProgress />
-      <HeroSection />
-      <UnescoSection />
-      <MarqueeSection />
-      <MissionSection />
-      <PeopleSection />
+      <IntroSection />
+      <StorySection />
+      <ParticipateSection />
       <TeamSection />
-      <DonateSection />
-      <CleaningSection />
-      <LocalsSection />
-      <EntranceSection />
       <ContributionSection />
       <TransparencySection />
-      <ProgressSection />
-      <FiveHundredSection />
       <FollowSection />
       <FinaleSection />
       <FooterSection />
-      <DonatePill />
     </main>
   );
 }
