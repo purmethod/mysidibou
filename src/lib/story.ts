@@ -59,6 +59,7 @@ const photos = {
   flowerSeller: { photo: `${P}flower-seller.webp`, alt: "A jasmine seller in Sidi Bou Saïd" },
   gate: { photo: `${P}flower-gate.webp`, alt: "The flower gate at the entrance of the old village" },
   historic: { photo: `${P}historic.webp`, alt: "Sidi Bou Saïd in an old photograph" },
+  blueWorld: { photo: `${P}blue-world.webp`, alt: "A blue heart with the map of the world" },
 };
 
 const more = {
@@ -103,6 +104,7 @@ const en: StoryCopy = {
     { date: "1 December 2027", text: "Tunisia's report to UNESCO is due: landslide studies, a map of the cracks, emergency plans and a tourism strategy.", future: true },
     { date: "2028", text: "The World Heritage Committee reviews the report at its 50th session.", future: true },
     { date: "500 years", title: "People should still be able to walk these streets.", text: "We are responsible for what we leave behind.", ...photos.historic, future: true },
+    { date: "2526", text: "We believe in a blue world without plastic, without pollution, without war. Peace.", ...photos.blueWorld, future: true },
   ],
 };
 
@@ -140,6 +142,7 @@ const fr: StoryCopy = {
     { date: "1er décembre 2027", text: "Le rapport de la Tunisie à l'UNESCO est attendu : études des glissements, carte des fissures, plans d'urgence et stratégie touristique.", future: true },
     { date: "2028", text: "Le Comité du patrimoine mondial examine le rapport lors de sa 50e session.", future: true },
     { date: "500 ans", title: "On doit encore pouvoir marcher dans ces rues.", text: "Nous sommes responsables de ce que nous laissons derrière nous.", ...photos.historic, future: true },
+    { date: "2526", text: "Nous croyons en un monde bleu, sans plastique, sans pollution, sans guerre. La paix.", ...photos.blueWorld, future: true },
   ],
 };
 
@@ -177,6 +180,7 @@ const de: StoryCopy = {
     { date: "1. Dezember 2027", text: "Tunesiens Bericht an die UNESCO ist fällig: Erdrutsch-Studien, eine Karte der Risse, Notfallpläne und eine Tourismusstrategie.", future: true },
     { date: "2028", text: "Das Welterbekomitee prüft den Bericht auf seiner 50. Sitzung.", future: true },
     { date: "500 Jahre", title: "Menschen sollen hier noch immer durch diese Straßen gehen.", text: "Wir sind verantwortlich für das, was wir hinterlassen.", ...photos.historic, future: true },
+    { date: "2526", text: "Wir glauben an eine blaue Welt ohne Plastik, ohne Verschmutzung, ohne Krieg. Frieden.", ...photos.blueWorld, future: true },
   ],
 };
 
@@ -214,6 +218,7 @@ const ar: StoryCopy = {
     { date: "1 ديسمبر 2027", text: "موعد تقرير تونس إلى اليونسكو: دراسات الانزلاقات، خريطة الشقوق، خطط الطوارئ واستراتيجية للسياحة.", future: true },
     { date: "2028", text: "تنظر لجنة التراث العالمي في التقرير خلال دورتها الخمسين.", future: true },
     { date: "500 عام", title: "يجب أن يظل الناس قادرين على المشي في هذه الشوارع.", text: "نحن مسؤولون عمّا نتركه خلفنا.", ...photos.historic, future: true },
+    { date: "2526", text: "نؤمن بعالم أزرق، بلا بلاستيك، بلا تلوث، بلا حرب. سلام.", ...photos.blueWorld, future: true },
   ],
 };
 
