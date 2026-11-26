@@ -225,3 +225,21 @@ export function ParticipateSection() {
     </section>
   );
 }
+
+/* ------------------------------------------------------------------ */
+/* Stories from the mission: after the line, not on it                 */
+/* ------------------------------------------------------------------ */
+
+export function PostsSection() {
+  const { lang } = useI18n();
+  const copy = story[lang];
+  return (
+    <section className="story-posts" aria-label={copy.chapters.mission}>
+      <ol className="story__list">
+        {copy.posts.map((station, i) => (
+          <StationItem key={`p${i}`} station={station} side={i % 2 === 0 ? "start" : "end"} />
+        ))}
+      </ol>
+    </section>
+  );
+}

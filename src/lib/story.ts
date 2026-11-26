@@ -38,6 +38,8 @@ type StoryCopy = {
   credit: string;
   history: Station[];
   mission: Station[];
+  /** Stories from the mission: shown after the line, not on it. */
+  posts: Station[];
   nav: { story: string; how: string };
 };
 
@@ -95,16 +97,15 @@ const en: StoryCopy = {
   ],
   mission: [
     { date: "2026", title: "We are architects. We take responsibility.", text: "Architects and students for Sidi Bou Saïd. We work on Tunisia's report to UNESCO.", ...photos.hero, extra: "role" },
+    { date: "1 December 2027", text: "Tunisia's report to UNESCO is due: landslide studies, a map of the cracks, emergency plans and a tourism strategy.", future: true },
+    { date: "2028", text: "The World Heritage Committee reviews the report at its 50th session.", future: true },
+    { date: "2526", text: "We believe in a blue world without plastic, without pollution, without war. Peace.", ...photos.blueWorld, future: true },
+  ],
+  posts: [
     { date: "Every day", title: "The cleanest and most beautiful village in the world.", text: "No plastic on the streets. Not a single cigarette butt.", ...photos.cleaning, extra: "commitments", more: more.cleaning },
     { date: "Every generation", title: "The next generation takes responsibility.", text: "Architecture students from ENAU work with the people of the village.", ...photos.students, more: more.people },
     { date: "All year", title: "Strong local life.", text: "Flower sellers, cafés, craftsmen and families are the heart of the village.", ...photos.flowerSeller, more: more.locals },
     { date: "The entrance", title: "Let nature build the entrance.", text: "A flower gate where the old village begins. Every visit starts here.", ...photos.gate, more: more.entrance },
-    { date: "December 2026", text: "Our first public report: donations, spending, results.", future: true },
-    { date: "Season 2027", title: "A ticket for visitors from abroad.", text: "10 TND per person, valid for one year. Tunisians enter free.", future: true, extra: "ticket" },
-    { date: "1 December 2027", text: "Tunisia's report to UNESCO is due: landslide studies, a map of the cracks, emergency plans and a tourism strategy.", future: true },
-    { date: "2028", text: "The World Heritage Committee reviews the report at its 50th session.", future: true },
-    { date: "500 years", title: "People should still be able to walk these streets.", text: "We are responsible for what we leave behind.", ...photos.historic, future: true },
-    { date: "2526", text: "We believe in a blue world without plastic, without pollution, without war. Peace.", ...photos.blueWorld, future: true },
   ],
 };
 
@@ -133,16 +134,15 @@ const fr: StoryCopy = {
   ],
   mission: [
     { date: "2026", title: "Nous sommes architectes. Nous prenons nos responsabilités.", text: "Des architectes et des étudiants pour Sidi Bou Saïd. Nous travaillons au rapport de la Tunisie à l'UNESCO.", ...photos.hero, extra: "role" },
+    { date: "1er décembre 2027", text: "Le rapport de la Tunisie à l'UNESCO est attendu : études des glissements, carte des fissures, plans d'urgence et stratégie touristique.", future: true },
+    { date: "2028", text: "Le Comité du patrimoine mondial examine le rapport lors de sa 50e session.", future: true },
+    { date: "2526", text: "Nous croyons en un monde bleu, sans plastique, sans pollution, sans guerre. La paix.", ...photos.blueWorld, future: true },
+  ],
+  posts: [
     { date: "Chaque jour", title: "Le village le plus propre et le plus beau du monde.", text: "Pas de plastique dans les rues. Pas un seul mégot.", ...photos.cleaning, extra: "commitments", more: more.cleaning },
     { date: "Chaque génération", title: "La nouvelle génération prend ses responsabilités.", text: "Les étudiants en architecture de l'ENAU travaillent avec les habitants du village.", ...photos.students, more: more.people },
     { date: "Toute l'année", title: "Une vie locale forte.", text: "Vendeurs de fleurs, cafés, artisans et familles sont le cœur du village.", ...photos.flowerSeller, more: more.locals },
     { date: "L'entrée", title: "Laisser la nature construire l'entrée.", text: "Une porte de fleurs là où commence le vieux village. Chaque visite commence ici.", ...photos.gate, more: more.entrance },
-    { date: "Décembre 2026", text: "Notre premier rapport public : dons, dépenses, résultats.", future: true },
-    { date: "Saison 2027", title: "Un billet pour les visiteurs étrangers.", text: "10 TND par personne, valable un an. Entrée gratuite pour les Tunisiens.", future: true, extra: "ticket" },
-    { date: "1er décembre 2027", text: "Le rapport de la Tunisie à l'UNESCO est attendu : études des glissements, carte des fissures, plans d'urgence et stratégie touristique.", future: true },
-    { date: "2028", text: "Le Comité du patrimoine mondial examine le rapport lors de sa 50e session.", future: true },
-    { date: "500 ans", title: "On doit encore pouvoir marcher dans ces rues.", text: "Nous sommes responsables de ce que nous laissons derrière nous.", ...photos.historic, future: true },
-    { date: "2526", text: "Nous croyons en un monde bleu, sans plastique, sans pollution, sans guerre. La paix.", ...photos.blueWorld, future: true },
   ],
 };
 
@@ -171,16 +171,15 @@ const de: StoryCopy = {
   ],
   mission: [
     { date: "2026", title: "Wir sind Architekten. Wir übernehmen Verantwortung.", text: "Architekten und Studenten für Sidi Bou Saïd. Wir arbeiten am Bericht Tunesiens an die UNESCO.", ...photos.hero, extra: "role" },
+    { date: "1. Dezember 2027", text: "Tunesiens Bericht an die UNESCO ist fällig: Erdrutsch-Studien, eine Karte der Risse, Notfallpläne und eine Tourismusstrategie.", future: true },
+    { date: "2028", text: "Das Welterbekomitee prüft den Bericht auf seiner 50. Sitzung.", future: true },
+    { date: "2526", text: "Wir glauben an eine blaue Welt ohne Plastik, ohne Verschmutzung, ohne Krieg. Frieden.", ...photos.blueWorld, future: true },
+  ],
+  posts: [
     { date: "Jeden Tag", title: "Das sauberste und schönste Dorf der Welt.", text: "Kein Plastik auf den Straßen. Kein einziger Zigarettenstummel.", ...photos.cleaning, extra: "commitments", more: more.cleaning },
     { date: "Jede Generation", title: "Die nächste Generation übernimmt Verantwortung.", text: "Architekturstudenten der ENAU arbeiten mit den Menschen im Dorf.", ...photos.students, more: more.people },
     { date: "Das ganze Jahr", title: "Ein starkes Leben im Dorf.", text: "Blumenverkäufer, Cafés, Handwerker und Familien sind das Herz des Dorfes.", ...photos.flowerSeller, more: more.locals },
     { date: "Der Eingang", title: "Die Natur baut den Eingang.", text: "Ein Blumentor dort, wo das alte Dorf beginnt. Jeder Besuch beginnt hier.", ...photos.gate, more: more.entrance },
-    { date: "Dezember 2026", text: "Unser erster öffentlicher Bericht: Spenden, Ausgaben, Ergebnisse.", future: true },
-    { date: "Saison 2027", title: "Ein Ticket für Besucher aus dem Ausland.", text: "10 TND pro Person, ein Jahr gültig. Tunesier haben freien Eintritt.", future: true, extra: "ticket" },
-    { date: "1. Dezember 2027", text: "Tunesiens Bericht an die UNESCO ist fällig: Erdrutsch-Studien, eine Karte der Risse, Notfallpläne und eine Tourismusstrategie.", future: true },
-    { date: "2028", text: "Das Welterbekomitee prüft den Bericht auf seiner 50. Sitzung.", future: true },
-    { date: "500 Jahre", title: "Menschen sollen hier noch immer durch diese Straßen gehen.", text: "Wir sind verantwortlich für das, was wir hinterlassen.", ...photos.historic, future: true },
-    { date: "2526", text: "Wir glauben an eine blaue Welt ohne Plastik, ohne Verschmutzung, ohne Krieg. Frieden.", ...photos.blueWorld, future: true },
   ],
 };
 
@@ -209,16 +208,15 @@ const ar: StoryCopy = {
   ],
   mission: [
     { date: "2026", title: "نحن معماريون. نتحمّل المسؤولية.", text: "معماريون وطلبة من أجل سيدي بوسعيد. نعمل على تقرير تونس إلى اليونسكو.", ...photos.hero, extra: "role" },
+    { date: "1 ديسمبر 2027", text: "موعد تقرير تونس إلى اليونسكو: دراسات الانزلاقات، خريطة الشقوق، خطط الطوارئ واستراتيجية للسياحة.", future: true },
+    { date: "2028", text: "تنظر لجنة التراث العالمي في التقرير خلال دورتها الخمسين.", future: true },
+    { date: "2526", text: "نؤمن بعالم أزرق، بلا بلاستيك، بلا تلوث، بلا حرب. سلام.", ...photos.blueWorld, future: true },
+  ],
+  posts: [
     { date: "كل يوم", title: "أنظف وأجمل قرية في العالم.", text: "لا بلاستيك في الشوارع. ولا عقب سيجارة واحد.", ...photos.cleaning, extra: "commitments", more: more.cleaning },
     { date: "كل جيل", title: "الجيل القادم يتحمّل المسؤولية.", text: "طلبة الهندسة المعمارية في المدرسة الوطنية للهندسة المعمارية والتعمير يعملون مع سكان القرية.", ...photos.students, more: more.people },
     { date: "طوال العام", title: "حياة محلية قوية.", text: "باعة الزهور والمقاهي والحرفيون والعائلات هم قلب القرية.", ...photos.flowerSeller, more: more.locals },
     { date: "المدخل", title: "لنترك الطبيعة تبني المدخل.", text: "بوابة من الزهور حيث تبدأ القرية القديمة. كل زيارة تبدأ من هنا.", ...photos.gate, more: more.entrance },
-    { date: "ديسمبر 2026", text: "تقريرنا العلني الأول: التبرعات، المصاريف، النتائج.", future: true },
-    { date: "موسم 2027", title: "تذكرة للزوار القادمين من الخارج.", text: "10 دنانير للشخص، صالحة لمدة عام. الدخول مجاني للتونسيين.", future: true, extra: "ticket" },
-    { date: "1 ديسمبر 2027", text: "موعد تقرير تونس إلى اليونسكو: دراسات الانزلاقات، خريطة الشقوق، خطط الطوارئ واستراتيجية للسياحة.", future: true },
-    { date: "2028", text: "تنظر لجنة التراث العالمي في التقرير خلال دورتها الخمسين.", future: true },
-    { date: "500 عام", title: "يجب أن يظل الناس قادرين على المشي في هذه الشوارع.", text: "نحن مسؤولون عمّا نتركه خلفنا.", ...photos.historic, future: true },
-    { date: "2526", text: "نؤمن بعالم أزرق، بلا بلاستيك، بلا تلوث، بلا حرب. سلام.", ...photos.blueWorld, future: true },
   ],
 };
 

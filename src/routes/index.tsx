@@ -8,7 +8,7 @@ import {
   TeamSection,
   TransparencySection,
 } from "@/components/site/sections";
-import { IntroSection, ParticipateSection, StorySection } from "@/components/site/story";
+import { IntroSection, ParticipateSection, PostsSection, StorySection } from "@/components/site/story";
 import { SiteNav } from "@/components/site/nav";
 import { ScrollProgress } from "@/components/site/ui";
 
@@ -23,6 +23,7 @@ function Index() {
       <ScrollProgress />
       <IntroSection />
       <StorySection />
+      <PostsSection />
       <ParticipateSection />
       <TeamSection />
       <ContributionSection />

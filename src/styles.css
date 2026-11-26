@@ -2317,3 +2317,17 @@ html[dir="rtl"] .hero-mission__roles { direction: rtl; }
   text-align: center;
 }
 .story-participate__inner .hero-mission__actions { margin-top: 1.25rem; }
+
+/* Mission stories after the line: same circles, no line, no dots */
+.story-posts {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 1rem 1.25rem 3rem;
+  border-top: 1px solid var(--color-line);
+}
+.story-posts .station { padding-inline-start: 0; margin-top: 3.25rem; }
+.story-posts .station__dot { display: none; }
+@media (min-width: 860px) {
+  .story-posts { padding-top: 2rem; }
+  .story-posts .station { margin-top: 5rem; }
+}
