@@ -95,23 +95,23 @@ const en: StoryCopy = {
     { date: "11th century", text: "Watchtowers and fire towers are built on the cape to guard the Gulf of Tunis." },
     { date: "1231", text: "The Sufi saint Abu Saïd al-Baji, who taught on the hill, is buried here. The village grows around his tomb and later takes his name.", ...photos.sidi1900 },
     { date: "18th and 19th century", text: "The beys of Tunis and families from the city build summer residences close to the saint's tomb.", ...photos.sidi1894 },
-    { date: "1860", text: "A tower of about ten metres becomes the lighthouse of the cape, with a flashing light.", ...photos.lighthouse }
+    { date: "1860", text: "A tower of about ten metres becomes the lighthouse of the cape, with a flashing light.", ...photos.lighthouse },
     { date: "1893", text: "A decree of the bey makes Sidi Bou Saïd a municipality, one of the oldest on the coast north of Tunis." },
-    { date: "1912", text: "Baron Rodolphe d'Erlanger begins his palace, Ennejma Ezzahra. It takes ten years to build.", ...photos.erlanger }
+    { date: "1912", text: "Baron Rodolphe d'Erlanger begins his palace, Ennejma Ezzahra. It takes ten years to build.", ...photos.erlanger },
     { date: "1914", text: "Paul Klee, August Macke and Louis Moilliet paint in the village. Macke paints the café on the square, one of the oldest pictures of the village.", ...photos.klee },
-    { date: "1915", text: "A decree, pushed by Baron d'Erlanger, protects the village: white walls, blue doors, nothing built out of place. It is one of the first heritage protection laws in Tunisia.", ...photos.door }
-    { date: "1920s and 1930s", text: "Blue and white becomes the rule for every house. Writers such as André Gide find a retreat here.", ...photos.roofs }
-    { date: "1932", text: "D'Erlanger dies. His archive of Arab music stays in the palace.", ...photos.palace }
+    { date: "1915", text: "A decree, pushed by Baron d'Erlanger, protects the village: white walls, blue doors, nothing built out of place. It is one of the first heritage protection laws in Tunisia.", ...photos.door },
+    { date: "1920s and 1930s", text: "Blue and white becomes the rule for every house. Writers such as André Gide find a retreat here.", ...photos.roofs },
+    { date: "1932", text: "D'Erlanger dies. His archive of Arab music stays in the palace.", ...photos.palace },
     { date: "1942 and 1943", text: "The Second World War reaches Tunis. German and Italian troops hold the city from November 1942 until the Allies enter in May 1943.", ...photos.tunis1943 },
     { date: "Late 1940s", text: "Painters found the École de Tunis. Yahia Turki, Ammar Farhat and others paint the life of the country, far from the orientalist gaze.", ...photos.drawing },
-    { date: "March 1956", text: "Tunisia becomes independent.", ...photos.bourguiba }
+    { date: "March 1956", text: "Tunisia becomes independent.", ...photos.bourguiba },
     { date: "1966 to 1968", text: "The philosopher Michel Foucault lives in Sidi Bou Saïd, teaches in Tunis and writes much of The Archaeology of Knowledge here." },
-    { date: "1979", text: "The archaeological site of Carthage, the landscape around the village, becomes World Heritage.", ...photos.antonine }
+    { date: "1979", text: "The archaeological site of Carthage, the landscape around the village, becomes World Heritage.", ...photos.antonine },
     { date: "1985", text: "A decree makes Carthage and Sidi Bou Saïd a national archaeological park and sets areas where nothing may be built." },
-    { date: "1992", text: "The state, owner of the palace since the late 1980s, opens it as the Centre for Arab and Mediterranean Music.", ...photos.palaceGarden }
-    { date: "January 2011", text: "The Tunisian revolution. President Ben Ali, whose palace stands on the hill of Sidi Bou Saïd, flees the country.", ...photos.revolution }
-    { date: "January 2013", text: "Arsonists set fire to the saint's mausoleum. Residents march in protest, and UNESCO calls for the protection of Tunisia's heritage.", ...photos.mausoleum }
-    { date: "May 2023", text: "D'Erlanger's music archive enters UNESCO's Memory of the World Register.", ...photos.palaceInside }
+    { date: "1992", text: "The state, owner of the palace since the late 1980s, opens it as the Centre for Arab and Mediterranean Music.", ...photos.palaceGarden },
+    { date: "January 2011", text: "The Tunisian revolution. President Ben Ali, whose palace stands on the hill of Sidi Bou Saïd, flees the country.", ...photos.revolution },
+    { date: "January 2013", text: "Arsonists set fire to the saint's mausoleum. Residents march in protest, and UNESCO calls for the protection of Tunisia's heritage.", ...photos.mausoleum },
+    { date: "May 2023", text: "D'Erlanger's music archive enters UNESCO's Memory of the World Register.", ...photos.palaceInside },
     { date: "April 2024", text: "The village enters Tunisia's Tentative List for World Heritage." },
     { date: "February 2025", text: "Tunisia submits the nomination: Village of Sidi Bou Saïd, hub of cultural and spiritual inspiration in the Mediterranean." },
     { date: "January 2026", text: "Close to 300 mm of rain in two days. The clay hillside cracks, and eight buildings are evacuated." },
@@ -146,23 +146,23 @@ const fr: StoryCopy = {
     { date: "XIe siècle", text: "Des tours de guet et des tours à feu sont construites sur le cap pour surveiller le golfe de Tunis." },
     { date: "1231", text: "Le saint soufi Abou Saïd al-Baji, qui enseignait sur la colline, y est enterré. Le village grandit autour de sa tombe et prend plus tard son nom.", ...photos.sidi1900 },
     { date: "XVIIIe et XIXe siècles", text: "Les beys de Tunis et des familles de la ville construisent des résidences d'été près de la tombe du saint.", ...photos.sidi1894 },
-    { date: "1860", text: "Une tour d'une dizaine de mètres devient le phare du cap, avec un feu à éclats.", ...photos.lighthouse }
+    { date: "1860", text: "Une tour d'une dizaine de mètres devient le phare du cap, avec un feu à éclats.", ...photos.lighthouse },
     { date: "1893", text: "Un décret du bey fait de Sidi Bou Saïd une commune, l'une des plus anciennes de la côte au nord de Tunis." },
-    { date: "1912", text: "Le baron Rodolphe d'Erlanger commence son palais, Ennejma Ezzahra. Sa construction dure dix ans.", ...photos.erlanger }
+    { date: "1912", text: "Le baron Rodolphe d'Erlanger commence son palais, Ennejma Ezzahra. Sa construction dure dix ans.", ...photos.erlanger },
     { date: "1914", text: "Paul Klee, August Macke et Louis Moilliet peignent dans le village. Macke peint le café de la place, l'une des plus anciennes images du village.", ...photos.klee },
-    { date: "1915", text: "Un décret, voulu par le baron d'Erlanger, protège le village : murs blancs, portes bleues, rien de construit hors de propos. C'est l'une des premières lois de protection du patrimoine en Tunisie.", ...photos.door }
-    { date: "Années 1920 et 1930", text: "Le bleu et le blanc deviennent la règle pour chaque maison. Des écrivains comme André Gide y trouvent une retraite.", ...photos.roofs }
-    { date: "1932", text: "D'Erlanger meurt. Ses archives de musique arabe restent au palais.", ...photos.palace }
+    { date: "1915", text: "Un décret, voulu par le baron d'Erlanger, protège le village : murs blancs, portes bleues, rien de construit hors de propos. C'est l'une des premières lois de protection du patrimoine en Tunisie.", ...photos.door },
+    { date: "Années 1920 et 1930", text: "Le bleu et le blanc deviennent la règle pour chaque maison. Des écrivains comme André Gide y trouvent une retraite.", ...photos.roofs },
+    { date: "1932", text: "D'Erlanger meurt. Ses archives de musique arabe restent au palais.", ...photos.palace },
     { date: "1942 et 1943", text: "La Seconde Guerre mondiale atteint Tunis. Les troupes allemandes et italiennes tiennent la ville de novembre 1942 jusqu'à l'entrée des Alliés en mai 1943.", ...photos.tunis1943 },
     { date: "Fin des années 1940", text: "Des peintres fondent l'École de Tunis. Yahia Turki, Ammar Farhat et d'autres peignent la vie du pays, loin du regard orientaliste.", ...photos.drawing },
-    { date: "Mars 1956", text: "La Tunisie devient indépendante.", ...photos.bourguiba }
+    { date: "Mars 1956", text: "La Tunisie devient indépendante.", ...photos.bourguiba },
     { date: "1966 à 1968", text: "Le philosophe Michel Foucault vit à Sidi Bou Saïd, enseigne à Tunis et y écrit une grande partie de L'Archéologie du savoir." },
-    { date: "1979", text: "Le site archéologique de Carthage, le paysage autour du village, devient patrimoine mondial.", ...photos.antonine }
+    { date: "1979", text: "Le site archéologique de Carthage, le paysage autour du village, devient patrimoine mondial.", ...photos.antonine },
     { date: "1985", text: "Un décret fait de Carthage et de Sidi Bou Saïd un parc archéologique national et fixe des zones où rien ne peut être construit." },
-    { date: "1992", text: "L'État, propriétaire du palais depuis la fin des années 1980, l'ouvre comme Centre des musiques arabes et méditerranéennes.", ...photos.palaceGarden }
-    { date: "Janvier 2011", text: "La révolution tunisienne. Le président Ben Ali, dont le palais se dresse sur la colline de Sidi Bou Saïd, fuit le pays.", ...photos.revolution }
-    { date: "Janvier 2013", text: "Des incendiaires mettent le feu au mausolée du saint. Les habitants manifestent, et l'UNESCO appelle à protéger le patrimoine tunisien.", ...photos.mausoleum }
-    { date: "Mai 2023", text: "Les archives musicales de d'Erlanger entrent au registre Mémoire du monde de l'UNESCO.", ...photos.palaceInside }
+    { date: "1992", text: "L'État, propriétaire du palais depuis la fin des années 1980, l'ouvre comme Centre des musiques arabes et méditerranéennes.", ...photos.palaceGarden },
+    { date: "Janvier 2011", text: "La révolution tunisienne. Le président Ben Ali, dont le palais se dresse sur la colline de Sidi Bou Saïd, fuit le pays.", ...photos.revolution },
+    { date: "Janvier 2013", text: "Des incendiaires mettent le feu au mausolée du saint. Les habitants manifestent, et l'UNESCO appelle à protéger le patrimoine tunisien.", ...photos.mausoleum },
+    { date: "Mai 2023", text: "Les archives musicales de d'Erlanger entrent au registre Mémoire du monde de l'UNESCO.", ...photos.palaceInside },
     { date: "Avril 2024", text: "Le village entre sur la liste indicative de la Tunisie pour le patrimoine mondial." },
     { date: "Février 2025", text: "La Tunisie dépose la candidature : Village de Sidi Bou Saïd, hub d'inspiration culturelle et spirituelle en Méditerranée." },
     { date: "Janvier 2026", text: "Près de 300 mm de pluie en deux jours. La colline d'argile se fissure et huit bâtiments sont évacués." },
@@ -197,23 +197,23 @@ const de: StoryCopy = {
     { date: "11. Jahrhundert", text: "Auf dem Kap entstehen Wachtürme und Feuertürme, die den Golf von Tunis bewachen." },
     { date: "1231", text: "Der Sufi-Heilige Abu Saïd al-Baji, der auf dem Hügel lehrte, wird hier begraben. Das Dorf wächst um sein Grab und trägt später seinen Namen.", ...photos.sidi1900 },
     { date: "18. und 19. Jahrhundert", text: "Die Beys von Tunis und Familien aus der Stadt bauen Sommerresidenzen nahe dem Grab des Heiligen.", ...photos.sidi1894 },
-    { date: "1860", text: "Ein etwa zehn Meter hoher Turm wird zum Leuchtturm des Kaps, mit blinkendem Feuer.", ...photos.lighthouse }
+    { date: "1860", text: "Ein etwa zehn Meter hoher Turm wird zum Leuchtturm des Kaps, mit blinkendem Feuer.", ...photos.lighthouse },
     { date: "1893", text: "Ein Dekret des Beys macht Sidi Bou Saïd zur Gemeinde, einer der ältesten an der Küste nördlich von Tunis." },
-    { date: "1912", text: "Baron Rodolphe d'Erlanger beginnt seinen Palast Ennejma Ezzahra. Der Bau dauert zehn Jahre.", ...photos.erlanger }
+    { date: "1912", text: "Baron Rodolphe d'Erlanger beginnt seinen Palast Ennejma Ezzahra. Der Bau dauert zehn Jahre.", ...photos.erlanger },
     { date: "1914", text: "Paul Klee, August Macke und Louis Moilliet malen im Dorf. Macke malt das Café am Platz, eines der ältesten Bilder des Dorfes.", ...photos.klee },
-    { date: "1915", text: "Ein Dekret, auf Betreiben von Baron d'Erlanger, schützt das Dorf: weiße Mauern, blaue Türen, nichts, was aus der Reihe fällt. Es ist eines der ersten Denkmalschutzgesetze Tunesiens.", ...photos.door }
-    { date: "1920er und 1930er", text: "Blau und Weiß wird zur Regel für jedes Haus. Schriftsteller wie André Gide finden hier einen Rückzugsort.", ...photos.roofs }
-    { date: "1932", text: "D'Erlanger stirbt. Sein Archiv der arabischen Musik bleibt im Palast.", ...photos.palace }
+    { date: "1915", text: "Ein Dekret, auf Betreiben von Baron d'Erlanger, schützt das Dorf: weiße Mauern, blaue Türen, nichts, was aus der Reihe fällt. Es ist eines der ersten Denkmalschutzgesetze Tunesiens.", ...photos.door },
+    { date: "1920er und 1930er", text: "Blau und Weiß wird zur Regel für jedes Haus. Schriftsteller wie André Gide finden hier einen Rückzugsort.", ...photos.roofs },
+    { date: "1932", text: "D'Erlanger stirbt. Sein Archiv der arabischen Musik bleibt im Palast.", ...photos.palace },
     { date: "1942 und 1943", text: "Der Zweite Weltkrieg erreicht Tunis. Deutsche und italienische Truppen halten die Stadt von November 1942, bis die Alliierten im Mai 1943 einziehen.", ...photos.tunis1943 },
     { date: "Ende der 1940er", text: "Maler gründen die École de Tunis. Yahia Turki, Ammar Farhat und andere malen das Leben des Landes, fern vom orientalistischen Blick.", ...photos.drawing },
-    { date: "März 1956", text: "Tunesien wird unabhängig.", ...photos.bourguiba }
+    { date: "März 1956", text: "Tunesien wird unabhängig.", ...photos.bourguiba },
     { date: "1966 bis 1968", text: "Der Philosoph Michel Foucault lebt in Sidi Bou Saïd, lehrt in Tunis und schreibt hier einen Großteil der Archäologie des Wissens." },
-    { date: "1979", text: "Die archäologische Stätte von Karthago, die Landschaft um das Dorf, wird Welterbe.", ...photos.antonine }
+    { date: "1979", text: "Die archäologische Stätte von Karthago, die Landschaft um das Dorf, wird Welterbe.", ...photos.antonine },
     { date: "1985", text: "Ein Dekret macht Karthago und Sidi Bou Saïd zum nationalen archäologischen Park und legt Flächen fest, auf denen nichts gebaut werden darf." },
-    { date: "1992", text: "Der Staat, seit Ende der 1980er Eigentümer des Palastes, eröffnet ihn als Zentrum für arabische und mediterrane Musik.", ...photos.palaceGarden }
-    { date: "Januar 2011", text: "Die tunesische Revolution. Präsident Ben Ali, dessen Palast auf dem Hügel von Sidi Bou Saïd steht, flieht aus dem Land.", ...photos.revolution }
-    { date: "Januar 2013", text: "Brandstifter zünden das Mausoleum des Heiligen an. Die Bewohner protestieren, und die UNESCO ruft zum Schutz des tunesischen Erbes auf.", ...photos.mausoleum }
-    { date: "Mai 2023", text: "D'Erlangers Musikarchiv wird in das UNESCO-Register Memory of the World aufgenommen.", ...photos.palaceInside }
+    { date: "1992", text: "Der Staat, seit Ende der 1980er Eigentümer des Palastes, eröffnet ihn als Zentrum für arabische und mediterrane Musik.", ...photos.palaceGarden },
+    { date: "Januar 2011", text: "Die tunesische Revolution. Präsident Ben Ali, dessen Palast auf dem Hügel von Sidi Bou Saïd steht, flieht aus dem Land.", ...photos.revolution },
+    { date: "Januar 2013", text: "Brandstifter zünden das Mausoleum des Heiligen an. Die Bewohner protestieren, und die UNESCO ruft zum Schutz des tunesischen Erbes auf.", ...photos.mausoleum },
+    { date: "Mai 2023", text: "D'Erlangers Musikarchiv wird in das UNESCO-Register Memory of the World aufgenommen.", ...photos.palaceInside },
     { date: "April 2024", text: "Das Dorf kommt auf Tunesiens Tentativliste für das Welterbe." },
     { date: "Februar 2025", text: "Tunesien reicht die Nominierung ein: Village of Sidi Bou Saïd, hub of cultural and spiritual inspiration in the Mediterranean." },
     { date: "Januar 2026", text: "Fast 300 mm Regen in zwei Tagen. Der Hang aus Ton bekommt Risse, acht Gebäude werden geräumt." },
@@ -248,23 +248,23 @@ const ar: StoryCopy = {
     { date: "القرن الحادي عشر", text: "تُبنى على الرأس أبراج مراقبة وأبراج نار لحراسة خليج تونس." },
     { date: "1231", text: "يُدفن هنا الولي الصوفي أبو سعيد الباجي الذي كان يعلّم على التل. وتنمو القرية حول ضريحه وتحمل اسمه لاحقًا.", ...photos.sidi1900 },
     { date: "القرنان الثامن عشر والتاسع عشر", text: "يبني بايات تونس وعائلات من المدينة مساكن صيفية قرب ضريح الولي.", ...photos.sidi1894 },
-    { date: "1860", text: "يصبح برج بارتفاع نحو عشرة أمتار منارة الرأس، بضوء متقطّع.", ...photos.lighthouse }
+    { date: "1860", text: "يصبح برج بارتفاع نحو عشرة أمتار منارة الرأس، بضوء متقطّع.", ...photos.lighthouse },
     { date: "1893", text: "مرسوم من الباي يجعل سيدي بوسعيد بلدية، من أقدم بلديات الساحل شمال تونس." },
-    { date: "1912", text: "يبدأ البارون رودولف ديرلانجي بناء قصره النجمة الزهراء. يستغرق البناء عشر سنوات.", ...photos.erlanger }
+    { date: "1912", text: "يبدأ البارون رودولف ديرلانجي بناء قصره النجمة الزهراء. يستغرق البناء عشر سنوات.", ...photos.erlanger },
     { date: "1914", text: "يرسم بول كلي وأوغست ماكه ولويس مواييه في القرية. ويرسم ماكه المقهى في الساحة، وهي من أقدم صور القرية.", ...photos.klee },
-    { date: "1915", text: "مرسوم بمبادرة من البارون ديرلانجي يحمي القرية: جدران بيضاء، أبواب زرقاء، ولا بناء خارج عن طابعها. وهو من أوائل قوانين حماية التراث في تونس.", ...photos.door }
-    { date: "العشرينيات والثلاثينيات", text: "يصبح الأبيض والأزرق قاعدة لكل بيت. ويجد كتّاب مثل أندريه جيد ملاذًا هنا.", ...photos.roofs }
-    { date: "1932", text: "يموت ديرلانجي. ويبقى أرشيفه للموسيقى العربية في القصر.", ...photos.palace }
+    { date: "1915", text: "مرسوم بمبادرة من البارون ديرلانجي يحمي القرية: جدران بيضاء، أبواب زرقاء، ولا بناء خارج عن طابعها. وهو من أوائل قوانين حماية التراث في تونس.", ...photos.door },
+    { date: "العشرينيات والثلاثينيات", text: "يصبح الأبيض والأزرق قاعدة لكل بيت. ويجد كتّاب مثل أندريه جيد ملاذًا هنا.", ...photos.roofs },
+    { date: "1932", text: "يموت ديرلانجي. ويبقى أرشيفه للموسيقى العربية في القصر.", ...photos.palace },
     { date: "1942 و1943", text: "تصل الحرب العالمية الثانية إلى تونس. تسيطر القوات الألمانية والإيطالية على المدينة من نوفمبر 1942 حتى دخول الحلفاء في مايو 1943.", ...photos.tunis1943 },
     { date: "أواخر الأربعينيات", text: "يؤسس رسامون مدرسة تونس. يحيى التركي وعمار فرحات وآخرون يرسمون حياة البلاد بعيدًا عن النظرة الاستشراقية.", ...photos.drawing },
-    { date: "مارس 1956", text: "تونس تنال استقلالها.", ...photos.bourguiba }
+    { date: "مارس 1956", text: "تونس تنال استقلالها.", ...photos.bourguiba },
     { date: "1966 إلى 1968", text: "يعيش الفيلسوف ميشيل فوكو في سيدي بوسعيد، ويدرّس في تونس، ويكتب هنا جزءًا كبيرًا من حفريات المعرفة." },
-    { date: "1979", text: "موقع قرطاج الأثري، المشهد المحيط بالقرية، يصبح تراثًا عالميًا.", ...photos.antonine }
+    { date: "1979", text: "موقع قرطاج الأثري، المشهد المحيط بالقرية، يصبح تراثًا عالميًا.", ...photos.antonine },
     { date: "1985", text: "مرسوم يجعل قرطاج وسيدي بوسعيد حديقة أثرية وطنية ويحدد مناطق يُمنع فيها البناء." },
-    { date: "1992", text: "الدولة، مالكة القصر منذ أواخر الثمانينيات، تفتتحه مركزًا للموسيقى العربية والمتوسطية.", ...photos.palaceGarden }
-    { date: "يناير 2011", text: "الثورة التونسية. الرئيس بن علي، الذي يقع قصره على تلة سيدي بوسعيد، يفرّ من البلاد.", ...photos.revolution }
-    { date: "يناير 2013", text: "يضرم مخرّبون النار في ضريح الولي. يتظاهر السكان، وتدعو اليونسكو إلى حماية تراث تونس.", ...photos.mausoleum }
-    { date: "مايو 2023", text: "يُدرج أرشيف ديرلانجي الموسيقي في سجل ذاكرة العالم لليونسكو.", ...photos.palaceInside }
+    { date: "1992", text: "الدولة، مالكة القصر منذ أواخر الثمانينيات، تفتتحه مركزًا للموسيقى العربية والمتوسطية.", ...photos.palaceGarden },
+    { date: "يناير 2011", text: "الثورة التونسية. الرئيس بن علي، الذي يقع قصره على تلة سيدي بوسعيد، يفرّ من البلاد.", ...photos.revolution },
+    { date: "يناير 2013", text: "يضرم مخرّبون النار في ضريح الولي. يتظاهر السكان، وتدعو اليونسكو إلى حماية تراث تونس.", ...photos.mausoleum },
+    { date: "مايو 2023", text: "يُدرج أرشيف ديرلانجي الموسيقي في سجل ذاكرة العالم لليونسكو.", ...photos.palaceInside },
     { date: "أبريل 2024", text: "تُدرج القرية على القائمة التمهيدية لتونس للتراث العالمي." },
     { date: "فبراير 2025", text: "تقدّم تونس ملف الترشيح: قرية سيدي بوسعيد، مركز إلهام ثقافي وروحي في المتوسط." },
     { date: "يناير 2026", text: "قرابة 300 ملم من المطر في يومين. يتشقق المنحدر الطيني ويتم إخلاء ثمانية مبانٍ." },
