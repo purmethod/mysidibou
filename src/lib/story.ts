@@ -65,7 +65,7 @@ const photos = {
   palace: { photo: "https://commons.wikimedia.org/wiki/Special:FilePath/BaronErlangerHouse.JPG?width=640", alt: "The palace Ennejma Ezzahra of Baron d'Erlanger" },
   palaceGarden: { photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Jardin_perse_Palais_Ennejma_Ezzahra_Sidi_Bousaid.jpg?width=640", alt: "The garden of the palace Ennejma Ezzahra" },
   palaceInside: { photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Inside_Baron_d%27Erlanger_Palace_in_Sidi_Bou_Said%2C_Tunisia.jpg?width=640", alt: "Inside the palace of Baron d'Erlanger" },
-  bourguiba: { photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Habib_Bourguiba_Portrait.jpg?width=640", alt: "Habib Bourguiba, first president of Tunisia" },
+  bourguiba: { photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Tunisia.svg?width=640", alt: "The flag of Tunisia" },
   antonine: { photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Antonine_Baths.jpg?width=640", alt: "The Antonine Baths of Carthage" },
   revolution: { photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Tunisia_Unrest_-_VOA_-_Tunis_14_Jan_2011_%283%29.jpg?width=640", alt: "Protesters in Tunis on 14 January 2011" },
   mausoleum: { photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Sidi_Bousaid_Mausoleum_01.JPG?width=640", alt: "The mausoleum of the saint in Sidi Bou Saïd" },
@@ -88,7 +88,7 @@ const en: StoryCopy = {
   readLess: "Read less",
   howLink: "How does it work?",
   credit:
-    "Pictures: Library of Congress, no known restrictions: William Henry Jackson, 1894 · a postcard from around 1900 · Nick Parrino, Office of War Information, 1943 · Victor Lundy, 1949. Paul Klee, St. Germain near Tunis, 1914, Centre Pompidou, public domain. Self-portrait of Rodolphe d'Erlanger, photo Issam Barhoumi, CC BY-SA 4.0. Wikimedia Commons: Issam Barhoumi, CC BY-SA 4.0 · Smailtn, CC0 · Citizen59, CC BY-SA 3.0 · Habib Osman, public domain · Bernard Gagnon, CC BY-SA 3.0 · VOA, L. Bryant, public domain · Emna Mizouni, CC BY-SA 3.0 · Lila Tretikov, CC BY-SA 4.0.",
+    "Pictures: Library of Congress, no known restrictions: William Henry Jackson, 1894 · a postcard from around 1900 · Nick Parrino, Office of War Information, 1943 · Victor Lundy, 1949. Paul Klee, St. Germain near Tunis, 1914, Centre Pompidou, public domain. Self-portrait of Rodolphe d'Erlanger, photo Issam Barhoumi, CC BY-SA 4.0. Wikimedia Commons: Issam Barhoumi, CC BY-SA 4.0 · Smailtn, CC0 · Citizen59, CC BY-SA 3.0 · Bernard Gagnon, CC BY-SA 3.0 · VOA, L. Bryant, public domain · Emna Mizouni, CC BY-SA 3.0 · Lila Tretikov, CC BY-SA 4.0.",
   nav: { story: "story", how: "how it works" },
   history: [
     { date: "Antiquity", text: "From the cape, the mountain of the lighthouse, Jebel el-Manar, Punic and Roman ships are guided along the coast.", ...photos.carthage },
@@ -139,7 +139,7 @@ const fr: StoryCopy = {
   readLess: "Réduire",
   howLink: "Comment ça marche ?",
   credit:
-    "Images : Library of Congress, sans restriction connue : William Henry Jackson, 1894 · une carte postale vers 1900 · Nick Parrino, Office of War Information, 1943 · Victor Lundy, 1949. Paul Klee, Saint-Germain près de Tunis, 1914, Centre Pompidou, domaine public. Autoportrait de Rodolphe d'Erlanger, photo Issam Barhoumi, CC BY-SA 4.0. Wikimedia Commons : Issam Barhoumi, CC BY-SA 4.0 · Smailtn, CC0 · Citizen59, CC BY-SA 3.0 · Habib Osman, domaine public · Bernard Gagnon, CC BY-SA 3.0 · VOA, L. Bryant, domaine public · Emna Mizouni, CC BY-SA 3.0 · Lila Tretikov, CC BY-SA 4.0.",
+    "Images : Library of Congress, sans restriction connue : William Henry Jackson, 1894 · une carte postale vers 1900 · Nick Parrino, Office of War Information, 1943 · Victor Lundy, 1949. Paul Klee, Saint-Germain près de Tunis, 1914, Centre Pompidou, domaine public. Autoportrait de Rodolphe d'Erlanger, photo Issam Barhoumi, CC BY-SA 4.0. Wikimedia Commons : Issam Barhoumi, CC BY-SA 4.0 · Smailtn, CC0 · Citizen59, CC BY-SA 3.0 · Bernard Gagnon, CC BY-SA 3.0 · VOA, L. Bryant, domaine public · Emna Mizouni, CC BY-SA 3.0 · Lila Tretikov, CC BY-SA 4.0.",
   nav: { story: "histoire", how: "fonctionnement" },
   history: [
     { date: "Antiquité", text: "Depuis le cap, la montagne du phare, Jebel el-Manar, on guide les navires puniques et romains le long de la côte.", ...photos.carthage },
@@ -190,7 +190,7 @@ const de: StoryCopy = {
   readLess: "Weniger",
   howLink: "Wie funktioniert's?",
   credit:
-    "Bilder: Library of Congress, keine bekannten Einschränkungen: William Henry Jackson, 1894 · eine Postkarte um 1900 · Nick Parrino, Office of War Information, 1943 · Victor Lundy, 1949. Paul Klee, St. Germain bei Tunis, 1914, Centre Pompidou, gemeinfrei. Selbstporträt von Rodolphe d'Erlanger, Foto Issam Barhoumi, CC BY-SA 4.0. Wikimedia Commons: Issam Barhoumi, CC BY-SA 4.0 · Smailtn, CC0 · Citizen59, CC BY-SA 3.0 · Habib Osman, gemeinfrei · Bernard Gagnon, CC BY-SA 3.0 · VOA, L. Bryant, gemeinfrei · Emna Mizouni, CC BY-SA 3.0 · Lila Tretikov, CC BY-SA 4.0.",
+    "Bilder: Library of Congress, keine bekannten Einschränkungen: William Henry Jackson, 1894 · eine Postkarte um 1900 · Nick Parrino, Office of War Information, 1943 · Victor Lundy, 1949. Paul Klee, St. Germain bei Tunis, 1914, Centre Pompidou, gemeinfrei. Selbstporträt von Rodolphe d'Erlanger, Foto Issam Barhoumi, CC BY-SA 4.0. Wikimedia Commons: Issam Barhoumi, CC BY-SA 4.0 · Smailtn, CC0 · Citizen59, CC BY-SA 3.0 · Bernard Gagnon, CC BY-SA 3.0 · VOA, L. Bryant, gemeinfrei · Emna Mizouni, CC BY-SA 3.0 · Lila Tretikov, CC BY-SA 4.0.",
   nav: { story: "Geschichte", how: "So funktioniert's" },
   history: [
     { date: "Antike", text: "Vom Kap, dem Berg des Leuchtturms, Jebel el-Manar, werden punische und römische Schiffe entlang der Küste geleitet.", ...photos.carthage },
@@ -241,7 +241,7 @@ const ar: StoryCopy = {
   readLess: "أقل",
   howLink: "كيف يعمل النظام؟",
   credit:
-    "الصور: مكتبة الكونغرس، دون قيود معروفة: William Henry Jackson، 1894 · بطاقة بريدية من حوالي 1900 · Nick Parrino، مكتب معلومات الحرب، 1943 · Victor Lundy، 1949. Paul Klee، سان جرمان قرب تونس، 1914، مركز بومبيدو، ملك عام. صورة ذاتية لرودولف ديرلانجي، تصوير عصام برهومي، CC BY-SA 4.0. ويكيميديا كومنز: Issam Barhoumi، CC BY-SA 4.0 · Smailtn، CC0 · Citizen59، CC BY-SA 3.0 · Habib Osman، ملك عام · Bernard Gagnon، CC BY-SA 3.0 · VOA، L. Bryant، ملك عام · Emna Mizouni، CC BY-SA 3.0 · Lila Tretikov، CC BY-SA 4.0.",
+    "الصور: مكتبة الكونغرس، دون قيود معروفة: William Henry Jackson، 1894 · بطاقة بريدية من حوالي 1900 · Nick Parrino، مكتب معلومات الحرب، 1943 · Victor Lundy، 1949. Paul Klee، سان جرمان قرب تونس، 1914، مركز بومبيدو، ملك عام. صورة ذاتية لرودولف ديرلانجي، تصوير عصام برهومي، CC BY-SA 4.0. ويكيميديا كومنز: Issam Barhoumi، CC BY-SA 4.0 · Smailtn، CC0 · Citizen59، CC BY-SA 3.0 · Bernard Gagnon، CC BY-SA 3.0 · VOA، L. Bryant، ملك عام · Emna Mizouni، CC BY-SA 3.0 · Lila Tretikov، CC BY-SA 4.0.",
   nav: { story: "القصة", how: "كيف يعمل" },
   history: [
     { date: "العصور القديمة", text: "من الرأس، جبل المنار، تُوجَّه السفن البونيقية والرومانية على طول الساحل.", ...photos.carthage },
