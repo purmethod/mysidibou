@@ -127,7 +127,7 @@ const en: StoryCopy = {
     { date: "October 2026", text: "Tunisia's commission for major projects approves the works to secure the hillside." },
     { date: "1 December 2027", text: "Tunisia's report to UNESCO is due: landslide studies, a map of the cracks, emergency plans and a tourism strategy.", future: true },
     { date: "2028", text: "The World Heritage Committee reviews the report at its 50th session.", future: true },
-    { date: "2526", text: "We believe in a blue world without plastic, without pollution, without borders, without war. Peace.", ...photos.blueWorld, future: true },
+    { date: "2526", text: "We believe in a blue world without plastic, without pollution, without war. Many cultures, no walls between them. Peace.", ...photos.blueWorld, future: true },
   ],
   posts: [
     { date: "Every day", title: "The cleanest and most beautiful village in the world.", text: "No plastic on the streets. Not a single cigarette butt.", ...photos.cleaning, extra: "commitments", more: more.cleaning },
@@ -180,7 +180,7 @@ const fr: StoryCopy = {
     { date: "Octobre 2026", text: "La commission tunisienne des grands projets approuve les travaux de sécurisation de la colline." },
     { date: "1er décembre 2027", text: "Le rapport de la Tunisie à l'UNESCO est attendu : études des glissements, carte des fissures, plans d'urgence et stratégie touristique.", future: true },
     { date: "2028", text: "Le Comité du patrimoine mondial examine le rapport lors de sa 50e session.", future: true },
-    { date: "2526", text: "Nous croyons en un monde bleu, sans plastique, sans pollution, sans frontières, sans guerre. La paix.", ...photos.blueWorld, future: true },
+    { date: "2526", text: "Nous croyons en un monde bleu, sans plastique, sans pollution, sans guerre. Des cultures multiples, sans murs entre elles. La paix.", ...photos.blueWorld, future: true },
   ],
   posts: [
     { date: "Chaque jour", title: "Le village le plus propre et le plus beau du monde.", text: "Pas de plastique dans les rues. Pas un seul mégot.", ...photos.cleaning, extra: "commitments", more: more.cleaning },
@@ -233,7 +233,7 @@ const de: StoryCopy = {
     { date: "Oktober 2026", text: "Tunesiens Kommission für Großprojekte genehmigt die Arbeiten zur Sicherung des Hangs." },
     { date: "1. Dezember 2027", text: "Tunesiens Bericht an die UNESCO ist fällig: Erdrutsch-Studien, eine Karte der Risse, Notfallpläne und eine Tourismusstrategie.", future: true },
     { date: "2028", text: "Das Welterbekomitee prüft den Bericht auf seiner 50. Sitzung.", future: true },
-    { date: "2526", text: "Wir glauben an eine blaue Welt ohne Plastik, ohne Verschmutzung, ohne Grenzen, ohne Krieg. Frieden.", ...photos.blueWorld, future: true },
+    { date: "2526", text: "Wir glauben an eine blaue Welt ohne Plastik, ohne Verschmutzung, ohne Krieg. Viele Kulturen, keine Mauern dazwischen. Frieden.", ...photos.blueWorld, future: true },
   ],
   posts: [
     { date: "Jeden Tag", title: "Das sauberste und schönste Dorf der Welt.", text: "Kein Plastik auf den Straßen. Kein einziger Zigarettenstummel.", ...photos.cleaning, extra: "commitments", more: more.cleaning },
@@ -286,7 +286,7 @@ const ar: StoryCopy = {
     { date: "أكتوبر 2026", text: "لجنة المشاريع الكبرى في تونس توافق على أشغال تأمين المنحدر." },
     { date: "1 ديسمبر 2027", text: "موعد تقرير تونس إلى اليونسكو: دراسات الانزلاقات، خريطة الشقوق، خطط الطوارئ واستراتيجية للسياحة.", future: true },
     { date: "2028", text: "تنظر لجنة التراث العالمي في التقرير خلال دورتها الخمسين.", future: true },
-    { date: "2526", text: "نؤمن بعالم أزرق، بلا بلاستيك، بلا تلوث، بلا حدود، بلا حرب. سلام.", ...photos.blueWorld, future: true },
+    { date: "2526", text: "نؤمن بعالم أزرق، بلا بلاستيك، بلا تلوث، بلا حرب. ثقافات كثيرة، بلا جدران بينها. سلام.", ...photos.blueWorld, future: true },
   ],
   posts: [
     { date: "كل يوم", title: "أنظف وأجمل قرية في العالم.", text: "لا بلاستيك في الشوارع. ولا عقب سيجارة واحد.", ...photos.cleaning, extra: "commitments", more: more.cleaning },
