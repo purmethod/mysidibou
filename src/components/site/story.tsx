@@ -66,7 +66,14 @@ export function IntroSection() {
         </h1>
         <p className="story-intro__line">{copy.intro.line}</p>
       </div>
+      <a className="story-intro__explore" href="/kompas">
+        <img src="/kompas/compaz-mark.webp" width="144" height="147" alt="" decoding="async" />
+        <span>{copy.nav.explore}</span>
+      </a>
       <a className="story-intro__scroll" href="#story">
+        <svg className="story-intro__arrow" viewBox="0 0 16 40" aria-hidden="true">
+          <path d="M8 1v37M2.5 32.5 8 38l5.5-5.5" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
         <span>{copy.intro.scroll}</span>
       </a>
       <span className="story-intro__rule" aria-hidden="true" />

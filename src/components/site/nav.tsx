@@ -16,15 +16,6 @@ const anchors = [
   { key: "transparency", href: "#transparency" },
 ] as const;
 
-/** COMPAZ stays available, but only as a small mark at the edge of the bar. */
-function CompazMini() {
-  return (
-    <a className="compaz-mini" href="/kompas" aria-label="Explore Sidi Bou with COMPAZ" lang="en" dir="ltr">
-      <img src="/kompas/compaz-mark.webp" width="144" height="147" alt="" decoding="async" />
-      <span>COMPAZ</span>
-    </a>
-  );
-}
 
 export function LanguageSwitch() {
   const { lang, setLang } = useI18n();
@@ -73,13 +64,15 @@ export function SiteNav() {
       </div>
 
       <div className="site-nav__right">
-        <CompazMini />
         <nav aria-label="Primary" className="site-nav__links">
           {anchors.map((item) => (
             <a className="site-nav__link" href={item.href} key={item.key}>
               {label(item.key)}
             </a>
           ))}
+          <a className="site-nav__link" href="/kompas">
+            {story[lang].nav.explore}
+          </a>
           <a className="site-nav__link site-nav__link--donate" href={donateHref}>
             {dict.nav.donate}
           </a>
@@ -111,6 +104,10 @@ export function SiteNav() {
               {label(item.key)}
             </a>
           ))}
+          <a className="site-nav__menu-link site-nav__menu-link--explore" href="/kompas" onClick={() => setOpen(false)}>
+            <img src="/kompas/compaz-mark.webp" width="144" height="147" alt="" decoding="async" />
+            <span>{story[lang].nav.explore}</span>
+          </a>
           <div className="site-nav__menu-foot">
             <a
               className="site-nav__link site-nav__link--donate"

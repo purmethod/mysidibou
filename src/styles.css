@@ -2001,26 +2001,6 @@ html[dir="rtl"] .hero-mission__roles { direction: rtl; }
 /* Story redesign: calm landing, one line through the whole page        */
 /* ================================================================== */
 
-/* COMPAZ: a small mark at the edge of the bar, nothing more. */
-.compaz-mini {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  padding: 0.25rem 0.4rem;
-  color: var(--color-ink-soft);
-  font-size: 0.625rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-decoration: none;
-  opacity: 0.75;
-  transition: opacity 0.2s ease;
-}
-.compaz-mini img { width: 0.95rem; height: 0.95rem; object-fit: contain; }
-.compaz-mini:hover, .compaz-mini:focus-visible { opacity: 1; }
-@media (max-width: 480px) {
-  .compaz-mini span { display: none; }
-}
-
 /* Landing */
 .story-intro {
   position: relative;
@@ -2352,3 +2332,46 @@ html[dir="rtl"] .hero-mission__roles { direction: rtl; }
   font-weight: 600;
   letter-spacing: 0.06em;
 }
+
+/* COMPAZ on the landing: top right, quiet */
+.story-intro__explore {
+  position: absolute;
+  top: 6.5rem;
+  inset-inline-end: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  max-width: 6.5rem;
+  color: var(--color-ink-soft);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  line-height: 1.35;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+.story-intro__explore img { width: 2.6rem; height: 2.6rem; object-fit: contain; }
+.story-intro__explore:hover, .story-intro__explore:focus-visible { opacity: 1; }
+@media (min-width: 860px) {
+  .story-intro__explore { top: 7.5rem; inset-inline-end: 2.5rem; }
+  .story-intro__explore img { width: 3rem; height: 3rem; }
+}
+
+/* Minimal arrow above "scroll to discover" */
+.story-intro__scroll { display: flex; flex-direction: column; align-items: flex-start; gap: 0.7rem; }
+.story-intro__arrow { width: 0.75rem; height: 2.25rem; color: var(--color-ink-soft); }
+@media (min-width: 860px) {
+  .story-intro__scroll { align-items: center; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .story-intro__arrow { animation: story-arrow 2.4s ease-in-out 1.6s infinite; }
+}
+@keyframes story-arrow { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+
+/* COMPAZ in the menu */
+.site-nav__menu-link--explore { display: flex; align-items: center; gap: 0.6rem; }
+.site-nav__menu-link--explore img { width: 1.4rem; height: 1.4rem; object-fit: contain; }

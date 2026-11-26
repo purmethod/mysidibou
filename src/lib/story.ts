@@ -42,7 +42,7 @@ type StoryCopy = {
   mission: Station[];
   /** Stories from the mission: shown after the line, not on it. */
   posts: Station[];
-  nav: { story: string; how: string };
+  nav: { story: string; how: string; explore: string };
 };
 
 const P = "/assets/story/";
@@ -94,7 +94,7 @@ const en: StoryCopy = {
   howLink: "How does it work?",
   credit:
     "Pictures: Library of Congress, no known restrictions: William Henry Jackson, 1894 · a postcard from around 1900 · Nick Parrino, Office of War Information, 1943 · Victor Lundy, 1949. Paul Klee, St. Germain near Tunis, 1914, Centre Pompidou, public domain. Self-portrait of Rodolphe d'Erlanger, photo Issam Barhoumi, CC BY-SA 4.0. Wikimedia Commons: Issam Barhoumi, CC BY-SA 4.0 · Smailtn, CC0 · Citizen59, CC BY-SA 3.0 · Bernard Gagnon, CC BY-SA 3.0 · VOA, L. Bryant, public domain · Emna Mizouni, CC BY-SA 3.0 · Lila Tretikov, CC BY-SA 4.0.",
-  nav: { story: "story", how: "how it works" },
+  nav: { story: "story", how: "how it works", explore: "Explore Sidi Bou Said" },
   history: [
     { date: "Antiquity", text: "From the cape, the mountain of the lighthouse, Jebel el-Manar, Punic and Roman ships are guided along the coast.", ...photos.carthage },
     { date: "11th century", text: "Watchtowers and fire towers are built on the cape to guard the Gulf of Tunis." },
@@ -147,7 +147,7 @@ const fr: StoryCopy = {
   howLink: "Comment ça marche ?",
   credit:
     "Images : Library of Congress, sans restriction connue : William Henry Jackson, 1894 · une carte postale vers 1900 · Nick Parrino, Office of War Information, 1943 · Victor Lundy, 1949. Paul Klee, Saint-Germain près de Tunis, 1914, Centre Pompidou, domaine public. Autoportrait de Rodolphe d'Erlanger, photo Issam Barhoumi, CC BY-SA 4.0. Wikimedia Commons : Issam Barhoumi, CC BY-SA 4.0 · Smailtn, CC0 · Citizen59, CC BY-SA 3.0 · Bernard Gagnon, CC BY-SA 3.0 · VOA, L. Bryant, domaine public · Emna Mizouni, CC BY-SA 3.0 · Lila Tretikov, CC BY-SA 4.0.",
-  nav: { story: "histoire", how: "fonctionnement" },
+  nav: { story: "histoire", how: "fonctionnement", explore: "Explorer Sidi Bou Saïd" },
   history: [
     { date: "Antiquité", text: "Depuis le cap, la montagne du phare, Jebel el-Manar, on guide les navires puniques et romains le long de la côte.", ...photos.carthage },
     { date: "XIe siècle", text: "Des tours de guet et des tours à feu sont construites sur le cap pour surveiller le golfe de Tunis." },
@@ -200,7 +200,7 @@ const de: StoryCopy = {
   howLink: "Wie funktioniert's?",
   credit:
     "Bilder: Library of Congress, keine bekannten Einschränkungen: William Henry Jackson, 1894 · eine Postkarte um 1900 · Nick Parrino, Office of War Information, 1943 · Victor Lundy, 1949. Paul Klee, St. Germain bei Tunis, 1914, Centre Pompidou, gemeinfrei. Selbstporträt von Rodolphe d'Erlanger, Foto Issam Barhoumi, CC BY-SA 4.0. Wikimedia Commons: Issam Barhoumi, CC BY-SA 4.0 · Smailtn, CC0 · Citizen59, CC BY-SA 3.0 · Bernard Gagnon, CC BY-SA 3.0 · VOA, L. Bryant, gemeinfrei · Emna Mizouni, CC BY-SA 3.0 · Lila Tretikov, CC BY-SA 4.0.",
-  nav: { story: "Geschichte", how: "So funktioniert's" },
+  nav: { story: "Geschichte", how: "So funktioniert's", explore: "Sidi Bou Said entdecken" },
   history: [
     { date: "Antike", text: "Vom Kap, dem Berg des Leuchtturms, Jebel el-Manar, werden punische und römische Schiffe entlang der Küste geleitet.", ...photos.carthage },
     { date: "11. Jahrhundert", text: "Auf dem Kap entstehen Wachtürme und Feuertürme, die den Golf von Tunis bewachen." },
@@ -253,7 +253,7 @@ const ar: StoryCopy = {
   howLink: "كيف يعمل النظام؟",
   credit:
     "الصور: مكتبة الكونغرس، دون قيود معروفة: William Henry Jackson، 1894 · بطاقة بريدية من حوالي 1900 · Nick Parrino، مكتب معلومات الحرب، 1943 · Victor Lundy، 1949. Paul Klee، سان جرمان قرب تونس، 1914، مركز بومبيدو، ملك عام. صورة ذاتية لرودولف ديرلانجي، تصوير عصام برهومي، CC BY-SA 4.0. ويكيميديا كومنز: Issam Barhoumi، CC BY-SA 4.0 · Smailtn، CC0 · Citizen59، CC BY-SA 3.0 · Bernard Gagnon، CC BY-SA 3.0 · VOA، L. Bryant، ملك عام · Emna Mizouni، CC BY-SA 3.0 · Lila Tretikov، CC BY-SA 4.0.",
-  nav: { story: "القصة", how: "كيف يعمل" },
+  nav: { story: "القصة", how: "كيف يعمل", explore: "اكتشف سيدي بوسعيد" },
   history: [
     { date: "العصور القديمة", text: "من الرأس، جبل المنار، تُوجَّه السفن البونيقية والرومانية على طول الساحل.", ...photos.carthage },
     { date: "القرن الحادي عشر", text: "تُبنى على الرأس أبراج مراقبة وأبراج نار لحراسة خليج تونس." },
