@@ -126,7 +126,9 @@ const en: StoryCopy = {
   ],
   mission: [
     { date: "2026", title: "We are architects. We take responsibility.", text: "Architects and students for Sidi Bou Saïd. We work on Tunisia's report to UNESCO.", ...photos.hero, extra: "role" },
+    { date: "September 2026", text: "Paul Brinkmann founds mysidibou.com together with students, to protect Sidi Bou Saïd." },
     { date: "October 2026", text: "Tunisia's commission for major projects approves the works to secure the hillside." },
+    { date: "October 2026", text: "We program a cashless ticket system, inspired by Venice. It will fund the municipality and the School of Architecture of Sidi Bou Saïd." },
     { date: "1 December 2027", text: "Tunisia's report to UNESCO is due: landslide studies, a map of the cracks, emergency plans and a tourism strategy.", future: true },
     { date: "2028", text: "The World Heritage Committee reviews the report at its 50th session.", future: true },
     { date: "2526", text: "We believe in a blue world without plastic, without pollution, without war. Many cultures, no walls between them: every people keeps its culture, its faith and its identity, and lives with the others in respect. We believe in peace.", quote: { text: "Our greatest achievement as humankind will not be reaching Mars. It will be finding peace on Earth.", by: "Paul Brinkmann" }, ...photos.blueWorld, future: true },
@@ -179,7 +181,9 @@ const fr: StoryCopy = {
   ],
   mission: [
     { date: "2026", title: "Nous sommes architectes. Nous prenons nos responsabilités.", text: "Des architectes et des étudiants pour Sidi Bou Saïd. Nous travaillons au rapport de la Tunisie à l'UNESCO.", ...photos.hero, extra: "role" },
+    { date: "Septembre 2026", text: "Paul Brinkmann fonde mysidibou.com avec des étudiants, pour protéger Sidi Bou Saïd." },
     { date: "Octobre 2026", text: "La commission tunisienne des grands projets approuve les travaux de sécurisation de la colline." },
+    { date: "Octobre 2026", text: "Nous programmons un système de billetterie sans espèces, inspiré de Venise. Il financera la municipalité et l'École d'architecture de Sidi Bou Saïd." },
     { date: "1er décembre 2027", text: "Le rapport de la Tunisie à l'UNESCO est attendu : études des glissements, carte des fissures, plans d'urgence et stratégie touristique.", future: true },
     { date: "2028", text: "Le Comité du patrimoine mondial examine le rapport lors de sa 50e session.", future: true },
     { date: "2526", text: "Nous croyons en un monde bleu, sans plastique, sans pollution, sans guerre. Des cultures multiples, sans murs entre elles : chaque peuple garde sa culture, sa foi et son identité, et vit avec les autres dans le respect. Nous croyons en la paix.", quote: { text: "Notre plus grande réussite en tant qu'humanité ne sera pas d'atteindre Mars. Ce sera de trouver la paix sur Terre.", by: "Paul Brinkmann" }, ...photos.blueWorld, future: true },
@@ -232,7 +236,9 @@ const de: StoryCopy = {
   ],
   mission: [
     { date: "2026", title: "Wir sind Architekten. Wir übernehmen Verantwortung.", text: "Architekten und Studenten für Sidi Bou Saïd. Wir arbeiten am Bericht Tunesiens an die UNESCO.", ...photos.hero, extra: "role" },
+    { date: "September 2026", text: "Paul Brinkmann gründet mysidibou.com zusammen mit Studenten, um Sidi Bou Saïd zu schützen." },
     { date: "Oktober 2026", text: "Tunesiens Kommission für Großprojekte genehmigt die Arbeiten zur Sicherung des Hangs." },
+    { date: "Oktober 2026", text: "Wir programmieren ein bargeldloses Ticketsystem, inspiriert von Venedig. Es soll die Gemeinde und die Architekturhochschule von Sidi Bou Saïd finanzieren." },
     { date: "1. Dezember 2027", text: "Tunesiens Bericht an die UNESCO ist fällig: Erdrutsch-Studien, eine Karte der Risse, Notfallpläne und eine Tourismusstrategie.", future: true },
     { date: "2028", text: "Das Welterbekomitee prüft den Bericht auf seiner 50. Sitzung.", future: true },
     { date: "2526", text: "Wir glauben an eine blaue Welt ohne Plastik, ohne Verschmutzung, ohne Krieg. Viele Kulturen, keine Mauern dazwischen: Jedes Volk behält seine Kultur, seinen Glauben und seine Identität und lebt mit den anderen in Respekt. Wir glauben an Frieden.", quote: { text: "Die größte Errungenschaft der Menschheit wird nicht sein, den Mars zu erreichen. Sie wird sein, Frieden auf der Erde zu finden.", by: "Paul Brinkmann" }, ...photos.blueWorld, future: true },
@@ -285,7 +291,9 @@ const ar: StoryCopy = {
   ],
   mission: [
     { date: "2026", title: "نحن معماريون. نتحمّل المسؤولية.", text: "معماريون وطلبة من أجل سيدي بوسعيد. نعمل على تقرير تونس إلى اليونسكو.", ...photos.hero, extra: "role" },
+    { date: "سبتمبر 2026", text: "يؤسس بول برينكمان مع الطلبة مشروع mysidibou.com لحماية سيدي بوسعيد." },
     { date: "أكتوبر 2026", text: "لجنة المشاريع الكبرى في تونس توافق على أشغال تأمين المنحدر." },
+    { date: "أكتوبر 2026", text: "نبرمج نظام تذاكر بدون نقود، مستوحى من البندقية. سيموّل البلدية والمدرسة الوطنية للهندسة المعمارية والتعمير بسيدي بوسعيد." },
     { date: "1 ديسمبر 2027", text: "موعد تقرير تونس إلى اليونسكو: دراسات الانزلاقات، خريطة الشقوق، خطط الطوارئ واستراتيجية للسياحة.", future: true },
     { date: "2028", text: "تنظر لجنة التراث العالمي في التقرير خلال دورتها الخمسين.", future: true },
     { date: "2526", text: "نؤمن بعالم أزرق، بلا بلاستيك، بلا تلوث، بلا حرب. ثقافات كثيرة، بلا جدران بينها: يحافظ كل شعب على ثقافته ودينه وهويته، ويعيش مع الآخرين في احترام. نؤمن بالسلام.", quote: { text: "أعظم إنجاز للبشرية لن يكون الوصول إلى المريخ، بل إيجاد السلام على الأرض.", by: "بول برينكمان" }, ...photos.blueWorld, future: true },
