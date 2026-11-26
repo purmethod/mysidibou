@@ -131,7 +131,7 @@ const en: StoryCopy = {
     { date: "October 2026", text: "Paul Brinkmann programs a cashless ticket system, inspired by Venice. It will fund the municipality and the School of Architecture of Sidi Bou Saïd." },
     { date: "1 December 2027", text: "Tunisia's report to UNESCO is due: landslide studies, a map of the cracks, emergency plans and a tourism strategy.", future: true },
     { date: "2028", text: "The World Heritage Committee reviews the report at its 50th session.", future: true },
-    { date: "2526", text: "We believe in a blue world without plastic, without pollution, without war. We believe in peace. Every nation and every religion keeps its identity. We live in acceptance of each other.", quote: { text: "Our greatest achievement as humankind will not be reaching Mars. It will be finding peace on Earth.", by: "Paul Brinkmann" }, ...photos.blueWorld, future: true },
+    { date: "2526", text: "We believe in a blue world without plastic, without pollution, without war. We believe in peace. Every nation and every religion keeps its identity. We live in acceptance of each other.", quote: { text: "Our greatest achievement as humanity will not be reaching Mars. It will be finding peace on Earth.", by: "Paul Brinkmann" }, ...photos.blueWorld, future: true },
   ],
   posts: [
     { date: "Every day", title: "The cleanest and most beautiful village in the world.", text: "No plastic on the streets. Not a single cigarette butt.", ...photos.cleaning, extra: "commitments", more: more.cleaning },
