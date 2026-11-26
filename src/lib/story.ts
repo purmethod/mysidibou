@@ -69,7 +69,7 @@ const photos = {
   antonine: { photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Antonine_Baths.jpg?width=640", alt: "The Antonine Baths of Carthage" },
   revolution: { photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Tunisia_Unrest_-_VOA_-_Tunis_14_Jan_2011_%283%29.jpg?width=640", alt: "Protesters in Tunis on 14 January 2011" },
   mausoleum: { photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Sidi_Bousaid_Mausoleum_01.JPG?width=640", alt: "The mausoleum of the saint in Sidi Bou Saïd" },
-  paul: { photo: "/assets/team-founder.jpg", alt: "Paul Brinkmann" },
+  paul: { photo: `${P}paul-2026-students.webp`, alt: "Paul Brinkmann with students in a café in Sidi Bou Saïd" },
   paul2025: { photo: `${P}paul-2025.webp`, alt: "Paul Brinkmann in Sidi Bou Saïd, June 2025" },
   historic: { photo: `${P}historic.webp`, alt: "Sidi Bou Saïd in an old photograph" },
   blueWorld: { photo: `${P}blue-world.webp`, alt: "A blue heart with the map of the world" },
