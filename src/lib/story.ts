@@ -69,6 +69,7 @@ const photos = {
   antonine: { photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Antonine_Baths.jpg?width=640", alt: "The Antonine Baths of Carthage" },
   revolution: { photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Tunisia_Unrest_-_VOA_-_Tunis_14_Jan_2011_%283%29.jpg?width=640", alt: "Protesters in Tunis on 14 January 2011" },
   mausoleum: { photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Sidi_Bousaid_Mausoleum_01.JPG?width=640", alt: "The mausoleum of the saint in Sidi Bou Saïd" },
+  aly: { photo: "/assets/team-ali.jpg", alt: "Aly Cherif, World Heritage initiator" },
   paul: { photo: `${P}paul-2026-students.webp`, alt: "Paul Brinkmann with students in a café in Sidi Bou Saïd" },
   paul2025: { photo: `${P}paul-2025.webp`, alt: "Paul Brinkmann in Sidi Bou Saïd, June 2025" },
   historic: { photo: `${P}historic.webp`, alt: "Sidi Bou Saïd in an old photograph" },
@@ -119,7 +120,7 @@ const en: StoryCopy = {
     { date: "June 2025", text: "Paul Brinkmann visits Sidi Bou Saïd for the first time. From then on, the village does not let him go." },
     { date: "January 2026", text: "Close to 300 mm of rain in two days. The clay hillside cracks, and eight buildings are evacuated." },
     { date: "January 2026", text: "Paul Brinkmann comes back and falls in love with the village. Together with students, he begins the work to protect it.", ...photos.paul },
-    { date: "25 July 2026", title: "World Heritage.", text: "At its 48th session in Busan, UNESCO inscribes the village of Sidi Bou Saïd on the World Heritage List.", ...photos.sea, more: more.unesco },
+    { date: "25 July 2026", title: "World Heritage.", text: "At its 48th session in Busan, UNESCO inscribes the village of Sidi Bou Saïd on the World Heritage List. The nomination was initiated by Aly Cherif.", ...photos.aly, more: more.unesco },
   ],
   mission: [
     { date: "2026", title: "We are architects. We take responsibility.", text: "Architects and students for Sidi Bou Saïd. We work on Tunisia's report to UNESCO.", ...photos.hero, extra: "role" },
@@ -172,7 +173,7 @@ const fr: StoryCopy = {
     { date: "Juin 2025", text: "Première visite de Paul Brinkmann. Depuis, le village ne le quitte plus." },
     { date: "Janvier 2026", text: "Près de 300 mm de pluie en deux jours. La colline d'argile se fissure et huit bâtiments sont évacués." },
     { date: "Janvier 2026", text: "Paul Brinkmann revient et tombe amoureux du village. Avec des étudiants, il commence le travail pour le protéger.", ...photos.paul },
-    { date: "25 juillet 2026", title: "Patrimoine mondial.", text: "Lors de sa 48e session à Busan, l'UNESCO inscrit le village de Sidi Bou Saïd sur la Liste du patrimoine mondial.", ...photos.sea, more: more.unesco },
+    { date: "25 juillet 2026", title: "Patrimoine mondial.", text: "Lors de sa 48e session à Busan, l'UNESCO inscrit le village de Sidi Bou Saïd sur la Liste du patrimoine mondial. La candidature a été initiée par Aly Cherif.", ...photos.aly, more: more.unesco },
   ],
   mission: [
     { date: "2026", title: "Nous sommes architectes. Nous prenons nos responsabilités.", text: "Des architectes et des étudiants pour Sidi Bou Saïd. Nous travaillons au rapport de la Tunisie à l'UNESCO.", ...photos.hero, extra: "role" },
@@ -225,7 +226,7 @@ const de: StoryCopy = {
     { date: "Juni 2025", text: "Erster Besuch von Paul Brinkmann. Seitdem lässt ihn das Dorf nicht mehr los." },
     { date: "Januar 2026", text: "Fast 300 mm Regen in zwei Tagen. Der Hang aus Ton bekommt Risse, acht Gebäude werden geräumt." },
     { date: "Januar 2026", text: "Paul Brinkmann kommt zurück und verliebt sich in das Dorf. Mit Studenten beginnt er die Arbeit, um es zu schützen.", ...photos.paul },
-    { date: "25. Juli 2026", title: "Welterbe.", text: "Auf ihrer 48. Sitzung in Busan nimmt die UNESCO das Dorf Sidi Bou Saïd in die Welterbeliste auf.", ...photos.sea, more: more.unesco },
+    { date: "25. Juli 2026", title: "Welterbe.", text: "Auf ihrer 48. Sitzung in Busan nimmt die UNESCO das Dorf Sidi Bou Saïd in die Welterbeliste auf. Initiiert wurde die Nominierung von Aly Cherif.", ...photos.aly, more: more.unesco },
   ],
   mission: [
     { date: "2026", title: "Wir sind Architekten. Wir übernehmen Verantwortung.", text: "Architekten und Studenten für Sidi Bou Saïd. Wir arbeiten am Bericht Tunesiens an die UNESCO.", ...photos.hero, extra: "role" },
@@ -278,7 +279,7 @@ const ar: StoryCopy = {
     { date: "يونيو 2025", text: "أول زيارة لبول برينكمان. ومنذ ذلك الحين لا تفارقه القرية." },
     { date: "يناير 2026", text: "قرابة 300 ملم من المطر في يومين. يتشقق المنحدر الطيني ويتم إخلاء ثمانية مبانٍ." },
     { date: "يناير 2026", text: "يعود بول برينكمان ويقع في حب القرية. ويبدأ مع الطلبة العمل على حمايتها.", ...photos.paul },
-    { date: "25 يوليو 2026", title: "تراث عالمي.", text: "في دورتها الثامنة والأربعين في بوسان، تدرج اليونسكو قرية سيدي بوسعيد على قائمة التراث العالمي.", ...photos.sea, more: more.unesco },
+    { date: "25 يوليو 2026", title: "تراث عالمي.", text: "في دورتها الثامنة والأربعين في بوسان، تدرج اليونسكو قرية سيدي بوسعيد على قائمة التراث العالمي. بادر بهذا الترشيح علي الشريف.", ...photos.aly, more: more.unesco },
   ],
   mission: [
     { date: "2026", title: "نحن معماريون. نتحمّل المسؤولية.", text: "معماريون وطلبة من أجل سيدي بوسعيد. نعمل على تقرير تونس إلى اليونسكو.", ...photos.hero, extra: "role" },
