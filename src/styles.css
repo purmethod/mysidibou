@@ -2331,3 +2331,24 @@ html[dir="rtl"] .hero-mission__roles { direction: rtl; }
   .story-posts { padding-top: 2rem; }
   .story-posts .station { margin-top: 5rem; }
 }
+
+/* A quote on the line (2526) */
+.station__quote {
+  margin: 1.25rem 0 0;
+  padding: 0;
+  border: 0;
+}
+.station__quote p {
+  font-family: var(--font-village);
+  font-size: clamp(1.35rem, 2.6vw, 1.75rem);
+  font-style: italic;
+  line-height: 1.3;
+  color: var(--color-cobalt);
+}
+.station__quote footer {
+  margin-top: 0.6rem;
+  color: var(--color-ink-soft);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}

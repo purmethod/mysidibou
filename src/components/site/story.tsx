@@ -124,6 +124,13 @@ function StationItem({ station, side }: { station: Station; side: "start" | "end
           </ul>
         ) : null}
 
+        {station.quote ? (
+          <blockquote className="station__quote">
+            <p>“{station.quote.text}”</p>
+            <footer>– {station.quote.by}</footer>
+          </blockquote>
+        ) : null}
+
         {station.extra === "ticket" ? (
           <a className="station__link" href="#contribution">
             {copy.howLink}
