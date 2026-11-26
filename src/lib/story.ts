@@ -131,7 +131,7 @@ const en: StoryCopy = {
     { date: "October 2026", text: "Paul Brinkmann programs a cashless ticket system, inspired by Venice. It will fund the municipality and the School of Architecture of Sidi Bou Saïd." },
     { date: "1 December 2027", text: "Tunisia's report to UNESCO is due: landslide studies, a map of the cracks, emergency plans and a tourism strategy.", future: true },
     { date: "2028", text: "The World Heritage Committee reviews the report at its 50th session.", future: true },
-    { date: "2526", text: "We believe in a blue world without plastic, without pollution, without war. We believe in peace: every nation and every religion keeps its identity, and we live together with respect.", quote: { text: "Our greatest achievement as humankind will not be reaching Mars. It will be finding peace on Earth.", by: "Paul Brinkmann" }, ...photos.blueWorld, future: true },
+    { date: "2526", text: "We believe in a blue world without plastic, without pollution, without war. We believe in peace. Every nation and every religion keeps its identity. We live and love in mutual acceptance. I believe that in 500 years we will get there.", quote: { text: "Our greatest achievement as humankind will not be reaching Mars. It will be finding peace on Earth.", by: "Paul Brinkmann" }, ...photos.blueWorld, future: true },
   ],
   posts: [
     { date: "Every day", title: "The cleanest and most beautiful village in the world.", text: "No plastic on the streets. Not a single cigarette butt.", ...photos.cleaning, extra: "commitments", more: more.cleaning },
@@ -186,7 +186,7 @@ const fr: StoryCopy = {
     { date: "Octobre 2026", text: "Paul Brinkmann programme un système de billetterie sans espèces, inspiré de Venise. Il financera la municipalité et l'École d'architecture de Sidi Bou Saïd." },
     { date: "1er décembre 2027", text: "Le rapport de la Tunisie à l'UNESCO est attendu : études des glissements, carte des fissures, plans d'urgence et stratégie touristique.", future: true },
     { date: "2028", text: "Le Comité du patrimoine mondial examine le rapport lors de sa 50e session.", future: true },
-    { date: "2526", text: "Nous croyons en un monde bleu, sans plastique, sans pollution, sans guerre. Nous croyons en la paix : chaque nation et chaque religion garde son identité, et nous vivons ensemble dans le respect.", quote: { text: "Notre plus grande réussite en tant qu'humanité ne sera pas d'atteindre Mars. Ce sera de trouver la paix sur Terre.", by: "Paul Brinkmann" }, ...photos.blueWorld, future: true },
+    { date: "2526", text: "Nous croyons en un monde bleu, sans plastique, sans pollution, sans guerre. Nous croyons en la paix. Chaque nation et chaque religion garde son identité. Nous vivons et nous aimons dans l'acceptation mutuelle. Je crois que dans 500 ans, nous y arriverons.", quote: { text: "Notre plus grande réussite en tant qu'humanité ne sera pas d'atteindre Mars. Ce sera de trouver la paix sur Terre.", by: "Paul Brinkmann" }, ...photos.blueWorld, future: true },
   ],
   posts: [
     { date: "Chaque jour", title: "Le village le plus propre et le plus beau du monde.", text: "Pas de plastique dans les rues. Pas un seul mégot.", ...photos.cleaning, extra: "commitments", more: more.cleaning },
@@ -241,7 +241,7 @@ const de: StoryCopy = {
     { date: "Oktober 2026", text: "Paul Brinkmann programmiert ein bargeldloses Ticketsystem, inspiriert von Venedig. Es soll die Gemeinde und die Architekturhochschule von Sidi Bou Saïd finanzieren." },
     { date: "1. Dezember 2027", text: "Tunesiens Bericht an die UNESCO ist fällig: Erdrutsch-Studien, eine Karte der Risse, Notfallpläne und eine Tourismusstrategie.", future: true },
     { date: "2028", text: "Das Welterbekomitee prüft den Bericht auf seiner 50. Sitzung.", future: true },
-    { date: "2526", text: "Wir glauben an eine blaue Welt ohne Plastik, ohne Verschmutzung, ohne Krieg. Wir glauben an Frieden: Jede Nation und jede Religion behält ihre Identität, und wir leben in Respekt zusammen.", quote: { text: "Die größte Errungenschaft der Menschheit wird nicht sein, den Mars zu erreichen. Sie wird sein, Frieden auf der Erde zu finden.", by: "Paul Brinkmann" }, ...photos.blueWorld, future: true },
+    { date: "2526", text: "Wir glauben an eine blaue Welt ohne Plastik, ohne Verschmutzung, ohne Krieg. Wir glauben an Frieden. Jede Nation und jede Religion behält ihre Identität. Wir leben und lieben in gegenseitiger Akzeptanz. Ich glaube, dass wir das in 500 Jahren schaffen.", quote: { text: "Die größte Errungenschaft der Menschheit wird nicht sein, den Mars zu erreichen. Sie wird sein, Frieden auf der Erde zu finden.", by: "Paul Brinkmann" }, ...photos.blueWorld, future: true },
   ],
   posts: [
     { date: "Jeden Tag", title: "Das sauberste und schönste Dorf der Welt.", text: "Kein Plastik auf den Straßen. Kein einziger Zigarettenstummel.", ...photos.cleaning, extra: "commitments", more: more.cleaning },
@@ -296,7 +296,7 @@ const ar: StoryCopy = {
     { date: "أكتوبر 2026", text: "يبرمج بول برينكمان نظام تذاكر بدون نقود، مستوحى من البندقية. سيموّل البلدية والمدرسة الوطنية للهندسة المعمارية والتعمير بسيدي بوسعيد." },
     { date: "1 ديسمبر 2027", text: "موعد تقرير تونس إلى اليونسكو: دراسات الانزلاقات، خريطة الشقوق، خطط الطوارئ واستراتيجية للسياحة.", future: true },
     { date: "2028", text: "تنظر لجنة التراث العالمي في التقرير خلال دورتها الخمسين.", future: true },
-    { date: "2526", text: "نؤمن بعالم أزرق، بلا بلاستيك، بلا تلوث، بلا حرب. نؤمن بالسلام: تحافظ كل أمة وكل دين على هويتها، ونعيش معًا في احترام.", quote: { text: "أعظم إنجاز للبشرية لن يكون الوصول إلى المريخ، بل إيجاد السلام على الأرض.", by: "بول برينكمان" }, ...photos.blueWorld, future: true },
+    { date: "2526", text: "نؤمن بعالم أزرق، بلا بلاستيك، بلا تلوث، بلا حرب. نؤمن بالسلام. تحافظ كل أمة وكل دين على هويتها. نعيش ونحب في قبول متبادل. أؤمن أننا سنصل إلى ذلك خلال 500 عام.", quote: { text: "أعظم إنجاز للبشرية لن يكون الوصول إلى المريخ، بل إيجاد السلام على الأرض.", by: "بول برينكمان" }, ...photos.blueWorld, future: true },
   ],
   posts: [
     { date: "كل يوم", title: "أنظف وأجمل قرية في العالم.", text: "لا بلاستيك في الشوارع. ولا عقب سيجارة واحد.", ...photos.cleaning, extra: "commitments", more: more.cleaning },
