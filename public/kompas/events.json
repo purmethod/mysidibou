@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T05:49:45.869115+01:00",
+  "updatedAt": "2026-11-28T05:34:22.544195+01:00",
   "timezone": "Africa/Tunis",
   "horizonMonths": 12,
   "refreshSchedule": {
@@ -20,14 +20,14 @@
       "status": "partial",
       "coverage": "Public calendars across Tunis, Sidi Bou Saïd, Carthage, La Marsa and Gammarth",
       "pagesChecked": 90,
-      "eventsFound": 56,
+      "eventsFound": 58,
       "errors": [
         {
           "url": "https://tunis.events/",
           "error": "Collection page/time budget reached"
         }
       ],
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -46,7 +46,7 @@
           "error": "Collection page/time budget reached"
         }
       ],
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -60,7 +60,7 @@
       "pagesChecked": 1,
       "eventsFound": 0,
       "errors": [],
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -72,14 +72,14 @@
       "status": "partial",
       "coverage": "Teskerti · tickets & screenings · published dates",
       "pagesChecked": 12,
-      "eventsFound": 43,
+      "eventsFound": 34,
       "errors": [
         {
           "url": "https://teskerti.tn/",
           "error": "Collection page/time budget reached"
         }
       ],
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -90,7 +90,7 @@
       "kind": "calendar",
       "status": "partial",
       "coverage": "Guichet · shows & events · published dates",
-      "pagesChecked": 6,
+      "pagesChecked": 5,
       "eventsFound": 2,
       "errors": [
         {
@@ -102,7 +102,7 @@
           "error": "HTTP Error 404: Not Found"
         }
       ],
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -121,7 +121,7 @@
           "error": "Collection page/time budget reached"
         }
       ],
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -135,7 +135,7 @@
       "pagesChecked": 1,
       "eventsFound": 2,
       "errors": [],
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -149,7 +149,7 @@
       "pagesChecked": 1,
       "eventsFound": 1,
       "errors": [],
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -168,7 +168,7 @@
           "error": "HTTP Error 403: Forbidden"
         }
       ],
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "rootSuccess": false,
       "cancelledUrls": []
     },
@@ -182,7 +182,7 @@
       "pagesChecked": 1,
       "eventsFound": 1,
       "errors": [],
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -201,7 +201,7 @@
           "error": "Collection page/time budget reached"
         }
       ],
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -210,13 +210,18 @@
       "name": "Institut français de Tunisie",
       "url": "https://www.institutfrancais-tunisie.com/agenda/",
       "kind": "calendar",
-      "status": "monitor_only",
+      "status": "error",
       "coverage": "Institut français de Tunisie · published dates",
       "pagesChecked": 1,
       "eventsFound": 0,
-      "errors": [],
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
-      "rootSuccess": true,
+      "errors": [
+        {
+          "url": "https://www.institutfrancais-tunisie.com/agenda/",
+          "error": "Cannot verify robots policy"
+        }
+      ],
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
+      "rootSuccess": false,
       "cancelledUrls": []
     },
     {
@@ -229,7 +234,7 @@
       "pagesChecked": 1,
       "eventsFound": 1,
       "errors": [],
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -248,7 +253,7 @@
           "error": "Redirect outside configured source"
         }
       ],
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "rootSuccess": false,
       "cancelledUrls": []
     },
@@ -262,7 +267,7 @@
       "pagesChecked": 1,
       "eventsFound": 2,
       "errors": [],
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -276,7 +281,7 @@
       "pagesChecked": 1,
       "eventsFound": 0,
       "errors": [],
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     },
@@ -290,7 +295,7 @@
       "pagesChecked": 1,
       "eventsFound": 0,
       "errors": [],
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "rootSuccess": true,
       "cancelledUrls": []
     }
@@ -311,7 +316,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -335,7 +340,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -359,7 +364,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -369,78 +374,6 @@
         {
           "name": "Meeps · Tunis agenda",
           "url": "https://joinmeeps.com/fr/event/undertow-contre-courant-7t3xprs7"
-        }
-      ]
-    },
-    {
-      "id": "6c75b853d00bd663",
-      "title": "Expo : Images de Syrie",
-      "category": "arts-culture",
-      "start": "2026-10-27T00:00:00+01:00",
-      "end": "2026-11-27T00:00:00+01:00",
-      "dateOnly": true,
-      "location": "Institut français de Tunisie, Tunis",
-      "summary": "Cultural event at Institut français de Tunisie, Tunis.",
-      "url": "https://joinmeeps.com/fr/event/expo-images-de-syrie-52k13atx",
-      "sourceId": "meeps",
-      "sourceName": "Meeps · Tunis agenda",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Meeps · Tunis agenda",
-          "url": "https://joinmeeps.com/fr/event/expo-images-de-syrie-52k13atx"
-        }
-      ]
-    },
-    {
-      "id": "8bc1d8a954a9bd06",
-      "title": "Images de Syrie, Palmyre, Alep, Damas - Michel Eisenlohr",
-      "category": "arts-culture",
-      "start": "2026-10-27T17:00:00+01:00",
-      "end": "2026-11-27T19:00:00+01:00",
-      "dateOnly": false,
-      "location": "Institut Français de Tunis",
-      "summary": "Cultural event at Institut Français de Tunis.",
-      "url": "https://tunis.events/events/krn29k/images-de-syrie-palmyre-alep-damas-michel-eisenlohr-institut-francais-de-tunis",
-      "sourceId": "tunis-events",
-      "sourceName": "Tunis Events · Greater Tunis",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Tunis Events · Greater Tunis",
-          "url": "https://tunis.events/events/krn29k/images-de-syrie-palmyre-alep-damas-michel-eisenlohr-institut-francais-de-tunis"
-        }
-      ]
-    },
-    {
-      "id": "33e1aacae6351bc7",
-      "title": "Images de Syrie",
-      "category": "arts-culture",
-      "start": "2026-10-27T17:00:00+01:00",
-      "end": "2026-11-27T19:00:00+01:00",
-      "dateOnly": false,
-      "location": "Institut français de Tunisie, 20–22 avenue de Paris, Tunis, Tunisie",
-      "summary": "Cultural event at Institut français de Tunisie, 20–22 avenue de Paris, Tunis, Tunisie.",
-      "url": "https://joinmeeps.com/fr/event/images-de-syrie-6k5e24mt",
-      "sourceId": "meeps",
-      "sourceName": "Meeps · Tunis agenda",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Meeps · Tunis agenda",
-          "url": "https://joinmeeps.com/fr/event/images-de-syrie-6k5e24mt"
         }
       ]
     },
@@ -459,7 +392,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -483,36 +416,12 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Meeps · Tunis agenda",
           "url": "https://joinmeeps.com/fr/event/journees-theatrales-de-carthage-27e-edition-r9zppdqh"
-        }
-      ]
-    },
-    {
-      "id": "42306d64c759f676",
-      "title": "Alf Lila w Lila VIP",
-      "category": "community",
-      "start": "2026-11-26T10:00:00+01:00",
-      "end": "2026-11-27T07:00:00+01:00",
-      "dateOnly": false,
-      "location": "Hôtel Acqua Viva Gammarth",
-      "summary": "Community event at Hôtel Acqua Viva Gammarth.",
-      "url": "https://tunis.events/events/ext_mqG5x8/alf-lila-w-lila-vip-hotel-acqua-viva-gammarth",
-      "sourceId": "tunis-events",
-      "sourceName": "Tunis Events · Greater Tunis",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Tunis Events · Greater Tunis",
-          "url": "https://tunis.events/events/ext_mqG5x8/alf-lila-w-lila-vip-hotel-acqua-viva-gammarth"
         }
       ]
     },
@@ -531,402 +440,12 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Meeps · Tunis agenda",
           "url": "https://joinmeeps.com/fr/event/tunisia-art-fair-1f4kq3wt"
-        }
-      ]
-    },
-    {
-      "id": "5cea09666b9f3968",
-      "title": "TONTON DU BLED DÉBARQUE À MARACAS !",
-      "category": "community",
-      "start": "2026-11-26T20:00:00+01:00",
-      "end": "2026-11-27T02:00:00+01:00",
-      "dateOnly": false,
-      "location": "Tunis Grand Hôtel",
-      "summary": "Community event at Tunis Grand Hôtel.",
-      "url": "https://tunis.events/events/ext_8JKn6k/tonton-du-bled-debarque-a-maracas-tunis-grand-hotel",
-      "sourceId": "tunis-events",
-      "sourceName": "Tunis Events · Greater Tunis",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-11-26T05:43:18.885235+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Tunis Events · Greater Tunis",
-          "url": "https://tunis.events/events/ext_8JKn6k/tonton-du-bled-debarque-a-maracas-tunis-grand-hotel"
-        }
-      ],
-      "stale": true
-    },
-    {
-      "id": "b9132d2ed9f4907b",
-      "title": "back to 2000s 50%",
-      "category": "community",
-      "start": "2026-11-26T20:00:00+01:00",
-      "end": "2026-11-27T04:00:00+01:00",
-      "dateOnly": false,
-      "location": "Trinidad Club",
-      "summary": "Community event at Trinidad Club.",
-      "url": "https://tunis.events/events/ext_8JKeXk/back-to-2000s-50-trinidad-club",
-      "sourceId": "tunis-events",
-      "sourceName": "Tunis Events · Greater Tunis",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-11-26T05:43:18.885235+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Tunis Events · Greater Tunis",
-          "url": "https://tunis.events/events/ext_8JKeXk/back-to-2000s-50-trinidad-club"
-        }
-      ],
-      "stale": true
-    },
-    {
-      "id": "cbcdc6b176b07b7f",
-      "title": "️ Haithem Sammoud @ L'Onziéme Rooftop",
-      "category": "community",
-      "start": "2026-11-26T20:30:00+01:00",
-      "end": "2026-11-27T00:30:00+01:00",
-      "dateOnly": false,
-      "location": "Tunis Marriott Hotel",
-      "summary": "Community event at Tunis Marriott Hotel.",
-      "url": "https://tunis.events/events/ext_3xlaa3/haithem-sammoud-lonzieme-rooftop-tunis-marriott-hotel",
-      "sourceId": "tunis-events",
-      "sourceName": "Tunis Events · Greater Tunis",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-11-26T05:43:18.885235+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Tunis Events · Greater Tunis",
-          "url": "https://tunis.events/events/ext_3xlaa3/haithem-sammoud-lonzieme-rooftop-tunis-marriott-hotel"
-        }
-      ],
-      "stale": true
-    },
-    {
-      "id": "23289f26a83de1cd",
-      "title": "Eruzioni",
-      "category": "community",
-      "start": "2026-11-26T21:00:00+01:00",
-      "end": "2026-11-27T04:00:00+01:00",
-      "dateOnly": false,
-      "location": "AÏNA",
-      "summary": "Community event at AÏNA.",
-      "url": "https://tunis.events/events/ext_moGq1m/eruzioni-aina",
-      "sourceId": "tunis-events",
-      "sourceName": "Tunis Events · Greater Tunis",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-11-26T05:43:18.885235+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Tunis Events · Greater Tunis",
-          "url": "https://tunis.events/events/ext_moGq1m/eruzioni-aina"
-        }
-      ],
-      "stale": true
-    },
-    {
-      "id": "169511542d8a3138",
-      "title": "Moonlight",
-      "category": "community",
-      "start": "2026-11-26T21:00:00+01:00",
-      "end": "2026-11-27T02:00:00+01:00",
-      "dateOnly": false,
-      "location": "Olivia",
-      "summary": "Community event at Olivia.",
-      "url": "https://tunis.events/events/ext_mwl1n3/moonlight-olivia",
-      "sourceId": "tunis-events",
-      "sourceName": "Tunis Events · Greater Tunis",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-11-26T05:43:18.885235+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Tunis Events · Greater Tunis",
-          "url": "https://tunis.events/events/ext_mwl1n3/moonlight-olivia"
-        }
-      ],
-      "stale": true
-    },
-    {
-      "id": "13a17e23f09c07b6",
-      "title": "Weam",
-      "category": "community",
-      "start": "2026-11-26T21:00:00+01:00",
-      "end": "2026-11-27T02:00:00+01:00",
-      "dateOnly": false,
-      "location": "Radisson Blu Hotel & Convention Center, Tunis",
-      "summary": "Community event at Radisson Blu Hotel & Convention Center, Tunis.",
-      "url": "https://tunis.events/events/ext_8LWeP3/weam-radisson-blu-hotel-convention-center-tunis",
-      "sourceId": "tunis-events",
-      "sourceName": "Tunis Events · Greater Tunis",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-11-26T05:43:18.885235+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Tunis Events · Greater Tunis",
-          "url": "https://tunis.events/events/ext_8LWeP3/weam-radisson-blu-hotel-convention-center-tunis"
-        }
-      ],
-      "stale": true
-    },
-    {
-      "id": "c28ff92d7ec5f178",
-      "title": "SUPERCOUPE DE TUNISIE DE VOLLEY-BALL : Finale Dames : EST vs CFC",
-      "category": "community",
-      "start": "2026-11-27T14:00:00+01:00",
-      "end": null,
-      "dateOnly": false,
-      "location": "Palais des sports d'El Menzah",
-      "summary": "Community event at Palais des sports d'El Menzah.",
-      "url": "https://teskerti.tn/evenement/supercoupe-de-tunisie-de-volley-ball-finale-dames-est-vs-cfc",
-      "sourceId": "teskerti",
-      "sourceName": "Teskerti · tickets & screenings",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Teskerti · tickets & screenings",
-          "url": "https://teskerti.tn/evenement/supercoupe-de-tunisie-de-volley-ball-finale-dames-est-vs-cfc"
-        }
-      ]
-    },
-    {
-      "id": "79e2098b0865183f",
-      "title": "SUPERCOUPE DE TUNISIE DE VOLLEY-BALL : Finale Dames : CFC vs EST",
-      "category": "community",
-      "start": "2026-11-27T14:00:00+01:00",
-      "end": null,
-      "dateOnly": false,
-      "location": "Palais des sports d'El Menzah",
-      "summary": "Community event at Palais des sports d'El Menzah.",
-      "url": "https://teskerti.tn/evenement/supercoupe-de-tunisie-de-volley-ball-finale-dames-cfc-vs-est",
-      "sourceId": "teskerti",
-      "sourceName": "Teskerti · tickets & screenings",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Teskerti · tickets & screenings",
-          "url": "https://teskerti.tn/evenement/supercoupe-de-tunisie-de-volley-ball-finale-dames-cfc-vs-est"
-        }
-      ]
-    },
-    {
-      "id": "eb6bbc10b72365cd",
-      "title": "Je m'appelle Clara 27/11",
-      "category": "cinema",
-      "start": "2026-11-27T14:00:00+01:00",
-      "end": null,
-      "dateOnly": false,
-      "location": "Ciné Alhambra Zéphyr",
-      "summary": "Film screening at Ciné Alhambra Zéphyr.",
-      "url": "https://teskerti.tn/evenement/je-mappelle-clara-2711",
-      "sourceId": "teskerti",
-      "sourceName": "Teskerti · tickets & screenings",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Teskerti · tickets & screenings",
-          "url": "https://teskerti.tn/evenement/je-mappelle-clara-2711"
-        }
-      ]
-    },
-    {
-      "id": "be9e849a7cb9bafa",
-      "title": "TCHAIKA",
-      "category": "community",
-      "start": "2026-11-27T15:00:00+01:00",
-      "end": null,
-      "dateOnly": false,
-      "location": "Théâtre Le 4ème Art",
-      "summary": "Community event at Théâtre Le 4ème Art.",
-      "url": "https://teskerti.tn/evenement/tchaika",
-      "sourceId": "teskerti",
-      "sourceName": "Teskerti · tickets & screenings",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Teskerti · tickets & screenings",
-          "url": "https://teskerti.tn/evenement/tchaika"
-        }
-      ]
-    },
-    {
-      "id": "cd9076d2e8674926",
-      "title": "TCHAIKA – Séance 15h",
-      "category": "arts-culture",
-      "start": "2026-11-27T15:00:00+01:00",
-      "end": "2026-11-27T16:00:00+01:00",
-      "dateOnly": false,
-      "location": "Théâtre Le 4ème Art, 7 avenue de Paris, Tunis, Tunisie",
-      "summary": "Cultural event at Théâtre Le 4ème Art, 7 avenue de Paris, Tunis, Tunisie.",
-      "url": "https://joinmeeps.com/fr/event/tchaika-seance-15h-77mr6gr0",
-      "sourceId": "meeps",
-      "sourceName": "Meeps · Tunis agenda",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Meeps · Tunis agenda",
-          "url": "https://joinmeeps.com/fr/event/tchaika-seance-15h-77mr6gr0"
-        }
-      ]
-    },
-    {
-      "id": "c6cfe027356456e9",
-      "title": "Haute Couture",
-      "category": "community",
-      "start": "2026-11-27T17:00:00+01:00",
-      "end": null,
-      "dateOnly": false,
-      "location": "Le Mondial tunis",
-      "summary": "Community event at Le Mondial tunis.",
-      "url": "https://teskerti.tn/evenement/haute-couture",
-      "sourceId": "teskerti",
-      "sourceName": "Teskerti · tickets & screenings",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Teskerti · tickets & screenings",
-          "url": "https://teskerti.tn/evenement/haute-couture"
-        }
-      ]
-    },
-    {
-      "id": "cd70ee4b65dadc3d",
-      "title": "SUPERCOUPE DE TUNISIE DE VOLLEY-BALL : Finale Hommes : EST vs ESS",
-      "category": "community",
-      "start": "2026-11-27T17:30:00+01:00",
-      "end": null,
-      "dateOnly": false,
-      "location": "Palais des sports d'El Menzah",
-      "summary": "Community event at Palais des sports d'El Menzah.",
-      "url": "https://teskerti.tn/evenement/supercoupe-de-tunisie-de-volley-ball-finale-hommes-est-vs-ess",
-      "sourceId": "teskerti",
-      "sourceName": "Teskerti · tickets & screenings",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Teskerti · tickets & screenings",
-          "url": "https://teskerti.tn/evenement/supercoupe-de-tunisie-de-volley-ball-finale-hommes-est-vs-ess"
-        }
-      ]
-    },
-    {
-      "id": "711887ece2adf817",
-      "title": "SUPERCOUPE DE TUNISIE DE VOLLEY-BALL : Finale Hommes : ESS vs EST",
-      "category": "community",
-      "start": "2026-11-27T17:30:00+01:00",
-      "end": null,
-      "dateOnly": false,
-      "location": "Palais des sports d'El Menzah",
-      "summary": "Community event at Palais des sports d'El Menzah.",
-      "url": "https://teskerti.tn/evenement/supercoupe-de-tunisie-de-volley-ball-finale-hommes-ess-vs-est",
-      "sourceId": "teskerti",
-      "sourceName": "Teskerti · tickets & screenings",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Teskerti · tickets & screenings",
-          "url": "https://teskerti.tn/evenement/supercoupe-de-tunisie-de-volley-ball-finale-hommes-ess-vs-est"
-        }
-      ]
-    },
-    {
-      "id": "32cb0d63a22d627f",
-      "title": "Black Friday Sale Stretch Yoga Flow",
-      "category": "wellness",
-      "start": "2026-11-27T19:00:00+01:00",
-      "end": "2026-11-27T20:00:00+01:00",
-      "dateOnly": false,
-      "location": "Âme studio",
-      "summary": "Wellness session at Âme studio.",
-      "url": "https://tunis.events/events/3G2d9m/black-friday-sale-stretch-yoga-flow-ame-studio",
-      "sourceId": "tunis-events",
-      "sourceName": "Tunis Events · Greater Tunis",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Tunis Events · Greater Tunis",
-          "url": "https://tunis.events/events/3G2d9m/black-friday-sale-stretch-yoga-flow-ame-studio"
-        }
-      ]
-    },
-    {
-      "id": "fbcf7b8e0e592931",
-      "title": "TCHAIKA – Séance 19h",
-      "category": "arts-culture",
-      "start": "2026-11-27T19:00:00+01:00",
-      "end": "2026-11-27T20:00:00+01:00",
-      "dateOnly": false,
-      "location": "Théâtre Le 4ème Art, 7 avenue de Paris, Tunis, Tunisie",
-      "summary": "Cultural event at Théâtre Le 4ème Art, 7 avenue de Paris, Tunis, Tunisie.",
-      "url": "https://joinmeeps.com/fr/event/tchaika-seance-19h-fbnapjvt",
-      "sourceId": "meeps",
-      "sourceName": "Meeps · Tunis agenda",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Meeps · Tunis agenda",
-          "url": "https://joinmeeps.com/fr/event/tchaika-seance-19h-fbnapjvt"
         }
       ]
     },
@@ -952,55 +471,8 @@
           "name": "Tunis Events · Greater Tunis",
           "url": "https://tunis.events/events/ext_k45xlm/lina-ben-ali-zhamrouni-50-trinidad-club"
         }
-      ]
-    },
-    {
-      "id": "5d94dd8eb1dd20f0",
-      "title": "L'antriti by moncef dhouib | jalel eddine saadi 27/11",
-      "category": "community",
-      "start": "2026-11-27T20:00:00+01:00",
-      "end": null,
-      "dateOnly": false,
-      "location": "Zéphyr La Marsa",
-      "summary": "Community event at Zéphyr La Marsa.",
-      "url": "https://teskerti.tn/evenement/lantriti-by-moncef-dhouib-jalel-eddine-saadi-2711",
-      "sourceId": "teskerti",
-      "sourceName": "Teskerti · tickets & screenings",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Teskerti · tickets & screenings",
-          "url": "https://teskerti.tn/evenement/lantriti-by-moncef-dhouib-jalel-eddine-saadi-2711"
-        }
-      ]
-    },
-    {
-      "id": "b41146491a5da456",
-      "title": "L'ANTRITI",
-      "category": "arts-culture",
-      "start": "2026-11-27T20:00:00+01:00",
-      "end": "2026-11-27T22:00:00+01:00",
-      "dateOnly": false,
-      "location": "Zéphyr La Marsa, Avenue Habib Bourguiba, La Marsa, Tunisie",
-      "summary": "Cultural event at Zéphyr La Marsa, Avenue Habib Bourguiba, La Marsa, Tunisie.",
-      "url": "https://joinmeeps.com/fr/event/l-antriti-f78n8z5r",
-      "sourceId": "meeps",
-      "sourceName": "Meeps · Tunis agenda",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Meeps · Tunis agenda",
-          "url": "https://joinmeeps.com/fr/event/l-antriti-f78n8z5r"
-        }
-      ]
+      ],
+      "stale": true
     },
     {
       "id": "b5b7e220f5a051e0",
@@ -1024,7 +496,8 @@
           "name": "Tunis Events · Greater Tunis",
           "url": "https://tunis.events/events/ext_31ongk/manzo%D9%83%D9%8A%D8%AA%D8%B4-boeuf-sur-le-toit-boeuffy-jardin-du-boeuf"
         }
-      ]
+      ],
+      "stale": true
     },
     {
       "id": "1d9516cca703e588",
@@ -1048,7 +521,8 @@
           "name": "Tunis Events · Greater Tunis",
           "url": "https://tunis.events/events/ext_krG76m/maazuz-dj-set-lonzieme-rooftop-tunis-marriott-hotel"
         }
-      ]
+      ],
+      "stale": true
     },
     {
       "id": "6072353f5bcbbc5a",
@@ -1072,31 +546,8 @@
           "name": "Tunis Events · Greater Tunis",
           "url": "https://tunis.events/events/ext_37N1Pm/charme-de-lorient-radisson-blu-hotel-convention-center-tunis"
         }
-      ]
-    },
-    {
-      "id": "9dcf7cddb98f8bcf",
-      "title": "Chicos live Band",
-      "category": "live-music",
-      "start": "2026-11-27T21:00:00+01:00",
-      "end": null,
-      "dateOnly": false,
-      "location": "Hôtel Belvédère Fourati",
-      "summary": "Live music at Hôtel Belvédère Fourati.",
-      "url": "https://teskerti.tn/evenement/chicos-live-band",
-      "sourceId": "teskerti",
-      "sourceName": "Teskerti · tickets & screenings",
-      "sourceKind": "calendar",
-      "schedule": null,
-      "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
-      "personallyTested": false,
-      "sources": [
-        {
-          "name": "Teskerti · tickets & screenings",
-          "url": "https://teskerti.tn/evenement/chicos-live-band"
-        }
-      ]
+      ],
+      "stale": true
     },
     {
       "id": "f7d442b33119b5b7",
@@ -1120,7 +571,8 @@
           "name": "Tunis Events · Greater Tunis",
           "url": "https://tunis.events/events/ext_31oyZk/chicos-live-band-hotel-belvedere-fourati"
         }
-      ]
+      ],
+      "stale": true
     },
     {
       "id": "48cc9afe6837364f",
@@ -1144,7 +596,8 @@
           "name": "Meeps · Tunis agenda",
           "url": "https://joinmeeps.com/fr/event/chicos-live-band-2bfe40en"
         }
-      ]
+      ],
+      "stale": true
     },
     {
       "id": "549a0b9de7d6a49d",
@@ -1161,7 +614,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1185,7 +638,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1209,7 +662,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1233,12 +686,60 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "AIO Events · public listings",
           "url": "https://aio.events/e/raad-games-8km-8-stations-samedi-28-novembre"
+        }
+      ]
+    },
+    {
+      "id": "ad6e30c8312ef309",
+      "title": "️CAF CL : CA vs Zamalek 50% sur toutes les bières",
+      "category": "community",
+      "start": "2026-11-28T16:00:00+01:00",
+      "end": "2026-11-28T20:00:00+01:00",
+      "dateOnly": false,
+      "location": "Hôtel Acqua Viva Gammarth",
+      "summary": "Community event at Hôtel Acqua Viva Gammarth.",
+      "url": "https://tunis.events/events/ext_mwloe3/caf-cl-ca-vs-zamalek-50-sur-toutes-les-bieres-hotel-acqua-viva-gammarth",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/ext_mwloe3/caf-cl-ca-vs-zamalek-50-sur-toutes-les-bieres-hotel-acqua-viva-gammarth"
+        }
+      ]
+    },
+    {
+      "id": "273200d2fd8c005a",
+      "title": "Kahlet Lahdheb",
+      "category": "community",
+      "start": "2026-11-28T16:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "Théâtre municipal de Tunis",
+      "summary": "Community event at Théâtre municipal de Tunis.",
+      "url": "https://teskerti.tn/evenement/kahlet-lahdheb",
+      "sourceId": "teskerti",
+      "sourceName": "Teskerti · tickets & screenings",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Teskerti · tickets & screenings",
+          "url": "https://teskerti.tn/evenement/kahlet-lahdheb"
         }
       ]
     },
@@ -1257,7 +758,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1281,7 +782,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1309,7 +810,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1333,12 +834,36 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Teskerti · tickets & screenings",
           "url": "https://teskerti.tn/evenement/dar-el-3ers-2811"
+        }
+      ]
+    },
+    {
+      "id": "9661b3627460df48",
+      "title": "DÉCLIK 2.0",
+      "category": "community",
+      "start": "2026-11-28T19:00:00+01:00",
+      "end": "2026-11-29T02:00:00+01:00",
+      "dateOnly": false,
+      "location": "La Soukra",
+      "summary": "Community event at La Soukra.",
+      "url": "https://tunis.events/events/ext_mnGo93/declik-20-la-soukra",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/ext_mnGo93/declik-20-la-soukra"
         }
       ]
     },
@@ -1357,7 +882,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1381,7 +906,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1405,7 +930,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1429,7 +954,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1453,7 +978,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1477,7 +1002,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1501,12 +1026,60 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Tunis Events · Greater Tunis",
           "url": "https://tunis.events/events/ext_3A06Jm/krossroads-karim-siala-trinidad-club"
+        }
+      ]
+    },
+    {
+      "id": "99ce38ded89fd57f",
+      "title": "Mortadha Ftiti En Concert \" El Carnaval \"",
+      "category": "live-music",
+      "start": "2026-11-28T20:00:00+01:00",
+      "end": "2026-11-29T04:00:00+01:00",
+      "dateOnly": false,
+      "location": "GOLDEN CARTHAGE TUNIS",
+      "summary": "Live music at GOLDEN CARTHAGE TUNIS.",
+      "url": "https://tunis.events/events/ext_mqGo48/mortadha-ftiti-en-concert-el-carnaval-golden-carthage-tunis",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/ext_mqGo48/mortadha-ftiti-en-concert-el-carnaval-golden-carthage-tunis"
+        }
+      ]
+    },
+    {
+      "id": "da428c39b3d088c4",
+      "title": "عشاق المزود هادي دنيا و هشام سلام",
+      "category": "community",
+      "start": "2026-11-28T20:00:00+01:00",
+      "end": "2026-11-29T05:00:00+01:00",
+      "dateOnly": false,
+      "location": "Game Art Park",
+      "summary": "Community event at Game Art Park.",
+      "url": "https://tunis.events/events/ext_8JKzok/%D8%B9%D8%B4%D8%A7%D9%82-%D8%A7%D9%84%D9%85%D8%B2%D9%88%D8%AF-%D9%87%D8%A7%D8%AF%D9%8A-%D8%AF%D9%86%D9%8A%D8%A7-%D9%88-%D9%87%D8%B4%D8%A7%D9%85-%D8%B3%D9%84%D8%A7%D9%85-game-art-park",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/ext_8JKzok/%D8%B9%D8%B4%D8%A7%D9%82-%D8%A7%D9%84%D9%85%D8%B2%D9%88%D8%AF-%D9%87%D8%A7%D8%AF%D9%8A-%D8%AF%D9%86%D9%8A%D8%A7-%D9%88-%D9%87%D8%B4%D8%A7%D9%85-%D8%B3%D9%84%D8%A7%D9%85-game-art-park"
         }
       ]
     },
@@ -1525,7 +1098,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1549,7 +1122,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1573,7 +1146,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1597,12 +1170,36 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Tunis Events · Greater Tunis",
           "url": "https://tunis.events/events/ext_3bXP0k/wathik-radisson-blu-hotel-convention-center-tunis"
+        }
+      ]
+    },
+    {
+      "id": "45d10dcf49803241",
+      "title": "Soirée regency Hammamet",
+      "category": "parties",
+      "start": "2026-11-28T21:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "Regency Tunis Hôtel",
+      "summary": "Party at Regency Tunis Hôtel.",
+      "url": "https://teskerti.tn/evenement/soiree-regency-hammamet",
+      "sourceId": "teskerti",
+      "sourceName": "Teskerti · tickets & screenings",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Teskerti · tickets & screenings",
+          "url": "https://teskerti.tn/evenement/soiree-regency-hammamet"
         }
       ]
     },
@@ -1621,7 +1218,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1645,12 +1242,36 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Tunis Events · Greater Tunis",
           "url": "https://tunis.events/events/ext_8vRpl8/soiree-regency-hammamet-regency-tunis-medina-hotels-resorts"
+        }
+      ]
+    },
+    {
+      "id": "9a49220c05ca5c2c",
+      "title": "Alf lila w lila",
+      "category": "community",
+      "start": "2026-11-28T22:00:00+01:00",
+      "end": "2026-11-29T05:00:00+01:00",
+      "dateOnly": false,
+      "location": "zone gammarth",
+      "summary": "Community event at zone gammarth.",
+      "url": "https://tunis.events/events/ext_3xlRj3/alf-lila-w-lila-zone-gammarth",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/ext_3xlRj3/alf-lila-w-lila-zone-gammarth"
         }
       ]
     },
@@ -1669,12 +1290,36 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Teskerti · tickets & screenings",
           "url": "https://teskerti.tn/evenement/billie-a-la-croisee-des-mondes-2911"
+        }
+      ]
+    },
+    {
+      "id": "61572cf7ce0996c9",
+      "title": "Dar el 3ers 29/11",
+      "category": "cinema",
+      "start": "2026-11-29T16:00:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "Ciné Alhambra Zéphyr",
+      "summary": "Film screening at Ciné Alhambra Zéphyr.",
+      "url": "https://teskerti.tn/evenement/dar-el-3ers-2911",
+      "sourceId": "teskerti",
+      "sourceName": "Teskerti · tickets & screenings",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Teskerti · tickets & screenings",
+          "url": "https://teskerti.tn/evenement/dar-el-3ers-2911"
         }
       ]
     },
@@ -1693,7 +1338,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1717,7 +1362,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1741,12 +1386,36 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Meeps · Tunis agenda",
           "url": "https://joinmeeps.com/fr/event/pierre-et-le-loup-ehvfxdka"
+        }
+      ]
+    },
+    {
+      "id": "be752fba763ea5d8",
+      "title": "Fahmi Riahi Live",
+      "category": "community",
+      "start": "2026-11-29T20:00:00+01:00",
+      "end": "2026-11-30T04:00:00+01:00",
+      "dateOnly": false,
+      "location": "GOLDEN CARTHAGE TUNIS",
+      "summary": "Community event at GOLDEN CARTHAGE TUNIS.",
+      "url": "https://tunis.events/events/ext_8LWPO3/fahmi-riahi-live-golden-carthage-tunis",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/ext_8LWPO3/fahmi-riahi-live-golden-carthage-tunis"
         }
       ]
     },
@@ -1765,7 +1434,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1789,7 +1458,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1813,7 +1482,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1837,7 +1506,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1861,7 +1530,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1885,7 +1554,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1909,7 +1578,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1933,7 +1602,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1957,7 +1626,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -1981,7 +1650,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2005,12 +1674,36 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Meeps · Tunis agenda",
           "url": "https://joinmeeps.com/fr/event/ocheg-mahfel-18r4akk5"
+        }
+      ]
+    },
+    {
+      "id": "1abf0d8b1ee42044",
+      "title": "Shik Shak Shok MARACAS شيك شك شوك",
+      "category": "community",
+      "start": "2026-12-03T20:00:00+01:00",
+      "end": "2026-12-04T02:30:00+01:00",
+      "dateOnly": false,
+      "location": "MARACAS By Le Cinquième",
+      "summary": "Community event at MARACAS By Le Cinquième.",
+      "url": "https://tunis.events/events/ext_k456Gm/shik-shak-shok-maracas-%D8%B4%D9%8A%D9%83-%D8%B4%D9%83-%D8%B4%D9%88%D9%83-maracas-by-le-cinquieme",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/ext_k456Gm/shik-shak-shok-maracas-%D8%B4%D9%8A%D9%83-%D8%B4%D9%83-%D8%B4%D9%88%D9%83-maracas-by-le-cinquieme"
         }
       ]
     },
@@ -2029,7 +1722,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2053,12 +1746,36 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Teskerti · tickets & screenings",
           "url": "https://teskerti.tn/evenement/yalla-tounes-tghani"
+        }
+      ]
+    },
+    {
+      "id": "ac60e71e6ca9ac8e",
+      "title": "عشاق الدنيا",
+      "category": "community",
+      "start": "2026-12-04T21:00:00+01:00",
+      "end": "2026-12-05T04:00:00+01:00",
+      "dateOnly": false,
+      "location": "Bee Hive CLub",
+      "summary": "Community event at Bee Hive CLub.",
+      "url": "https://tunis.events/events/ext_31o65k/%D8%B9%D8%B4%D8%A7%D9%82-%D8%A7%D9%84%D8%AF%D9%86%D9%8A%D8%A7-bee-hive-club",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/ext_31o65k/%D8%B9%D8%B4%D8%A7%D9%82-%D8%A7%D9%84%D8%AF%D9%86%D9%8A%D8%A7-bee-hive-club"
         }
       ]
     },
@@ -2077,7 +1794,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2101,12 +1818,36 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Tunis Events · Greater Tunis",
           "url": "https://tunis.events/events/ext_3xlqz3/regenesis-concert-centre-culturel-et-sportif-de-la-jeunesse-del-menzeh"
+        }
+      ]
+    },
+    {
+      "id": "493da021a2950881",
+      "title": "Regenesis – 5 groupes sur scène",
+      "category": "community",
+      "start": "2026-12-05T13:00:00+01:00",
+      "end": "2026-12-05T18:00:00+01:00",
+      "dateOnly": false,
+      "location": "Centre Culturel et Sportif de la Jeunesse d'El Menzah 6, rue Othmen Ibn Affen, Ariana 1004, Tunisie",
+      "summary": "Community event at Centre Culturel et Sportif de la Jeunesse d'El Menzah 6, rue Othmen Ibn Affen, Ariana 1004, Tunisie.",
+      "url": "https://joinmeeps.com/fr/event/regenesis-5-groupes-sur-scene-4wevrjwr",
+      "sourceId": "meeps",
+      "sourceName": "Meeps · Tunis agenda",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Meeps · Tunis agenda",
+          "url": "https://joinmeeps.com/fr/event/regenesis-5-groupes-sur-scene-4wevrjwr"
         }
       ]
     },
@@ -2125,12 +1866,36 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Tunis Events · Greater Tunis",
           "url": "https://tunis.events/events/31vjP8/tunis-is-a-frequency-by-tunis-nouveau-club-saint-georges-tunis-hotel"
+        }
+      ]
+    },
+    {
+      "id": "81df47d2d09613b4",
+      "title": "TUNIS IS A FREQUENCY",
+      "category": "festivals",
+      "start": "2026-12-05T16:00:00+01:00",
+      "end": "2026-12-06T03:00:00+01:00",
+      "dateOnly": false,
+      "location": "Saint Georges Tunis Hotel, 16 rue de Cologne, Tunis, Tunisie",
+      "summary": "Festival at Saint Georges Tunis Hotel, 16 rue de Cologne, Tunis, Tunisie.",
+      "url": "https://joinmeeps.com/fr/event/tunis-is-a-frequency-0jxv13cn",
+      "sourceId": "meeps",
+      "sourceName": "Meeps · Tunis agenda",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Meeps · Tunis agenda",
+          "url": "https://joinmeeps.com/fr/event/tunis-is-a-frequency-0jxv13cn"
         }
       ]
     },
@@ -2149,12 +1914,36 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Guichet · shows & events",
           "url": "https://guichet.tn/fr/event/3476/artea-comedy-club-0512-stand-up-pour-adulte"
+        }
+      ]
+    },
+    {
+      "id": "23a224d9ddda1359",
+      "title": "Testostérone – Séance du 5 décembre",
+      "category": "arts-culture",
+      "start": "2026-12-05T19:00:00+01:00",
+      "end": "2026-12-05T21:00:00+01:00",
+      "dateOnly": false,
+      "location": "Théâtre El Hamra, rue Al Jazira, Tunis, Tunisie",
+      "summary": "Cultural event at Théâtre El Hamra, rue Al Jazira, Tunis, Tunisie.",
+      "url": "https://joinmeeps.com/fr/event/testosterone-seance-du-5-decembre-vthkbch5",
+      "sourceId": "meeps",
+      "sourceName": "Meeps · Tunis agenda",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Meeps · Tunis agenda",
+          "url": "https://joinmeeps.com/fr/event/testosterone-seance-du-5-decembre-vthkbch5"
         }
       ]
     },
@@ -2173,7 +1962,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2197,12 +1986,84 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Teskerti · tickets & screenings",
           "url": "https://teskerti.tn/evenement/hassen-doss"
+        }
+      ]
+    },
+    {
+      "id": "a62b2ab95d27e99c",
+      "title": "Hassen Doss",
+      "category": "arts-culture",
+      "start": "2026-12-05T19:30:00+01:00",
+      "end": "2026-12-05T21:30:00+01:00",
+      "dateOnly": false,
+      "location": "Théâtre municipal de Tunis, 2 rue de Grèce, Tunis, Tunisie",
+      "summary": "Cultural event at Théâtre municipal de Tunis, 2 rue de Grèce, Tunis, Tunisie.",
+      "url": "https://joinmeeps.com/fr/event/hassen-doss-t8z0czqw",
+      "sourceId": "meeps",
+      "sourceName": "Meeps · Tunis agenda",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Meeps · Tunis agenda",
+          "url": "https://joinmeeps.com/fr/event/hassen-doss-t8z0czqw"
+        }
+      ]
+    },
+    {
+      "id": "a529df63e0fe8f14",
+      "title": "SOIRÉE BARAKA: BACH, DOGUI, F.BLACK, KARMOUSSA",
+      "category": "parties",
+      "start": "2026-12-05T20:00:00+01:00",
+      "end": "2026-12-06T04:00:00+01:00",
+      "dateOnly": false,
+      "location": "Trinidad Club",
+      "summary": "Party at Trinidad Club.",
+      "url": "https://tunis.events/events/ext_krGo5m/soiree-baraka-bach-dogui-fblack-karmoussa-trinidad-club",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/ext_krGo5m/soiree-baraka-bach-dogui-fblack-karmoussa-trinidad-club"
+        }
+      ]
+    },
+    {
+      "id": "4327778427c45aee",
+      "title": "Marathon COMAR de Tunis-Carthage",
+      "category": "sports",
+      "start": "2026-12-06T00:00:00+01:00",
+      "end": "2026-12-06T00:00:00+01:00",
+      "dateOnly": true,
+      "location": "Avenue Habib Bourguiba, centre-ville de Tunis, Tunisie",
+      "summary": "Activity at Avenue Habib Bourguiba, centre-ville de Tunis, Tunisie.",
+      "url": "https://joinmeeps.com/fr/event/marathon-comar-de-tunis-carthage-ckt6z90q",
+      "sourceId": "meeps",
+      "sourceName": "Meeps · Tunis agenda",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Meeps · Tunis agenda",
+          "url": "https://joinmeeps.com/fr/event/marathon-comar-de-tunis-carthage-ckt6z90q"
         }
       ]
     },
@@ -2221,12 +2082,36 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Teskerti · tickets & screenings",
           "url": "https://teskerti.tn/evenement/100-violons-de-zied-zouari"
+        }
+      ]
+    },
+    {
+      "id": "fee719e955148490",
+      "title": "100 Violons de Zied Zouari",
+      "category": "arts-culture",
+      "start": "2026-12-06T19:00:00+01:00",
+      "end": "2026-12-06T21:00:00+01:00",
+      "dateOnly": false,
+      "location": "Théâtre municipal de Tunis, 2 rue de Grèce, Tunis, Tunisie",
+      "summary": "Cultural event at Théâtre municipal de Tunis, 2 rue de Grèce, Tunis, Tunisie.",
+      "url": "https://joinmeeps.com/fr/event/100-violons-de-zied-zouari-6acxxs0c",
+      "sourceId": "meeps",
+      "sourceName": "Meeps · Tunis agenda",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Meeps · Tunis agenda",
+          "url": "https://joinmeeps.com/fr/event/100-violons-de-zied-zouari-6acxxs0c"
         }
       ]
     },
@@ -2295,7 +2180,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2319,7 +2204,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2343,7 +2228,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2367,7 +2252,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2391,12 +2276,36 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Teskerti · tickets & screenings",
           "url": "https://teskerti.tn/evenement/kolna-nghani-saison-3"
+        }
+      ]
+    },
+    {
+      "id": "2f17d5510b1e592e",
+      "title": "KUTSXINSIDE",
+      "category": "community",
+      "start": "2026-12-12T20:00:00+01:00",
+      "end": "2026-12-13T08:00:00+01:00",
+      "dateOnly": false,
+      "location": "Tunis",
+      "summary": "Community event at Tunis.",
+      "url": "https://tunis.events/events/kgqKM3/kutsxinside",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/kgqKM3/kutsxinside"
         }
       ]
     },
@@ -2415,7 +2324,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2439,7 +2348,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2463,7 +2372,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2487,7 +2396,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2586,7 +2495,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2610,7 +2519,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2634,7 +2543,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2658,7 +2567,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2682,7 +2591,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2706,7 +2615,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2730,7 +2639,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2754,12 +2663,60 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Tunis Events · Greater Tunis",
           "url": "https://tunis.events/events/mnMayk/soundcheck-aina"
+        }
+      ]
+    },
+    {
+      "id": "57c7f95a4d5e36c9",
+      "title": "Flashback 90s 80s le 22/12",
+      "category": "community",
+      "start": "2026-12-22T19:30:00+01:00",
+      "end": null,
+      "dateOnly": false,
+      "location": "Théâtre municipal de Tunis",
+      "summary": "Community event at Théâtre municipal de Tunis.",
+      "url": "https://teskerti.tn/evenement/flashback-90s-80s-le-2212",
+      "sourceId": "teskerti",
+      "sourceName": "Teskerti · tickets & screenings",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Teskerti · tickets & screenings",
+          "url": "https://teskerti.tn/evenement/flashback-90s-80s-le-2212"
+        }
+      ]
+    },
+    {
+      "id": "96b9875b9dbdc8d7",
+      "title": "Flashback 90s 80s le 22/12",
+      "category": "arts-culture",
+      "start": "2026-12-22T20:30:00+01:00",
+      "end": "2026-12-22T22:30:00+01:00",
+      "dateOnly": false,
+      "location": "Théâtre municipal de Tunis",
+      "summary": "Cultural event at Théâtre municipal de Tunis.",
+      "url": "https://tunis.events/events/ext_8ylO63/flashback-90s-80s-le-2212-theatre-municipal-de-tunis",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/ext_8ylO63/flashback-90s-80s-le-2212-theatre-municipal-de-tunis"
         }
       ]
     },
@@ -2778,7 +2735,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2852,7 +2809,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2876,7 +2833,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2925,7 +2882,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2949,12 +2906,36 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
           "name": "Tunis Events · Greater Tunis",
           "url": "https://tunis.events/events/ext_k6Dee3/event-loco-more-than-an-event-lieu-secret"
+        }
+      ]
+    },
+    {
+      "id": "0f97ed34ecdc7f04",
+      "title": "Ramy Ayach",
+      "category": "community",
+      "start": "2026-12-31T22:00:00+01:00",
+      "end": "2027-01-01T04:00:00+01:00",
+      "dateOnly": false,
+      "location": "Radisson Blu Hotel & Convention Center, Tunis",
+      "summary": "Community event at Radisson Blu Hotel & Convention Center, Tunis.",
+      "url": "https://tunis.events/events/ext_3Pzy7k/ramy-ayach-radisson-blu-hotel-convention-center-tunis",
+      "sourceId": "tunis-events",
+      "sourceName": "Tunis Events · Greater Tunis",
+      "sourceKind": "calendar",
+      "schedule": null,
+      "note": null,
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
+      "personallyTested": false,
+      "sources": [
+        {
+          "name": "Tunis Events · Greater Tunis",
+          "url": "https://tunis.events/events/ext_3Pzy7k/ramy-ayach-radisson-blu-hotel-convention-center-tunis"
         }
       ]
     },
@@ -2973,7 +2954,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -2997,7 +2978,7 @@
       "sourceKind": "calendar",
       "schedule": null,
       "note": null,
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
@@ -3021,7 +3002,7 @@
       "sourceKind": "organizer",
       "schedule": null,
       "note": "Multi-stop travel retreat including Tunis and southern Tunisia. Confirm the itinerary with the organizer.",
-      "checkedAt": "2026-11-27T05:49:45.869115+01:00",
+      "checkedAt": "2026-11-28T05:34:22.544195+01:00",
       "personallyTested": false,
       "sources": [
         {
